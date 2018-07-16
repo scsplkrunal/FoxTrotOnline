@@ -34,11 +34,11 @@
 	<!-- BEGIN FORM Table -->
 	<TABLE WIDTH="350" CELLSPACING="0" CELLPADDING="0" BORDER="0">
 	<FORM NAME="getrepno" ACTION="loginaction2.cfm" METHOD="POST">
-	</TD>
-	</TR>
+	
 
-	</CFOUTPUT>
-	<cfquery name="qBrokers" datasource="#application.datasource.name#">
+	
+	<?php
+	$sql = "
 		SELECT rep_no, 
 		       sort =
 			    CASE 
@@ -51,22 +51,23 @@
                       ELSE RTRIM(lname) + ', ' + fname 
                  END
  		FROM permrep p
-		WHERE (p.rep_no = <cfqueryparam cfsqltype="cf_sql_integer" value="#Session.rep_no#">
-		       OR p.branch_no IN (SELECT branch_no FROM branches b WHERE b.rep_no = <cfqueryparam cfsqltype="cf_sql_integer" value="#Session.rep_no#"> AND b.customerID = <cfqueryparam cfsqltype="cf_sql_integer" value="#session.customerID#">) )
-		  AND p.customerID = <cfqueryparam cfsqltype="cf_sql_integer" value="#session.customerID#">
-		ORDER BY sort, rep_name, rep_no
-	</cfquery>
+		WHERE (p.rep_no = '".$_SESSION['rep_no']."'
+		       OR p.branch_no IN (SELECT branch_no FROM branches b WHERE b.rep_no = '".$_SESSION['rep_no']."' AND b.customerID = '".$_SESSION['customerID']."'
+		  AND p.customerID = '".$_SESSION['customerID']."'
+		ORDER BY sort, rep_name, rep_no";
+		$qBrokers_sql = mysql_query($sql);
+	?>
 	
 	<TR>
-	<TD ALIGN="RIGHT" WIDTH="#variables.colwidth[1]#"><FONT FACE="Arial, Helvetica, Sans Serif" SIZE="-1"><B>Broker:</B></FONT></TD>
-	<TD WIDTH="#variables.colwidth[2]#">&nbsp;</TD>
-	<TD WIDTH="#variables.colwidth[3]#">
+	<TD ALIGN="RIGHT" WIDTH="<?=colwidth[1]?>"><FONT FACE="Arial, Helvetica, Sans Serif" SIZE="-1"><B>Broker:</B></FONT></TD>
+	<TD WIDTH="<?=colwidth[2]?>">&nbsp;</TD>
+	<TD WIDTH="<?=colwidth[3]?>">
 	<FONT FACE="Arial, Helvetica, Sans Serif" SIZE="-1">
 
 	<SELECT name="Brokers">
-	<CFOUTPUT query="qBrokers">  
-		<OPTION value="#rep_name# ....#RJustify(rep_no,6)#">#rep_name# ....#RJustify(rep_no,6)#
-	</CFOUTPUT>
+	<? while($qBrokers = mysql_fetch_assoc(mysql_query($sql))){?>
+		<OPTION value="<?=$qBrokers['rep_name']?> ....<?=$qBrokers['rep_no']?>"><?=$qBrokers['rep_name']?> ....<?=$qBrokers['rep_no']?>
+	<? }?>
 	</SELECT>
 	
 
@@ -103,4 +104,4 @@
 </TABLE>
 <!-- END BORDER Table -->
 
-<CFINCLUDE TEMPLATE="htmlfooter.cfm">
+<?php include 'footer.inc.php'?>
