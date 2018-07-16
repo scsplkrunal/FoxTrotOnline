@@ -33,7 +33,7 @@
 	
 	<!-- BEGIN FORM Table -->
 	<TABLE WIDTH="350" CELLSPACING="0" CELLPADDING="0" BORDER="0">
-	<FORM NAME="getrepno" ACTION="loginaction2.cfm" METHOD="POST">
+	<FORM NAME="getrepno" ACTION="loginaction2.php" METHOD="POST">
 	
 
 	
