@@ -59,10 +59,9 @@
 	?>
 	
 	<TR>
-	<TD ALIGN="RIGHT" WIDTH="<?=colwidth[1]?>"><FONT FACE="Arial, Helvetica, Sans Serif" SIZE="-1"><B>Broker:</B></FONT></TD>
-	<TD WIDTH="<?=colwidth[2]?>">&nbsp;</TD>
-	<TD WIDTH="<?=colwidth[3]?>">
-	<FONT FACE="Arial, Helvetica, Sans Serif" SIZE="-1">
+	<TD ALIGN="RIGHT" WIDTH="<?=$colwidth[1]?>"><FONT FACE="Arial, Helvetica, Sans Serif" SIZE="-1"><B>Broker:</B></FONT></TD>
+	<TD WIDTH="<?=$colwidth[2]?>">&nbsp;</TD>
+	<TD WIDTH="<?=$colwidth[3]?>">
 
 	<SELECT name="Brokers">
 	<? while($qBrokers = mysql_fetch_assoc(mysql_query($sql))){?>
