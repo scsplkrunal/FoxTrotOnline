@@ -67,7 +67,7 @@ require_once "html_fragments.php";
 				</form>
 			</div>
 			<div class="table-responsive mb-5">
-				<table class="main-table table table-hover table-striped table-sm text-center">
+				<table id="activity_table" class="main-table table table-hover table-striped table-sm text-center">
 					<thead>
 					<tr>
 						<th>DATE</th>
@@ -255,6 +255,15 @@ require_once "html_fragments.php";
 					</tr>
 					</tbody>
 				</table>
+				<script type="text/javascript">
+					$(document).ready( function () {
+						$('#activity_table').DataTable( {
+							searching: false,
+							paging: false,
+							info: false
+						} );
+					} );
+				</script>
 			</div>
 		</main>
 	</div>
