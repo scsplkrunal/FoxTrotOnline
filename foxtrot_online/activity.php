@@ -260,8 +260,15 @@ require_once "html_fragments.php";
 						$('#activity_table').DataTable( {
 							searching: false,
 							paging: false,
-							info: false
+							info: false,
+							dom: 'Bfrtip',
+							buttons: [
+								'excelHtml5',
+								'pdfHtml5'
+								]
 						} );
+
+						$('.buttons-html5').addClass('btn btn-secondary');
 					} );
 				</script>
 			</div>
