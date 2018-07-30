@@ -282,7 +282,7 @@ class statement{
 	static function sort_pdf_array_by_date($file_obj_array){
 		for($j = 0; $j < count($file_obj_array); $j++){
 			for($i = 0; $i < count($file_obj_array) - 1; $i++){ //Will run on all items except the last one
-				if($file_obj_array[$i]->date > $file_obj_array[$i + 1]->date){
+				if($file_obj_array[$i]->date < $file_obj_array[$i + 1]->date){
 					array_splice($file_obj_array, $i + 2, 0, array($file_obj_array[$i]));
 					unset($file_obj_array[$i]);
 					$file_obj_array = array_values($file_obj_array);
