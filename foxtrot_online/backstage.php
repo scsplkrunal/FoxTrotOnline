@@ -63,7 +63,7 @@ function db_choose($post){
 		case 'company_a':
 			define('DB_USERNAME', 'root');
 			define('DB_PASS', 'alonba2358');
-			define('DB_NAME', 'company_a_foxtrot_online');
+			define('DB_NAME', 'company_a');
 			break;
 		default:
 			throw new Exception('There are no DB credentials defined for the chosen company. Contact a system admin.', EXCEPTION_DANGER_CODE);
@@ -295,24 +295,136 @@ class statement{
 
 }
 
-class user{
-	public $id;
+class permrep{
+	public $permRepID;
+	public $rep_no;
+	public $clear_no;
+	public $fname;
+	public $lname;
+	public $middle;
+	public $suffix;
+	public $h_addr;
+	public $h_city;
+	public $h_state;
+	public $h_zip;
+	public $m_addr;
+	public $m_addr2;
+	public $m_city;
+	public $m_state;
+	public $m_zip;
+	public $w_phone;
+	public $h_phone;
+	public $fax;
+	public $soc_sec;
+	public $taxid;
+	public $emp_date;
+	public $crd_no;
+	public $term_date;
+	public $lp_states;
+	public $mut_states;
+	public $sec_states;
+	public $va_states;
+	public $fa_states;
+	public $l_states;
+	public $ria_states;
+	public $branch;
+	public $branch_no;
+	public $override;
+	public $over_rate;
+	public $override2;
+	public $over2_rate;
+	public $override3;
+	public $over3_rate;
+	public $dob;
+	public $paytype;
+	public $notes;
+	public $equi_acct;
+	public $commbasis;
+	public $frn_dom;
+	public $seccalc;
+	public $branch1;
+	public $branch2;
+	public $branch3;
+	public $pay_tot;
+	public $gross_tot;
+	public $sec_calc;
+	public $defer_rate;
+	public $defer_amt;
+	public $spl_rep;
+	public $spl_rate;
+	public $spl_rep2;
+	public $spl2_rate;
 	public $email;
-	public $company;
+	public $webpswd;
+	public $insur;
+	public $ria;
+	public $cfp;
+	public $cfa;
+	public $clu;
+	public $cpa;
+	public $chfa;
+	public $sal_no;
+	public $username;
+	public $accessLevel;
+	public $customerID;
+	public $lastModifiedDate;
+	public $bnd_states;
+	public $opt_states;
+	public $rep_link;
+	public $osjmgr;
+	public $osjmgr2;
 
-	function __construct($post){
+	function __construct($post = null){
 		//escape user input for protection against sql injection
 		foreach($post as $key => $value){
 			$post[$key] = mysqli_real_escape_string($GLOBALS['db_conn'], $value);
 		}
+		$sql_str = "SELECT * FROM permrep WHERE BINARY username = '{$post['username']}' LIMIT 1;";
+		$result  = db_query($sql_str);
+		if($result->num_rows == 0){ //in case there is no existing permrep with this username
+			foreach($this as $attr_name => $attr_value){
+				$this->$attr_name = $post[$attr_name];
+				$this->username         = '';
+			}
+
+		} else{ //in case there is an existing permrep with this username.
+			while($row = $result->fetch_assoc()){ //Fill up all properties from DB data
+				foreach($this as $attr_name => $attr_value){
+					$this->$attr_name = $row[$attr_name];
+				}
+			}
+		}
 	}
 
 	/**
-	 * Checks if the users exists, if so - redirect to dashboard.
-	 * @return bool
+	 * Logs in the account
+	 * @param $post
+	 * @return json_obj
+	 * @throws Exception
 	 */
-	function log_in(){
-		return true;
+	function log_in($post){
+		if($this->username == ''){
+			throw new Exception("Username doesn't exist");
+		}
+		if($post['log_in_with_cookies'] == 'false'){
+			$post['password'] = md5($post['password']);
+		}
+		if($this->password != $post['password']){
+			throw new Exception("Password is incorrect");
+		}
+		$_SESSION['user_obj'] = $this;
+
+		//Remember me (put cookies on computer)
+		if($post['remember'] == 'on'){
+			setcookie('tag_leagues_password', $post['password'], time() + (86400 * 7), "/");
+			setcookie('tag_leagues_user_name', $post['user_name'], time() + (86400 * 7), "/");
+		}
+
+		$json_obj                     = new json_obj();
+		$json_obj->status             = true;
+		$json_obj->data_arr ['admin'] = $this->admin;
+
+		return $json_obj;
 	}
 
 	/**
@@ -393,7 +505,7 @@ function pie_chart_data_and_labels($chart_name){
 				'borderWidth'     => 1
 			],
 		],
-		'labels' => $pie_chart_labels
+		'labels'   => $pie_chart_labels
 	];
 
 	$pie_chart_data = json_encode($pie_chart_data);
@@ -698,12 +810,12 @@ function drill_down_pie_chart($post){
 				'borderWidth'     => 1
 			],
 		],
-		'labels' => array($post['label'])
+		'labels'   => array($post['label'])
 	];
 
-	$json_obj         = new json_obj();
+	$json_obj                                        = new json_obj();
 	$json_obj->data_arr['drill_down_pie_chart_data'] = $pie_chart_data;
-	$json_obj->status = true;
+	$json_obj->status                                = true;
 
 	return $json_obj;
 }
