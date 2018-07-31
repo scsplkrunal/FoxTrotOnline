@@ -202,9 +202,33 @@ $( document ).ready( function(){
 				value: value,
 				color: color
 			}, function( server_response_data ){
+				$('#drill_down_pie_chart_modal').modal('show');
 				var json_obj = $.parseJSON( server_response_data );
-				pie_chart.data = json_obj.data_arr['drill_down_pie_chart_data'];
-				pie_chart.update();
+
+				//Create a new chart in the modal
+				var ctx = $( '#drill_down_pie_chart' );
+				var config = {
+					type: 'pie',
+					data: json_obj.data_arr['drill_down_pie_chart_data'],
+					options: {
+						legend: {
+							position: 'right',
+						},
+						scales: {
+							yAxes: [{
+								ticks: {
+									beginAtZero: true
+								}
+							}]
+						}
+					}
+				};
+
+				var drill_down_pie_chart = new Chart( ctx, config );
+
+
+				// pie_chart.data = json_obj.data_arr['drill_down_pie_chart_data'];
+				// pie_chart.update();
 			} );
 		}
 
