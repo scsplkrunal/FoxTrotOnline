@@ -179,4 +179,7 @@ $( document ).ready( function(){
 	$( "#sign_out_link" ).click( function(){
 		$.post( "junction.php", {func: 'sign_out', class: 'user'});
 	} );
+
+
+
 } );

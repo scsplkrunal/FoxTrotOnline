@@ -687,3 +687,23 @@ function number_to_ordinal($num){
 	return $string = str_replace('y-eth', 'ieth', $second_word[$second_num].' '.$first_word[$first_num]);
 
 }
+
+function drill_down_pie_chart($post){
+	$pie_chart_data = [
+		'datasets' => [
+			[
+				'data'            => array(intval($post['value'])),
+				'backgroundColor' => $post['color'],
+				'borderColor'     => 'rgb(255,255,255)',
+				'borderWidth'     => 1
+			],
+		],
+		'labels' => array($post['label'])
+	];
+
+	$json_obj         = new json_obj();
+	$json_obj->data_arr['drill_down_pie_chart_data'] = $pie_chart_data;
+	$json_obj->status = true;
+
+	return $json_obj;
+}

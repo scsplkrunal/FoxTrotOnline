@@ -50,6 +50,11 @@ require_once "html_fragments.php";
 						pie_chart.update();
 					</script>
 				</div>
+				<div class="col-lg-6">
+					<button id="restore_pie_chart_btn" class="btn btn-info">
+						Back
+					</button>
+				</div>
 			</div>
 		</main>
 	</div>

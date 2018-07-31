@@ -125,3 +125,7 @@ footer{
 .server_response_div *{
 	display: none;
 	}
+
+#restore_pie_chart_btn{
+	display: none;
+	}
