@@ -24,27 +24,27 @@ require_once "html_fragments.php";
 				<option value="company_b">company_b</option>
 				<option value="company_c">company_c</option>
 			</select>
-			<input name="email" type="email" class="form-control" placeholder="Email address"
-			       autocomplete="email" required>
+			<input name="username" type="text" class="form-control" placeholder="Username"
+			       autocomplete="username" required>
 			<input name="password" type="password" class="form-control" placeholder="Password"
 			       autocomplete="current-password" required>
-			<input name="class" value="user" hidden>
+			<input name="class" value="permrep" hidden>
 			<input name="func" value="log_in" hidden>
 			<input class="btn btn-lg btn-primary btn-block btn-signin" type="submit" value="Sign in">
 		</form><!-- /form -->
 		<a href="#" class="forgot-password" data-toggle="modal" data-target="#forgot_password_modal">
-			Forgot Password?
+			Forgot Username / Password?
 		</a>
 		<a href="dashboard.php">GO IN</a>
 	</div><!-- /card-container -->
 </div><!-- /container -->
 
 <!-- Modal -->
-<div class="modal fade bd-modal-sm" id="forgot_password_modal" tabindex="-1" role="dialog" aria-hidden="true">
-	<div class="modal-dialog modal-sm" role="document">
+<div class="modal fade" id="forgot_password_modal" tabindex="-1" role="dialog" aria-hidden="true">
+	<div class="modal-dialog" role="document">
 		<div class="modal-content">
 			<div class="modal-header">
-				<h5 class="modal-title" id="forgot_password_modal_title">Forgot your password?</h5>
+				<h5 class="modal-title" id="forgot_password_modal_title">Forgot Username / Password?</h5>
 				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 					<span aria-hidden="true">&times;</span>
 				</button>
@@ -67,7 +67,7 @@ require_once "html_fragments.php";
 						       value="Send my password to my E-mail">
 					</div>
 
-					<input name="class" value="user" hidden>
+					<input name="class" value="permrep" hidden>
 					<input name="func" value="forgot_password" hidden>
 				</form>
 			</div>
