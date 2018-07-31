@@ -63,7 +63,7 @@ require_once "html_fragments.php";
 							</button>
 						</div>
 						<div class="modal-body">
-							<canvas id="dashboard_drill_down_pie_chart"></canvas>
+							<canvas id="drill_down_pie_chart"></canvas>
 						</div>
 					</div>
 				</div>
