@@ -63,7 +63,7 @@ function db_choose($post){
 		case 'company_a':
 			define('DB_USERNAME', 'root');
 			define('DB_PASS', 'alonba2358');
-			define('DB_NAME', 'foxtrot_online');
+			define('DB_NAME', 'company_a_foxtrot_online');
 			break;
 		default:
 			throw new Exception('There are no DB credentials defined for the chosen company. Contact a system admin.', EXCEPTION_DANGER_CODE);
