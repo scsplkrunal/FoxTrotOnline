@@ -181,5 +181,30 @@ $( document ).ready( function(){
 	} );
 
 
+	/**
+	 * Drill down pie chart
+	 * @param evt
+	 */
+	$( '#' + chart_id )[0].onclick = function(evt) {
+		var is_shown = $('#restore_pie_chart_btn').attr( 'style' );
+		if( is_shown == undefined ){
+			var activePoints = pie_chart.getElementsAtEvent(evt);
+			if (activePoints[0]) {
+				var chartData = activePoints[0]['_chart'].config.data;
+				var idx = activePoints[0]['_index'];
+
+				var label = chartData.labels[idx];
+				var value = chartData.datasets[0].data[idx];
+				var color = chartData.datasets[0].backgroundColor[idx];
+
+				$.post( "junction.php", {func: 'drill_down_pie_chart', class: 'no_class', label: label, value: value, color: color}, function( server_response_data ){
+					var json_obj = $.parseJSON( server_response_data );
+					pie_chart.data = json_obj.data_arr['drill_down_pie_chart_data'];
+					pie_chart.update();
+					$('#restore_pie_chart_btn').show();
+				});
+			}
+		}
+	};
 
 } );
