@@ -46,9 +46,7 @@ require_once "html_fragments.php";
 					<canvas id="dashboard_pie_chart"></canvas>
 					<script type="text/javascript" src="pie_chart_no_data.js" chart_id="dashboard_pie_chart"></script>
 					<script type="text/javascript">
-						pie_chart.data.datasets[0].data = pie_chart_data;
-						pie_chart.data.labels = pie_chart_labels;
-						pie_chart.data.datasets[0].backgroundColor = pie_chart_colors;
+						pie_chart.data = pie_chart_data;
 						pie_chart.update();
 					</script>
 				</div>

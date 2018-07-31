@@ -336,7 +336,7 @@ class user{
 function pie_chart_data_and_labels($chart_name){
 	switch($chart_name){
 		case 'dashboard_pie_chart':
-			$pie_chart_data   = json_encode([
+			$pie_chart_data_values = [
 				1,
 				2,
 				3,
@@ -345,8 +345,9 @@ function pie_chart_data_and_labels($chart_name){
 				6,
 				7,
 				8
-			]);
-			$pie_chart_labels = json_encode([
+			];
+
+			$pie_chart_labels = [
 				"Dashboard",
 				"Dashboard",
 				"Dashboard",
@@ -355,16 +356,10 @@ function pie_chart_data_and_labels($chart_name){
 				"Dashboard",
 				"Dashboard",
 				"Dashboard"
-			]);
-			$script           = "
-			<script type='text/javascript'>
-				var pie_chart_data = $pie_chart_data;
-				var pie_chart_labels = $pie_chart_labels;
-			";
-			echo $script;
+			];
 			break;
 		case 'reports_pie_chart':
-			$pie_chart_data   = json_encode([
+			$pie_chart_data_values = [
 				1,
 				2,
 				3,
@@ -373,8 +368,9 @@ function pie_chart_data_and_labels($chart_name){
 				6,
 				7,
 				8
-			]);
-			$pie_chart_labels = json_encode([
+			];
+
+			$pie_chart_labels = [
 				"Reports",
 				"Reports",
 				"Reports",
@@ -383,17 +379,28 @@ function pie_chart_data_and_labels($chart_name){
 				"Reports",
 				"Reports",
 				"Reports"
-			]);
-			$script           = "
-			<script type='text/javascript'>
-				var pie_chart_data = $pie_chart_data;
-				var pie_chart_labels = $pie_chart_labels;
-			";
-			echo $script;
+			];
 			reports_table_html($pie_chart_data, $pie_chart_labels);
 			break;
 	}
-	echo 'var pie_chart_colors = '.json_encode(PIE_CHART_COLORS_ARRAY).'</script>';
+
+	$pie_chart_data = [
+		'datasets' => [
+			[
+				'data'            => $pie_chart_data_values,
+				'backgroundColor' => PIE_CHART_COLORS_ARRAY,
+				'borderColor'     => 'rgb(255,255,255)',
+				'borderWidth'     => 1
+			],
+		],
+		'labels' => $pie_chart_labels
+	];
+
+	$pie_chart_data = json_encode($pie_chart_data);
+	$script         = "<script type='text/javascript'>
+					var pie_chart_data = $pie_chart_data;
+				</script>";
+	echo $script;
 }
 
 /**
