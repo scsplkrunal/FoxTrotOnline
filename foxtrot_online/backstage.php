@@ -23,7 +23,7 @@ define('PIE_CHART_COLORS_ARRAY', [
 function db_connect(){
 
 	// Create connection
-	$conn = new mysqli("127.0.0.1:3305", DB_USERNAME, DB_PASS, DB_NAME);
+	$conn = new mysqli("127.0.0.1:3304", DB_USERNAME, DB_PASS, DB_NAME);
 
 	// Check connection
 	if(!$conn->connect_error){
