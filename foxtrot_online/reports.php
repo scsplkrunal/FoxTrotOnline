@@ -81,6 +81,24 @@ require_once "html_fragments.php";
 					</script>
 				</div>
 			</div>
+
+			<!-- Modal -->
+			<div class="modal fade" id="drill_down_pie_chart_modal" tabindex="-1" role="dialog" aria-hidden="true">
+				<div class="modal-dialog" role="document">
+					<div class="modal-content">
+						<div class="modal-header">
+							<h5 class="modal-title" id="forgot_password_modal_title">A RELEVANT TITLE</h5>
+							<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+								<span aria-hidden="true">&times;</span>
+							</button>
+						</div>
+						<div class="modal-body">
+							<canvas id="dashboard_drill_down_pie_chart"></canvas>
+						</div>
+					</div>
+				</div>
+			</div>
+
 			<?php
 			echo REPORTS_TABLE_HTML;
 			?>
