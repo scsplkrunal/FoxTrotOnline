@@ -54,15 +54,17 @@ h4{
 /*}*/
 
 .form-signin #inputEmail,
-.form-signin #inputPassword{
-	direction: ltr;
-	height:    44px;
+.form-signin #inputPassword,
+form label{
+	/*direction: ltr;*/
+	/*height:    44px;*/
 	font-size: 16px;
 	}
 
 form input[type=email],
 form input[type=password],
 form input[type=text],
+.custom-checkbox,
 form select,
 form button{
 	width:              100%;

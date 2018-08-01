@@ -28,6 +28,10 @@ require_once "html_fragments.php";
 			       autocomplete="username" required>
 			<input name="password" type="password" class="form-control" placeholder="Password"
 			       autocomplete="current-password" required>
+			<div class="custom-control custom-checkbox">
+				<input type="checkbox" name="remember_me" class="custom-control-input" id="remember_me_checkbox" checked>
+				<label class="custom-control-label" for="remember_me_checkbox">Remember Me</label>
+			</div>
 			<input name="class" value="permrep" hidden>
 			<input name="func" value="log_in" hidden>
 			<input class="btn btn-lg btn-primary btn-block btn-signin" type="submit" value="Sign in">

@@ -11167,3 +11167,43 @@
 [Wed Aug 01 12:47:44.876782 2018] [php7:notice] [pid 13456:tid 1284] [client 127.0.0.1:61694] PHP   1. {main}() C:\\Users\\alonb\\Desktop\\FoxTrotOnline\\foxtrot_online\\junction.php:0, referer: http://foxtrot_online:2000/login.php?XDEBUG_SESSION_START=17013
 [Wed Aug 01 12:47:44.876782 2018] [php7:notice] [pid 13456:tid 1284] [client 127.0.0.1:61694] PHP   2. require_once() C:\\Users\\alonb\\Desktop\\FoxTrotOnline\\foxtrot_online\\junction.php:4, referer: http://foxtrot_online:2000/login.php?XDEBUG_SESSION_START=17013
 [Wed Aug 01 12:47:44.876782 2018] [php7:notice] [pid 13456:tid 1284] [client 127.0.0.1:61694] PHP   3. session_start() C:\\Users\\alonb\\Desktop\\FoxTrotOnline\\foxtrot_online\\backstage.php:2, referer: http://foxtrot_online:2000/login.php?XDEBUG_SESSION_START=17013
+[Wed Aug 01 12:54:05.784817 2018] [php7:notice] [pid 13456:tid 1284] [client 127.0.0.1:57980] PHP Notice:  session_start(): A session had already been started - ignoring in C:\\Users\\alonb\\Desktop\\FoxTrotOnline\\foxtrot_online\\backstage.php on line 2
+[Wed Aug 01 12:54:05.784817 2018] [php7:notice] [pid 13456:tid 1284] [client 127.0.0.1:57980] PHP Stack trace:
+[Wed Aug 01 12:54:05.784817 2018] [php7:notice] [pid 13456:tid 1284] [client 127.0.0.1:57980] PHP   1. {main}() C:\\Users\\alonb\\Desktop\\FoxTrotOnline\\foxtrot_online\\login.php:0
+[Wed Aug 01 12:54:05.784817 2018] [php7:notice] [pid 13456:tid 1284] [client 127.0.0.1:57980] PHP   2. require_once() C:\\Users\\alonb\\Desktop\\FoxTrotOnline\\foxtrot_online\\login.php:3
+[Wed Aug 01 12:54:05.784817 2018] [php7:notice] [pid 13456:tid 1284] [client 127.0.0.1:57980] PHP   3. session_start() C:\\Users\\alonb\\Desktop\\FoxTrotOnline\\foxtrot_online\\backstage.php:2
+[Wed Aug 01 12:55:13.919985 2018] [php7:notice] [pid 13456:tid 1268] [client 127.0.0.1:57990] PHP Notice:  session_start(): A session had already been started - ignoring in C:\\Users\\alonb\\Desktop\\FoxTrotOnline\\foxtrot_online\\backstage.php on line 2
+[Wed Aug 01 12:55:13.919985 2018] [php7:notice] [pid 13456:tid 1268] [client 127.0.0.1:57990] PHP Stack trace:
+[Wed Aug 01 12:55:13.919985 2018] [php7:notice] [pid 13456:tid 1268] [client 127.0.0.1:57990] PHP   1. {main}() C:\\Users\\alonb\\Desktop\\FoxTrotOnline\\foxtrot_online\\login.php:0
+[Wed Aug 01 12:55:13.919985 2018] [php7:notice] [pid 13456:tid 1268] [client 127.0.0.1:57990] PHP   2. require_once() C:\\Users\\alonb\\Desktop\\FoxTrotOnline\\foxtrot_online\\login.php:3
+[Wed Aug 01 12:55:13.919985 2018] [php7:notice] [pid 13456:tid 1268] [client 127.0.0.1:57990] PHP   3. session_start() C:\\Users\\alonb\\Desktop\\FoxTrotOnline\\foxtrot_online\\backstage.php:2
+[Wed Aug 01 12:55:30.965839 2018] [php7:notice] [pid 13456:tid 1292] [client 127.0.0.1:58021] PHP Notice:  session_start(): A session had already been started - ignoring in C:\\Users\\alonb\\Desktop\\FoxTrotOnline\\foxtrot_online\\backstage.php on line 2
+[Wed Aug 01 12:55:30.965839 2018] [php7:notice] [pid 13456:tid 1292] [client 127.0.0.1:58021] PHP Stack trace:
+[Wed Aug 01 12:55:30.965839 2018] [php7:notice] [pid 13456:tid 1292] [client 127.0.0.1:58021] PHP   1. {main}() C:\\Users\\alonb\\Desktop\\FoxTrotOnline\\foxtrot_online\\login.php:0
+[Wed Aug 01 12:55:30.965839 2018] [php7:notice] [pid 13456:tid 1292] [client 127.0.0.1:58021] PHP   2. require_once() C:\\Users\\alonb\\Desktop\\FoxTrotOnline\\foxtrot_online\\login.php:3
+[Wed Aug 01 12:55:30.965839 2018] [php7:notice] [pid 13456:tid 1292] [client 127.0.0.1:58021] PHP   3. session_start() C:\\Users\\alonb\\Desktop\\FoxTrotOnline\\foxtrot_online\\backstage.php:2
+[Wed Aug 01 12:55:35.918402 2018] [php7:notice] [pid 13456:tid 1292] [client 127.0.0.1:58021] PHP Notice:  session_start(): A session had already been started - ignoring in C:\\Users\\alonb\\Desktop\\FoxTrotOnline\\foxtrot_online\\backstage.php on line 2
+[Wed Aug 01 12:55:35.918402 2018] [php7:notice] [pid 13456:tid 1292] [client 127.0.0.1:58021] PHP Stack trace:
+[Wed Aug 01 12:55:35.918402 2018] [php7:notice] [pid 13456:tid 1292] [client 127.0.0.1:58021] PHP   1. {main}() C:\\Users\\alonb\\Desktop\\FoxTrotOnline\\foxtrot_online\\login.php:0
+[Wed Aug 01 12:55:35.918402 2018] [php7:notice] [pid 13456:tid 1292] [client 127.0.0.1:58021] PHP   2. require_once() C:\\Users\\alonb\\Desktop\\FoxTrotOnline\\foxtrot_online\\login.php:3
+[Wed Aug 01 12:55:35.918402 2018] [php7:notice] [pid 13456:tid 1292] [client 127.0.0.1:58021] PHP   3. session_start() C:\\Users\\alonb\\Desktop\\FoxTrotOnline\\foxtrot_online\\backstage.php:2
+[Wed Aug 01 12:55:53.423180 2018] [php7:notice] [pid 13456:tid 1292] [client 127.0.0.1:58057] PHP Notice:  session_start(): A session had already been started - ignoring in C:\\Users\\alonb\\Desktop\\FoxTrotOnline\\foxtrot_online\\backstage.php on line 2
+[Wed Aug 01 12:55:53.423180 2018] [php7:notice] [pid 13456:tid 1292] [client 127.0.0.1:58057] PHP Stack trace:
+[Wed Aug 01 12:55:53.423180 2018] [php7:notice] [pid 13456:tid 1292] [client 127.0.0.1:58057] PHP   1. {main}() C:\\Users\\alonb\\Desktop\\FoxTrotOnline\\foxtrot_online\\login.php:0
+[Wed Aug 01 12:55:53.423180 2018] [php7:notice] [pid 13456:tid 1292] [client 127.0.0.1:58057] PHP   2. require_once() C:\\Users\\alonb\\Desktop\\FoxTrotOnline\\foxtrot_online\\login.php:3
+[Wed Aug 01 12:55:53.423180 2018] [php7:notice] [pid 13456:tid 1292] [client 127.0.0.1:58057] PHP   3. session_start() C:\\Users\\alonb\\Desktop\\FoxTrotOnline\\foxtrot_online\\backstage.php:2
+[Wed Aug 01 12:56:34.750206 2018] [php7:notice] [pid 13456:tid 1268] [client 127.0.0.1:58075] PHP Notice:  session_start(): A session had already been started - ignoring in C:\\Users\\alonb\\Desktop\\FoxTrotOnline\\foxtrot_online\\backstage.php on line 2
+[Wed Aug 01 12:56:34.750206 2018] [php7:notice] [pid 13456:tid 1268] [client 127.0.0.1:58075] PHP Stack trace:
+[Wed Aug 01 12:56:34.750206 2018] [php7:notice] [pid 13456:tid 1268] [client 127.0.0.1:58075] PHP   1. {main}() C:\\Users\\alonb\\Desktop\\FoxTrotOnline\\foxtrot_online\\login.php:0
+[Wed Aug 01 12:56:34.750206 2018] [php7:notice] [pid 13456:tid 1268] [client 127.0.0.1:58075] PHP   2. require_once() C:\\Users\\alonb\\Desktop\\FoxTrotOnline\\foxtrot_online\\login.php:3
+[Wed Aug 01 12:56:34.750206 2018] [php7:notice] [pid 13456:tid 1268] [client 127.0.0.1:58075] PHP   3. session_start() C:\\Users\\alonb\\Desktop\\FoxTrotOnline\\foxtrot_online\\backstage.php:2
+[Wed Aug 01 12:57:24.353706 2018] [php7:notice] [pid 13456:tid 1256] [client 127.0.0.1:58087] PHP Notice:  session_start(): A session had already been started - ignoring in C:\\Users\\alonb\\Desktop\\FoxTrotOnline\\foxtrot_online\\backstage.php on line 2
+[Wed Aug 01 12:57:24.353706 2018] [php7:notice] [pid 13456:tid 1256] [client 127.0.0.1:58087] PHP Stack trace:
+[Wed Aug 01 12:57:24.353706 2018] [php7:notice] [pid 13456:tid 1256] [client 127.0.0.1:58087] PHP   1. {main}() C:\\Users\\alonb\\Desktop\\FoxTrotOnline\\foxtrot_online\\login.php:0
+[Wed Aug 01 12:57:24.353706 2018] [php7:notice] [pid 13456:tid 1256] [client 127.0.0.1:58087] PHP   2. require_once() C:\\Users\\alonb\\Desktop\\FoxTrotOnline\\foxtrot_online\\login.php:3
+[Wed Aug 01 12:57:24.353706 2018] [php7:notice] [pid 13456:tid 1256] [client 127.0.0.1:58087] PHP   3. session_start() C:\\Users\\alonb\\Desktop\\FoxTrotOnline\\foxtrot_online\\backstage.php:2
+[Wed Aug 01 12:57:38.668480 2018] [php7:notice] [pid 13456:tid 1292] [client 127.0.0.1:58097] PHP Notice:  session_start(): A session had already been started - ignoring in C:\\Users\\alonb\\Desktop\\FoxTrotOnline\\foxtrot_online\\backstage.php on line 2
+[Wed Aug 01 12:57:38.668480 2018] [php7:notice] [pid 13456:tid 1292] [client 127.0.0.1:58097] PHP Stack trace:
+[Wed Aug 01 12:57:38.668480 2018] [php7:notice] [pid 13456:tid 1292] [client 127.0.0.1:58097] PHP   1. {main}() C:\\Users\\alonb\\Desktop\\FoxTrotOnline\\foxtrot_online\\login.php:0
+[Wed Aug 01 12:57:38.668480 2018] [php7:notice] [pid 13456:tid 1292] [client 127.0.0.1:58097] PHP   2. require_once() C:\\Users\\alonb\\Desktop\\FoxTrotOnline\\foxtrot_online\\login.php:3
+[Wed Aug 01 12:57:38.668480 2018] [php7:notice] [pid 13456:tid 1292] [client 127.0.0.1:58097] PHP   3. session_start() C:\\Users\\alonb\\Desktop\\FoxTrotOnline\\foxtrot_online\\backstage.php:2
