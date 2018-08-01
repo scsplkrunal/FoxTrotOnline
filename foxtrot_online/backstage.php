@@ -457,7 +457,7 @@ class permrep{
 			$GLOBALS['db_conn']->close(); //close DB connection
 			if($log_in_result->status == true){
 				return true;
-			} else{
+			} else{ //in case there was some kind of error logging in
 				header("Location: login.php");
 			}
 		}else{
