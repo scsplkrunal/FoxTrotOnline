@@ -19,7 +19,7 @@ try{
 
 		if($_POST['class'] != 'no_class'){ // check if needed to create an object or not
 			$obj = new $_POST['class']($_POST); //create object
-			echo json_encode($obj->$_POST['func']($_POST)); //execute the function sent to the server
+			echo json_encode($obj->{$_POST['func']}($_POST)); //execute the function sent to the server
 		} else{
 			echo json_encode($_POST['func']($_POST)); //execute the function sent to the server
 		}
