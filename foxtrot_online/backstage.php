@@ -459,11 +459,12 @@ class permrep{
 				return true;
 			} else{ //in case there was some kind of error logging in
 				header("Location: login.php");
+
 				return false;
 			}
-		} else{
-			return false;
 		}
+
+		return false;
 	}
 }
 
