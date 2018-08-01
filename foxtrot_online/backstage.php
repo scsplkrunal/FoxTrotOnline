@@ -404,13 +404,13 @@ class permrep{
 	 */
 	function log_in($post){
 		if($this->username == ''){
-			throw new Exception("Username doesn't exist");
+			throw new Exception("Username doesn't exist", EXCEPTION_WARNING_CODE);
 		}
 		if($post['log_in_with_cookies'] == 'false'){
 			$post['password'] = md5($post['password']);
 		}
 		if($this->password != $post['password']){
-			throw new Exception("Password is incorrect");
+			throw new Exception("Password is incorrect", EXCEPTION_WARNING_CODE);
 		}
 		$_SESSION['user_obj'] = $this;
 
