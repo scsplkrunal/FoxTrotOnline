@@ -6,11 +6,6 @@ try{
 
 	if(isset($_POST['class'])){
 
-//		define('DB_USERNAME', 'root');
-//		define('DB_PASS', 'alonba2358');
-//		define('DB_NAME', 'company_a_foxtrot_online');
-//
-
 		if(!defined('DB_USERNAME') || !defined('DB_PASS') || !defined('DB_NAME')){
 			db_choose($_POST);
 		}
