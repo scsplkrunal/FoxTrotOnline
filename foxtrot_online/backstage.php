@@ -63,8 +63,8 @@ function db_choose($post){
 		case 'company_a':
 			$_SESSION['db_details'] = [
 				'db_username' => 'root',
-				'db_pass' => 'alonba2358',
-				'db_name' => 'company_a'
+				'db_pass'     => 'alonba2358',
+				'db_name'     => 'company_a'
 			];
 			break;
 		case 'none':
@@ -383,21 +383,47 @@ class permrep{
 		foreach($post as $key => $value){
 			$post[$key] = mysqli_real_escape_string($GLOBALS['db_conn'], $value);
 		}
-		$sql_str = "SELECT * FROM permrep WHERE BINARY username = '{$post['username']}' LIMIT 1;";
-		$result  = db_query($sql_str);
-		if($result->num_rows == 0){ //in case there is no existing permrep with this username
-			foreach($this as $attr_name => $attr_value){
-				$this->$attr_name = $post[$attr_name];
-				$this->username   = '';
+		$sql_str         = "SELECT * FROM permrep WHERE BINARY username = '{$post['username_or_email']}' LIMIT 1;";
+		$result_username = db_query($sql_str);
+		$sql_str         = "SELECT * FROM permrep WHERE BINARY email = '{$post['username_or_email']}' LIMIT 1;";
+		$result_email    = db_query($sql_str);
+		if($result_username->num_rows != 0 || $result_email->num_rows != 0){ //in case there is an existing permrep with this username or email
+			if($result_username->num_rows > $result_email->num_rows){ //Assign to $result the correct query result.
+				$result = $result_username;
+			}else{
+				$result = $result_email;
 			}
-
-		} else{ //in case there is an existing permrep with this username.
 			while($row = $result->fetch_assoc()){ //Fill up all properties from DB data
 				foreach($this as $attr_name => $attr_value){
 					$this->$attr_name = $row[$attr_name];
 				}
 			}
+		} else{
+			foreach($this as $attr_name => $attr_value){
+				$this->$attr_name = $post[$attr_name];
+				$this->username   = '';
+			}
 		}
+
+		//		if($result->num_rows == 0){ //in case there is no existing permrep with this username
+		//			//Check if there is a signed permrep with this E-mail address
+		//			$sql_str = "SELECT * FROM permrep WHERE BINARY email = '{$post['username_or_email']}' LIMIT 1;";
+		//			$result  = db_query($sql_str);
+		//			if($result->num_rows == 0){ //in case there is no existing permrep with this E-mail
+		//
+		//			}
+		//			foreach($this as $attr_name => $attr_value){
+		//				$this->$attr_name = $post[$attr_name];
+		//				$this->username   = '';
+		//			}
+		//
+		//		} else{ //in case there is an existing permrep with this username.
+		//			while($row = $result->fetch_assoc()){ //Fill up all properties from DB data
+		//				foreach($this as $attr_name => $attr_value){
+		//					$this->$attr_name = $row[$attr_name];
+		//				}
+		//			}
+		//		}
 	}
 
 	/**
@@ -408,7 +434,7 @@ class permrep{
 	 */
 	function log_in($post){
 		if($this->username == ''){
-			throw new Exception("Username doesn't exist", EXCEPTION_WARNING_CODE);
+			throw new Exception("Username or Email doesn't exist", EXCEPTION_WARNING_CODE);
 		}
 
 		if($this->webpswd != $post['password']){
@@ -419,8 +445,8 @@ class permrep{
 
 		//Remember me (put cookies on computer)
 		if($post['remember_me'] == 'on'){
-			setcookie('foxtrot_online_password', $post['password'], time() + (86400 * 7), "/");
-			setcookie('foxtrot_online_username', $post['username'], time() + (86400 * 7), "/");
+			setcookie('foxtrot_online_password', $this->webpswd, time() + (86400 * 7), "/");
+			setcookie('foxtrot_online_username', $this->username, time() + (86400 * 7), "/");
 			setcookie('foxtrot_online_company', $post['company_name'], time() + (86400 * 7), "/");
 		}
 
@@ -435,22 +461,24 @@ class permrep{
 	 * @return bool
 	 */
 	function forgot_password(){
+
+
+		// the message
+		//$msg = "
+		//Name: {$_POST['full_name']}\n
+		//Phone: {$_POST['telephone']}\n
+		//Mail: {$_POST['email']}\n
+		//City: {$_POST['address']}
+		//";
+
+		// send email
+		//$flag = mail("alonbenarieh@gmail.com","New Customer: {$_POST['full_name']}",$msg);
+		//if($flag){
+		//	echo "ok";
+		//}else{
+		//	echo "not_ok";
+
 		return true;
-	}
-
-	/**
-	 * Logs out from the account
-	 * @return json_obj
-	 */
-	function sign_out(){
-		unset($_SESSION['permrep_obj']);
-		setcookie('foxtrot_online_password', $post['password'], 1);
-		setcookie('foxtrot_online_username', $post['username'], 1);
-		setcookie('foxtrot_online_company', $post['company_name'], 1);
-		$json_obj         = new json_obj();
-		$json_obj->status = true;
-
-		return $json_obj;
 	}
 
 	/**
@@ -463,10 +491,10 @@ class permrep{
 			$company_arr = array('company_name' => $_COOKIE['foxtrot_online_company']);
 			db_choose($company_arr);
 			db_connect(); //open DB connection
-			$credentials_arr ['username'] = $_COOKIE['foxtrot_online_username'];
-			$credentials_arr ['password'] = $_COOKIE['foxtrot_online_password'];
-			$permrep_obj                  = new permrep($credentials_arr);
-			$log_in_result                = $permrep_obj->log_in($credentials_arr);
+			$credentials_arr ['username_or_email'] = $_COOKIE['foxtrot_online_username'];
+			$credentials_arr ['password']          = $_COOKIE['foxtrot_online_password'];
+			$permrep_obj                           = new permrep($credentials_arr);
+			$log_in_result                         = $permrep_obj->log_in($credentials_arr);
 			$GLOBALS['db_conn']->close(); //close DB connection
 			if($log_in_result->status == true){
 				return true;
@@ -857,6 +885,21 @@ function drill_down_pie_chart($post){
 	$json_obj                                        = new json_obj();
 	$json_obj->data_arr['drill_down_pie_chart_data'] = $pie_chart_data;
 	$json_obj->status                                = true;
+
+	return $json_obj;
+}
+
+/**
+ * Logs out from the account
+ * @return json_obj
+ */
+function sign_out(){
+	unset($_SESSION['permrep_obj']);
+	setcookie('foxtrot_online_password', '', 1);
+	setcookie('foxtrot_online_username', '', 1);
+	setcookie('foxtrot_online_company', '', 1);
+	$json_obj         = new json_obj();
+	$json_obj->status = true;
 
 	return $json_obj;
 }

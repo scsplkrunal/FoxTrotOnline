@@ -22,7 +22,7 @@ require_once 'header.php';
 				<option value="company_b">company_b</option>
 				<option value="company_c">company_c</option>
 			</select>
-			<input name="username" type="text" class="form-control" placeholder="Username"
+			<input name="username_or_email" type="text" class="form-control" placeholder="Username or E-mail"
 			       autocomplete="username" required>
 			<input name="password" type="password" class="form-control" placeholder="Password"
 			       autocomplete="current-password" required>

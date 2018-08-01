@@ -164,7 +164,7 @@ $( document ).ready( function(){
 	Sign out link
 	 */
 	$( "#sign_out_fake_link" ).click( function(){
-		$.post( "junction.php", {func: 'sign_out', class: 'permrep'}, function( data ){
+		$.post( "junction.php", {func: 'sign_out', class: 'no_class'}, function( data ){
 			var json_obj = $.parseJSON( data );
 			if( json_obj.status == true ){
 				window.location.replace( "login.php" );
