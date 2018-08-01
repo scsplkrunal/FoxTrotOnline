@@ -169,8 +169,13 @@ $( document ).ready( function(){
 	/*
 	Sign out link
 	 */
-	$( "#sign_out_link" ).click( function(){
-		$.post( "junction.php", {func: 'sign_out', class: 'permrep'} );
+	$( "#sign_out_fake_link" ).click( function(){
+		$.post( "junction.php", {func: 'sign_out', class: 'permrep'}, function( data ){
+			var json_obj = $.parseJSON( data );
+			if( json_obj.status == true ){
+				window.location.replace( "login.php" );
+			}
+		} );
 	} );
 
 
@@ -195,7 +200,7 @@ $( document ).ready( function(){
 				value: value,
 				color: color
 			}, function( server_response_data ){
-				$('#drill_down_pie_chart_modal').modal('show');
+				$( '#drill_down_pie_chart_modal' ).modal( 'show' );
 				var json_obj = $.parseJSON( server_response_data );
 
 				//Create a new chart in the modal

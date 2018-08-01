@@ -125,3 +125,7 @@ footer{
 .server_response_div *{
 	display: none;
 	}
+
+.fake_link{
+	cursor: pointer;
+	}

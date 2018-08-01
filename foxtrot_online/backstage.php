@@ -23,7 +23,7 @@ define('PIE_CHART_COLORS_ARRAY', [
 function db_connect(){
 
 	// Create connection
-	$conn = new mysqli("127.0.0.1:3304", DB_USERNAME, DB_PASS, DB_NAME);
+	$conn = new mysqli("127.0.0.1:3304", $_SESSION["db_details"]["db_username"], $_SESSION["db_details"]["db_pass"], $_SESSION["db_details"]["db_name"]);
 
 	// Check connection
 	if(!$conn->connect_error){
@@ -61,9 +61,11 @@ function db_query($sql_str){
 function db_choose($post){
 	switch($post['company_name']){
 		case 'company_a':
-			define('DB_USERNAME', 'root');
-			define('DB_PASS', 'alonba2358');
-			define('DB_NAME', 'company_a');
+			$_SESSION['db_details'] = [
+				'db_username' => 'root',
+				'db_pass' => 'alonba2358',
+				'db_name' => 'company_a'
+			];
 			break;
 		case 'none':
 			throw new Exception('Choose a company from the list.', EXCEPTION_WARNING_CODE);
@@ -150,10 +152,10 @@ function show_sidebar($current_page){
 					</a>
 				</li>
 				<li class="nav-item">
-						<a id="sign_out_link" class="nav-link" href="login.php">
-						'.show_sidebar_icon('sign_out').'
-						Sign out
-					</a>
+						<span id="sign_out_fake_link" class="fake_link nav-link">
+							'.show_sidebar_icon('sign_out').'
+							Sign out
+						</span>
 				</li>
 			</ul>
 		</nav>
@@ -436,8 +438,19 @@ class permrep{
 		return true;
 	}
 
+	/**
+	 * Logs out from the account
+	 * @return json_obj
+	 */
 	function sign_out(){
+		unset($_SESSION['permrep_obj']);
+		setcookie('foxtrot_online_password', $post['password'], 1);
+		setcookie('foxtrot_online_username', $post['username'], 1);
+		setcookie('foxtrot_online_company', $post['company_name'], 1);
+		$json_obj         = new json_obj();
+		$json_obj->status = true;
 
+		return $json_obj;
 	}
 
 	/**
