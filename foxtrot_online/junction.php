@@ -6,7 +6,7 @@ try{
 
 	if(isset($_POST['class'])){
 
-		if(!defined('DB_USERNAME') || !defined('DB_PASS') || !defined('DB_NAME')){
+		if(!isset($_SESSION['db_details'])){
 			db_choose($_POST);
 		}
 
