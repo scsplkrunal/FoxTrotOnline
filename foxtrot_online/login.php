@@ -37,7 +37,6 @@ require_once 'header.php';
 		<a href="#" class="forgot-password" data-toggle="modal" data-target="#forgot_password_modal">
 			Forgot Username / Password?
 		</a>
-		<a href="dashboard.php">GO IN</a>
 	</div><!-- /card-container -->
 </div><!-- /container -->
 
