@@ -1,7 +1,5 @@
 <?php
-session_start();
-require_once "backstage.php";
-require_once "html_fragments.php";
+require_once 'header.php';
 ?>
 
 <html lang="en">
