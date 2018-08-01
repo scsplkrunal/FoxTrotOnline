@@ -386,7 +386,7 @@ class permrep{
 		if($result->num_rows == 0){ //in case there is no existing permrep with this username
 			foreach($this as $attr_name => $attr_value){
 				$this->$attr_name = $post[$attr_name];
-				$this->username         = '';
+				$this->username   = '';
 			}
 
 		} else{ //in case there is an existing permrep with this username.
@@ -419,10 +419,11 @@ class permrep{
 		if($post['remember_me'] == 'on'){
 			setcookie('foxtrot_online_password', $post['password'], time() + (86400 * 7), "/");
 			setcookie('foxtrot_online_username', $post['username'], time() + (86400 * 7), "/");
+			setcookie('foxtrot_online_company', $post['company_name'], time() + (86400 * 7), "/");
 		}
 
-		$json_obj                     = new json_obj();
-		$json_obj->status             = true;
+		$json_obj         = new json_obj();
+		$json_obj->status = true;
 
 		return $json_obj;
 	}
@@ -437,6 +438,31 @@ class permrep{
 
 	function sign_out(){
 
+	}
+
+	/**
+	 * Checks if there are saved cookies with the credentials.
+	 * If so - return true.
+	 * If not - redirect to log in page.
+	 */
+	static function is_remembered(){
+		if(isset($_COOKIE['foxtrot_online_username']) && isset($_COOKIE['foxtrot_online_password']) && isset($_COOKIE['foxtrot_online_company'])){
+			$company_arr = array('company_name' => $_COOKIE['foxtrot_online_company']);
+			db_choose($company_arr);
+			db_connect(); //open DB connection
+			$credentials_arr ['username'] = $_COOKIE['foxtrot_online_username'];
+			$credentials_arr ['password']  = $_COOKIE['foxtrot_online_password'];
+			$permrep_obj                  = new permrep($credentials_arr);
+			$log_in_result                = $permrep_obj->log_in($credentials_arr);
+			$GLOBALS['db_conn']->close(); //close DB connection
+			if($log_in_result->status == true){
+				return true;
+			} else{
+				header("Location: login.php");
+			}
+		}else{
+			return false;
+		}
 	}
 }
 

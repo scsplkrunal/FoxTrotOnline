@@ -2,6 +2,10 @@
 session_start();
 require_once "backstage.php";
 require_once "html_fragments.php";
+
+if(permrep::is_remembered()){
+	header("Location: dashboard.php");
+}
 ?>
 
 <html lang="en">
