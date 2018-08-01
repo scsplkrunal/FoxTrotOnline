@@ -451,7 +451,7 @@ class permrep{
 			db_choose($company_arr);
 			db_connect(); //open DB connection
 			$credentials_arr ['username'] = $_COOKIE['foxtrot_online_username'];
-			$credentials_arr ['password']  = $_COOKIE['foxtrot_online_password'];
+			$credentials_arr ['password'] = $_COOKIE['foxtrot_online_password'];
 			$permrep_obj                  = new permrep($credentials_arr);
 			$log_in_result                = $permrep_obj->log_in($credentials_arr);
 			$GLOBALS['db_conn']->close(); //close DB connection
@@ -459,8 +459,9 @@ class permrep{
 				return true;
 			} else{ //in case there was some kind of error logging in
 				header("Location: login.php");
+				return false;
 			}
-		}else{
+		} else{
 			return false;
 		}
 	}
