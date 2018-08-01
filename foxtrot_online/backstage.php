@@ -65,6 +65,8 @@ function db_choose($post){
 			define('DB_PASS', 'alonba2358');
 			define('DB_NAME', 'company_a');
 			break;
+		case 'none':
+			throw new Exception('Choose a company from the list.', EXCEPTION_WARNING_CODE);
 		default:
 			throw new Exception('There are no DB credentials defined for the chosen company. Contact a system admin.', EXCEPTION_DANGER_CODE);
 	}
@@ -406,23 +408,21 @@ class permrep{
 		if($this->username == ''){
 			throw new Exception("Username doesn't exist", EXCEPTION_WARNING_CODE);
 		}
-		if($post['log_in_with_cookies'] == 'false'){
-			$post['password'] = md5($post['password']);
-		}
-		if($this->password != $post['password']){
+
+		if($this->webpswd != $post['password']){
 			throw new Exception("Password is incorrect", EXCEPTION_WARNING_CODE);
 		}
-		$_SESSION['user_obj'] = $this;
+
+		$_SESSION['permrep_obj'] = $this;
 
 		//Remember me (put cookies on computer)
-		if($post['remember'] == 'on'){
-			setcookie('tag_leagues_password', $post['password'], time() + (86400 * 7), "/");
-			setcookie('tag_leagues_user_name', $post['user_name'], time() + (86400 * 7), "/");
+		if($post['remember_me'] == 'on'){
+			setcookie('foxtrot_online_password', $post['password'], time() + (86400 * 7), "/");
+			setcookie('foxtrot_online_username', $post['username'], time() + (86400 * 7), "/");
 		}
 
 		$json_obj                     = new json_obj();
 		$json_obj->status             = true;
-		$json_obj->data_arr ['admin'] = $this->admin;
 
 		return $json_obj;
 	}
