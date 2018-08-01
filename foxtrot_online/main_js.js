@@ -125,12 +125,9 @@ $( document ).ready( function(){
 			$.post( 'junction.php', $( '#reports_form' ).serialize(), function( data ){ //Send the form to the server.
 				var json_obj = $.parseJSON( data );
 				if( json_obj.status == true ){
-					$( ".server_response_div .alert" ).addClass( 'alert-success' );
-					$( ".server_response_div .alert" ).text( 'Graphs generated successfully.' );
-					$( ".server_response_div .alert" ).show();
+					$( ".server_response_div .alert" ).addClass( 'alert-success' ).text( 'Graphs generated successfully.' ).show();
 				}else{ //If there is an error
-					$( ".server_response_div .alert" ).text( json_obj.error_message );
-					$( ".server_response_div .alert" ).show();
+					$( ".server_response_div .alert" ).text( json_obj.error_message ).show();
 					if( json_obj.error_level == 0 ){
 						$( ".server_response_div .alert" ).addClass( 'alert-warning' );
 					}else{
@@ -150,12 +147,9 @@ $( document ).ready( function(){
 		$.post( 'junction.php', $( '#reports_form' ).serialize(), function( data ){
 			var json_obj = $.parseJSON( data );
 			if( json_obj.status == true ){
-				$( ".server_response_div .alert" ).addClass( 'alert-success' );
-				$( ".server_response_div .alert" ).text( 'Graphs generated successfully.' );
-				$( ".server_response_div .alert" ).show();
+				$( ".server_response_div .alert" ).addClass( 'alert-success' ).text( 'Graphs generated successfully.' ).show();
 			}else{ //If there is an error
-				$( ".server_response_div .alert" ).text( json_obj.error_message );
-				$( ".server_response_div .alert" ).show();
+				$( ".server_response_div .alert" ).text( json_obj.error_message ).show();
 				if( json_obj.error_level == 0 ){
 					$( ".server_response_div .alert" ).addClass( 'alert-warning' );
 				}else{
