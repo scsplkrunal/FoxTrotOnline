@@ -11,10 +11,10 @@ require_once 'header.php';
 <div class="container">
 	<div class="card card-container">
 		<h4 style="text-align: center;">FoxTrot Online</h4>
-		<div class="server_response_div mt-2">
-			<div class="alert" role="alert"></div>
-		</div>
 		<form id="log_in_form" class="form-signin mb-0">
+			<div class="server_response_div mt-2">
+				<div class="alert" role="alert"></div>
+			</div>
 			<!--<span id="reauth-email" class="reauth-email"></span>-->
 			<select name="company_name" class="form-control" autofocus>
 				<option value="none">Choose a company</option>
