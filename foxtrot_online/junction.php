@@ -2,13 +2,8 @@
 session_start();
 try{
 	require_once 'backstage.php';
-	//	require_once 'html_fragments.php';
 
 	if(isset($_POST['class'])){
-
-//		if(!isset($_SESSION['db_details'])){
-//			db_choose($_POST);
-//		}
 
 		db_connect(); //open DB connection
 

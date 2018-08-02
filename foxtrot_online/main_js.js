@@ -168,7 +168,7 @@ $( document ).ready( function(){
 			var json_obj = $.parseJSON( data );
 			if( json_obj.status == true ){
 				var get_params = '?company_name=' + json_obj.data_arr['company_name'];
-				window.location.replace( "login.php" + get_params);
+				window.location.replace( "login.php" + get_params );
 			}
 		} );
 	} );
@@ -216,12 +216,7 @@ $( document ).ready( function(){
 						}
 					}
 				};
-
 				var drill_down_pie_chart = new Chart( ctx, config );
-
-
-				// pie_chart.data = json_obj.data_arr['drill_down_pie_chart_data'];
-				// pie_chart.update();
 			} );
 		}
 

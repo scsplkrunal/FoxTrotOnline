@@ -403,26 +403,6 @@ class permrep{
 				$this->username   = '';
 			}
 		}
-
-		//		if($result->num_rows == 0){ //in case there is no existing permrep with this username
-		//			//Check if there is a signed permrep with this E-mail address
-		//			$sql_str = "SELECT * FROM permrep WHERE BINARY email = '{$post['username_or_email']}' LIMIT 1;";
-		//			$result  = db_query($sql_str);
-		//			if($result->num_rows == 0){ //in case there is no existing permrep with this E-mail
-		//
-		//			}
-		//			foreach($this as $attr_name => $attr_value){
-		//				$this->$attr_name = $post[$attr_name];
-		//				$this->username   = '';
-		//			}
-		//
-		//		} else{ //in case there is an existing permrep with this username.
-		//			while($row = $result->fetch_assoc()){ //Fill up all properties from DB data
-		//				foreach($this as $attr_name => $attr_value){
-		//					$this->$attr_name = $row[$attr_name];
-		//				}
-		//			}
-		//		}
 	}
 
 	/**
@@ -446,7 +426,6 @@ class permrep{
 		if($post['remember_me'] == 'on'){
 			setcookie('foxtrot_online_password', $this->webpswd, time() + (86400 * 7), "/");
 			setcookie('foxtrot_online_username', $this->username, time() + (86400 * 7), "/");
-			setcookie('foxtrot_online_company', $post['company_name'], time() + (86400 * 7), "/");
 		}
 
 		$json_obj         = new json_obj();
@@ -492,8 +471,9 @@ class permrep{
 	 * If not - redirect to log in page.
 	 */
 	static function is_remembered(){
-		if(isset($_COOKIE['foxtrot_online_username']) && isset($_COOKIE['foxtrot_online_password']) && isset($_COOKIE['foxtrot_online_company'])){
-			$company_arr = array('company_name' => $_COOKIE['foxtrot_online_company']);
+		if(isset($_COOKIE['foxtrot_online_username']) && isset($_COOKIE['foxtrot_online_password'])){
+			$_GET["company_name"] = addslashes(htmlentities($_GET["company_name"]));
+			$company_arr = array('company_name' => $_GET["company_name"]);
 			db_choose($company_arr);
 			db_connect(); //open DB connection
 			$credentials_arr ['username_or_email'] = $_COOKIE['foxtrot_online_username'];
@@ -902,7 +882,6 @@ function sign_out(){
 	unset($_SESSION['permrep_obj']);
 	setcookie('foxtrot_online_password', '', 1);
 	setcookie('foxtrot_online_username', '', 1);
-	setcookie('foxtrot_online_company', '', 1);
 	$json_obj         = new json_obj();
 	$json_obj->status = true;
 	$json_obj->data_arr['company_name'] = $_SESSION['db_details']['db_name'];
