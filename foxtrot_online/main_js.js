@@ -30,10 +30,11 @@ $( document ).ready( function(){
 	$( '#statements_select' ).change( function(){
 		var value_of_selected_option = $( this ).find( "option:selected" ).attr( "value" );
 		if( value_of_selected_option != "none" ){
-			$( '#statement_pdf_object' ).attr( 'data', 'company_abc/data/' + value_of_selected_option + '#view=Fit' );
+			var company_name = window.company_name;
+			$( '#statement_pdf_object' ).attr( 'data', company_name + '/data/' + value_of_selected_option + '#view=Fit' );
 			var x = $( '.statement_toolbar button' );
 			$( '.statement_toolbar button' ).prop( "disabled", false );
-			$( '.statement_toolbar' ).attr( 'href', 'company_abc/data/' + value_of_selected_option );
+			$( '.statement_toolbar' ).attr( 'href', company_name + '/data/' + value_of_selected_option );
 		}else{
 			$( '#statement_pdf_object' ).attr( 'data', 'none' );
 			$( '.statement_toolbar button' ).prop( "disabled", true );

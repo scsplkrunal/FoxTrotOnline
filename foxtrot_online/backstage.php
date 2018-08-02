@@ -254,7 +254,7 @@ class statement{
 		unset($files_array[array_search('..', $files_array, true)]);
 
 		foreach($files_array as $file){
-			$file_obj_array [] = new statement($file, "company_abc/data/$file");
+			$file_obj_array [] = new statement($file, "{$_SESSION['db_details']['db_name']}/data/$file");
 		}
 		$file_obj_array = self::sort_pdf_array_by_date($file_obj_array);
 

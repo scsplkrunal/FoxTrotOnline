@@ -32,7 +32,7 @@ require_once 'header.php';
 					<select id="statements_select" class="form-control" name="statements_select">
 						<option value="none">Choose a PDF from the list</option>
 						<?php
-						echo statement::statements_list('company_abc/data');
+						echo statement::statements_list("{$_SESSION['db_details']['db_name']}/data");
 						?>
 					</select>
 					<div style="margin-top: 20px;">
