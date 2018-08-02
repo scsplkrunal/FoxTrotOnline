@@ -6,9 +6,9 @@ try{
 
 	if(isset($_POST['class'])){
 
-		if(!isset($_SESSION['db_details'])){
-			db_choose($_POST);
-		}
+//		if(!isset($_SESSION['db_details'])){
+//			db_choose($_POST);
+//		}
 
 		db_connect(); //open DB connection
 

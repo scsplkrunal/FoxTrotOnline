@@ -167,7 +167,8 @@ $( document ).ready( function(){
 		$.post( "junction.php", {func: 'sign_out', class: 'no_class'}, function( data ){
 			var json_obj = $.parseJSON( data );
 			if( json_obj.status == true ){
-				window.location.replace( "login.php" );
+				var get_params = '?company_name=' + json_obj.data_arr['company_name'];
+				window.location.replace( "login.php" + get_params);
 			}
 		} );
 	} );

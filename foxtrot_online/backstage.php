@@ -56,7 +56,6 @@ function db_query($sql_str){
 /**
  * Gets and array with the company name, and changes the constants db_username, db_pass and db_name to the right values.
  * @param $post
- * @throws Exception
  */
 function db_choose($post){
 	switch($post['company_name']){
@@ -67,10 +66,10 @@ function db_choose($post){
 				'db_name'     => 'company_a'
 			];
 			break;
-		case 'none':
-			throw new Exception('Choose a company from the list.', EXCEPTION_WARNING_CODE);
 		default:
-			throw new Exception('There are no DB credentials defined for the chosen company. Contact a system admin.', EXCEPTION_DANGER_CODE);
+			if(!isset($_SESSION["permrep_obj"])){
+				unset($_SESSION['db_details']);
+			}
 	}
 }
 
@@ -906,6 +905,7 @@ function sign_out(){
 	setcookie('foxtrot_online_company', '', 1);
 	$json_obj         = new json_obj();
 	$json_obj->status = true;
+	$json_obj->data_arr['company_name'] = $_SESSION['db_details']['db_name'];
 
 	return $json_obj;
 }

@@ -16,18 +16,19 @@ require_once 'header.php';
 				<div class="alert" role="alert"></div>
 			</div>
 			<!--<span id="reauth-email" class="reauth-email"></span>-->
-			<select name="company_name" class="form-control" autofocus>
-				<option value="none">Choose a company</option>
-				<option value="company_a">company_a</option>
-				<option value="company_b">company_b</option>
-				<option value="company_c">company_c</option>
-			</select>
+<!--			<select name="company_name" class="form-control" autofocus>-->
+<!--				<option value="none">Choose a company</option>-->
+<!--				<option value="company_a">company_a</option>-->
+<!--				<option value="company_b">company_b</option>-->
+<!--				<option value="company_c">company_c</option>-->
+<!--			</select>-->
 			<input name="username_or_email" type="text" class="form-control" placeholder="Username or E-mail"
 			       autocomplete="username" required>
 			<input name="password" type="password" class="form-control" placeholder="Password"
 			       autocomplete="current-password" required>
 			<div class="custom-control custom-checkbox">
-				<input type="checkbox" name="remember_me" class="custom-control-input" id="remember_me_checkbox" checked>
+				<input type="checkbox" name="remember_me" class="custom-control-input" id="remember_me_checkbox"
+				       checked>
 				<label class="custom-control-label" for="remember_me_checkbox">Remember Me</label>
 			</div>
 			<input name="class" value="permrep" hidden>
@@ -55,13 +56,14 @@ require_once 'header.php';
 					<div class="server_response_div mt-2">
 						<div class="alert" role="alert"></div>
 					</div>
-					<select name="company_name" class="form-control">
-						<option value="none">Choose a company</option>
-						<option value="company_a">company_a</option>
-						<option value="company_b">company_b</option>
-						<option value="company_c">company_c</option>
-					</select>
-					<input name="username_or_email" type="email" class="form-control mb-3" placeholder="Email address"
+<!--					<select name="company_name" class="form-control">-->
+<!--						<option value="none">Choose a company</option>-->
+<!--						<option value="company_a">company_a</option>-->
+<!--						<option value="company_b">company_b</option>-->
+<!--						<option value="company_c">company_c</option>-->
+<!--					</select>-->
+					<input name="username_or_email" type="email" class="form-control mb-3"
+					       placeholder="Email address"
 					       autocomplete="email" autofocus required>
 					<div class="text-center">
 						<input class="btn btn-lg btn-primary btn-block btn-signin" type="submit"
@@ -76,7 +78,18 @@ require_once 'header.php';
 	</div>
 </div>
 
-<?php echo FOOTER ?>
-
+<?php
+echo FOOTER;
+//If try to log in without GET parameters, disable the log in button and show a danger alert
+if($_GET["company_name"] == '' || !isset($_SESSION['db_details'])){
+	$script = '
+	<script>
+		$(".btn-signin").prop( "disabled", true );
+		$( ".server_response_div .alert" ).addClass( "alert-danger" ).text("Add or correct company name in the URL address").show();
+	</script>
+	';
+	echo $script;
+}
+?>
 </body>
 </html>
