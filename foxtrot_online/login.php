@@ -61,7 +61,7 @@ require_once 'header.php';
 						<option value="company_b">company_b</option>
 						<option value="company_c">company_c</option>
 					</select>
-					<input name="email" type="email" class="form-control mb-3" placeholder="Email address"
+					<input name="username_or_email" type="email" class="form-control mb-3" placeholder="Email address"
 					       autocomplete="email" autofocus required>
 					<div class="text-center">
 						<input class="btn btn-lg btn-primary btn-block btn-signin" type="submit"

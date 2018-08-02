@@ -390,7 +390,7 @@ class permrep{
 		if($result_username->num_rows != 0 || $result_email->num_rows != 0){ //in case there is an existing permrep with this username or email
 			if($result_username->num_rows > $result_email->num_rows){ //Assign to $result the correct query result.
 				$result = $result_username;
-			}else{
+			} else{
 				$result = $result_email;
 			}
 			while($row = $result->fetch_assoc()){ //Fill up all properties from DB data
@@ -458,27 +458,33 @@ class permrep{
 
 	/**
 	 * Check if email exists, if so - send a mail to the user with the password.
-	 * @return bool
+	 * @return json_obj
+	 * @throws Exception
 	 */
 	function forgot_password(){
+		if($this->username == ''){
+			throw new Exception("Email doesn't exist", EXCEPTION_WARNING_CODE);
+		}
 
+		//		The message
+		$msg = "
+		Hi {$this->fname}!\n\r
+		Since you forgot your password or username, we are sending it to you!\n\r
+		Your password is: {$this->webpswd}\n\r
+		Your username is: {$this->username}\n\r
+		Have a good day,\n\r
+		FoxTrot Online system.
+		";
 
-		// the message
-		//$msg = "
-		//Name: {$_POST['full_name']}\n
-		//Phone: {$_POST['telephone']}\n
-		//Mail: {$_POST['email']}\n
-		//City: {$_POST['address']}
-		//";
-
-		// send email
-		//$flag = mail("alonbenarieh@gmail.com","New Customer: {$_POST['full_name']}",$msg);
-		//if($flag){
-		//	echo "ok";
-		//}else{
-		//	echo "not_ok";
-
-		return true;
+		//		Send email
+		$flag     = mail($this->email, "FoxTrot Online Password and Username Recovery", $msg);
+		$json_obj = new json_obj();
+		if($flag){
+			$json_obj->status = true;
+			return $json_obj;
+		} else{
+			throw new Exception("The mail wasn't sent. Contact administrator.",EXCEPTION_DANGER_CODE);
+		}
 	}
 
 	/**

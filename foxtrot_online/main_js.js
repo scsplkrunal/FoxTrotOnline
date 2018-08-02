@@ -77,7 +77,7 @@ $( document ).ready( function(){
 		$.post( 'junction.php', $( '#forgot_password_form' ).serialize(), function( data ){
 			var json_obj = $.parseJSON( data );
 			if( json_obj.status == true ){
-				$( ".server_response_div .alert" ).addClass( 'alert-success' ).text( 'Password sent to your E-mail. Check your inbox for mails from FoxTrot Online.' ).show();
+				$( ".server_response_div .alert" ).addClass( 'alert-success' ).text( 'Password and username sent to your E-mail. Check your inbox for mails from FoxTrot Online.' ).show();
 			}else{ //If there is an error
 				$( ".server_response_div .alert" ).text( json_obj.error_message ).show();
 				if( json_obj.error_level == 0 ){
