@@ -468,11 +468,11 @@ class permrep{
 
 		//		The message
 		$msg = "
-		Hi {$this->fname}!\n\r
-		Since you forgot your password or username, we are sending it to you!\n\r
-		Your password is: {$this->webpswd}\n\r
-		Your username is: {$this->username}\n\r
-		Have a good day,\n\r
+		Hi {$this->fname}!\n
+		Since you forgot your password or username, we are sending it to you!\n
+		Your password is: {$this->webpswd}\n
+		Your username is: {$this->username}\n
+		Have a good day,\n
 		FoxTrot Online system.
 		";
 
