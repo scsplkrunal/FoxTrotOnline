@@ -386,16 +386,9 @@ class permrep{
 		foreach($post as $key => $value){
 			$post[$key] = mysqli_real_escape_string($GLOBALS['db_conn'], $value);
 		}
-		$sql_str         = "SELECT * FROM permrep WHERE BINARY username = '{$post['username_or_email']}' LIMIT 1;";
-		$result_username = db_query($sql_str);
-		$sql_str         = "SELECT * FROM permrep WHERE BINARY email = '{$post['username_or_email']}' LIMIT 1;";
-		$result_email    = db_query($sql_str);
-		if($result_username->num_rows != 0 || $result_email->num_rows != 0){ //in case there is an existing permrep with this username or email
-			if($result_username->num_rows > $result_email->num_rows){ //Assign to $result the correct query result.
-				$result = $result_username;
-			} else{
-				$result = $result_email;
-			}
+		$sql_str         = "SELECT * FROM permrep WHERE BINARY username = '{$post['username_or_email']}' OR email = '{$post['username_or_email']}' LIMIT 1;";
+		$result = db_query($sql_str);
+		if($result->num_rows != 0){ //in case there is an existing permrep with this username or email
 			while($row = $result->fetch_assoc()){ //Fill up all properties from DB data
 				foreach($this as $attr_name => $attr_value){
 					$this->$attr_name = $row[$attr_name];
