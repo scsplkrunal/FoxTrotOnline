@@ -66,6 +66,13 @@ function db_choose($post){
 				'db_name'     => 'company_a'
 			];
 			break;
+		case 'company_b':
+			$_SESSION['db_details'] = [
+				'db_username' => 'user',
+				'db_pass'     => 'pass',
+				'db_name'     => 'company_b'
+			];
+			break;
 		default:
 			if(!isset($_SESSION["permrep_obj"])){
 				unset($_SESSION['db_details']);
@@ -99,7 +106,7 @@ function show_top_navigation_bar(){
 	<nav class="navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-0 shadow">
 
 		<a class="navbar-brand col-sm-4 col-md-2 col-xs-1 mr-0" href="dashboard.php" style="padding-top: 7px; padding-bottom: 7px;">
-			<img src="lib/logo.png" alt="LOGO" style="height: 40px; padding: 0;">
+			<img src="lib/logo.png" alt="logo" style="height: 40px; padding: 0;">
 			FoxTrot Online
 		</a>
 	</nav>

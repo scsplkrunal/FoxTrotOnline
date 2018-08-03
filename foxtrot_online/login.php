@@ -9,19 +9,21 @@ require_once 'header.php';
 </head>
 <body>
 <div class="container">
+	<div class="row justify-content-center mt-3 d-none d-md-flex">
+		<div class="col-3">
+			<?php
+			$comapny_name = (isset($_SESSION['company_name'])) ? $_SESSION['company_name'] : 'foxtrot_online';
+			echo "<img src='lib/logos/{$comapny_name}.png' alt='logo' class='logo'>";
+			?>
+		</div>
+	</div>
+
 	<div class="card card-container">
-		<h4 style="text-align: center;">FoxTrot Online</h4>
+		<h4 class="mb-3" style="text-align: center;">FoxTrot Online</h4>
 		<form id="log_in_form" class="form-signin mb-0">
 			<div class="server_response_div mt-2">
 				<div class="alert" role="alert"></div>
 			</div>
-			<!--<span id="reauth-email" class="reauth-email"></span>-->
-<!--			<select name="company_name" class="form-control" autofocus>-->
-<!--				<option value="none">Choose a company</option>-->
-<!--				<option value="company_a">company_a</option>-->
-<!--				<option value="company_b">company_b</option>-->
-<!--				<option value="company_c">company_c</option>-->
-<!--			</select>-->
 			<input name="username_or_email" type="text" class="form-control" placeholder="Username or E-mail"
 			       autocomplete="username" required>
 			<input name="password" type="password" class="form-control" placeholder="Password"
@@ -56,12 +58,6 @@ require_once 'header.php';
 					<div class="server_response_div mt-2">
 						<div class="alert" role="alert"></div>
 					</div>
-<!--					<select name="company_name" class="form-control">-->
-<!--						<option value="none">Choose a company</option>-->
-<!--						<option value="company_a">company_a</option>-->
-<!--						<option value="company_b">company_b</option>-->
-<!--						<option value="company_c">company_c</option>-->
-<!--					</select>-->
 					<input name="username_or_email" type="email" class="form-control mb-3"
 					       placeholder="Email address"
 					       autocomplete="email" autofocus required>
