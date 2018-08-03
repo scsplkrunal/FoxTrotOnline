@@ -386,8 +386,8 @@ class permrep{
 		foreach($post as $key => $value){
 			$post[$key] = mysqli_real_escape_string($GLOBALS['db_conn'], $value);
 		}
-		$sql_str         = "SELECT * FROM permrep WHERE BINARY username = '{$post['username_or_email']}' OR email = '{$post['username_or_email']}' LIMIT 1;";
-		$result = db_query($sql_str);
+		$sql_str = "SELECT * FROM permrep WHERE BINARY username = '{$post['username_or_email']}' OR email = '{$post['username_or_email']}' LIMIT 1;";
+		$result  = db_query($sql_str);
 		if($result->num_rows != 0){ //in case there is an existing permrep with this username or email
 			while($row = $result->fetch_assoc()){ //Fill up all properties from DB data
 				foreach($this as $attr_name => $attr_value){
@@ -456,9 +456,10 @@ class permrep{
 		$json_obj = new json_obj();
 		if($flag){
 			$json_obj->status = true;
+
 			return $json_obj;
 		} else{
-			throw new Exception("The mail wasn't sent. Contact administrator.",EXCEPTION_DANGER_CODE);
+			throw new Exception("The mail wasn't sent. Contact administrator.", EXCEPTION_DANGER_CODE);
 		}
 	}
 
@@ -470,7 +471,7 @@ class permrep{
 	static function is_remembered(){
 		if(isset($_COOKIE['foxtrot_online_username']) && isset($_COOKIE['foxtrot_online_password'])){
 			$_GET["company_name"] = addslashes(htmlentities($_GET["company_name"]));
-			$company_arr = array('company_name' => $_GET["company_name"]);
+			$company_arr          = array('company_name' => $_GET["company_name"]);
 			db_choose($company_arr);
 			db_connect(); //open DB connection
 			$credentials_arr ['username_or_email'] = $_COOKIE['foxtrot_online_username'];
@@ -879,8 +880,8 @@ function sign_out(){
 	unset($_SESSION['permrep_obj']);
 	setcookie('foxtrot_online_password', '', 1);
 	setcookie('foxtrot_online_username', '', 1);
-	$json_obj         = new json_obj();
-	$json_obj->status = true;
+	$json_obj                           = new json_obj();
+	$json_obj->status                   = true;
 	$json_obj->data_arr['company_name'] = $_SESSION['company_name'];
 
 	return $json_obj;
