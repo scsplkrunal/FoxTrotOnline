@@ -22,6 +22,6 @@ if(!isset($_SESSION['db_details']) || ($_SESSION['db_details']['db_name'] != $_G
 
 echo "
 <script>
-window.company_name = '{$_SESSION['db_details']['db_name']}';
+window.company_name = '{$_SESSION['company_name']}';
 </script>
 ";

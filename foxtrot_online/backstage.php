@@ -71,6 +71,10 @@ function db_choose($post){
 				unset($_SESSION['db_details']);
 			}
 	}
+
+	if(isset($_SESSION['db_details'])){
+		$_SESSION['company_name'] = $_SESSION['db_details']['db_name'];
+	}
 }
 
 /**
@@ -254,7 +258,7 @@ class statement{
 		unset($files_array[array_search('..', $files_array, true)]);
 
 		foreach($files_array as $file){
-			$file_obj_array [] = new statement($file, "{$_SESSION['db_details']['db_name']}/data/$file");
+			$file_obj_array [] = new statement($file, "{$_SESSION['company_name']}/data/$file");
 		}
 		$file_obj_array = self::sort_pdf_array_by_date($file_obj_array);
 
@@ -884,7 +888,7 @@ function sign_out(){
 	setcookie('foxtrot_online_username', '', 1);
 	$json_obj         = new json_obj();
 	$json_obj->status = true;
-	$json_obj->data_arr['company_name'] = $_SESSION['db_details']['db_name'];
+	$json_obj->data_arr['company_name'] = $_SESSION['company_name'];
 
 	return $json_obj;
 }
