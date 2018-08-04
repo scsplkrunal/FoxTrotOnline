@@ -270,7 +270,7 @@ class statement{
 		$file_obj_array = self::sort_pdf_array_by_date($file_obj_array);
 
 		foreach($file_obj_array as $file_obj){
-			if(self::is_authorized()){
+			if(self::is_authorized($file_obj)){
 				$option_content  = "{$file_obj->month} {$file_obj->year} {$file_obj->payroll_sequence} Payroll";
 				$html_return_str .= "<option value='{$file_obj->pdf_name}'>$option_content</option>";
 			}
@@ -280,11 +280,16 @@ class statement{
 	}
 
 	/**
-	 * Gets a file name, and returns true/false if the logged in user is authorized to view the file.
+	 * Gets a file object, and returns true/false if the logged in user is authorized to view the file.
+	 * @param $file_obj
+	 * @return bool
 	 */
-	static function is_authorized(){
-		//TODO: change when user data is available
-		return true;
+	static function is_authorized($file_obj){
+		if($file_obj->broker_id == $_SESSION['permrep_obj']->permRepID){
+			return true;
+		} else{
+			return false;
+		}
 	}
 
 	/**
