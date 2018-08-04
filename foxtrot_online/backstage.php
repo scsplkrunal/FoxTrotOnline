@@ -23,7 +23,7 @@ define('PIE_CHART_COLORS_ARRAY', [
 function db_connect(){
 
 	// Create connection
-	$conn = new mysqli("127.0.0.1:3304", $_SESSION["db_details"]["db_username"], $_SESSION["db_details"]["db_pass"], $_SESSION["db_details"]["db_name"]);
+	$conn = new mysqli("127.0.0.1:3304", 'root', 'alonba2358', $_SESSION['db_name']);
 
 	// Check connection
 	if(!$conn->connect_error){
@@ -60,27 +60,19 @@ function db_query($sql_str){
 function db_choose($post){
 	switch($post['company_name']){
 		case 'company_a':
-			$_SESSION['db_details'] = [
-				'db_username' => 'root',
-				'db_pass'     => 'alonba2358',
-				'db_name'     => 'company_a'
-			];
+			$_SESSION['db_name'] = 'company_a';
 			break;
 		case 'company_b':
-			$_SESSION['db_details'] = [
-				'db_username' => 'user',
-				'db_pass'     => 'pass',
-				'db_name'     => 'company_b'
-			];
+			$_SESSION['db_name'] = 'company_b';
 			break;
 		default:
 			if(!isset($_SESSION["permrep_obj"])){
-				unset($_SESSION['db_details']);
+				unset($_SESSION['db_name']);
 			}
 	}
 
-	if(isset($_SESSION['db_details'])){
-		$_SESSION['company_name'] = $_SESSION['db_details']['db_name'];
+	if(isset($_SESSION['db_name'])){
+		$_SESSION['company_name'] = $_SESSION['db_name'];
 	}
 }
 

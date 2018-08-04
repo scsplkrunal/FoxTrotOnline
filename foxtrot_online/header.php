@@ -16,7 +16,7 @@ if(permrep::is_remembered()){
 $_GET["company_name"] = addslashes(htmlentities($_GET["company_name"]));
 
 //Choose DB
-if(!isset($_SESSION['db_details']) || ($_SESSION['db_details']['db_name'] != $_GET["company_name"])){
+if(!isset($_SESSION['db_name']) || ($_SESSION['db_name'] != $_GET["company_name"])){
 	db_choose($_GET);
 }
 

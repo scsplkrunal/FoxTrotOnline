@@ -77,7 +77,7 @@ require_once 'header.php';
 <?php
 echo FOOTER;
 //If try to log in without GET parameters, disable the log in button and show a danger alert
-if($_GET["company_name"] == '' || !isset($_SESSION['db_details'])){
+if($_GET["company_name"] == '' || !isset($_SESSION['db_name'])){
 	$script = '
 	<script>
 		$(".btn-signin").prop( "disabled", true );
