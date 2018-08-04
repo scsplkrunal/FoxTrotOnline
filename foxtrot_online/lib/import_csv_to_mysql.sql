@@ -1,5 +1,5 @@
-LOAD DATA LOCAL INFILE 'C:/Users/alonb/Desktop/FoxTrotOnline/foxtrot_online/company_abc/db/AcctPosTest6_20180730T192633.CSV'
-INTO TABLE acctpos
+LOAD DATA LOCAL INFILE 'C:/Users/alonb/Desktop/FoxTrotOnline/foxtrot_online/company_a/db/prodtype.csv'
+INTO TABLE prodtype
 FIELDS TERMINATED BY ','
 ENCLOSED BY '"'
 LINES TERMINATED BY "\r\n"
