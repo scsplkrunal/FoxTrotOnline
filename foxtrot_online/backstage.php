@@ -879,12 +879,12 @@ function drill_down_pie_chart($post){
  * @return json_obj
  */
 function sign_out(){
-	unset($_SESSION['permrep_obj']);
 	setcookie('foxtrot_online_password', '', 1);
 	setcookie('foxtrot_online_username', '', 1);
 	$json_obj                           = new json_obj();
 	$json_obj->status                   = true;
 	$json_obj->data_arr['company_name'] = $_SESSION['company_name'];
+	unset($_SESSION);
 
 	return $json_obj;
 }
