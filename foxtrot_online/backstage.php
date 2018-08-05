@@ -62,23 +62,18 @@ function db_query($sql_str){
  */
 function db_choose($post){
 	switch($post['company_name']){
-		case 'company_a':
-//		case 'foxtrotonline_jjixgbv9my802728':
-			//Online: foxtrotonline_jjixgbv9my802728
-			$_SESSION['db_name'] = 'company_a';
-			break;
-		case 'company_b':
-			$_SESSION['db_name'] = 'company_b';
+		case 'lafferty':
+			$_SESSION['company_name'] = $post['company_name'];
+			$_SESSION['db_name'] = $post['company_name'].'_jjixgbv9my802728';
 			break;
 		default:
 			if(!isset($_SESSION["permrep_obj"])){
 				unset($_SESSION['db_name']);
 			}
 	}
-
-	if(isset($_SESSION['db_name'])){
-		$_SESSION['company_name'] = $_SESSION['db_name'];
-	}
+//	if(isset($_SESSION['db_name'])){
+//		$_SESSION['company_name'] = substr($_SESSION['db_name'], 0, strpos($_SESSION['db_name'], '_'));
+//	}
 }
 
 /**
