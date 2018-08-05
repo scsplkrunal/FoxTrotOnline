@@ -411,24 +411,32 @@ class permrep{
 
 	/**
 	 * Logs in the account
-	 * @param $post
+	 * @param      $post
+	 * @param bool $is_log_in_from_cookies
 	 * @return json_obj
 	 * @throws Exception
 	 */
-	function log_in($post){
+	function log_in($post, $is_log_in_from_cookies = false){
 		if($this->username == ''){
 			throw new Exception("Username or Email doesn't exist", EXCEPTION_WARNING_CODE);
 		}
 
-		if($this->webpswd != $post['password']){
-			throw new Exception("Password is incorrect", EXCEPTION_WARNING_CODE);
+		if(!$is_log_in_from_cookies){
+			if($this->webpswd != $post['password']){
+				throw new Exception("Password is incorrect", EXCEPTION_WARNING_CODE);
+			}
+		}else{
+			if(md5($this->webpswd) != $post['password']){
+				throw new Exception("Password is incorrect", EXCEPTION_WARNING_CODE);
+			}
 		}
+
 
 		$_SESSION['permrep_obj'] = $this;
 
 		//Remember me (put cookies on computer)
 		if($post['remember_me'] == 'on'){
-			setcookie('foxtrot_online_password', $this->webpswd, time() + (86400 * 7), "/");
+			setcookie('foxtrot_online_password', md5($this->webpswd), time() + (86400 * 7), "/");
 			setcookie('foxtrot_online_username', $this->username, time() + (86400 * 7), "/");
 		}
 
@@ -484,7 +492,7 @@ class permrep{
 			$credentials_arr ['username_or_email'] = $_COOKIE['foxtrot_online_username'];
 			$credentials_arr ['password']          = $_COOKIE['foxtrot_online_password'];
 			$permrep_obj                           = new permrep($credentials_arr);
-			$log_in_result                         = $permrep_obj->log_in($credentials_arr);
+			$log_in_result                         = $permrep_obj->log_in($credentials_arr, true);
 			$GLOBALS['db_conn']->close(); //close DB connection
 			if($log_in_result->status == true){
 				return true;
@@ -884,7 +892,7 @@ function drill_down_pie_chart($post){
  * @return json_obj
  */
 function sign_out(){
-	setcookie('foxtrot_online_password', $_SESSION['permrep_obj']->webpswd, 1,'/');
+	setcookie('foxtrot_online_password', md5($_SESSION['permrep_obj']->webpswd), 1,'/');
 	setcookie('foxtrot_online_username', $_SESSION['permrep_obj']->username, 1, '/');
 	$json_obj                           = new json_obj();
 	$json_obj->status                   = true;
