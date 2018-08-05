@@ -72,9 +72,6 @@ function db_choose($post){
 				unset($_SESSION['db_name']);
 			}
 	}
-//	if(isset($_SESSION['db_name'])){
-//		$_SESSION['company_name'] = substr($_SESSION['db_name'], 0, strpos($_SESSION['db_name'], '_'));
-//	}
 }
 
 /**
