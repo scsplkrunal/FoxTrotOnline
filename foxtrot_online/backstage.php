@@ -62,6 +62,7 @@ function db_query($sql_str){
  */
 function db_choose($post){
 	switch($post['company_name']){
+		case 'lifemark':
 		case 'lafferty':
 			$_SESSION['company_name'] = $post['company_name'];
 			$_SESSION['db_name'] = $post['company_name'].'_jjixgbv9my802728';
