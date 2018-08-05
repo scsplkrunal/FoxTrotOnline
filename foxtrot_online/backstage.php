@@ -23,7 +23,10 @@ define('PIE_CHART_COLORS_ARRAY', [
 function db_connect(){
 
 	// Create connection
+	//For local connection
 	$conn = new mysqli("127.0.0.1:3304", 'root', 'alonba2358', $_SESSION['db_name']);
+	//For online connection:
+//	$conn = new mysqli("sql5c40n.carrierzone.com", 'jjixgbv9my802728', 'We3b2!12', $_SESSION['db_name']);
 
 	// Check connection
 	if(!$conn->connect_error){
