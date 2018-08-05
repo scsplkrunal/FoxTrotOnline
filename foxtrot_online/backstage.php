@@ -26,7 +26,7 @@ function db_connect(){
 	//For local connection
 	$conn = new mysqli("127.0.0.1:3304", 'root', 'alonba2358', $_SESSION['db_name']);
 	//For online connection:
-//	$conn = new mysqli("sql5c40n.carrierzone.com", 'jjixgbv9my802728', 'We3b2!12', $_SESSION['db_name']);
+//	$conn = new mysqli("$_SESSION['db_host']", 'jjixgbv9my802728', 'We3b2!12', $_SESSION['db_name']);
 
 	// Check connection
 	if(!$conn->connect_error){
@@ -63,8 +63,13 @@ function db_query($sql_str){
 function db_choose($post){
 	switch($post['company_name']){
 		case 'lifemark':
+			$_SESSION['company_name'] = $post['company_name'];
+			$_SESSION['db_host'] = 'sql5c40n.carrierzone.com';
+			$_SESSION['db_name'] = $post['company_name'].'_jjixgbv9my802728';
+			break;
 		case 'lafferty':
 			$_SESSION['company_name'] = $post['company_name'];
+			$_SESSION['db_host'] = 'sql5c40d.carrierzone.com';
 			$_SESSION['db_name'] = $post['company_name'].'_jjixgbv9my802728';
 			break;
 		default:
