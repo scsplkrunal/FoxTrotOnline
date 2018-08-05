@@ -63,6 +63,7 @@ function db_query($sql_str){
 function db_choose($post){
 	switch($post['company_name']){
 		case 'company_a':
+			//Online: foxtrotonline_jjixgbv9my802728
 			$_SESSION['db_name'] = 'company_a';
 			break;
 		case 'company_b':
