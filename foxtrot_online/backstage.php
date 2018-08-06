@@ -947,7 +947,7 @@ function logo_html_modal(){
  * Gets the dates period as a parameter in the $post array.
  * Returns an HTML string with the table data
  */
-function activity_table($post){
+function activity_update($post){
 	if($post['from_date'] > $post['to_date']){
 		throw new Exception("Start date cannot be after the end date.", EXCEPTION_WARNING_CODE);
 	}
@@ -957,7 +957,7 @@ function activity_table($post){
 	} else{
 		if($post['from_date'] == $post['to_date']){
 			$post['from_date'] = substr_replace($post['from_date'], ' 00:00:00', 10);
-			$post['to_date'] = substr_replace($post['to_date'], ' 23:59:59', 10);
+			$post['to_date']   = substr_replace($post['to_date'], ' 23:59:59', 10);
 		}
 		$sql_str = "SELECT dateTrade, cli_name, invest, net_amt, comm_rec, rep_comm, date_rec, pay_date FROM trades WHERE dateTrade > '{$post['from_date']}' AND dateTrade < '{$post['to_date']}';";
 	}
@@ -966,15 +966,29 @@ function activity_table($post){
 	while($row = $result->fetch_assoc()){
 		$html_return_str .= "<tr>";
 		foreach($row as $col => $value){
-			if(strpos($col, 'date') !== false){ //reformat dates
-				if($value != null){ //TODO: Maybe remove IF when real data is available
-					$value           = date('d-M-Y', strtotime($value));
+			switch($col){
+				case 'cli_name':
+				case 'invest':
+					$html_return_str .= "<td class='text-left'>$value</td>";
+					break;
+				case 'net_amt':
+				case 'comm_rec':
+				case 'rep_comm':
+					$html_return_str .= "<td>\$$value</td>";
+					break;
+				case 'dateTrade':
+				case 'date_rec':
+				case 'pay_date':
+					if($value != null){ //TODO: Maybe remove IF when real data is available
+						$value           = date('d-M-Y', strtotime($value));
+						$html_return_str .= "<td>$value</td>";
+					} else{
+						$html_return_str .= "<td>-</td>";
+					}
+					break;
+				default:
 					$html_return_str .= "<td>$value</td>";
-				} else{
-					$html_return_str .= "<td>-</td>";
-				}
-			} else{
-				$html_return_str .= "<td>$value</td>";
+					break;
 			}
 		}
 		$html_return_str .= "</tr>";
