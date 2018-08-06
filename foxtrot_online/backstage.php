@@ -901,3 +901,43 @@ function sign_out(){
 
 	return $json_obj;
 }
+
+/**
+ * Returns an HTML string for a modal with the logos and a script to show the modal.
+ */
+function logo_html_modal(){
+	$modal_html = '
+	<div class="modal fade" id="select_company_modal" tabindex="-1" role="dialog" aria-labelledby="select_company_label" aria-hidden="true" data-backdrop="static" data-keyboard="false">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="select_company_label">Select a Company</h5>
+				</div>
+				<div class="modal-body">
+					<div class="container-fluid">
+						<div class="row">
+	';
+
+	$logos = scandir('lib/logos');
+	unset($logos[array_search('.', $logos, true)]);
+	unset($logos[array_search('..', $logos, true)]);
+	unset($logos[array_search('foxtrot_online.png', $logos, true)]);
+	foreach($logos as $logo){
+		$company_name = pathinfo($logo, PATHINFO_FILENAME);
+		$modal_html .= "<div class='col-md-4'><a href='login.php?company_name=$company_name'><img class='logo' src='lib/logos/$logo' alt='logo'></a></div>";
+	}
+
+	$modal_html .= '
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script>
+		$( "#select_company_modal" ).modal( \'show\' );
+	</script>
+	';
+
+	return $modal_html;
+}

@@ -76,7 +76,8 @@ require_once 'header.php';
 
 <?php
 echo FOOTER;
-//If try to log in without GET parameters, disable the log in button and show a danger alert
+//If try to log in without GET parameters, disable the log in button and show a danger alert.
+//Show a modal with a grid showing all the logos of all the companies. to choose from.
 if($_GET["company_name"] == '' || !isset($_SESSION['db_name'])){
 	$script = '
 	<script>
@@ -85,6 +86,7 @@ if($_GET["company_name"] == '' || !isset($_SESSION['db_name'])){
 	</script>
 	';
 	echo $script;
+	echo logo_html_modal();
 }
 ?>
 </body>
