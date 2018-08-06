@@ -9,7 +9,7 @@ if(permrep::is_remembered()){
 		header("Location: dashboard.php"); //redirect to dashboard
 	}
 } elseif(!isset($_SESSION['permrep_obj']) && basename($_SERVER["PHP_SELF"], '.php') != 'login'){
-	header("Location: login.php"); //redirect to dashboard
+	header("Location: login.php"); //redirect to login
 }
 
 //Security
