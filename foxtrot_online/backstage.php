@@ -946,6 +946,9 @@ function logo_html_modal(){
 /**
  * Gets the dates period as a parameter in the $post array.
  * Returns an HTML string with the table data
+ * @param $post
+ * @return json_obj
+ * @throws Exception
  */
 function activity_update($post){
 	if($post['from_date'] > $post['to_date']){
