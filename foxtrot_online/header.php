@@ -1,6 +1,6 @@
 <?php
-session_start();
 require_once "backstage.php";
+session_start();
 require_once "html_fragments.php";
 
 //Check if cookies are in use for log in
