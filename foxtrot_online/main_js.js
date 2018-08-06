@@ -224,4 +224,14 @@ $( document ).ready( function(){
 
 	};
 
+
+	/**
+	 * Check if window is small enough, and if so, move down Pie chart legend
+	 */
+	if($( document ).width() < 992){
+		pie_chart.options.legend.position = 'bottom';
+		pie_chart.update();
+	}
+
+
 } );
