@@ -26,7 +26,7 @@ function db_connect(){
 	//For local connection
 	$conn = new mysqli("127.0.0.1:3304", 'root', 'alonba2358', $_SESSION['db_name']);
 	//For online connection:
-//	$conn = new mysqli($_SESSION['db_host'], 'jjixgbv9my802728', 'We3b2!12', $_SESSION['db_name']);
+	//	$conn = new mysqli($_SESSION['db_host'], 'jjixgbv9my802728', 'We3b2!12', $_SESSION['db_name']);
 
 	// Check connection
 	if(!$conn->connect_error){
@@ -64,13 +64,13 @@ function db_choose($post){
 	switch($post['company_name']){
 		case 'lifemark':
 			$_SESSION['company_name'] = $post['company_name'];
-			$_SESSION['db_host'] = 'sql5c40n.carrierzone.com';
-			$_SESSION['db_name'] = $post['company_name'].'_jjixgbv9my802728';
+			$_SESSION['db_host']      = 'sql5c40n.carrierzone.com';
+			$_SESSION['db_name']      = $post['company_name'].'_jjixgbv9my802728';
 			break;
 		case 'lafferty':
 			$_SESSION['company_name'] = $post['company_name'];
-			$_SESSION['db_host'] = 'sql5c40d.carrierzone.com';
-			$_SESSION['db_name'] = $post['company_name'].'_jjixgbv9my802728';
+			$_SESSION['db_host']      = 'sql5c40d.carrierzone.com';
+			$_SESSION['db_name']      = $post['company_name'].'_jjixgbv9my802728';
 			break;
 		default:
 			if(!isset($_SESSION["permrep_obj"])){
@@ -425,12 +425,11 @@ class permrep{
 			if($this->webpswd != $post['password']){
 				throw new Exception("Password is incorrect", EXCEPTION_WARNING_CODE);
 			}
-		}else{
+		} else{
 			if(md5($this->webpswd) != $post['password']){
 				throw new Exception("Password is incorrect", EXCEPTION_WARNING_CODE);
 			}
 		}
-
 
 		$_SESSION['permrep_obj'] = $this;
 
@@ -466,7 +465,7 @@ class permrep{
 		FoxTrot Online system.
 		";
 
-		$headers  = "From: FoxTrot Online <system@FoxTrotOnline.com>\n";
+		$headers = "From: FoxTrot Online <system@FoxTrotOnline.com>\n";
 
 		//		Send email
 		$flag     = mail($this->email, "FoxTrot Online Password and Username Recovery", $msg, $headers);
@@ -894,7 +893,7 @@ function drill_down_pie_chart($post){
  * @return json_obj
  */
 function sign_out(){
-	setcookie('foxtrot_online_password', md5($_SESSION['permrep_obj']->webpswd), 1,'/');
+	setcookie('foxtrot_online_password', md5($_SESSION['permrep_obj']->webpswd), 1, '/');
 	setcookie('foxtrot_online_username', $_SESSION['permrep_obj']->username, 1, '/');
 	$json_obj                           = new json_obj();
 	$json_obj->status                   = true;
@@ -926,7 +925,7 @@ function logo_html_modal(){
 	unset($logos[array_search('foxtrot_online.png', $logos, true)]);
 	foreach($logos as $logo){
 		$company_name = pathinfo($logo, PATHINFO_FILENAME);
-		$modal_html .= "<div class='col-md-4'><a href='login.php?company_name=$company_name'><img class='logo' src='lib/logos/$logo' alt='logo'></a></div>";
+		$modal_html   .= "<div class='col-md-4'><a href='login.php?company_name=$company_name'><img class='logo' src='lib/logos/$logo' alt='logo'></a></div>";
 	}
 
 	$modal_html .= '
@@ -942,4 +941,48 @@ function logo_html_modal(){
 	';
 
 	return $modal_html;
+}
+
+/**
+ * Gets the dates period as a parameter in the $post array.
+ * Returns an HTML string with the table data
+ */
+function activity_table($post){
+	if($post['from_date'] > $post['to_date']){
+		throw new Exception("Start date cannot be after the end date.", EXCEPTION_WARNING_CODE);
+	}
+
+	if($post['all_dates'] == 'on'){
+		$sql_str = "SELECT dateTrade, cli_name, invest, net_amt, comm_rec, rep_comm, date_rec, pay_date FROM trades;";
+	} else{
+		if($post['from_date'] == $post['to_date']){
+			$post['from_date'] = substr_replace($post['from_date'], ' 00:00:00', 10);
+			$post['to_date'] = substr_replace($post['to_date'], ' 23:59:59', 10);
+		}
+		$sql_str = "SELECT dateTrade, cli_name, invest, net_amt, comm_rec, rep_comm, date_rec, pay_date FROM trades WHERE dateTrade > '{$post['from_date']}' AND dateTrade < '{$post['to_date']}';";
+	}
+
+	$result = db_query($sql_str);
+	while($row = $result->fetch_assoc()){
+		$html_return_str .= "<tr>";
+		foreach($row as $col => $value){
+			if(strpos($col, 'date') !== false){ //reformat dates
+				if($value != null){ //TODO: Maybe remove IF when real data is available
+					$value           = date('d-M-Y', strtotime($value));
+					$html_return_str .= "<td>$value</td>";
+				} else{
+					$html_return_str .= "<td>-</td>";
+				}
+			} else{
+				$html_return_str .= "<td>$value</td>";
+			}
+		}
+		$html_return_str .= "</tr>";
+	}
+
+	$json_obj                             = new json_obj();
+	$json_obj->data_arr['activity_table'] = $html_return_str;
+	$json_obj->status                     = true;
+
+	return $json_obj;
 }

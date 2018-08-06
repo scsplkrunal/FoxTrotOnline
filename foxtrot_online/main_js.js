@@ -99,6 +99,7 @@ $( document ).ready( function(){
 		$.post( 'junction.php', $( '#activity_form' ).serialize(), function( data ){
 			var json_obj = $.parseJSON( data );
 			if( json_obj.status == true ){
+				$("#activity_table tbody").html(json_obj.data_arr['activity_table']);
 				$( ".server_response_div .alert" ).addClass( 'alert-success' ).text( 'Table generated successfully.' ).show();
 			}else{ //If there is an error
 				$( ".server_response_div .alert" ).text( json_obj.error_message ).show();

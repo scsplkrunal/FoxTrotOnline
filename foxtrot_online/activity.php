@@ -60,8 +60,8 @@ require_once 'header.php';
 					<label>To</label>
 					<input type="date" name="to_date" disabled><br class="d-xs-block d-sm-none">
 					<input class="btn btn-primary ml-2" type="submit" value="Filter">
-					<input name="class" value="I_DONT_KNOW_YET" hidden>
-					<input name="func" value="I_DONT_KNOW_YET" hidden>
+					<input name="class" value="no_class" hidden>
+					<input name="func" value="activity_table" hidden>
 				</form>
 			</div>
 			<div class="table-responsive mb-5">
@@ -69,188 +69,25 @@ require_once 'header.php';
 					<thead>
 					<tr>
 						<th>DATE</th>
-						<th>CLIENT ACCOUNT</th>
+<!--						<th>CLIENT ACCOUNT</th>-->
 						<th>CLIENT NAME</th>
 						<th>PRODUCT DESCRIPTION</th>
-						<th>CUSIP</th>
+<!--						<th>CUSIP</th>-->
 						<th>PRINCIPAL</th>
 						<th>COMMISSION RECEIVED</th>
-						<th>PAYOUT RATE</th>
+<!--						<th>PAYOUT RATE</th>-->
 						<th>COMMISSION PAID</th>
 						<th>DATE RECEIVED</th>
 						<th>DATE PAID</th>
 					</tr>
 					</thead>
 					<tbody>
-					<tr>
-						<td>1,001</td>
-						<td>Lorem</td>
-						<td>ipsum</td>
-						<td>dolor</td>
-						<td>sit</td>
-						<td>1,001</td>
-						<td>Lorem</td>
-						<td>ipsum</td>
-						<td>dolor</td>
-						<td>sit</td>
-						<td>sit</td>
-					</tr>
-					<tr>
-						<td>1,002</td>
-						<td>amet</td>
-						<td>consectetur</td>
-						<td>adipiscing</td>
-						<td>elit</td>
-						<td>1,002</td>
-						<td>amet</td>
-						<td>consectetur</td>
-						<td>adipiscing</td>
-						<td>elit</td>
-						<td>elit</td>
-					</tr>
-					<tr>
-						<td>1,003</td>
-						<td>Integer</td>
-						<td>nec</td>
-						<td>odio</td>
-						<td>Praesent</td>
-						<td>1,003</td>
-						<td>Integer</td>
-						<td>nec</td>
-						<td>odio</td>
-						<td>Praesent</td>
-						<td>Praesent</td>
-					</tr>
-					<tr>
-						<td>1,003</td>
-						<td>libero</td>
-						<td>Sed</td>
-						<td>cursus</td>
-						<td>ante</td>
-						<td>1,003</td>
-						<td>libero</td>
-						<td>Sed</td>
-						<td>cursus</td>
-						<td>ante</td>
-						<td>ante</td>
-					</tr>
-					<tr>
-						<td>1,004</td>
-						<td>dapibus</td>
-						<td>diam</td>
-						<td>Sed</td>
-						<td>nisi</td>
-						<td>1,004</td>
-						<td>dapibus</td>
-						<td>diam</td>
-						<td>Sed</td>
-						<td>nisi</td>
-						<td>nisi</td>
-					</tr>
-					<tr>
-						<td>1,005</td>
-						<td>Nulla</td>
-						<td>quis</td>
-						<td>sem</td>
-						<td>at</td>
-						<td>1,005</td>
-						<td>Nulla</td>
-						<td>quis</td>
-						<td>sem</td>
-						<td>at</td>
-						<td>at</td>
-					</tr>
-					<tr>
-						<td>1,006</td>
-						<td>nibh</td>
-						<td>elementum</td>
-						<td>imperdiet</td>
-						<td>Duis</td>
-						<td>1,006</td>
-						<td>nibh</td>
-						<td>elementum</td>
-						<td>imperdiet</td>
-						<td>Duis</td>
-						<td>Duis</td>
-					</tr>
-					<tr>
-						<td>1,007</td>
-						<td>sagittis</td>
-						<td>ipsum</td>
-						<td>Praesent</td>
-						<td>mauris</td>
-						<td>1,007</td>
-						<td>sagittis</td>
-						<td>ipsum</td>
-						<td>Praesent</td>
-						<td>mauris</td>
-						<td>mauris</td>
-					</tr>
-					<tr>
-						<td>1,008</td>
-						<td>Fusce</td>
-						<td>nec</td>
-						<td>tellus</td>
-						<td>sed</td>
-						<td>1,008</td>
-						<td>Fusce</td>
-						<td>nec</td>
-						<td>tellus</td>
-						<td>sed</td>
-						<td>sed</td>
-					</tr>
-					<tr>
-						<td>1,009</td>
-						<td>augue</td>
-						<td>semper</td>
-						<td>porta</td>
-						<td>Mauris</td>
-						<td>1,009</td>
-						<td>augue</td>
-						<td>semper</td>
-						<td>porta</td>
-						<td>Mauris</td>
-						<td>Mauris</td>
-					</tr>
-					<tr>
-						<td>1,010</td>
-						<td>massa</td>
-						<td>Vestibulum</td>
-						<td>lacinia</td>
-						<td>arcu</td>
-						<td>1,010</td>
-						<td>massa</td>
-						<td>Vestibulum</td>
-						<td>lacinia</td>
-						<td>arcu</td>
-						<td>arcu</td>
-					</tr>
-					<tr>
-						<td>1,011</td>
-						<td>eget</td>
-						<td>nulla</td>
-						<td>Class</td>
-						<td>aptent</td>
-						<td>1,011</td>
-						<td>eget</td>
-						<td>nulla</td>
-						<td>Class</td>
-						<td>aptent</td>
-						<td>aptent</td>
-					</tr>
-					<tr>
-						<td>1,012</td>
-						<td>taciti</td>
-						<td>sociosqu</td>
-						<td>ad</td>
-						<td>litora</td>
-						<td>1,012</td>
-						<td>taciti</td>
-						<td>sociosqu</td>
-						<td>ad</td>
-						<td>litora</td>
-						<td>litora</td>
-					</tr>
+					<?php
+					db_connect();
+					$json_obj = activity_table(['all_dates' => 'on']);
+					$GLOBALS['db_conn']->close(); //close DB connection
+					echo $json_obj->data_arr['activity_table'];
+					?>
 					</tbody>
 				</table>
 				<script type="text/javascript">
