@@ -466,8 +466,10 @@ class permrep{
 		FoxTrot Online system.
 		";
 
+		$headers  = "From: FoxTrot Online <system@FoxTrotOnline.com>\n";
+
 		//		Send email
-		$flag     = mail($this->email, "FoxTrot Online Password and Username Recovery", $msg);
+		$flag     = mail($this->email, "FoxTrot Online Password and Username Recovery", $msg, $headers);
 		$json_obj = new json_obj();
 		if($flag){
 			$json_obj->status = true;
