@@ -100,13 +100,14 @@ $( document ).ready( function(){
 			var json_obj = $.parseJSON( data );
 			if( json_obj.status == true ){
 				$("#activity_table tbody").html(json_obj.data_arr['activity_table']);
-				$( ".server_response_div .alert" ).addClass( 'alert-success' ).text( 'Table generated successfully.' ).show();
+
+				$( ".server_response_div .alert" ).removeClass('alert-warning alert-danger').addClass( 'alert-success' ).text( 'Table generated successfully.' ).show();
 			}else{ //If there is an error
 				$( ".server_response_div .alert" ).text( json_obj.error_message ).show();
 				if( json_obj.error_level == 0 ){
-					$( ".server_response_div .alert" ).addClass( 'alert-warning' );
+					$( ".server_response_div .alert" ).removeClass('alert-success alert-danger').addClass( 'alert-warning' );
 				}else{
-					$( ".server_response_div .alert" ).addClass( 'alert-danger' );
+					$( ".server_response_div .alert" ).removeClass('alert-success alert-warning').addClass( 'alert-danger' );
 				}
 			}
 		} );
