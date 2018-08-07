@@ -230,7 +230,7 @@ $( document ).ready( function(){
 											return {
 												// Instead of `text: label,`
 												// We add the value to the string
-												text: label + ": " + value,
+												text: label + ": $" + value,
 												fillStyle: fill,
 												strokeStyle: stroke,
 												lineWidth: bw,
