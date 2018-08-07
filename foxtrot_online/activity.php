@@ -61,7 +61,7 @@ require_once 'header.php';
 					<input type="date" name="to_date" disabled><br class="d-xs-block d-sm-none">
 					<input class="btn btn-primary ml-2" type="submit" value="Filter">
 					<input name="class" value="no_class" hidden>
-					<input name="func" value="activity_update" hidden>
+					<input name="func" value="activity_table" hidden>
 				</form>
 			</div>
 			<div class="table-responsive mb-5">
@@ -83,7 +83,7 @@ require_once 'header.php';
 					</thead>
 					<tbody>
 					<?php
-					$json_obj = activity_update(['all_dates' => 'on']);
+					$json_obj = activity_table(['all_dates' => 'on']);
 					echo $json_obj->data_arr['activity_table'];
 					?>
 					</tbody>

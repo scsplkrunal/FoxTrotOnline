@@ -987,7 +987,7 @@ function logo_html_modal(){
  * @return json_obj
  * @throws Exception
  */
-function activity_update($post){
+function activity_table($post){
 	if($post['from_date'] > $post['to_date']){
 		throw new Exception("Start date cannot be after the end date.", EXCEPTION_WARNING_CODE);
 	}
