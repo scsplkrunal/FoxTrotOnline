@@ -53,9 +53,9 @@ $( document ).ready( function(){
 			}else{ //If there is an error
 				$( "#log_in_form .server_response_div .alert" ).text( json_obj.error_message ).show();
 				if( json_obj.error_level == 0 ){
-					$( "#log_in_form .server_response_div .alert" ).addClass( 'alert-warning' );
+					$( "#log_in_form .server_response_div .alert" ).removeClass('alert-danger').addClass( 'alert-warning' );
 				}else{
-					$( "#log_in_form .server_response_div .alert" ).addClass( 'alert-danger' );
+					$( "#log_in_form .server_response_div .alert" ).removeClass('alert-warning').addClass( 'alert-danger' );
 				}
 			}
 		} );
@@ -78,13 +78,13 @@ $( document ).ready( function(){
 		$.post( 'junction.php', $( '#forgot_password_form' ).serialize(), function( data ){
 			var json_obj = $.parseJSON( data );
 			if( json_obj.status == true ){
-				$( "#forgot_password_form .server_response_div .alert" ).addClass( 'alert-success' ).text( 'Password and username sent to your E-mail. Check your inbox for mails from FoxTrot Online.' ).show();
+				$( "#forgot_password_form .server_response_div .alert" ).removeClass('alert-warning alert-danger').addClass( 'alert-success' ).text( 'Password and username sent to your E-mail. Check your inbox for mails from FoxTrot Online.' ).show();
 			}else{ //If there is an error
 				$( "#forgot_password_form .server_response_div .alert" ).text( json_obj.error_message ).show();
 				if( json_obj.error_level == 0 ){
-					$( "#forgot_password_form .server_response_div .alert" ).addClass( 'alert-warning' );
+					$( "#forgot_password_form .server_response_div .alert" ).removeClass('alert-success alert-danger').addClass( 'alert-warning' );
 				}else{
-					$( "#forgot_password_form .server_response_div .alert" ).addClass( 'alert-danger' );
+					$( "#forgot_password_form .server_response_div .alert" ).removeClass('alert-success alert-warning').addClass( 'alert-danger' );
 				}
 			}
 		} );
@@ -128,13 +128,13 @@ $( document ).ready( function(){
 			$.post( 'junction.php', $( '#reports_form' ).serialize(), function( data ){ //Send the form to the server.
 				var json_obj = $.parseJSON( data );
 				if( json_obj.status == true ){
-					$( ".server_response_div .alert" ).addClass( 'alert-success' ).text( 'Graphs generated successfully.' ).show();
+					$( ".server_response_div .alert" ).removeClass('alert-warning alert-danger').addClass( 'alert-success' ).text( 'Graphs generated successfully.' ).show();
 				}else{ //If there is an error
 					$( ".server_response_div .alert" ).text( json_obj.error_message ).show();
 					if( json_obj.error_level == 0 ){
-						$( ".server_response_div .alert" ).addClass( 'alert-warning' );
+						$( ".server_response_div .alert" ).removeClass('alert-success alert-danger').addClass( 'alert-warning' );
 					}else{
-						$( ".server_response_div .alert" ).addClass( 'alert-danger' );
+						$( ".server_response_div .alert" ).removeClass('alert-success alert-warning').addClass( 'alert-danger' );
 					}
 				}
 			} );
@@ -150,13 +150,13 @@ $( document ).ready( function(){
 		$.post( 'junction.php', $( '#reports_form' ).serialize(), function( data ){
 			var json_obj = $.parseJSON( data );
 			if( json_obj.status == true ){
-				$( ".server_response_div .alert" ).addClass( 'alert-success' ).text( 'Graphs generated successfully.' ).show();
+				$( ".server_response_div .alert" ).removeClass('alert-warning alert-danger').addClass( 'alert-success' ).text( 'Graphs generated successfully.' ).show();
 			}else{ //If there is an error
 				$( ".server_response_div .alert" ).text( json_obj.error_message ).show();
 				if( json_obj.error_level == 0 ){
-					$( ".server_response_div .alert" ).addClass( 'alert-warning' );
+					$( ".server_response_div .alert" ).removeClass('alert-success alert-danger').addClass( 'alert-warning' );
 				}else{
-					$( ".server_response_div .alert" ).addClass( 'alert-danger' );
+					$( ".server_response_div .alert" ).removeClass('alert-success alert-warning').addClass( 'alert-danger' );
 				}
 			}
 		} );
