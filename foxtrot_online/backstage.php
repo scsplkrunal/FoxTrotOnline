@@ -982,60 +982,107 @@ function logo_html_modal(){
 
 /**
  * Gets the dates period as a parameter in the $post array.
- * Returns an HTML string with the table data
- * @param $post
+ * Gets 2 flags, that determine if needed to create boxes or table or both.
+ * Returns an HTML string with the table and boxes data inside the json_obj.
+ * @param      $post
+ * @param bool $create_boxes_flag
+ * @param bool $create_table_flag
  * @return json_obj
  * @throws Exception
  */
-function activity_table($post){
-	if($post['from_date'] > $post['to_date']){
-		throw new Exception("Start date cannot be after the end date.", EXCEPTION_WARNING_CODE);
-	}
-
-	if($post['all_dates'] == 'on'){
-		$sql_str = "SELECT dateTrade, cli_name, invest, net_amt, comm_rec, rep_comm, date_rec, pay_date FROM trades;";
-	} else{
-		if($post['from_date'] == $post['to_date']){
-			$post['from_date'] = substr_replace($post['from_date'], ' 00:00:00', 10);
-			$post['to_date']   = substr_replace($post['to_date'], ' 23:59:59', 10);
+function activity_update($post, $create_boxes_flag = true, $create_table_flag = true){
+	//Activity table:
+	if($create_table_flag){
+		if($post['from_date'] > $post['to_date']){
+			throw new Exception("Start date cannot be after the end date.", EXCEPTION_WARNING_CODE);
 		}
-		$sql_str = "SELECT dateTrade, cli_name, invest, net_amt, comm_rec, rep_comm, date_rec, pay_date FROM trades WHERE dateTrade > '{$post['from_date']}' AND dateTrade < '{$post['to_date']}';";
-	}
 
-	$result = db_query($sql_str);
-	while($row = $result->fetch_assoc()){
-		$html_return_str .= "<tr>";
-		foreach($row as $col => $value){
-			switch($col){
-				case 'cli_name':
-				case 'invest':
-					$html_return_str .= "<td class='text-left'>$value</td>";
-					break;
-				case 'net_amt':
-				case 'comm_rec':
-				case 'rep_comm':
-					$html_return_str .= "<td>\$$value</td>";
-					break;
-				case 'dateTrade':
-				case 'date_rec':
-				case 'pay_date':
-					if($value != null){ //TODO: Maybe remove IF when real data is available
-						$value           = date('d-M-Y', strtotime($value));
-						$html_return_str .= "<td>$value</td>";
-					} else{
-						$html_return_str .= "<td>-</td>";
-					}
-					break;
-				default:
-					$html_return_str .= "<td>$value</td>";
-					break;
+		if($post['all_dates'] == 'on'){
+			$sql_str = "SELECT dateTrade, cli_name, invest, net_amt, comm_rec, rep_comm, date_rec, pay_date FROM trades;";
+		} else{
+			if($post['from_date'] == $post['to_date']){
+				$post['from_date'] = substr_replace($post['from_date'], ' 00:00:00', 10);
+				$post['to_date']   = substr_replace($post['to_date'], ' 23:59:59', 10);
 			}
+			$sql_str = "SELECT dateTrade, cli_name, invest, net_amt, comm_rec, rep_comm, date_rec, pay_date FROM trades WHERE dateTrade > '{$post['from_date']}' AND dateTrade < '{$post['to_date']}';";
 		}
-		$html_return_str .= "</tr>";
+
+		$result = db_query($sql_str);
+		while($row = $result->fetch_assoc()){
+			$table_html_return_str .= "<tr>";
+			foreach($row as $col => $value){
+				switch($col){
+					case 'cli_name':
+					case 'invest':
+						$table_html_return_str .= "<td class='text-left'>$value</td>";
+						break;
+					case 'net_amt':
+					case 'comm_rec':
+					case 'rep_comm':
+						$table_html_return_str .= "<td>\$$value</td>";
+						break;
+					case 'dateTrade':
+					case 'date_rec':
+					case 'pay_date':
+						if($value != null){
+							$value           = date('d-M-Y', strtotime($value));
+							$table_html_return_str .= "<td>$value</td>";
+						} else{
+							$table_html_return_str .= "<td>-</td>";
+						}
+						break;
+					default:
+						$table_html_return_str .= "<td>$value</td>";
+						break;
+				}
+			}
+			$table_html_return_str .= "</tr>";
+		}
 	}
+
+	//Activity Boxes:
+	if($create_boxes_flag){
+		$boxes_html_return_str = '<div class="col-sm-4">
+							<div class="alert alert-info">
+								<strong>';
+		$boxes_html_return_str .= 'Regular Commissions $3415.10';
+		$boxes_html_return_str .= '         </strong>
+							</div>
+						</div>
+						<div class="col-sm-4">
+							<div class="alert alert-info">
+								<strong>';
+		$boxes_html_return_str .= 'Trail Commissions $0';
+
+		$boxes_html_return_str .='          </strong>
+							</div>
+						</div>
+						<div class="col-sm-4">
+							<div class="alert alert-info">
+								<strong>';
+		$boxes_html_return_str .= 'Clearing Commissions $3.12';
+		$boxes_html_return_str .='          </strong>
+							</div>
+						</div>';
+	}
+
 
 	$json_obj                             = new json_obj();
-	$json_obj->data_arr['activity_table'] = $html_return_str;
+	$json_obj->data_arr['activity_table'] = $table_html_return_str;
+	$json_obj->data_arr['activity_boxes'] = $boxes_html_return_str;
+	$json_obj->status                     = true;
+
+	return $json_obj;
+}
+
+/**
+ * Gets the dates in an array, adn present the corresponding values inside HTML template.
+ */
+function activity_boxes($post){
+
+
+	$json_obj                             = new json_obj();
+	$json_obj->data_arr['activity_boxes'] = $boxes_html_return_str;
 	$json_obj->status                     = true;
 
 	return $json_obj;
