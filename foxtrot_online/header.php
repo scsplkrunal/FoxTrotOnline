@@ -25,3 +25,5 @@ echo "
 window.company_name = '{$_SESSION['company_name']}';
 </script>
 ";
+
+db_connect();

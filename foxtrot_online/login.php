@@ -75,7 +75,8 @@ require_once 'header.php';
 </div>
 
 <?php
-echo FOOTER;
+require_once 'footer.php';
+
 //If try to log in without GET parameters, disable the log in button and show a danger alert.
 //Show a modal with a grid showing all the logos of all the companies. to choose from.
 if($_GET["company_name"] == '' || !isset($_SESSION['db_name'])){

@@ -29,6 +29,8 @@ require_once 'header.php';
 		</main>
 	</div>
 </div>
-<?php echo FOOTER ?>
+<?php
+require_once 'footer.php';
+?>
 </body>
 </html>

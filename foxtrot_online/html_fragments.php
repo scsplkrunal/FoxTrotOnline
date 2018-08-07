@@ -40,14 +40,3 @@ define('HEAD', '
 	<link rel="shortcut icon" type="image/png" href="lib/favicon.ico">
 
 ');
-
-/**
- * Footer HTML
- */
-define('FOOTER', '
-<footer class="text-center bg-dark">
-	<div class="container">
-		<span class="text-muted">2018 Copyright &copy; FoxTrot, LLC</span>
-	</div>
-</footer>
-');

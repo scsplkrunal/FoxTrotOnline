@@ -83,9 +83,7 @@ require_once 'header.php';
 					</thead>
 					<tbody>
 					<?php
-					db_connect();
 					$json_obj = activity_update(['all_dates' => 'on']);
-					$GLOBALS['db_conn']->close(); //close DB connection
 					echo $json_obj->data_arr['activity_table'];
 					?>
 					</tbody>
@@ -110,7 +108,8 @@ require_once 'header.php';
 		</main>
 	</div>
 </div>
-<?php echo FOOTER ?>
-
+<?php
+require_once 'footer.php';
+?>
 </body>
 </html>
