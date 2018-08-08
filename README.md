@@ -1,2 +1,0 @@
-# FoxTrotOnline
-FoxTrotOnline broker access
