@@ -62,8 +62,11 @@ function db_connect(){
 	// Create connection
 	//For local connection
 	$conn = new mysqli("127.0.0.1:3304", 'root', 'alonba2358', $_SESSION['db_name']);
+
 	//For online connection:
-	//	$conn = new mysqli($_SESSION['db_host'], 'jjixgbv9my802728', 'We3b2!12', $_SESSION['db_name']);
+//	if(isset($_SESSION['db_host'])){
+//		$conn = new mysqli($_SESSION['db_host'], 'jjixgbv9my802728', 'We3b2!12', $_SESSION['db_name']);
+//	}
 
 	// Check connection
 	if(!$conn->connect_error){

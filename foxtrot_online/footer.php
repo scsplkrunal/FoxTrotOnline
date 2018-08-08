@@ -4,7 +4,9 @@ echo '<footer class="text-center bg-dark">
 			<span class="text-muted">2018 Copyright &copy; FoxTrot, LLC</span>
 		</div>
 	</footer>';
-$GLOBALS['db_conn']->close(); //close DB connection
+if($GLOBALS['db_conn']){
+	$GLOBALS['db_conn']->close(); //close DB connection
+}
 
 if(isset($GLOBALS['thrown_exception'])){
 	$GLOBALS['thrown_exception'] = addslashes($GLOBALS['thrown_exception']);
