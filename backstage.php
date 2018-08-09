@@ -573,27 +573,17 @@ function pie_chart_data_and_labels($chart_name){
 			];
 			break;
 		case 'reports_pie_chart':
-			$pie_chart_data_values = [
-				1,
-				2,
-				3,
-				4,
-				5,
-				6,
-				7,
-				8
-			];
-
-			$pie_chart_labels = [
-				"Reports",
-				"Reports",
-				"Reports",
-				"Reports",
-				"Reports",
-				"Reports",
-				"Reports",
-				"Reports"
-			];
+			$sql_str = "SELECT SUM(comm_rec) AS total_commission, trades.inv_type, prodtype.product
+					FROM trades
+					RIGHT JOIN prodtype ON trades.inv_type = prodtype.inv_type
+					WHERE rep_no = {$_SESSION['permrep_obj']->permRepID} GROUP BY inv_type;";
+			$result  = db_query($sql_str);
+			if($result->num_rows != 0){ //If there is a value returned
+				while($row = $result->fetch_assoc()){ //Fill up all properties from DB data
+					$pie_chart_data_values [] = $row['total_commission'];
+					$pie_chart_labels [] = $row['product'];
+				}
+			}
 			reports_table_html($pie_chart_data, $pie_chart_labels);
 			break;
 	}
