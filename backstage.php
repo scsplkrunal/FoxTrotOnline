@@ -546,6 +546,7 @@ class permrep{
  * Gets the chart name as a parameter.
  * Outputs the chart data and labels as javascript variables (arrays) inside a script html tag
  * @param $chart_name
+ * @throws exception
  */
 function pie_chart_data_and_labels($chart_name){
 	switch($chart_name){
@@ -576,7 +577,8 @@ function pie_chart_data_and_labels($chart_name){
 			$sql_str = "SELECT SUM(comm_rec) AS total_commission, trades.inv_type, prodtype.product
 					FROM trades
 					RIGHT JOIN prodtype ON trades.inv_type = prodtype.inv_type
-					WHERE rep_no = {$_SESSION['permrep_obj']->permRepID} GROUP BY inv_type;";
+					WHERE rep_no = {$_SESSION['permrep_obj']->permRepID}
+					GROUP BY inv_type;";
 			$result  = db_query($sql_str);
 			if($result->num_rows != 0){ //If there is a value returned
 				while($row = $result->fetch_assoc()){ //Fill up all properties from DB data
@@ -604,7 +606,7 @@ function pie_chart_data_and_labels($chart_name){
 	$script         = "<script type='text/javascript'>
 					var pie_chart_data = $pie_chart_data;
 				</script>";
-	echo $script;
+	return $script;
 }
 
 /**
@@ -1079,4 +1081,12 @@ function activity_boxes($post){
 	$json_obj->status                     = true;
 
 	return $json_obj;
+}
+
+/**
+ * Updates the reports charts and table
+ * @param $post
+ */
+function reports_update($post){
+
 }

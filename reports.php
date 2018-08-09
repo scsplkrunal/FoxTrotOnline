@@ -32,7 +32,7 @@ require_once 'header.php';
 				</div>
 				<label>Date:</label>
 				<select id="time_periods_select" name="time_periods">
-					<option id="dates_form_option_choose" value="none">Choose a period of time</option>
+					<option value="all_dates">All Dates</option>
 					<option value="Year to Date">Year to Date</option>
 					<option value="Month to Date">Month to Date</option>
 					<option value="Previous 12 Months">Previous 12 Months</option>
@@ -48,8 +48,8 @@ require_once 'header.php';
 					<input class="btn btn-primary ml-2" type="submit" value="Filter">
 
 				</div>
-				<input name="class" value="I_DONT_KNOW_YET" hidden>
-				<input name="func" value="I_DONT_KNOW_YET" hidden>
+				<input name="class" value="no_class" hidden>
+				<input name="func" value="reports_update" hidden>
 			</form>
 			<div class="row"> <!-- Line Chart div -->
 				<div class="col-lg-6">
@@ -69,7 +69,7 @@ require_once 'header.php';
 			<div class="row mt-5 mb-5">
 				<div class="col-lg-6"> <!-- Pie Chart div -->
 					<?php
-					pie_chart_data_and_labels('reports_pie_chart');
+					echo pie_chart_data_and_labels('reports_pie_chart');
 					?>
 					<canvas id="reports_pie_chart"></canvas>
 					<script type="text/javascript" src="pie_chart_no_data.js" chart_id="reports_pie_chart"></script>

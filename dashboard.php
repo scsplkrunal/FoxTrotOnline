@@ -39,7 +39,7 @@ require_once 'header.php';
 			<div class="row"> <!-- Pie Chart div -->
 				<div class="col-lg-6">
 					<?php
-					pie_chart_data_and_labels('dashboard_pie_chart');
+					echo pie_chart_data_and_labels('dashboard_pie_chart');
 					?>
 					<canvas id="dashboard_pie_chart"></canvas>
 					<script type="text/javascript" src="pie_chart_no_data.js" chart_id="dashboard_pie_chart"></script>
