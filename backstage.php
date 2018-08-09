@@ -849,7 +849,13 @@ function reports_table_html($chart_data, $chart_labels){
  * Returns a string representing the total commissions posted.
  */
 function dashboard_posted_commissions(){
-	$posted_commissions = 3415.10;
+	$sql_str = "SELECT SUM(comm_rec) AS posted_commission FROM trades WHERE pay_date is NULL AND rep_no = {$_SESSION['permrep_obj']->permRepID} LIMIT 1;";
+	$result  = db_query($sql_str);
+	if($result->num_rows != 0){ //If there is a value returned
+		while($row = $result->fetch_assoc()){ //Fill up all properties from DB data
+			$posted_commissions = ($row['posted_commission'] != NULL) ? $row['posted_commission'] : '0';
+		}
+	}
 
 	return "Posted Commisions: $posted_commissions\$";
 }
