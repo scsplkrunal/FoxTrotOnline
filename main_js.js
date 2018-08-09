@@ -121,8 +121,6 @@ $( document ).ready( function(){
 		var id_of_selected_option = $( this ).find( "option:selected" ).attr( "id" );
 		if( id_of_selected_option == "dates_form_option_custom" ){ //Check if the selected option was 'Custom'
 			$( '.hidden_form_div' ).show(); //If so - show the hidden div with the dates input.
-		// }else if( id_of_selected_option == "dates_form_option_choose" ){ //If selected option was 'Choose from the list'
-		// 	$( '.hidden_form_div' ).hide(); //Hide the hidden div with the dates input.
 		}else{ //If Option selected is not 'Custom' or 'Choose from the list'
 			$( '.hidden_form_div' ).hide(); //Hide the hidden div with the dates input.
 			$.post( 'junction.php', $( '#reports_form' ).serialize(), function( data ){ //Send the form to the server.

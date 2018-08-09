@@ -64,9 +64,9 @@ function db_connect(){
 	$conn = new mysqli("127.0.0.1:3304", 'root', 'alonba2358', $_SESSION['db_name']);
 
 	//For online connection:
-//	if(isset($_SESSION['db_host'])){
-//		$conn = new mysqli($_SESSION['db_host'], 'jjixgbv9my802728', 'We3b2!12', $_SESSION['db_name']);
-//	}
+	//	if(isset($_SESSION['db_host'])){
+	//		$conn = new mysqli($_SESSION['db_host'], 'jjixgbv9my802728', 'We3b2!12', $_SESSION['db_name']);
+	//	}
 
 	// Check connection
 	if(!$conn->connect_error){
@@ -545,10 +545,12 @@ class permrep{
 /**
  * Gets the chart name as a parameter.
  * Outputs the chart data and labels as javascript variables (arrays) inside a script html tag
- * @param $chart_name
+ * @param       $chart_name
+ * @param array $post
+ * @return string
  * @throws exception
  */
-function pie_chart_data_and_labels($chart_name){
+function pie_chart_data_and_labels($chart_name, $post = array('time_period' => 'all_dates')){
 	switch($chart_name){
 		case 'dashboard_pie_chart':
 			$pie_chart_data_values = [
@@ -574,16 +576,55 @@ function pie_chart_data_and_labels($chart_name){
 			];
 			break;
 		case 'reports_pie_chart':
+			switch($post['time_period']){
+				case 'all_dates':
+					break;
+				case 'Year to Date':
+					$from_date = strtotime('first day of January ' . date('Y'));
+					$from_date = date('Y-m-d H:i:s', $from_date);
+					$to_date = date('Y-m-d H:i:s');
+					break;
+				case  'Month to Date':
+					$from_date = strtotime('midnight first day of this month');
+					$from_date = date('Y-m-d H:i:s', $from_date);
+					$to_date = date('Y-m-d H:i:s');
+					break;
+				case  'Previous 12 Months':
+					$from_date = strtotime('midnight 12 months ago');
+					$from_date = date('Y-m-d H:i:s', $from_date);
+					$to_date = date('Y-m-d H:i:s');
+					break;
+				case  'Last Year':
+					$last_year = date('Y')-1;
+					$from_date = strtotime('midnight first day of January '.$last_year);
+					$from_date = date('Y-m-d H:i:s', $from_date);
+					$to_date = strtotime('first day of January ' . date('Y'));
+					$to_date = date('Y-m-d H:i:s', $to_date);
+					break;
+				case  'Last Month':
+					$from_date = strtotime('midnight first day of previous month');
+					$from_date = date('Y-m-d H:i:s', $from_date);
+					$to_date = strtotime('midnight first day of this month');
+					$to_date = date('Y-m-d H:i:s', $to_date);
+					break;
+				case  'Custom':
+					$from_date = date_format(date_create($post['from_date']), 'Y-m-d H:i:s');
+					$to_date = date_format(date_add(date_create($post['to_date']), date_interval_create_from_date_string("23 hours 59 minutes 59 seconds")), 'Y-m-d H:i:s');
+					break;
+			}
+			if(isset($from_date) && isset($to_date)){
+				$where_clause = "AND dateTrade > '$from_date' AND dateTrade < '$to_date'";
+			}
 			$sql_str = "SELECT SUM(comm_rec) AS total_commission, trades.inv_type, prodtype.product
 					FROM trades
 					RIGHT JOIN prodtype ON trades.inv_type = prodtype.inv_type
-					WHERE rep_no = {$_SESSION['permrep_obj']->permRepID}
+					WHERE rep_no = {$_SESSION["permrep_obj"]->permRepID} $where_clause
 					GROUP BY inv_type;";
 			$result  = db_query($sql_str);
 			if($result->num_rows != 0){ //If there is a value returned
 				while($row = $result->fetch_assoc()){ //Fill up all properties from DB data
 					$pie_chart_data_values [] = $row['total_commission'];
-					$pie_chart_labels [] = $row['product'];
+					$pie_chart_labels []      = $row['product'];
 				}
 			}
 			reports_table_html($pie_chart_data, $pie_chart_labels);
@@ -606,6 +647,7 @@ function pie_chart_data_and_labels($chart_name){
 	$script         = "<script type='text/javascript'>
 					var pie_chart_data = $pie_chart_data;
 				</script>";
+
 	return $script;
 }
 
@@ -845,7 +887,7 @@ function dashboard_posted_commissions(){
 	$result  = db_query($sql_str);
 	if($result->num_rows != 0){ //If there is a value returned
 		while($row = $result->fetch_assoc()){ //Fill up all properties from DB data
-			$posted_commissions = ($row['posted_commission'] != NULL) ? $row['posted_commission'] : '0';
+			$posted_commissions = ($row['posted_commission'] != null) ? $row['posted_commission'] : '0';
 		}
 	}
 
@@ -1020,7 +1062,7 @@ function activity_update($post, $create_boxes_flag = true, $create_table_flag = 
 					case 'date_rec':
 					case 'pay_date':
 						if($value != null){
-							$value           = date('d-M-Y', strtotime($value));
+							$value                 = date('d-M-Y', strtotime($value));
 							$table_html_return_str .= "<td>$value</td>";
 						} else{
 							$table_html_return_str .= "<td>-</td>";
@@ -1049,18 +1091,17 @@ function activity_update($post, $create_boxes_flag = true, $create_table_flag = 
 								<strong>';
 		$boxes_html_return_str .= 'Trail Commissions $0';
 
-		$boxes_html_return_str .='          </strong>
+		$boxes_html_return_str .= '          </strong>
 							</div>
 						</div>
 						<div class="col-sm-4">
 							<div class="alert alert-info">
 								<strong>';
 		$boxes_html_return_str .= 'Clearing Commissions $3.12';
-		$boxes_html_return_str .='          </strong>
+		$boxes_html_return_str .= '          </strong>
 							</div>
 						</div>';
 	}
-
 
 	$json_obj                             = new json_obj();
 	$json_obj->data_arr['activity_table'] = $table_html_return_str;
@@ -1086,7 +1127,8 @@ function activity_boxes($post){
 /**
  * Updates the reports charts and table
  * @param $post
+ * @throws exception
  */
 function reports_update($post){
-
+	$x = pie_chart_data_and_labels('reports_pie_chart', $post);
 }

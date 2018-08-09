@@ -31,7 +31,7 @@ require_once 'header.php';
 					<div class="alert" role="alert"></div>
 				</div>
 				<label>Date:</label>
-				<select id="time_periods_select" name="time_periods">
+				<select id="time_periods_select" name="time_period">
 					<option value="all_dates">All Dates</option>
 					<option value="Year to Date">Year to Date</option>
 					<option value="Month to Date">Month to Date</option>
