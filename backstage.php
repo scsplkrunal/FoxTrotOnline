@@ -191,12 +191,6 @@ function show_sidebar($current_page){
 					</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link '.$messages_active.'" href="messages.php">
-						'.show_sidebar_icon('envelope').'
-						Messages
-					</a>
-				</li>
-				<li class="nav-item">
 						<span id="sign_out_fake_link" class="fake_link nav-link">
 							'.show_sidebar_icon('sign_out').'
 							Sign out
