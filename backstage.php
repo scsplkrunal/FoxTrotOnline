@@ -547,6 +547,8 @@ class permrep{
  * Outputs the chart data and labels as javascript variables (arrays) inside a script html tag
  * @param       $chart_name
  * @param array $post
+ * @param bool  $reports_chart_flag
+ * @param bool  $reports_table_flag
  * @return string
  * @throws exception
  */
@@ -580,36 +582,36 @@ function pie_chart_data_and_labels($chart_name, $post = array('time_period' => '
 				case 'all_dates':
 					break;
 				case 'Year to Date':
-					$from_date = strtotime('first day of January ' . date('Y'));
+					$from_date = strtotime('first day of January '.date('Y'));
 					$from_date = date('Y-m-d H:i:s', $from_date);
-					$to_date = date('Y-m-d H:i:s');
+					$to_date   = date('Y-m-d H:i:s');
 					break;
 				case  'Month to Date':
 					$from_date = strtotime('midnight first day of this month');
 					$from_date = date('Y-m-d H:i:s', $from_date);
-					$to_date = date('Y-m-d H:i:s');
+					$to_date   = date('Y-m-d H:i:s');
 					break;
 				case  'Previous 12 Months':
 					$from_date = strtotime('midnight 12 months ago');
 					$from_date = date('Y-m-d H:i:s', $from_date);
-					$to_date = date('Y-m-d H:i:s');
+					$to_date   = date('Y-m-d H:i:s');
 					break;
 				case  'Last Year':
-					$last_year = date('Y')-1;
+					$last_year = date('Y') - 1;
 					$from_date = strtotime('midnight first day of January '.$last_year);
 					$from_date = date('Y-m-d H:i:s', $from_date);
-					$to_date = strtotime('first day of January ' . date('Y'));
-					$to_date = date('Y-m-d H:i:s', $to_date);
+					$to_date   = strtotime('first day of January '.date('Y'));
+					$to_date   = date('Y-m-d H:i:s', $to_date);
 					break;
 				case  'Last Month':
 					$from_date = strtotime('midnight first day of previous month');
 					$from_date = date('Y-m-d H:i:s', $from_date);
-					$to_date = strtotime('midnight first day of this month');
-					$to_date = date('Y-m-d H:i:s', $to_date);
+					$to_date   = strtotime('midnight first day of this month');
+					$to_date   = date('Y-m-d H:i:s', $to_date);
 					break;
 				case  'Custom':
 					$from_date = date_format(date_create($post['from_date']), 'Y-m-d H:i:s');
-					$to_date = date_format(date_add(date_create($post['to_date']), date_interval_create_from_date_string("23 hours 59 minutes 59 seconds")), 'Y-m-d H:i:s');
+					$to_date   = date_format(date_add(date_create($post['to_date']), date_interval_create_from_date_string("23 hours 59 minutes 59 seconds")), 'Y-m-d H:i:s');
 					break;
 			}
 			if(isset($from_date) && isset($to_date)){
@@ -627,7 +629,11 @@ function pie_chart_data_and_labels($chart_name, $post = array('time_period' => '
 					$pie_chart_labels []      = $row['product'];
 				}
 			}
-			reports_table_html($pie_chart_data, $pie_chart_labels);
+
+			$post['from_date']  = $from_date;
+			$post['to_date']    = $to_date;
+			$reports_table_html = reports_table_html($pie_chart_data_values, $pie_chart_labels, $post);
+
 			break;
 	}
 
@@ -648,7 +654,12 @@ function pie_chart_data_and_labels($chart_name, $post = array('time_period' => '
 					var pie_chart_data = $pie_chart_data;
 				</script>";
 
-	return $script;
+	$json_obj                                 = new json_obj();
+	$json_obj->data_arr['pie_chart_script']   = $script;
+	$json_obj->data_arr['reports_table_html'] = $reports_table_html;
+	$json_obj->status                         = true;
+
+	return $json_obj;
 }
 
 /**
@@ -690,8 +701,53 @@ function line_chart_data_and_labels($chart_name){
  * Defines the string as a constant, for later use.
  * @param $chart_data
  * @param $chart_labels
+ * @param $post
+ * @return string
+ * @throws exception
  */
-function reports_table_html($chart_data, $chart_labels){
+function reports_table_html($chart_data, $chart_labels, $post){
+	switch($post['time_period']){ //find the Last values
+		case 'all_dates':
+			break;
+		case 'Year to Date':
+			$last_from_date = date('Y-m-d H:i:s', strtotime("{$post["from_date"]} -1 year"));
+			$last_to_date   = date('Y-m-d H:i:s', strtotime("{$post["to_date"]} -1 year"));
+			break;
+		case  'Month to Date':
+			$last_from_date = date('Y-m-d H:i:s', strtotime("{$post["from_date"]} -1 month"));
+			$last_to_date   = date('Y-m-d H:i:s', strtotime("{$post["to_date"]} -1 month"));
+			break;
+		case  'Previous 12 Months':
+			$last_from_date = date('Y-m-d H:i:s', strtotime("{$post["from_date"]} -1 year"));
+			$last_to_date   = date('Y-m-d H:i:s', strtotime("{$post["to_date"]} -1 year"));
+			break;
+		case  'Last Year':
+			$last_from_date = date('Y-m-d H:i:s', strtotime("{$post["from_date"]} -1 year"));
+			$last_to_date   = date('Y-m-d H:i:s', strtotime("{$post["to_date"]} -1 year"));
+			break;
+		case  'Last Month':
+			$last_from_date = date('Y-m-d H:i:s', strtotime("{$post["from_date"]} -1 month"));
+			$last_to_date   = date('Y-m-d H:i:s', strtotime("{$post["to_date"]} -1 month"));
+			break;
+		case  'Custom':
+			break;
+	}
+
+	if(isset($last_from_date) && isset($last_to_date)){
+		$where_clause = "AND dateTrade > '$last_from_date' AND dateTrade < '$last_to_date'";
+		$sql_str      = "SELECT SUM(comm_rec) AS total_commission, trades.inv_type, prodtype.product
+					FROM trades
+					RIGHT JOIN prodtype ON trades.inv_type = prodtype.inv_type
+					WHERE rep_no = {$_SESSION["permrep_obj"]->permRepID} $where_clause
+					GROUP BY inv_type;";
+		$result       = db_query($sql_str);
+		if($result->num_rows != 0){ //If there is a value returned
+			while($row = $result->fetch_assoc()){ //Fill up all properties from DB data
+				$last_values [] = $row['total_commission'];
+			}
+		}
+	}
+
 	$html_table_string = '
 				<div class="row mt-5 mb-5">
 				<div class="col-lg-6">
@@ -705,178 +761,40 @@ function reports_table_html($chart_data, $chart_labels){
 							<th>DIFFERENCE</th>
 						</tr>
 						</thead>
-						<tbody>
-						<tr>
-							<td>
-								<ul class="graph_legend">
-									<li style="color: magenta;"></li>
-								</ul>
-							</td>
-							<td>Mutual Funds</td>
-							<td></td>
-							<td></td>
-							<td></td>
-						</tr>
-						<tr>
-							<td>
-								<ul class="graph_legend">
-									<li style="color: deeppink;"></li>
-								</ul>
-							</td>
-							<td>Stocks</td>
-							<td></td>
-							<td></td>
-							<td></td>
-						</tr>
-						<tr>
-							<td>
-								<ul class="graph_legend">
-									<li style="color: purple;"></li>
-								</ul>
-							</td>
-							<td>Bonds</td>
-							<td></td>
-							<td></td>
-							<td></td>
-						</tr>
-						<tr>
-							<td>
-								<ul class="graph_legend">
-									<li style="color: maroon;"></li>
-								</ul>
-							</td>
-							<td>Options</td>
-							<td></td>
-							<td></td>
-							<td></td>
-						</tr>
-						<tr>
-							<td>
-								<ul class="graph_legend">
-									<li style="color: red;"></li>
-								</ul>
-							</td>
-							<td>CD\'s</td>
-							<td></td>
-							<td></td>
-							<td></td>
-						</tr>
-						<tr>
-							<td>
-								<ul class="graph_legend">
-									<li style="color: orange;"></li>
-								</ul>
-							</td>
-							<td>UIT\'s</td>
-							<td></td>
-							<td></td>
-							<td></td>
-						</tr>
-						<tr>
-							<td>
-								<ul class="graph_legend">
-									<li style="color: yellow;"></li>
-								</ul>
-							</td>
-							<td>Variable Annuities</td>
-							<td></td>
-							<td></td>
-							<td></td>
-						</tr>
-						<tr>
-							<td>
-								<ul class="graph_legend">
-									<li style="color: lime;"></li>
-								</ul>
-							</td>
-							<td>Fixed Annuities</td>
-							<td></td>
-							<td></td>
-							<td></td>
-						</tr>
-						<tr>
-							<td>
-								<ul class="graph_legend">
-									<li style="color: green;"></li>
-								</ul>
-							</td>
-							<td>Life Insurance</td>
-							<td></td>
-							<td></td>
-							<td></td>
-						</tr>
-						<tr>
-							<td>
-								<ul class="graph_legend">
-									<li style="color: cyan;"></li>
-								</ul>
-							</td>
-							<td>Investment Banking</td>
-							<td></td>
-							<td></td>
-							<td></td>
-						</tr>
-						<tr>
-							<td>
-								<ul class="graph_legend">
-									<li style="color: teal;"></li>
-								</ul>
-							</td>
-							<td>RIA\'s</td>
-							<td></td>
-							<td></td>
-							<td></td>
-						</tr>
-						<tr>
-							<td>
-								<ul class="graph_legend">
-									<li style="color: blue;"></li>
-								</ul>
-							</td>
-							<td>Limited Partnerships</td>
-							<td></td>
-							<td></td>
-							<td></td>
-						</tr>
-						<tr>
-							<td>
-								<ul class="graph_legend">
-									<li style="color: navy;"></li>
-								</ul>
-							</td>
-							<td>Alternative Investments</td>
-							<td></td>
-							<td></td>
-							<td></td>
-						</tr>
-						<tr>
-							<td>
-								<ul class="graph_legend">
-									<li style="color: black;"></li>
-								</ul>
-							</td>
-							<td>Cryptocurrency</td>
-							<td></td>
-							<td></td>
-							<td></td>
-						</tr>
-						<tr>
-							<td>
-								<ul class="graph_legend">
-									<li style="color: grey;"></li>
-								</ul>
-							</td>
-							<td>Miscellaneous/Other</td>
-							<td></td>
-							<td></td>
-							<td></td>
-						</tr>
+						<tbody>';
+	for($i = 0; $i < sizeof($chart_labels); $i++){
+		$color = PIE_CHART_COLORS_ARRAY[$i];
+		if(isset($last_values)){
+			$difference = $last_values[$i] / $chart_data[$i] * 100;
+		}
+		$html_table_string .= "<tr>
+						<td>
+							<ul class='graph_legend'>
+								<li style='color: $color;'></li>
+							</ul>
+						</td>
+						<td>
+							{$chart_labels[$i]}
+						</td>						
+						<td>
+							{$chart_data[$i]}
+						</td>
+						<td>
+							{$last_values[$i]}
+						</td>
+						<td>
+							{$difference}
+						</td>
+						";
+		$html_table_string .= "</tr>";
+	}
+	$html_table_string .= '
 						</tbody>
 					</table>
 				</div>
-			</div>
-	';
-	define('REPORTS_TABLE_HTML', $html_table_string);
+			</div>';
+
+	return $html_table_string;
 }
 
 /**

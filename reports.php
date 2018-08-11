@@ -69,7 +69,8 @@ require_once 'header.php';
 			<div class="row mt-5 mb-5">
 				<div class="col-lg-6"> <!-- Pie Chart div -->
 					<?php
-					echo pie_chart_data_and_labels('reports_pie_chart');
+					$json_obj = pie_chart_data_and_labels('reports_pie_chart');
+					echo $json_obj->data_arr['pie_chart_script'];
 					?>
 					<canvas id="reports_pie_chart"></canvas>
 					<script type="text/javascript" src="pie_chart_no_data.js" chart_id="reports_pie_chart"></script>
@@ -98,7 +99,8 @@ require_once 'header.php';
 			</div>
 
 			<?php
-			echo REPORTS_TABLE_HTML;
+			$json_obj = pie_chart_data_and_labels('reports_pie_chart');
+			echo $json_obj->data_arr['reports_table_html'];
 			?>
 		</main>
 	</div>
