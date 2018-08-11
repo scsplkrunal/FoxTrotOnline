@@ -1022,6 +1022,8 @@ function activity_update($post, $create_boxes_flag = true, $create_table_flag = 
 
 /**
  * Gets the dates in an array, adn present the corresponding values inside HTML template.
+ * @param $post
+ * @return json_obj
  */
 function activity_boxes($post){
 
