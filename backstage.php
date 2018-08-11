@@ -641,12 +641,12 @@ function pie_chart_data_and_labels($chart_name, $post = array('time_period' => '
 	];
 
 	$pie_chart_data = json_encode($pie_chart_data);
-	$script         = "<script type='text/javascript'>
-					var pie_chart_data = $pie_chart_data;
-				</script>";
+	//	$script         = "<script type='text/javascript'>
+	//					var pie_chart_data = $pie_chart_data;
+	//				</script>";
 
 	$json_obj                                 = new json_obj();
-	$json_obj->data_arr['pie_chart_script']   = $script;
+	$json_obj->data_arr['pie_chart_data']     = $pie_chart_data;
 	$json_obj->data_arr['reports_table_html'] = $reports_table_html;
 	$json_obj->status                         = true;
 
@@ -1038,8 +1038,9 @@ function activity_boxes($post){
 /**
  * Updates the reports charts and table
  * @param $post
+ * @return string
  * @throws exception
  */
 function reports_update($post){
-	$x = pie_chart_data_and_labels('reports_pie_chart', $post);
+	return pie_chart_data_and_labels('reports_pie_chart', $post);
 }

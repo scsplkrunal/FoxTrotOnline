@@ -40,7 +40,10 @@ require_once 'header.php';
 				<div class="col-lg-6">
 					<?php
 					$json_obj = pie_chart_data_and_labels('dashboard_pie_chart');
-					echo $json_obj->data_arr['pie_chart_script'];
+					$pie_chart_data = $json_obj->data_arr['pie_chart_data'];
+					echo "<script type='text/javascript'>
+							var pie_chart_data = $pie_chart_data;
+						</script>";
 					?>
 					<canvas id="dashboard_pie_chart"></canvas>
 					<script type="text/javascript" src="pie_chart_no_data.js" chart_id="dashboard_pie_chart"></script>
