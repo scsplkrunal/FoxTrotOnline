@@ -783,6 +783,9 @@ function reports_table_html($post, $original_table_data){
 				$difference = '-';
 			}
 		}
+		if(!is_array($values_arr)){
+			$values_arr = array($values_arr, '-');
+		}
 		$html_table_string .= "<tr>
 						<td>
 							<ul class='graph_legend'>
