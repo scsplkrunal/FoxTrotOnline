@@ -1,9 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="3afaa673-cb46-4034-a6f7-e9cf43ebac35" name="Default" comment="">
+    <list default="true" id="3afaa673-cb46-4034-a6f7-e9cf43ebac35" name="Default" comment="Reports maybe finish">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backstage.php" beforeDir="false" afterPath="$PROJECT_DIR$/backstage.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tmp/foxtrot_online.log" beforeDir="false" afterPath="$PROJECT_DIR$/tmp/foxtrot_online.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tmp/sess_3m2f5h1n4emeg5pa0nk0pmfau1" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tmp/sess_drgu2q2dn65joqjibkeirap4i4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tmp/sess_ejcp2aeqvkh777idq8tphugu2j" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tmp/sess_gevral91d20vo4m7s4ck2hb86a" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tmp/sess_ilmoeqjvic3dsb0a7on2o8e5dv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tmp/sess_uj6pdn7tl7bcg087bni0v93tp3" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -17,8 +24,17 @@
       <file leaf-file-name="backstage.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/backstage.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="130">
-              <caret line="1027" column="25" selection-start-line="1027" selection-start-column="25" selection-end-line="1027" selection-end-column="25" />
+            <state relative-caret-position="144">
+              <caret line="783" column="19" selection-start-line="783" selection-start-column="19" selection-end-line="783" selection-end-column="19" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="mysqli.php" pinned="false" current-in-tab="false">
+        <entry file="jar://$APPLICATION_HOME_DIR$/plugins/php/lib/php.jar!/stubs/mysqli/mysqli.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="84">
+              <caret line="1121" column="27" selection-start-line="1121" selection-start-column="27" selection-end-line="1121" selection-end-column="27" />
             </state>
           </provider>
         </entry>
@@ -26,8 +42,35 @@
       <file leaf-file-name="reports.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/reports.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="101" selection-start-line="101" selection-end-line="101" />
+            <state relative-caret-position="348">
+              <caret line="108" column="24" selection-start-line="108" selection-start-column="24" selection-end-line="108" selection-end-column="24" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="junction.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/junction.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="221">
+              <caret line="13" selection-start-line="13" selection-end-line="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="dashboard.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/dashboard.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="263">
+              <caret line="50" column="36" selection-start-line="50" selection-start-column="36" selection-end-line="51" selection-end-column="55" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="main_js.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/main_js.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="247">
+              <caret line="128" selection-start-line="128" selection-end-line="128" />
             </state>
           </provider>
         </entry>
@@ -44,7 +87,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>foxtrot</find>
       <find>db_details</find>
       <find>sign</find>
       <find>db_det</find>
@@ -70,10 +112,11 @@
       <find>throw new exce</find>
       <find>dateTrade</find>
       <find>pie</find>
-      <find>reports</find>
       <find>time_period</find>
       <find>return $json</find>
       <find>graph</find>
+      <find>respo</find>
+      <find>reports</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -95,10 +138,10 @@
         <option value="$PROJECT_DIR$/footer.php" />
         <option value="$PROJECT_DIR$/pie_chart_no_data.js" />
         <option value="$PROJECT_DIR$/activity.php" />
-        <option value="$PROJECT_DIR$/main_js.js" />
         <option value="$PROJECT_DIR$/junction.php" />
-        <option value="$PROJECT_DIR$/reports.php" />
         <option value="$PROJECT_DIR$/dashboard.php" />
+        <option value="$PROJECT_DIR$/reports.php" />
+        <option value="$PROJECT_DIR$/main_js.js" />
         <option value="$PROJECT_DIR$/backstage.php" />
       </list>
     </option>
@@ -203,7 +246,7 @@
       <window_info anchor="bottom" id="Run" order="6" />
       <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="0" side_tool="true" />
-      <window_info active="true" anchor="right" id="Debug" order="4" visible="true" weight="0.19515885" />
+      <window_info active="true" anchor="right" id="Debug" order="4" visible="true" weight="0.25113463" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="3" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="8" weight="0.4" />
       <window_info anchor="right" id="Commander" order="1" weight="0.4" />
@@ -221,14 +264,11 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <option name="OFFER_MOVE_TO_ANOTHER_CHANGELIST_ON_PARTIAL_COMMIT" value="true" />
     <option name="INCLUDE_TEXT_INTO_SHELF" value="false" />
     <option name="USE_COMMIT_MESSAGE_MARGIN" value="false" />
     <ignored-roots>
       <path value="$PROJECT_DIR$/.." />
     </ignored-roots>
-    <MESSAGE value="Activity_table =&gt; activity_update" />
-    <MESSAGE value="Commenting function activity" />
     <MESSAGE value="Pie chart legend responsive location" />
     <MESSAGE value="DB connect in header,&#10;DB close in footer.&#10;Implement footer.php" />
     <MESSAGE value="remove HTML_fragments" />
@@ -252,41 +292,16 @@
     <MESSAGE value="Reports page" />
     <MESSAGE value="Dashboard and Reports headlines" />
     <MESSAGE value="Dashboard chart" />
-    <option name="LAST_COMMIT_MESSAGE" value="Dashboard chart" />
+    <MESSAGE value="Comment" />
+    <MESSAGE value="Reports maybe finish" />
+    <option name="LAST_COMMIT_MESSAGE" value="Reports maybe finish" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="php">
-          <url>file://$PROJECT_DIR$/backstage.php</url>
-          <line>741</line>
-          <option name="timeStamp" value="153" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="php">
-          <url>file://$PROJECT_DIR$/backstage.php</url>
-          <line>726</line>
-          <option name="timeStamp" value="167" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="php">
-          <url>file://$PROJECT_DIR$/backstage.php</url>
-          <line>787</line>
-          <option name="timeStamp" value="168" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="php">
-          <url>file://$PROJECT_DIR$/reports.php</url>
-          <line>101</line>
-          <option name="timeStamp" value="169" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="php">
-          <url>file://$PROJECT_DIR$/backstage.php</url>
-          <line>562</line>
-          <option name="timeStamp" value="170" />
-        </line-breakpoint>
-      </breakpoints>
       <breakpoints-dialog>
         <breakpoints-dialog />
       </breakpoints-dialog>
-      <option name="time" value="171" />
+      <option name="time" value="192" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
@@ -511,20 +526,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/main_js.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2023">
-          <caret line="119" column="22" selection-start-line="119" selection-start-column="11" selection-end-line="119" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/junction.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" selection-start-line="5" selection-end-line="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/activity.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="510">
@@ -548,22 +549,43 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/dashboard.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="161">
-          <caret line="41" column="53" lean-forward="true" selection-start-line="41" selection-start-column="53" selection-end-line="41" selection-end-column="53" />
+        <state relative-caret-position="263">
+          <caret line="50" column="36" selection-start-line="50" selection-start-column="36" selection-end-line="51" selection-end-column="55" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/reports.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="101" selection-start-line="101" selection-end-line="101" />
+        <state relative-caret-position="348">
+          <caret line="108" column="24" selection-start-line="108" selection-start-column="24" selection-end-line="108" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/junction.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="13" selection-start-line="13" selection-end-line="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main_js.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="247">
+          <caret line="128" selection-start-line="128" selection-end-line="128" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/php/lib/php.jar!/stubs/mysqli/mysqli.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="84">
+          <caret line="1121" column="27" selection-start-line="1121" selection-start-column="27" selection-end-line="1121" selection-end-column="27" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/backstage.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="130">
-          <caret line="1027" column="25" selection-start-line="1027" selection-start-column="25" selection-end-line="1027" selection-end-column="25" />
+        <state relative-caret-position="144">
+          <caret line="783" column="19" selection-start-line="783" selection-start-column="19" selection-end-line="783" selection-end-column="19" />
         </state>
       </provider>
     </entry>

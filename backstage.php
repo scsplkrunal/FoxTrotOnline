@@ -616,14 +616,15 @@ function pie_chart_data_and_labels($chart_name, $post = array('time_period' => '
 			$result  = db_query($sql_str);
 			if($result->num_rows != 0){ //If there is a value returned
 				while($row = $result->fetch_assoc()){ //Fill up all properties from DB data
-					$pie_chart_data_values [] = $row['total_commission'];
-					$pie_chart_labels []      = $row['product'];
+					$pie_chart_data_values []     = $row['total_commission'];
+					$pie_chart_labels []          = $row['product'];
+					$table_data [$row['product']] = $row['total_commission'];
 				}
 			}
 
 			$post['from_date']  = $from_date;
 			$post['to_date']    = $to_date;
-			$reports_table_html = reports_table_html($pie_chart_data_values, $pie_chart_labels, $post);
+			$reports_table_html = reports_table_html($post, $table_data);
 
 			break;
 	}
@@ -690,13 +691,12 @@ function line_chart_data_and_labels($chart_name){
  * Gets as parameters the charts data and labels
  * Creates the required HTML table as a string.
  * Defines the string as a constant, for later use.
- * @param $chart_data
- * @param $chart_labels
  * @param $post
+ * @param $original_table_data
  * @return string
  * @throws exception
  */
-function reports_table_html($chart_data, $chart_labels, $post){
+function reports_table_html($post, $original_table_data){
 	switch($post['time_period']){ //find the Last values
 		case 'all_dates':
 			break;
@@ -734,7 +734,25 @@ function reports_table_html($chart_data, $chart_labels, $post){
 		$result       = db_query($sql_str);
 		if($result->num_rows != 0){ //If there is a value returned
 			while($row = $result->fetch_assoc()){ //Fill up all properties from DB data
-				$last_values [] = $row['total_commission'];
+				$last_values [$row['product']] = $row['total_commission'];
+			}
+		}
+
+		foreach($original_table_data as $product => $original_total_commission){
+			$table_data [$product] = array(
+				$original_table_data[$product],
+				($last_values[$product] == null) ? '-' : $last_values[$product]
+				//replace null with -
+			);
+			unset($last_values[$product]); //remove "used" rows
+		}
+
+		if(isset($last_values)){
+			foreach($last_values as $last_product => $last_value){
+				$table_data[$last_product] = array(
+					'-',
+					$last_value
+				);
 			}
 		}
 	}
@@ -753,10 +771,17 @@ function reports_table_html($chart_data, $chart_labels, $post){
 						</tr>
 						</thead>
 						<tbody>';
-	for($i = 0; $i < sizeof($chart_labels); $i++){
+
+	$i          = 0;
+	$table_data = (isset($table_data)) ? $table_data : $original_table_data;
+	foreach($table_data as $product => $values_arr){
 		$color = PIE_CHART_COLORS_ARRAY[$i];
+		$i++;
 		if(isset($last_values)){
-			$difference = $last_values[$i] / $chart_data[$i] * 100;
+			$difference = round((100 * $values_arr[1] ) / $values_arr[0], 2);
+			if(!is_numeric($difference) || is_nan($difference)){
+				$difference = '-';
+			}
 		}
 		$html_table_string .= "<tr>
 						<td>
@@ -764,21 +789,38 @@ function reports_table_html($chart_data, $chart_labels, $post){
 								<li style='color: $color;'></li>
 							</ul>
 						</td>
-						<td>
-							{$chart_labels[$i]}
-						</td>						
-						<td>
-							{$chart_data[$i]}
-						</td>
-						<td>
-							{$last_values[$i]}
-						</td>
-						<td>
-							{$difference}
-						</td>
-						";
-		$html_table_string .= "</tr>";
+						<td>$product</td>
+						<td>{$values_arr[0]}</td>
+						<td>{$values_arr[1]}</td>
+						<td>$difference</td>
+						</tr>";
 	}
+	//	for($i = 0; $i < sizeof($chart_labels); $i++){
+	//		$color = PIE_CHART_COLORS_ARRAY[$i];
+	//		if(isset($last_values)){
+	//			$difference = $last_values[$i] / $chart_data[$i] * 100;
+	//		}
+	//		$html_table_string .= "<tr>
+	//						<td>
+	//							<ul class='graph_legend'>
+	//								<li style='color: $color;'></li>
+	//							</ul>
+	//						</td>
+	//						<td>
+	//							{$chart_labels[$i]}
+	//						</td>
+	//						<td>
+	//							{$chart_data[$i]}
+	//						</td>
+	//						<td>
+	//							{$last_values[$i]}
+	//						</td>
+	//						<td>
+	//							{$difference}
+	//						</td>
+	//						";
+	//		$html_table_string .= "</tr>";
+	//	}
 	$html_table_string .= '
 						</tbody>
 					</table>
