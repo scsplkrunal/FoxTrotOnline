@@ -31,21 +31,6 @@ require_once 'header.php';
 				$json_obj = activity_update(['all_dates' => 'on'], true, false);
 				echo $json_obj->data_arr['activity_boxes'];
 				?>
-<!--				<div class="col-sm-4">-->
-<!--					<div class="alert alert-info">-->
-<!--						<strong>Regular Commissions $3415.10</strong>-->
-<!--					</div>-->
-<!--				</div>-->
-<!--				<div class="col-sm-4">-->
-<!--					<div class="alert alert-info">-->
-<!--						<strong>Trail Commissions $0</strong>-->
-<!--					</div>-->
-<!--				</div>-->
-<!--				<div class="col-sm-4">-->
-<!--					<div class="alert alert-info">-->
-<!--						<strong>Clearing Commissions $3.12</strong>-->
-<!--					</div>-->
-<!--				</div>-->
 			</div>
 			<div class="row">
 				<form id="activity_form" class="col-md-12 dates_form">
