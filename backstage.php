@@ -760,7 +760,7 @@ function reports_table_html($post, $original_table_data){
 	$html_table_string = '
 				<div class="row mt-5 mb-5">
 				<div class="col-lg-6">
-					<table class="table table-sm">
+					<table class="main-table table table-hover table-striped table-sm">
 						<thead>
 						<tr>
 							<th>COLOR</th>
