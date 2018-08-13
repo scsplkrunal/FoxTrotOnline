@@ -622,6 +622,8 @@ function pie_chart_data_and_labels($chart_name, $post = array('time_period' => '
 					$pie_chart_labels []          = $row['product'];
 					$table_data [$row['product']] = $row['total_commission'];
 				}
+			}else{
+				throw new Exception("No relevant records were found.", EXCEPTION_WARNING_CODE);
 			}
 
 			$post['from_date']  = $from_date;

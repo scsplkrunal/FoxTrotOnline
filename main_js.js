@@ -151,7 +151,10 @@ $( document ).ready( function(){
 		$.post( 'junction.php', $( '#reports_form' ).serialize(), function( data ){
 			var json_obj = $.parseJSON( data );
 			if( json_obj.status == true ){
-				$( ".server_response_div .alert" ).removeClass('alert-warning alert-danger').addClass( 'alert-success' ).text( 'Graphs generated successfully.' ).show();
+				pie_chart.data = $.parseJSON(json_obj.data_arr.pie_chart_data);
+				pie_chart.update();
+				$("#reports_table").html(json_obj.data_arr['reports_table_html']);
+				$( ".server_response_div .alert" ).removeClass('alert-warning alert-danger').addClass( 'alert-success' ).text( 'Data generated successfully.' ).show();
 			}else{ //If there is an error
 				$( ".server_response_div .alert" ).text( json_obj.error_message ).show();
 				if( json_obj.error_level == 0 ){

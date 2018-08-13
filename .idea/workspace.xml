@@ -2,9 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3afaa673-cb46-4034-a6f7-e9cf43ebac35" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/dashboard.php" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main_js.js" beforeDir="false" afterPath="$PROJECT_DIR$/main_js.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reports.php" beforeDir="false" afterPath="$PROJECT_DIR$/reports.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backstage.php" beforeDir="false" afterPath="$PROJECT_DIR$/backstage.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -24,11 +23,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="backstage.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="backstage.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/backstage.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="246">
-              <caret line="954" column="43" selection-start-line="954" selection-start-column="27" selection-end-line="954" selection-end-column="43" />
+            <state relative-caret-position="331">
+              <caret line="607" selection-start-line="607" selection-end-line="607" />
             </state>
           </provider>
         </entry>
@@ -36,8 +35,8 @@
       <file leaf-file-name="reports.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/reports.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="249">
-              <caret line="96" column="36" selection-start-line="96" selection-start-column="36" selection-end-line="98" selection-end-column="42" />
+            <state relative-caret-position="1099">
+              <caret line="92" column="24" selection-start-line="92" selection-start-column="24" selection-end-line="92" selection-end-column="24" />
             </state>
           </provider>
         </entry>
@@ -54,13 +53,13 @@
       <file leaf-file-name="dashboard.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/dashboard.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="229">
-              <caret line="66" column="65" selection-start-line="66" selection-start-column="45" selection-end-line="66" selection-end-column="65" />
+            <state relative-caret-position="93">
+              <caret line="58" column="54" selection-start-line="58" selection-start-column="49" selection-end-line="58" selection-end-column="57" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="main_js.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="main_js.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/main_js.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="283">
@@ -81,9 +80,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>company_name'</find>
-      <find>cookie</find>
-      <find>setc</find>
       <find>..</find>
       <find>.php</find>
       <find>mail(</find>
@@ -100,17 +96,20 @@
       <find>catch</find>
       <find>thrown_exception</find>
       <find>fetch_as</find>
-      <find>throw new exce</find>
+      <find />
       <find>dateTrade</find>
       <find>pie</find>
       <find>time_period</find>
-      <find>return $json</find>
+      <find />
       <find>graph</find>
       <find>respo</find>
       <find>reports</find>
       <find>drill</find>
-      <find>dateTrade &gt;</find>
+      <find />
       <find>table-sm</find>
+      <find>sm-modal</find>
+      <find>d-M</find>
+      <find />
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -133,10 +132,10 @@
         <option value="$PROJECT_DIR$/pie_chart_no_data.js" />
         <option value="$PROJECT_DIR$/junction.php" />
         <option value="$PROJECT_DIR$/activity.php" />
-        <option value="$PROJECT_DIR$/backstage.php" />
-        <option value="$PROJECT_DIR$/reports.php" />
-        <option value="$PROJECT_DIR$/dashboard.php" />
         <option value="$PROJECT_DIR$/main_js.js" />
+        <option value="$PROJECT_DIR$/dashboard.php" />
+        <option value="$PROJECT_DIR$/reports.php" />
+        <option value="$PROJECT_DIR$/backstage.php" />
       </list>
     </option>
   </component>
@@ -231,7 +230,7 @@
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.16111952" />
+      <window_info content_ui="combo" id="Project" order="1" visible="true" weight="0.16111952" />
       <window_info anchor="bottom" id="TODO" order="9" />
       <window_info anchor="bottom" id="Event Log" order="1" side_tool="true" />
       <window_info anchor="right" id="Database" order="0" />
@@ -241,7 +240,7 @@
       <window_info anchor="bottom" id="Run" order="6" />
       <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="0" side_tool="true" />
-      <window_info anchor="right" id="Debug" order="4" visible="true" weight="0.22844176" />
+      <window_info active="true" anchor="right" id="Debug" order="4" visible="true" weight="0.17700455" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="3" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="8" weight="0.4" />
       <window_info anchor="right" id="Commander" order="1" weight="0.4" />
@@ -263,9 +262,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$/.." />
     </ignored-roots>
-    <MESSAGE value="% in pie chart tooltip" />
-    <MESSAGE value="Value in pie chart legend" />
-    <MESSAGE value="Value in Drill down pie chart legend" />
     <MESSAGE value="$ in pie chart legend" />
     <MESSAGE value="$ in drill down pie chart legend" />
     <MESSAGE value="catch header exceptions and show them in the footer" />
@@ -288,21 +284,24 @@
     <MESSAGE value="Reports table design" />
     <MESSAGE value="Reports table" />
     <MESSAGE value="Reports table function php" />
-    <option name="LAST_COMMIT_MESSAGE" value="Reports table function php" />
+    <MESSAGE value="Reports table javascript" />
+    <MESSAGE value="Drill down chart JS" />
+    <MESSAGE value="Drill Down FINISH" />
+    <option name="LAST_COMMIT_MESSAGE" value="Drill Down FINISH" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="php">
           <url>file://$PROJECT_DIR$/backstage.php</url>
-          <line>953</line>
-          <option name="timeStamp" value="195" />
+          <line>603</line>
+          <option name="timeStamp" value="201" />
         </line-breakpoint>
       </breakpoints>
       <breakpoints-dialog>
         <breakpoints-dialog />
       </breakpoints-dialog>
-      <option name="time" value="199" />
+      <option name="time" value="202" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
@@ -562,31 +561,31 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/reports.php">
+    <entry file="file://$PROJECT_DIR$/main_js.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="249">
-          <caret line="96" column="36" selection-start-line="96" selection-start-column="36" selection-end-line="98" selection-end-column="42" />
+        <state relative-caret-position="283">
+          <caret line="204" column="93" selection-start-line="204" selection-start-column="93" selection-end-line="204" selection-end-column="93" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/dashboard.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="229">
-          <caret line="66" column="65" selection-start-line="66" selection-start-column="45" selection-end-line="66" selection-end-column="65" />
+        <state relative-caret-position="93">
+          <caret line="58" column="54" selection-start-line="58" selection-start-column="49" selection-end-line="58" selection-end-column="57" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/reports.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1099">
+          <caret line="92" column="24" selection-start-line="92" selection-start-column="24" selection-end-line="92" selection-end-column="24" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/backstage.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="246">
-          <caret line="954" column="43" selection-start-line="954" selection-start-column="27" selection-end-line="954" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/main_js.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="283">
-          <caret line="204" column="93" selection-start-line="204" selection-start-column="93" selection-end-line="204" selection-end-column="93" />
+        <state relative-caret-position="331">
+          <caret line="607" selection-start-line="607" selection-end-line="607" />
         </state>
       </provider>
     </entry>
