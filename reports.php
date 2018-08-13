@@ -54,14 +54,19 @@ require_once 'header.php';
 			<div class="row"> <!-- Line Chart div -->
 				<div class="col-lg-6">
 					<?php
-					line_chart_data_and_labels([]);
+					$line_chart_data = line_chart_data_and_labels([]);
+					echo "<script type='text/javascript'>
+							var line_chart_data = $line_chart_data;
+						</script>";
 					?>
 					<canvas id="reports_line_chart"></canvas>
 					<script type="text/javascript" src="line_chart_no_data.js" chart_id="reports_line_chart"></script>
 					<script type="text/javascript">
-						line_chart.data.datasets[0].data = line_chart_data;
-						line_chart.data.labels = line_chart_labels;
+						line_chart.data = line_chart_data;
 						line_chart.update();
+						// line_chart.data.datasets[0].data = line_chart_data;
+						// line_chart.data.labels = line_chart_labels;
+						// line_chart.update();
 					</script>
 				</div>
 			</div>

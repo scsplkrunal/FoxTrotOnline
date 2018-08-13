@@ -646,9 +646,6 @@ function pie_chart_data_and_labels($chart_name, $post = array('time_period' => '
 	];
 
 	$pie_chart_data = json_encode($pie_chart_data);
-	//	$script         = "<script type='text/javascript'>
-	//					var pie_chart_data = $pie_chart_data;
-	//				</script>";
 
 	$json_obj                                 = new json_obj();
 	$json_obj->data_arr['pie_chart_data']     = $pie_chart_data;
@@ -662,6 +659,8 @@ function pie_chart_data_and_labels($chart_name, $post = array('time_period' => '
  * Gets the chart name as a parameter.
  * Outputs the chart data and labels as javascript variables (arrays) inside a script html tag
  * @param $post
+ * @return string
+ * @throws exception
  */
 function line_chart_data_and_labels($post){
 	if(isset($post['from_date']) && isset($post['to_date'])){
@@ -731,31 +730,35 @@ function line_chart_data_and_labels($post){
 		'labels'   => $line_chart_labels
 	];
 
-	$line_chart_data   = json_encode([
-		15339,
-		21345,
-		18483,
-		24003,
-		23489,
-		24092,
-		12034
-	]);
-	$line_chart_labels = json_encode([
-		"Sunday",
-		"Monday",
-		"Tuesday",
-		"Wednesday",
-		"Thursday",
-		"Friday",
-		"Saturday"
-	]);
-	$script            = "
-			<script type='text/javascript'>
-				var line_chart_data = $line_chart_data;
-				var line_chart_labels = $line_chart_labels;
-			</script>
-			";
-	echo $script;
+	$line_chart_data = json_encode($line_chart_data);
+
+	return $line_chart_data;
+
+//	$line_chart_data   = json_encode([
+//		15339,
+//		21345,
+//		18483,
+//		24003,
+//		23489,
+//		24092,
+//		12034
+//	]);
+//	$line_chart_labels = json_encode([
+//		"Sunday",
+//		"Monday",
+//		"Tuesday",
+//		"Wednesday",
+//		"Thursday",
+//		"Friday",
+//		"Saturday"
+//	]);
+//	$script            = "
+//			<script type='text/javascript'>
+//				var line_chart_data = $line_chart_data;
+//				var line_chart_labels = $line_chart_labels;
+//			</script>
+//			";
+//	echo $script;
 }
 
 /**
