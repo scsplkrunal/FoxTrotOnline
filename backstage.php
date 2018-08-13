@@ -663,8 +663,8 @@ function pie_chart_data_and_labels($chart_name, $post = array('time_period' => '
  * @throws exception
  */
 function line_chart_data_and_labels($post){
-	if(isset($post['from_date']) && isset($post['to_date'])){
-		$where_clause = "AND dateTrade > '{$post['from_date']}' AND dateTrade < '{$post['to_date']}'";
+	if(isset($_SESSION["from_date"]) && isset($_SESSION["to_date"])){
+		$where_clause = "AND dateTrade > '{$_SESSION["from_date"]}' AND dateTrade < '{$_SESSION["to_date"]}'";
 	}
 	switch($post['time_period']){
 		case 'all_dates':
