@@ -924,8 +924,8 @@ function drill_down_pie_chart($post){
 	}
 
 	//Create html table
-	$drill_down_table_html = '<div class="row mt-5 mb-5">
-						<div class="col-lg-6">
+	$drill_down_table_html = '<div class="row">
+						<div class="col-12">
 							<table class="main-table table table-hover table-striped table-sm">
 								<thead>
 								<tr>';
@@ -941,7 +941,12 @@ function drill_down_pie_chart($post){
 		while($row = $result->fetch_assoc()){ //Fill up all properties from DB data
 			$drill_down_table_html .= "<tr>";
 			foreach($row as $column_name => $value){
-				$drill_down_table_html .= "<td>$value</td>";
+				if($column_name == 'dateTrade'){
+					$value                 = date('d-M-Y', strtotime($value));
+					$drill_down_table_html .= "<td>$value</td>";
+				} else{
+					$drill_down_table_html .= "<td>$value</td>";
+				}
 			}
 			$drill_down_table_html .= "</tr>";
 		}
