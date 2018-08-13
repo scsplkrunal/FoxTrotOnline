@@ -55,8 +55,8 @@ require_once 'header.php';
 			</div>
 
 			<!-- Modal -->
-			<div class="modal fade bd-modal-lg" id="drill_down_pie_chart_modal" tabindex="-1" role="dialog" aria-hidden="true">
-				<div class="modal-dialog modal-lg" role="document">
+			<div class="modal fade" id="drill_down_pie_chart_modal" tabindex="-1" role="dialog" aria-hidden="true">
+				<div class="modal-dialog" role="document">
 					<div class="modal-content">
 						<div class="modal-header">
 							<h5 class="modal-title" id="forgot_password_modal_title">Trades list</h5>
