@@ -976,21 +976,24 @@ function number_to_ordinal($num){
 function drill_down_pie_chart($post){
 	switch($post["chart_id"]){ //Choose relevant chart and create SQL
 		case 'dashboard_pie_chart':
-			$sql_str = "SELECT dateTrade, comm_rec, rep_comm, trades.inv_type, prodtype.product, source
+			$sql_str = "SELECT dateTrade, comm_rec, rep_comm
 					FROM trades
 					RIGHT JOIN prodtype ON trades.inv_type = prodtype.inv_type
 					WHERE rep_no = {$_SESSION["permrep_obj"]->permRepID}
 						AND pay_date IS NULL
+						AND product = '{$post["label"]}'
 					ORDER BY dateTrade DESC;";
 			break;
 		case 'reports_pie_chart':
 			if(isset($_SESSION["from_date"]) && isset($_SESSION["to_date"])){
 				$where_clause = "AND dateTrade > '{$_SESSION["from_date"]}' AND dateTrade < '{$_SESSION["to_date"]}'";
 			}
-			$sql_str = "SELECT dateTrade, comm_rec, rep_comm, trades.inv_type, prodtype.product, source
+			$sql_str = "SELECT dateTrade, comm_rec, rep_comm
 					FROM trades
 					RIGHT JOIN prodtype ON trades.inv_type = prodtype.inv_type
-					WHERE rep_no = {$_SESSION["permrep_obj"]->permRepID} $where_clause
+					WHERE rep_no = {$_SESSION["permrep_obj"]->permRepID}
+					$where_clause
+					AND product = '{$post["label"]}'
 					ORDER BY dateTrade DESC;";
 			break;
 	}
@@ -1004,7 +1007,18 @@ function drill_down_pie_chart($post){
 	$result                = db_query($sql_str); //create headers
 	$headers               = $result->fetch_fields();
 	foreach($headers as $col_obj){
-		$drill_down_table_html .= "<th>{$col_obj->name}</th>";
+		switch($col_obj->name){
+			case 'dateTrade':
+				$header = 'Trade Date';
+				break;
+			case 'comm_rec':
+				$header = 'Gross Amount';
+				break;
+			case 'rep_comm':
+				$header = 'Net Pay';
+				break;
+		}
+		$drill_down_table_html .= "<th>$header</th>";
 	}
 	$drill_down_table_html .= '   </tr>
 						</thead>
