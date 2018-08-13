@@ -547,8 +547,6 @@ class permrep{
  * Outputs the chart data and labels as javascript variables (arrays) inside a script html tag
  * @param       $chart_name
  * @param array $post
- * @param bool  $reports_chart_flag
- * @param bool  $reports_table_flag
  * @return string
  * @throws exception
  */
@@ -571,6 +569,8 @@ function pie_chart_data_and_labels($chart_name, $post = array('time_period' => '
 		case 'reports_pie_chart':
 			switch($post['time_period']){
 				case 'all_dates':
+					unset($_SESSION['from_date']);
+					unset($_SESSION['to_date']);
 					break;
 				case 'Year to Date':
 					$from_date = strtotime('first day of January '.date('Y'));
@@ -606,7 +606,9 @@ function pie_chart_data_and_labels($chart_name, $post = array('time_period' => '
 					break;
 			}
 			if(isset($from_date) && isset($to_date)){
-				$where_clause = "AND dateTrade > '$from_date' AND dateTrade < '$to_date'";
+				$_SESSION['from_date'] = $from_date;
+				$_SESSION['to_date']   = $to_date;
+				$where_clause          = "AND dateTrade > '$from_date' AND dateTrade < '$to_date'";
 			}
 			$sql_str = "SELECT SUM(rep_comm) AS total_commission, trades.inv_type, prodtype.product
 					FROM trades
@@ -778,13 +780,16 @@ function reports_table_html($post, $original_table_data){
 		$color = PIE_CHART_COLORS_ARRAY[$i];
 		$i++;
 		if(isset($last_values)){
-			$difference = round((100 * $values_arr[1] ) / $values_arr[0], 2);
+			$difference = round((100 * $values_arr[1]) / $values_arr[0], 2);
 			if(!is_numeric($difference) || is_nan($difference)){
 				$difference = '-';
 			}
 		}
 		if(!is_array($values_arr)){
-			$values_arr = array($values_arr, '-');
+			$values_arr = array(
+				$values_arr,
+				'-'
+			);
 		}
 		$html_table_string .= "<tr>
 						<td>
@@ -897,21 +902,58 @@ function number_to_ordinal($num){
 }
 
 function drill_down_pie_chart($post){
-	$pie_chart_data = [
-		'datasets' => [
-			[
-				'data'            => array(intval($post['value'])),
-				'backgroundColor' => $post['color'],
-				'borderColor'     => 'rgb(255,255,255)',
-				'borderWidth'     => 1
-			],
-		],
-		'labels'   => array($post['label'])
-	];
+	switch($post["chart_id"]){ //Choose relevant chart and create SQL
+		case 'dashboard_pie_chart':
+			$sql_str = "SELECT dateTrade, comm_rec, rep_comm, trades.inv_type, prodtype.product, source
+					FROM trades
+					RIGHT JOIN prodtype ON trades.inv_type = prodtype.inv_type
+					WHERE rep_no = {$_SESSION["permrep_obj"]->permRepID}
+						AND pay_date IS NULL
+					ORDER BY dateTrade DESC;";
+			break;
+		case 'reports_pie_chart':
+			if(isset($_SESSION["from_date"]) && isset($_SESSION["to_date"])){
+				$where_clause = "AND dateTrade > '{$_SESSION["from_date"]}' AND dateTrade < '{$_SESSION["to_date"]}'";
+			}
+			$sql_str = "SELECT dateTrade, comm_rec, rep_comm, trades.inv_type, prodtype.product, source
+					FROM trades
+					RIGHT JOIN prodtype ON trades.inv_type = prodtype.inv_type
+					WHERE rep_no = {$_SESSION["permrep_obj"]->permRepID} $where_clause
+					ORDER BY dateTrade DESC;";
+			break;
+	}
 
-	$json_obj                                        = new json_obj();
-	$json_obj->data_arr['drill_down_pie_chart_data'] = $pie_chart_data;
-	$json_obj->status                                = true;
+	//Create html table
+	$drill_down_table_html = '<div class="row mt-5 mb-5">
+						<div class="col-lg-6">
+							<table class="main-table table table-hover table-striped table-sm">
+								<thead>
+								<tr>';
+	$result                = db_query($sql_str); //create headers
+	$headers               = $result->fetch_fields();
+	foreach($headers as $col_obj){
+		$drill_down_table_html .= "<th>{$col_obj->name}</th>";
+	}
+	$drill_down_table_html .= '   </tr>
+						</thead>
+						<tbody>';
+	if($result->num_rows != 0){ //If there is a value returned
+		while($row = $result->fetch_assoc()){ //Fill up all properties from DB data
+			$drill_down_table_html .= "<tr>";
+			foreach($row as $column_name => $value){
+				$drill_down_table_html .= "<td>$value</td>";
+			}
+			$drill_down_table_html .= "</tr>";
+		}
+	}
+	$drill_down_table_html .= '</tbody>
+					</table>
+				</div>
+			</div>';
+
+	$json_obj                               = new json_obj();
+	$json_obj->data_arr['drill_down_table'] = $drill_down_table_html;
+	$json_obj->status                       = true;
 
 	return $json_obj;
 }
