@@ -202,7 +202,7 @@ $( document ).ready( function(){
 			}, function( server_response_data ){
 				$( '#drill_down_pie_chart_modal' ).modal( 'show' );
 				var json_obj = $.parseJSON( server_response_data );
-
+				$("#drill_down_table_div").html(json_obj.data_arr['drill_down_table']);
 			} );
 		}
 
