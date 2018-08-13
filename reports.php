@@ -54,7 +54,7 @@ require_once 'header.php';
 			<div class="row"> <!-- Line Chart div -->
 				<div class="col-lg-6">
 					<?php
-					line_chart_data_and_labels('reports_line_chart');
+					line_chart_data_and_labels([]);
 					?>
 					<canvas id="reports_line_chart"></canvas>
 					<script type="text/javascript" src="line_chart_no_data.js" chart_id="reports_line_chart"></script>

@@ -622,7 +622,7 @@ function pie_chart_data_and_labels($chart_name, $post = array('time_period' => '
 					$pie_chart_labels []          = $row['product'];
 					$table_data [$row['product']] = $row['total_commission'];
 				}
-			}else{
+			} else{
 				throw new Exception("No relevant records were found.", EXCEPTION_WARNING_CODE);
 			}
 
@@ -661,9 +661,76 @@ function pie_chart_data_and_labels($chart_name, $post = array('time_period' => '
 /**
  * Gets the chart name as a parameter.
  * Outputs the chart data and labels as javascript variables (arrays) inside a script html tag
- * @param $chart_name
+ * @param $post
  */
-function line_chart_data_and_labels($chart_name){
+function line_chart_data_and_labels($post){
+	if(isset($post['from_date']) && isset($post['to_date'])){
+		$where_clause = "AND dateTrade > '{$post['from_date']}' AND dateTrade < '{$post['to_date']}'";
+	}
+	switch($post['time_period']){
+		case 'all_dates':
+		case 'Year to Date':
+		case  'Previous 12 Months':
+		case  'Last Year':
+			monthly:
+			$sql_str      = "SELECT EXTRACT(YEAR_MONTH FROM dateTrade) as 'date_time', SUM(rep_comm) AS total_commission
+					FROM trades
+					WHERE rep_no = {$_SESSION["permrep_obj"]->permRepID}
+					$where_clause
+					GROUP BY YEAR(dateTrade), MONTH(dateTrade);";
+			$flag_monthly = true;
+			break;
+		case  'Month to Date':
+		case  'Last Month':
+			daily:
+			$sql_str = "SELECT DATE(dateTrade) as date_time, SUM(rep_comm) as total_commission
+					FROM trades
+					WHERE rep_no = {$_SESSION["permrep_obj"]->permRepID}
+					$where_clause
+					GROUP BY DATE(dateTrade);";
+			break;
+		case  'Custom':
+			$to_date   = DateTime::createFromFormat('Y-m-d', $post['to_date']);
+			$from_date = DateTime::createFromFormat('Y-m-d', $post['from_date']);
+			$diff      = date_diff($to_date, $from_date);
+			if($diff->days > 90){ //check the difference between the dates and refer to the matching sql
+				goto monthly;
+			} else{
+				goto daily;
+			}
+			break;
+		default:
+			goto monthly;
+			break;
+	}
+
+	$result = db_query($sql_str);
+	while($row = $result->fetch_assoc()){
+		$line_chart_values [] = $row['total_commission'];
+		if($flag_monthly){
+			$year                 = substr($row['date_time'], 0, 4);
+			$month                = substr($row['date_time'], 4, 2);
+			$month                = date('M', mktime(0, 0, 0, $month));
+			$line_chart_labels [] = "$month-$year";
+		} else{
+			$line_chart_labels [] = $row['date_time'];
+		}
+	}
+
+	$line_chart_data = [
+		'datasets' => [
+			[
+				'data'                 => $line_chart_values,
+				'lineTension'          => 0,
+				'backgroundColor'      => 'transparent',
+				'borderColor'          => '#007bff',
+				'borderWidth'          => 4,
+				'pointBackgroundColor' => '#007bff'
+			],
+		],
+		'labels'   => $line_chart_labels
+	];
+
 	$line_chart_data   = json_encode([
 		15339,
 		21345,
@@ -1136,5 +1203,8 @@ function activity_boxes($post){
  * @throws exception
  */
 function reports_update($post){
-	return pie_chart_data_and_labels('reports_pie_chart', $post);
+	$json_obj                              = pie_chart_data_and_labels('reports_pie_chart', $post);
+	$json_obj->data_arr['line_chart_data'] = line_chart_data_and_labels($post);
+
+	return $json_obj;
 }
