@@ -128,6 +128,8 @@ $( document ).ready( function(){
 				if( json_obj.status == true ){
 					pie_chart.data = $.parseJSON(json_obj.data_arr.pie_chart_data);
 					pie_chart.update();
+					line_chart.data = $.parseJSON(json_obj.data_arr.line_chart_data);
+					line_chart.update();
 					$("#reports_table").html(json_obj.data_arr['reports_table_html']);
 					$( ".server_response_div .alert" ).removeClass('alert-warning alert-danger').addClass( 'alert-success' ).text( 'Data generated successfully.' ).show();
 				}else{ //If there is an error
@@ -153,6 +155,8 @@ $( document ).ready( function(){
 			if( json_obj.status == true ){
 				pie_chart.data = $.parseJSON(json_obj.data_arr.pie_chart_data);
 				pie_chart.update();
+				line_chart.data = $.parseJSON(json_obj.data_arr.line_chart_data);
+				line_chart.update();
 				$("#reports_table").html(json_obj.data_arr['reports_table_html']);
 				$( ".server_response_div .alert" ).removeClass('alert-warning alert-danger').addClass( 'alert-success' ).text( 'Data generated successfully.' ).show();
 			}else{ //If there is an error
