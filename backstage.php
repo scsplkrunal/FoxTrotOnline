@@ -1155,7 +1155,7 @@ function activity_update($post, $create_boxes_flag = true, $create_table_flag = 
 					case 'date_rec':
 					case 'pay_date':
 						if($value != null){
-							$value                 = date('d-M-Y', strtotime($value));
+							$value                 = date('Y-m-d', strtotime($value));
 							$table_html_return_str .= "<td>$value</td>";
 						} else{
 							$table_html_return_str .= "<td>-</td>";
