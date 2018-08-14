@@ -1213,20 +1213,20 @@ function activity_update($post, $create_boxes_flag = true, $create_table_flag = 
 	return $json_obj;
 }
 
-/**
- * Gets the dates in an array, adn present the corresponding values inside HTML template.
- * @param $post
- * @return json_obj
- */
-function activity_boxes($post){
-
-
-	$json_obj                             = new json_obj();
-	$json_obj->data_arr['activity_boxes'] = $boxes_html_return_str;
-	$json_obj->status                     = true;
-
-	return $json_obj;
-}
+///**
+// * Gets the dates in an array, adn present the corresponding values inside HTML template.
+// * @param $post
+// * @return json_obj
+// */
+//function activity_boxes($post){
+//
+//
+//	$json_obj                             = new json_obj();
+//	$json_obj->data_arr['activity_boxes'] = $boxes_html_return_str;
+//	$json_obj->status                     = true;
+//
+//	return $json_obj;
+//}
 
 /**
  * Updates the reports charts and table
