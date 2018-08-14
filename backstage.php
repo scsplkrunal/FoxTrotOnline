@@ -1135,43 +1135,48 @@ function activity_update($post, $create_boxes_flag = true, $create_table_flag = 
 		}
 
 		$result = db_query($sql_str);
-		while($row = $result->fetch_assoc()){
-			$table_html_return_str .= "<tr>";
-			foreach($row as $col => $value){
-				switch($col){
-					case 'cli_name':
-					case 'invest':
-					case 'clearing':
-					case 'cusip_no':
-						$table_html_return_str .= "<td class='text-left'>$value</td>";
-						break;
-					case 'rep_rate':
-						$value                 = number_format(floatval($value), 2);
-						$table_html_return_str .= "<td>$value</td>";
-						break;
-					case 'net_amt':
-					case 'comm_rec':
-					case 'rep_comm':
-						$value                 = number_format(floatval($value), 2);
-						$table_html_return_str .= "<td>\$$value</td>";
-						break;
-					case 'dateTrade':
-					case 'date_rec':
-					case 'pay_date':
-						if($value != null){
-							$value                 = date('Y-m-d', strtotime($value));
+		if($result->num_rows != 0){
+			while($row = $result->fetch_assoc()){
+				$table_html_return_str .= "<tr>";
+				foreach($row as $col => $value){
+					switch($col){
+						case 'cli_name':
+						case 'invest':
+						case 'clearing':
+						case 'cusip_no':
+							$table_html_return_str .= "<td class='text-left'>$value</td>";
+							break;
+						case 'rep_rate':
+							$value                 = number_format(floatval($value), 2);
 							$table_html_return_str .= "<td>$value</td>";
-						} else{
-							$table_html_return_str .= "<td>-</td>";
-						}
-						break;
-					default:
-						$table_html_return_str .= "<td>$value</td>";
-						break;
+							break;
+						case 'net_amt':
+						case 'comm_rec':
+						case 'rep_comm':
+							$value                 = number_format(floatval($value), 2);
+							$table_html_return_str .= "<td>\$$value</td>";
+							break;
+						case 'dateTrade':
+						case 'date_rec':
+						case 'pay_date':
+							if($value != null){
+								$value                 = date('Y-m-d', strtotime($value));
+								$table_html_return_str .= "<td>$value</td>";
+							} else{
+								$table_html_return_str .= "<td>-</td>";
+							}
+							break;
+						default:
+							$table_html_return_str .= "<td>$value</td>";
+							break;
+					}
 				}
+				$table_html_return_str .= "</tr>";
 			}
-			$table_html_return_str .= "</tr>";
+		}else{
+			throw new Exception("No relevant records were found.", EXCEPTION_WARNING_CODE);
 		}
+
 	}
 
 	//Activity Boxes:

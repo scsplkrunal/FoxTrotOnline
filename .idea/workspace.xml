@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="3afaa673-cb46-4034-a6f7-e9cf43ebac35" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backstage.php" beforeDir="false" afterPath="$PROJECT_DIR$/backstage.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -25,8 +26,8 @@
       <file leaf-file-name="backstage.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/backstage.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="162">
-              <caret line="1127" column="61" lean-forward="true" selection-start-line="1127" selection-start-column="61" selection-end-line="1127" selection-end-column="61" />
+            <state relative-caret-position="391">
+              <caret line="1176" column="72" selection-start-line="1176" selection-start-column="72" selection-end-line="1176" selection-end-column="72" />
             </state>
           </provider>
         </entry>
@@ -79,7 +80,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>db_q</find>
       <find>json</find>
       <find>close</find>
       <find>data_arr</find>
@@ -109,6 +109,7 @@
       <find>\	switch\(\$post\[\'time_period\'\]\)\{\n</find>
       <find>fetch_ass</find>
       <find>activity</find>
+      <find>num_r</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -262,8 +263,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$/.." />
     </ignored-roots>
-    <MESSAGE value="Reports pie chart" />
-    <MESSAGE value="Start of reports update" />
     <MESSAGE value="Reports dates" />
     <MESSAGE value="Reports page" />
     <MESSAGE value="Dashboard and Reports headlines" />
@@ -287,7 +286,9 @@
     <MESSAGE value="Drill down table improve" />
     <MESSAGE value="Drill down modal remove large attribute" />
     <MESSAGE value="Add missing columns to activity table" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add missing columns to activity table" />
+    <MESSAGE value="Reformat activity dates" />
+    <MESSAGE value="Reformat activity table fields" />
+    <option name="LAST_COMMIT_MESSAGE" value="Reformat activity table fields" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -591,8 +592,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/backstage.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="1127" column="61" lean-forward="true" selection-start-line="1127" selection-start-column="61" selection-end-line="1127" selection-end-column="61" />
+        <state relative-caret-position="391">
+          <caret line="1176" column="72" selection-start-line="1176" selection-start-column="72" selection-end-line="1176" selection-end-column="72" />
         </state>
       </provider>
     </entry>
