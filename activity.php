@@ -55,13 +55,13 @@ require_once 'header.php';
 					<thead>
 					<tr>
 						<th>DATE</th>
-<!--						<th>CLIENT ACCOUNT</th>-->
+						<th>CLIENT ACCOUNT</th>
 						<th>CLIENT NAME</th>
 						<th>PRODUCT DESCRIPTION</th>
-<!--						<th>CUSIP</th>-->
+						<th>CUSIP</th>
 						<th>PRINCIPAL</th>
 						<th>COMMISSION RECEIVED</th>
-<!--						<th>PAYOUT RATE</th>-->
+						<th>PAYOUT RATE</th>
 						<th>COMMISSION PAID</th>
 						<th>DATE RECEIVED</th>
 						<th>DATE PAID</th>

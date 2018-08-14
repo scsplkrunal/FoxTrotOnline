@@ -1122,13 +1122,16 @@ function activity_update($post, $create_boxes_flag = true, $create_table_flag = 
 		}
 
 		if($post['all_dates'] == 'on'){
-			$sql_str = "SELECT dateTrade, cli_name, invest, net_amt, comm_rec, rep_comm, date_rec, pay_date FROM trades;";
+			$sql_str = "SELECT dateTrade, clearing, cli_name, invest, cusip_no, net_amt, comm_rec, rep_rate, rep_comm, date_rec, pay_date
+					FROM trades;";
 		} else{
 			if($post['from_date'] == $post['to_date']){
 				$post['from_date'] = substr_replace($post['from_date'], ' 00:00:00', 10);
 				$post['to_date']   = substr_replace($post['to_date'], ' 23:59:59', 10);
 			}
-			$sql_str = "SELECT dateTrade, cli_name, invest, net_amt, comm_rec, rep_comm, date_rec, pay_date FROM trades WHERE dateTrade > '{$post['from_date']}' AND dateTrade < '{$post['to_date']}';";
+			$sql_str = "SELECT dateTrade, clearing, cli_name, invest, cusip_no, net_amt, comm_rec, rep_rate, rep_comm, date_rec, pay_date
+					FROM trades
+					WHERE dateTrade > '{$post['from_date']}' AND dateTrade < '{$post['to_date']}';";
 		}
 
 		$result = db_query($sql_str);
@@ -1138,6 +1141,9 @@ function activity_update($post, $create_boxes_flag = true, $create_table_flag = 
 				switch($col){
 					case 'cli_name':
 					case 'invest':
+					case 'clearing':
+					case 'cusip_no':
+					case 'rep_rate':
 						$table_html_return_str .= "<td class='text-left'>$value</td>";
 						break;
 					case 'net_amt':
