@@ -734,31 +734,31 @@ function line_chart_data_and_labels($post){
 
 	return $line_chart_data;
 
-//	$line_chart_data   = json_encode([
-//		15339,
-//		21345,
-//		18483,
-//		24003,
-//		23489,
-//		24092,
-//		12034
-//	]);
-//	$line_chart_labels = json_encode([
-//		"Sunday",
-//		"Monday",
-//		"Tuesday",
-//		"Wednesday",
-//		"Thursday",
-//		"Friday",
-//		"Saturday"
-//	]);
-//	$script            = "
-//			<script type='text/javascript'>
-//				var line_chart_data = $line_chart_data;
-//				var line_chart_labels = $line_chart_labels;
-//			</script>
-//			";
-//	echo $script;
+	//	$line_chart_data   = json_encode([
+	//		15339,
+	//		21345,
+	//		18483,
+	//		24003,
+	//		23489,
+	//		24092,
+	//		12034
+	//	]);
+	//	$line_chart_labels = json_encode([
+	//		"Sunday",
+	//		"Monday",
+	//		"Tuesday",
+	//		"Wednesday",
+	//		"Thursday",
+	//		"Friday",
+	//		"Saturday"
+	//	]);
+	//	$script            = "
+	//			<script type='text/javascript'>
+	//				var line_chart_data = $line_chart_data;
+	//				var line_chart_labels = $line_chart_labels;
+	//			</script>
+	//			";
+	//	echo $script;
 }
 
 /**
@@ -1143,12 +1143,16 @@ function activity_update($post, $create_boxes_flag = true, $create_table_flag = 
 					case 'invest':
 					case 'clearing':
 					case 'cusip_no':
-					case 'rep_rate':
 						$table_html_return_str .= "<td class='text-left'>$value</td>";
+						break;
+					case 'rep_rate':
+						$value                 = number_format(floatval($value), 2);
+						$table_html_return_str .= "<td>$value</td>";
 						break;
 					case 'net_amt':
 					case 'comm_rec':
 					case 'rep_comm':
+						$value                 = number_format(floatval($value), 2);
 						$table_html_return_str .= "<td>\$$value</td>";
 						break;
 					case 'dateTrade':
