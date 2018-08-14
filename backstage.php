@@ -1173,7 +1173,7 @@ function activity_update($post, $create_boxes_flag = true, $create_table_flag = 
 				}
 				$table_html_return_str .= "</tr>";
 			}
-		}else{
+		} else{
 			throw new Exception("No relevant records were found.", EXCEPTION_WARNING_CODE);
 		}
 
@@ -1181,28 +1181,64 @@ function activity_update($post, $create_boxes_flag = true, $create_table_flag = 
 
 	//Activity Boxes:
 	if($create_boxes_flag){
-		$boxes_html_return_str = '<div class="col-sm-4">
-							<div class="alert alert-info">
-								<strong>';
-		$boxes_html_return_str .= 'Regular Commissions $3415.10';
-		$boxes_html_return_str .= '         </strong>
-							</div>
-						</div>
-						<div class="col-sm-4">
-							<div class="alert alert-info">
-								<strong>';
-		$boxes_html_return_str .= 'Trail Commissions $0';
 
-		$boxes_html_return_str .= '          </strong>
+		//Trail Commissions
+		$sql_str = "SELECT SUM(comm_rec) as total_commission, rep_no
+				FROM trades
+				WHERE (source LIKE '%1' OR source LIKE '%2')
+				AND rep_no = {$_SESSION["permrep_obj"]->permRepID};";
+		$result  = db_query($sql_str);
+		if($result->num_rows != 0){
+			$row               = $result->fetch_assoc();
+			$trail_commissions = floatval($row['total_commission']);
+		} else{
+			$trail_commissions = 0;
+		}
+
+		//Clearing Commissions
+		$sql_str = "SELECT SUM(comm_rec) as total_commission
+				FROM trades
+				WHERE (source LIKE '%PE%' OR source LIKE '%NF%' OR source LIKE '%IN%' OR source LIKE '%DN%' OR source LIKE '%FC%' OR source LIKE '%HT%' OR source LIKE '%LG%' OR source LIKE '%PN%' OR source LIKE '%RE%' OR source LIKE '%SW%')
+				AND rep_no = {$_SESSION["permrep_obj"]->permRepID};";
+		$result  = db_query($sql_str);
+		if($result->num_rows != 0){
+			$row                  = $result->fetch_assoc();
+			$clearing_commissions = floatval($row['total_commission']);
+		} else{
+			$clearing_commissions = 0;
+		}
+
+		//Regular_commissions
+		$sql_str = "SELECT SUM(comm_rec) as total_commission
+				FROM trades
+				WHERE rep_no = {$_SESSION["permrep_obj"]->permRepID};";
+		$result  = db_query($sql_str);
+		if($result->num_rows != 0){
+			$row                 = $result->fetch_assoc();
+			$total_commissions   = floatval($row['total_commission']);
+			$regular_commissions = $total_commissions - $clearing_commissions - $trail_commissions;
+		} else{
+			$regular_commissions = 0;
+		}
+
+		$regular_commissions = number_format($regular_commissions, 2);
+		$trail_commissions = number_format($trail_commissions, 2);
+		$clearing_commissions = number_format($clearing_commissions, 2);
+		$boxes_html_return_str = "<div class='col-sm-4'>
+							<div class='alert alert-info'>
+								<strong>Regular Commissions \$$regular_commissions</strong>
 							</div>
 						</div>
-						<div class="col-sm-4">
-							<div class="alert alert-info">
-								<strong>';
-		$boxes_html_return_str .= 'Clearing Commissions $3.12';
-		$boxes_html_return_str .= '          </strong>
+						<div class='col-sm-4'>
+							<div class='alert alert-info'>
+								<strong>Trail Commissions \$$trail_commissions</strong>
 							</div>
-						</div>';
+						</div>
+						<div class='col-sm-4'>
+							<div class='alert alert-info'>
+								<strong>Clearing Commissions \$$clearing_commissions</strong>
+							</div>
+						</div>";
 	}
 
 	$json_obj                             = new json_obj();
