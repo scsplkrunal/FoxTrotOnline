@@ -1031,6 +1031,7 @@ function drill_down_pie_chart($post){
 					$value                 = date('d-M-Y', strtotime($value));
 					$drill_down_table_html .= "<td>$value</td>";
 				} else{
+					$value                 = number_format(floatval($value), 2);
 					$drill_down_table_html .= "<td>$value</td>";
 				}
 			}
