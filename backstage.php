@@ -292,6 +292,7 @@ class statement{
 		//Remove unnecessary array items.
 		unset($files_array[array_search('.', $files_array, true)]);
 		unset($files_array[array_search('..', $files_array, true)]);
+		$files_array = array_values($files_array);
 
 		foreach($files_array as $file){
 			$file_obj_array [] = new statement($file, "{$_SESSION['company_name']}/data/$file");
@@ -302,10 +303,25 @@ class statement{
 			if(self::is_authorized($file_obj)){
 				$option_content  = "{$file_obj->month} {$file_obj->year} {$file_obj->payroll_sequence} Payroll";
 				$html_return_str .= "<option value='{$file_obj->pdf_name}'>$option_content</option>";
+			}else{
+				unset($file_obj);
 			}
 		}
 
+		$first_file_url = $_SESSION['first_statement_url'] = $file_obj_array[0]->pdf_url;
+
 		return $html_return_str;
+	}
+
+	/**
+	 * Echoes a javaScript script that changes the button and pdf object to match the first pdf.
+	 * @return string
+	 */
+	static function statement_buttons_pdf_url_changer(){
+		return "<script type='text/javascript'>
+						$( '.statement_toolbar' ).attr( 'href', '{$_SESSION['first_statement_url']}' );
+						$( '#statement_pdf_object' ).attr( 'data',  '{$_SESSION['first_statement_url']}#view=Fit' );					
+					</script>";
 	}
 
 	/**

@@ -30,14 +30,13 @@ require_once 'header.php';
 				<form class="col-md-3">
 					<label class="h6">Available Statements</label><br>
 					<select id="statements_select" class="form-control" name="statements_select">
-						<option value="none">Choose a PDF from the list</option>
 						<?php
 						echo statement::statements_list("{$_SESSION['company_name']}/data");
 						?>
 					</select>
 					<div style="margin-top: 20px;">
-						<a class="statement_toolbar" href="none" download><button class="btn btn-sm btn-outline-secondary" type="button" disabled>Download</button></a>
-						<a class="statement_toolbar" href="none" target="_blank"><button class="btn btn-sm btn-outline-secondary" type="button" disabled>Open</button></a>
+						<a class="statement_toolbar" href="none" download><button class="btn btn-sm btn-outline-secondary" type="button">Download</button></a>
+						<a class="statement_toolbar" href="none" target="_blank"><button class="btn btn-sm btn-outline-secondary" type="button">Open</button></a>
 					</div>
 				</form>
 
@@ -47,6 +46,9 @@ require_once 'header.php';
 <!--					<iframe class="col-md-9" data="data/hello_world.pdf?#view=Fit" type="application/pdf" height="450">-->
 <!--					</iframe>-->
 				</object>
+				<?php
+				echo statement::statement_buttons_pdf_url_changer();
+				?>
 			</div>
 		</main>
 	</div>

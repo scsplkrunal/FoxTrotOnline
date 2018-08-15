@@ -33,11 +33,11 @@ $( document ).ready( function(){
 			var company_name = window.company_name;
 			$( '#statement_pdf_object' ).attr( 'data', company_name + '/data/' + value_of_selected_option + '#view=Fit' );
 			var x = $( '.statement_toolbar button' );
-			$( '.statement_toolbar button' ).prop( "disabled", false );
+			// $( '.statement_toolbar button' ).prop( "disabled", false );
 			$( '.statement_toolbar' ).attr( 'href', company_name + '/data/' + value_of_selected_option );
 		}else{
-			$( '#statement_pdf_object' ).attr( 'data', 'none' );
-			$( '.statement_toolbar button' ).prop( "disabled", true );
+			// $( '#statement_pdf_object' ).attr( 'data', 'none' );
+			// $( '.statement_toolbar button' ).prop( "disabled", true );
 		}
 	} );
 
