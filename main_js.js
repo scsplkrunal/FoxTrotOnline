@@ -101,6 +101,20 @@ $( document ).ready( function(){
 			if( json_obj.status == true ){
 				$("#activity_table").DataTable().destroy();
 				$("#activity_table tbody").html(json_obj.data_arr['activity_table']);
+
+				$('#activity_table').DataTable( {
+					searching: false,
+					paging: false,
+					info: false,
+					dom: 'Bfrtip',
+					buttons: [
+						'excelHtml5',
+						'pdfHtml5'
+					]
+				} );
+
+				$('.buttons-html5').addClass('btn btn-secondary');
+
 				$("#activity_boxes_container_div").html(json_obj.data_arr['activity_boxes']);
 				$( ".server_response_div .alert" ).removeClass('alert-warning alert-danger').addClass( 'alert-success' ).text( 'Table generated successfully.' ).show();
 			}else{ //If there is an error
