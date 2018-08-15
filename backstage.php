@@ -1125,7 +1125,6 @@ function activity_update($post, $create_boxes_flag = true, $create_table_flag = 
 			$where_clause = "AND dateTrade > '{$post['from_date']}' AND dateTrade < '{$post['to_date']}'";
 		}
 
-//		if($post['all_dates'] != 'on'){
 			if($post['from_date'] == $post['to_date'] && isset($post["from_date"]) && isset($post["to_date"]) && isset($post['all_dates'])){
 				$post['from_date'] = substr_replace($post['from_date'], ' 00:00:00', 10);
 				$post['to_date']   = substr_replace($post['to_date'], ' 23:59:59', 10);
@@ -1135,7 +1134,24 @@ function activity_update($post, $create_boxes_flag = true, $create_table_flag = 
 					WHERE rep_no = {$_SESSION["permrep_obj"]->permRepID}
 					$where_clause;";
 			}
-//		}
+
+		$table_html_return_str .="<table id='activity_table' class='main-table table table-hover table-striped table-sm text-center'>
+							<thead>
+							<tr>
+								<th>DATE</th>
+								<th>CLIENT ACCOUNT</th>
+								<th>CLIENT NAME</th>
+								<th>PRODUCT DESCRIPTION</th>
+								<th>CUSIP</th>
+								<th>PRINCIPAL</th>
+								<th>COMMISSION RECEIVED</th>
+								<th>PAYOUT RATE</th>
+								<th>COMMISSION PAID</th>
+								<th>DATE RECEIVED</th>
+								<th>DATE PAID</th>
+							</tr>
+							</thead>
+							<tbody>";
 
 		$result = db_query($sql_str);
 		if($result->num_rows != 0){
@@ -1179,7 +1195,23 @@ function activity_update($post, $create_boxes_flag = true, $create_table_flag = 
 		} else{
 			throw new Exception("No relevant records were found.", EXCEPTION_WARNING_CODE);
 		}
-
+		$table_html_return_str .= "</tbody>
+						</table>
+						<script type='text/javascript'>
+							$(document).ready( function () {
+								$('#activity_table').DataTable( {
+									searching: false,
+									paging: false,
+									info: false,
+									dom: 'Bfrtip',
+									buttons: [
+										'excelHtml5',
+										'pdfHtml5'
+										]
+								} );
+								$('.buttons-html5').addClass('btn btn-secondary');
+							} );
+						</script>";
 	}
 
 	//Activity Boxes:

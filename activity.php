@@ -51,45 +51,45 @@ require_once 'header.php';
 				</form>
 			</div>
 			<div class="table-responsive mb-5">
-				<table id="activity_table" class="main-table table table-hover table-striped table-sm text-center">
-					<thead>
-					<tr>
-						<th>DATE</th>
-						<th>CLIENT ACCOUNT</th>
-						<th>CLIENT NAME</th>
-						<th>PRODUCT DESCRIPTION</th>
-						<th>CUSIP</th>
-						<th>PRINCIPAL</th>
-						<th>COMMISSION RECEIVED</th>
-						<th>PAYOUT RATE</th>
-						<th>COMMISSION PAID</th>
-						<th>DATE RECEIVED</th>
-						<th>DATE PAID</th>
-					</tr>
-					</thead>
-					<tbody>
+<!--				<table id="activity_table" class="main-table table table-hover table-striped table-sm text-center">-->
+<!--					<thead>-->
+<!--					<tr>-->
+<!--						<th>DATE</th>-->
+<!--						<th>CLIENT ACCOUNT</th>-->
+<!--						<th>CLIENT NAME</th>-->
+<!--						<th>PRODUCT DESCRIPTION</th>-->
+<!--						<th>CUSIP</th>-->
+<!--						<th>PRINCIPAL</th>-->
+<!--						<th>COMMISSION RECEIVED</th>-->
+<!--						<th>PAYOUT RATE</th>-->
+<!--						<th>COMMISSION PAID</th>-->
+<!--						<th>DATE RECEIVED</th>-->
+<!--						<th>DATE PAID</th>-->
+<!--					</tr>-->
+<!--					</thead>-->
+<!--					<tbody>-->
 					<?php
 					$json_obj = activity_update(['all_dates' => 'on'], false);
 					echo $json_obj->data_arr['activity_table'];
 					?>
-					</tbody>
-				</table>
-				<script type="text/javascript">
-					$(document).ready( function () {
-						$('#activity_table').DataTable( {
-							searching: false,
-							paging: false,
-							info: false,
-							dom: 'Bfrtip',
-							buttons: [
-								'excelHtml5',
-								'pdfHtml5'
-								]
-						} );
-
-						$('.buttons-html5').addClass('btn btn-secondary');
-					} );
-				</script>
+<!--					</tbody>-->
+<!--				</table>-->
+<!--				<script type="text/javascript">-->
+<!--					$(document).ready( function () {-->
+<!--						$('#activity_table').DataTable( {-->
+<!--							searching: false,-->
+<!--							paging: false,-->
+<!--							info: false,-->
+<!--							dom: 'Bfrtip',-->
+<!--							buttons: [-->
+<!--								'excelHtml5',-->
+<!--								'pdfHtml5'-->
+<!--								]-->
+<!--						} );-->
+<!---->
+<!--						$('.buttons-html5').addClass('btn btn-secondary');-->
+<!--					} );-->
+<!--				</script>-->
 			</div>
 		</main>
 	</div>
