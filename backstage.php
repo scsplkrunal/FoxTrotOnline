@@ -1121,18 +1121,21 @@ function activity_update($post, $create_boxes_flag = true, $create_table_flag = 
 			throw new Exception("Start date cannot be after the end date.", EXCEPTION_WARNING_CODE);
 		}
 
-		if($post['all_dates'] == 'on'){
-			$sql_str = "SELECT dateTrade, clearing, cli_name, invest, cusip_no, net_amt, comm_rec, rep_rate, rep_comm, date_rec, pay_date
-					FROM trades;";
-		} else{
-			if($post['from_date'] == $post['to_date']){
+		if(isset($post["from_date"]) && isset($post["to_date"]) && $post['all_dates'] != 'on'){
+			$where_clause = "AND dateTrade > '{$post['from_date']}' AND dateTrade < '{$post['to_date']}'";
+		}
+
+//		if($post['all_dates'] != 'on'){
+			if($post['from_date'] == $post['to_date'] && isset($post["from_date"]) && isset($post["to_date"]) && isset($post['all_dates'])){
 				$post['from_date'] = substr_replace($post['from_date'], ' 00:00:00', 10);
 				$post['to_date']   = substr_replace($post['to_date'], ' 23:59:59', 10);
-			}
-			$sql_str = "SELECT dateTrade, clearing, cli_name, invest, cusip_no, net_amt, comm_rec, rep_rate, rep_comm, date_rec, pay_date
+			} else{
+				$sql_str = "SELECT dateTrade, clearing, cli_name, invest, cusip_no, net_amt, comm_rec, rep_rate, rep_comm, date_rec, pay_date
 					FROM trades
-					WHERE dateTrade > '{$post['from_date']}' AND dateTrade < '{$post['to_date']}';";
-		}
+					WHERE rep_no = {$_SESSION["permrep_obj"]->permRepID}
+					$where_clause;";
+			}
+//		}
 
 		$result = db_query($sql_str);
 		if($result->num_rows != 0){
@@ -1186,7 +1189,8 @@ function activity_update($post, $create_boxes_flag = true, $create_table_flag = 
 		$sql_str = "SELECT SUM(comm_rec) as total_commission, rep_no
 				FROM trades
 				WHERE (source LIKE '%1' OR source LIKE '%2')
-				AND rep_no = {$_SESSION["permrep_obj"]->permRepID};";
+				AND rep_no = {$_SESSION["permrep_obj"]->permRepID}
+				$where_clause;";
 		$result  = db_query($sql_str);
 		if($result->num_rows != 0){
 			$row               = $result->fetch_assoc();
@@ -1199,7 +1203,8 @@ function activity_update($post, $create_boxes_flag = true, $create_table_flag = 
 		$sql_str = "SELECT SUM(comm_rec) as total_commission
 				FROM trades
 				WHERE (source LIKE '%PE%' OR source LIKE '%NF%' OR source LIKE '%IN%' OR source LIKE '%DN%' OR source LIKE '%FC%' OR source LIKE '%HT%' OR source LIKE '%LG%' OR source LIKE '%PN%' OR source LIKE '%RE%' OR source LIKE '%SW%')
-				AND rep_no = {$_SESSION["permrep_obj"]->permRepID};";
+				AND rep_no = {$_SESSION["permrep_obj"]->permRepID}
+				$where_clause;";
 		$result  = db_query($sql_str);
 		if($result->num_rows != 0){
 			$row                  = $result->fetch_assoc();
@@ -1211,7 +1216,8 @@ function activity_update($post, $create_boxes_flag = true, $create_table_flag = 
 		//Regular_commissions
 		$sql_str = "SELECT SUM(comm_rec) as total_commission
 				FROM trades
-				WHERE rep_no = {$_SESSION["permrep_obj"]->permRepID};";
+				WHERE rep_no = {$_SESSION["permrep_obj"]->permRepID}
+				$where_clause;";
 		$result  = db_query($sql_str);
 		if($result->num_rows != 0){
 			$row                 = $result->fetch_assoc();
@@ -1221,9 +1227,9 @@ function activity_update($post, $create_boxes_flag = true, $create_table_flag = 
 			$regular_commissions = 0;
 		}
 
-		$regular_commissions = number_format($regular_commissions, 2);
-		$trail_commissions = number_format($trail_commissions, 2);
-		$clearing_commissions = number_format($clearing_commissions, 2);
+		$regular_commissions   = number_format($regular_commissions, 2);
+		$trail_commissions     = number_format($trail_commissions, 2);
+		$clearing_commissions  = number_format($clearing_commissions, 2);
 		$boxes_html_return_str = "<div class='col-sm-4'>
 							<div class='alert alert-info'>
 								<strong>Regular Commissions \$$regular_commissions</strong>

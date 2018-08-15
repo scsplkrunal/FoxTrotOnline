@@ -4,6 +4,7 @@
     <list default="true" id="3afaa673-cb46-4034-a6f7-e9cf43ebac35" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backstage.php" beforeDir="false" afterPath="$PROJECT_DIR$/backstage.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tmp/foxtrot_online.log" beforeDir="false" afterPath="$PROJECT_DIR$/tmp/foxtrot_online.log" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -14,20 +15,20 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="activity.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="activity.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/activity.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
+            <state relative-caret-position="-108">
               <caret line="63" column="43" selection-start-line="63" selection-start-column="43" selection-end-line="63" selection-end-column="43" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="backstage.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="backstage.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/backstage.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="391">
-              <caret line="1176" column="72" selection-start-line="1176" selection-start-column="72" selection-end-line="1176" selection-end-column="72" />
+            <state relative-caret-position="-830">
+              <caret line="1139" selection-start-line="1139" selection-end-line="1139" />
             </state>
           </provider>
         </entry>
@@ -44,8 +45,8 @@
       <file leaf-file-name="main_js.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/main_js.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="213">
-              <caret line="129" column="49" selection-start-line="129" selection-start-column="49" selection-end-line="129" selection-end-column="49" />
+            <state relative-caret-position="145">
+              <caret line="94" column="12" selection-start-line="94" selection-start-column="6" selection-end-line="94" selection-end-column="12" />
             </state>
           </provider>
         </entry>
@@ -80,10 +81,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>json</find>
-      <find>close</find>
-      <find>data_arr</find>
-      <find>activi</find>
       <find>meta</find>
       <find>&lt;button</find>
       <find>catch</find>
@@ -107,9 +104,13 @@
       <find>isset\(\$post</find>
       <find>where_clause</find>
       <find>\	switch\(\$post\[\'time_period\'\]\)\{\n</find>
-      <find>fetch_ass</find>
       <find>activity</find>
       <find>num_r</find>
+      <find>activity_boxes</find>
+      <find>fetch_ass</find>
+      <find>$_SESSION</find>
+      <find>permrepid</find>
+      <find>activi</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -231,7 +232,7 @@
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.16111952" />
+      <window_info content_ui="combo" id="Project" order="1" visible="true" weight="0.16111952" />
       <window_info anchor="bottom" id="TODO" order="9" />
       <window_info anchor="bottom" id="Event Log" order="1" side_tool="true" />
       <window_info anchor="right" id="Database" order="0" />
@@ -241,7 +242,7 @@
       <window_info anchor="bottom" id="Run" order="6" />
       <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="0" side_tool="true" />
-      <window_info anchor="right" id="Debug" order="4" visible="true" weight="0.17700455" />
+      <window_info active="true" anchor="right" id="Debug" order="4" visible="true" weight="0.17700455" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="3" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="8" weight="0.4" />
       <window_info anchor="right" id="Commander" order="1" weight="0.4" />
@@ -263,9 +264,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$/.." />
     </ignored-roots>
-    <MESSAGE value="Reports dates" />
-    <MESSAGE value="Reports page" />
-    <MESSAGE value="Dashboard and Reports headlines" />
     <MESSAGE value="Dashboard chart" />
     <MESSAGE value="Comment" />
     <MESSAGE value="Reports maybe finish" />
@@ -288,14 +286,17 @@
     <MESSAGE value="Add missing columns to activity table" />
     <MESSAGE value="Reformat activity dates" />
     <MESSAGE value="Reformat activity table fields" />
-    <option name="LAST_COMMIT_MESSAGE" value="Reformat activity table fields" />
+    <MESSAGE value="Exception no records activity" />
+    <MESSAGE value="Comment out the activity boxes function" />
+    <MESSAGE value="Activity boxes WORK ON PAGE LOAD" />
+    <option name="LAST_COMMIT_MESSAGE" value="Activity boxes WORK ON PAGE LOAD" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints-dialog>
         <breakpoints-dialog />
       </breakpoints-dialog>
-      <option name="time" value="222" />
+      <option name="time" value="237" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
@@ -562,13 +563,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/main_js.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="213">
-          <caret line="129" column="49" selection-start-line="129" selection-start-column="49" selection-end-line="129" selection-end-column="49" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/dashboard.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="76">
@@ -583,17 +577,24 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/activity.php">
+    <entry file="file://$PROJECT_DIR$/main_js.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="63" column="43" selection-start-line="63" selection-start-column="43" selection-end-line="63" selection-end-column="43" />
+        <state relative-caret-position="145">
+          <caret line="94" column="12" selection-start-line="94" selection-start-column="6" selection-end-line="94" selection-end-column="12" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/backstage.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="1176" column="72" selection-start-line="1176" selection-start-column="72" selection-end-line="1176" selection-end-column="72" />
+        <state relative-caret-position="-830">
+          <caret line="1139" selection-start-line="1139" selection-end-line="1139" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/activity.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-108">
+          <caret line="63" column="43" selection-start-line="63" selection-start-column="43" selection-end-line="63" selection-end-column="43" />
         </state>
       </provider>
     </entry>
