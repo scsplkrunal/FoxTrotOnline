@@ -1136,24 +1136,6 @@ function activity_update($post, $create_boxes_flag = true, $create_table_flag = 
 					$where_clause;";
 			}
 
-//		$table_html_return_str .="<table id='activity_table' class='main-table table table-hover table-striped table-sm text-center'>
-//							<thead>
-//							<tr>
-//								<th>DATE</th>
-//								<th>CLIENT ACCOUNT</th>
-//								<th>CLIENT NAME</th>
-//								<th>PRODUCT DESCRIPTION</th>
-//								<th>CUSIP</th>
-//								<th>PRINCIPAL</th>
-//								<th>COMMISSION RECEIVED</th>
-//								<th>PAYOUT RATE</th>
-//								<th>COMMISSION PAID</th>
-//								<th>DATE RECEIVED</th>
-//								<th>DATE PAID</th>
-//							</tr>
-//							</thead>
-//							<tbody>";
-
 		$result = db_query($sql_str);
 		if($result->num_rows != 0){
 			while($row = $result->fetch_assoc()){
@@ -1196,23 +1178,6 @@ function activity_update($post, $create_boxes_flag = true, $create_table_flag = 
 		} else{
 			throw new Exception("No relevant records were found.", EXCEPTION_WARNING_CODE);
 		}
-//		$table_html_return_str .= "</tbody>
-//						</table>
-//						<script type='text/javascript'>
-//							$(document).ready( function () {
-//								$('#activity_table').DataTable( {
-//									searching: false,
-//									paging: false,
-//									info: false,
-//									dom: 'Bfrtip',
-//									buttons: [
-//										'excelHtml5',
-//										'pdfHtml5'
-//										]
-//								} );
-//								$('.buttons-html5').addClass('btn btn-secondary');
-//							} );
-//						</script>";
 	}
 
 	//Activity Boxes:
