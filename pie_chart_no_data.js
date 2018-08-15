@@ -6,6 +6,9 @@ var config = {
 	data: {}, //Will be filled out through PHP
 	options: {
 		legend: {
+			onHover: function(e) {
+				e.target.style.cursor = 'pointer';
+			},
 			position: 'right',
 			labels: {
 				generateLabels: function(chart) {
@@ -55,6 +58,13 @@ var config = {
 				title: function(tooltipItem, data) {
 					return data.labels[tooltipItem[0].index];
 				}
+			}
+		},
+		hover: {
+			onHover: function(e) {
+				var point = this.getElementAtEvent(e);
+				if (point.length) e.target.style.cursor = 'pointer';
+				else e.target.style.cursor = 'default';
 			}
 		}
 	}

@@ -23,9 +23,7 @@ require_once 'header.php';
 		<!--Main Content-->
 		<main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
 			<div class="pt-3 pb-2 mb-2 border-bottom">
-				<h2>
-					<?php echo ucfirst(basename(__FILE__, '.php')) ?>: Gross commission & fees payroll-to-date
-				</h2>
+				<h2>Gross Commission & Fees Payroll-To-Date</h2>
 			</div>
 
 			<div class="row text-center">
