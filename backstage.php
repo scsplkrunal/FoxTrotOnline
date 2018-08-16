@@ -749,32 +749,6 @@ function line_chart_data_and_labels($post){
 	$line_chart_data = json_encode($line_chart_data);
 
 	return $line_chart_data;
-
-	//	$line_chart_data   = json_encode([
-	//		15339,
-	//		21345,
-	//		18483,
-	//		24003,
-	//		23489,
-	//		24092,
-	//		12034
-	//	]);
-	//	$line_chart_labels = json_encode([
-	//		"Sunday",
-	//		"Monday",
-	//		"Tuesday",
-	//		"Wednesday",
-	//		"Thursday",
-	//		"Friday",
-	//		"Saturday"
-	//	]);
-	//	$script            = "
-	//			<script type='text/javascript'>
-	//				var line_chart_data = $line_chart_data;
-	//				var line_chart_labels = $line_chart_labels;
-	//			</script>
-	//			";
-	//	echo $script;
 }
 
 /**
