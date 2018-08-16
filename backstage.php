@@ -181,7 +181,7 @@ function show_sidebar($current_page){
 				<li class="nav-item">
 					<a class="nav-link '.$reports_active.'" href="reports.php">
 						'.show_sidebar_icon('pie_chart').'
-						Reports
+						Graphs & Analytics
 					</a>
 				</li>
 				<li class="nav-item">

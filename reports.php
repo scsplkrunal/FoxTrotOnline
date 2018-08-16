@@ -22,9 +22,7 @@ require_once 'header.php';
 		<!--Main Content-->
 		<main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
 			<div class="pt-3 pb-2 mb-2 border-bottom">
-				<h2>
-					<?php echo ucfirst(basename(__FILE__, '.php')) ?>: Net commission & fees paid
-				</h2>
+				<h2>Commissions & Fees</h2>
 			</div>
 			<form id="reports_form" class="dates_form col-md-12">
 				<div class="server_response_div">
@@ -64,9 +62,6 @@ require_once 'header.php';
 					<script type="text/javascript">
 						line_chart.data = line_chart_data;
 						line_chart.update();
-						// line_chart.data.datasets[0].data = line_chart_data;
-						// line_chart.data.labels = line_chart_labels;
-						// line_chart.update();
 					</script>
 				</div>
 			</div>
@@ -100,7 +95,6 @@ require_once 'header.php';
 							</button>
 						</div>
 						<div id="drill_down_table_div" class="modal-body">
-<!--							<canvas id="drill_down_pie_chart"></canvas>-->
 						</div>
 					</div>
 				</div>
