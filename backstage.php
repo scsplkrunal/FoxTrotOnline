@@ -855,8 +855,8 @@ function reports_table_html($post, $original_table_data){
 						<tr>
 							<th>COLOR</th>
 							<th>COMMISSION</th>
-							<th>TOTAL</th>
-							<th>LAST</th>
+							<th class="text-right">TOTAL</th>
+							<th class="text-right">LAST</th>
 							<th>DIFFERENCE</th>
 						</tr>
 						</thead>
@@ -879,6 +879,8 @@ function reports_table_html($post, $original_table_data){
 				'-'
 			);
 		}
+		$values_arr[0] = number_format(floatval($values_arr[0]), 2);
+		$values_arr[1]= number_format(floatval($values_arr[1]), 2);
 		$html_table_string .= "<tr>
 						<td>
 							<ul class='graph_legend'>
@@ -886,8 +888,8 @@ function reports_table_html($post, $original_table_data){
 							</ul>
 						</td>
 						<td>$product</td>
-						<td>{$values_arr[0]}</td>
-						<td>{$values_arr[1]}</td>
+						<td class='text-right'>\${$values_arr[0]}</td>
+						<td class='text-right'>\${$values_arr[1]}</td>
 						<td>$difference</td>
 						</tr>";
 	}
