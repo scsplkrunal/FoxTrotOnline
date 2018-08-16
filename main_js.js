@@ -203,24 +203,24 @@ $( document ).ready( function(){
 			$( '.hidden_form_div' ).show(); //If so - show the hidden div with the dates input.
 		}else{ //If Option selected is not 'Custom' or 'Choose from the list'
 			$( '.hidden_form_div' ).hide(); //Hide the hidden div with the dates input.
-			$.post( 'junction.php', $( '#reports_form' ).serialize(), function( data ){ //Send the form to the server.
-				var json_obj = $.parseJSON( data );
-				if( json_obj.status == true ){
-					pie_chart.data = $.parseJSON(json_obj.data_arr.pie_chart_data);
-					pie_chart.update();
-					line_chart.data = $.parseJSON(json_obj.data_arr.line_chart_data);
-					line_chart.update();
-					$("#reports_table").html(json_obj.data_arr['reports_table_html']);
-					$( ".server_response_div .alert" ).removeClass('alert-warning alert-danger').addClass( 'alert-success' ).text( 'Data generated successfully.' ).show();
-				}else{ //If there is an error
-					$( ".server_response_div .alert" ).text( json_obj.error_message ).show();
-					if( json_obj.error_level == 0 ){
-						$( ".server_response_div .alert" ).removeClass('alert-success alert-danger').addClass( 'alert-warning' );
-					}else{
-						$( ".server_response_div .alert" ).removeClass('alert-success alert-warning').addClass( 'alert-danger' );
-					}
-				}
-			} );
+			// $.post( 'junction.php', $( '#reports_form' ).serialize(), function( data ){ //Send the form to the server.
+			// 	var json_obj = $.parseJSON( data );
+			// 	if( json_obj.status == true ){
+			// 		pie_chart.data = $.parseJSON(json_obj.data_arr.pie_chart_data);
+			// 		pie_chart.update();
+			// 		line_chart.data = $.parseJSON(json_obj.data_arr.line_chart_data);
+			// 		line_chart.update();
+			// 		$("#reports_table").html(json_obj.data_arr['reports_table_html']);
+			// 		$( ".server_response_div .alert" ).removeClass('alert-warning alert-danger').addClass( 'alert-success' ).text( 'Data generated successfully.' ).show();
+			// 	}else{ //If there is an error
+			// 		$( ".server_response_div .alert" ).text( json_obj.error_message ).show();
+			// 		if( json_obj.error_level == 0 ){
+			// 			$( ".server_response_div .alert" ).removeClass('alert-success alert-danger').addClass( 'alert-warning' );
+			// 		}else{
+			// 			$( ".server_response_div .alert" ).removeClass('alert-success alert-warning').addClass( 'alert-danger' );
+			// 		}
+			// 	}
+			// } );
 		}
 	} );
 
