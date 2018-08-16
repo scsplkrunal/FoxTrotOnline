@@ -91,13 +91,20 @@ require_once 'header.php';
 						];
 						var file_name = 'Transaction Activity ' + currentDate.getDate() + ' ' + months_names[currentDate.getMonth()] + ' ' + currentDate.getFullYear();
 						var pdf_title = pdf_title_first_line + '\n\r' + pdf_title_second_line;
+						var excel_title = pdf_title_first_line + ' - ' + pdf_title_second_line;
 						$( '#activity_table' ).DataTable( {
 							searching: false,
 							paging: false,
 							info: false,
 							dom: 'Bfrtip',
 							buttons: [
-								'excelHtml5',
+								{
+									extend: 'excelHtml5',
+									orientation: 'landscape',
+									filename: file_name,
+									messageTop: top_massage,
+									title: excel_title
+								},
 								{
 									extend: 'pdfHtml5',
 									orientation: 'landscape',
