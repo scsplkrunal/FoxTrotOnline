@@ -73,6 +73,12 @@ require_once 'header.php';
 					<?php
 					$json_obj = activity_update(['all_dates' => 'on'], false);
 					echo $json_obj->data_arr['activity_table'];
+					$pdf_title_first_line  = $json_obj->data_arr['$pdf_title_first_line'];
+					$pdf_title_second_line = $json_obj->data_arr['$pdf_title_second_line'];
+					echo "<script>
+							var pdf_title_first_line = '$pdf_title_first_line';
+							var pdf_title_second_line = '$pdf_title_second_line';
+						</script>";
 					?>
 					</tbody>
 				</table>
@@ -84,7 +90,7 @@ require_once 'header.php';
 							"July", "August", "September", "October", "November", "December"
 						];
 						var file_name = 'Transaction Activity ' + currentDate.getDate() + ' ' + months_names[currentDate.getMonth()] + ' ' + currentDate.getFullYear();
-						var title = 'Transaction Activity for broker_name' + '\n\rDate Trades';
+						var pdf_title = pdf_title_first_line + '\n\r' + pdf_title_second_line;
 						$( '#activity_table' ).DataTable( {
 							searching: false,
 							paging: false,
@@ -97,7 +103,7 @@ require_once 'header.php';
 									orientation: 'landscape',
 									filename: file_name,
 									messageTop: top_massage,
-									title: title
+									title: pdf_title
 								}
 							]
 						} );

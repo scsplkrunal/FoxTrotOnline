@@ -1147,9 +1147,8 @@ function activity_update($post, $create_boxes_flag = true, $create_table_flag = 
 					}
 				}
 				$table_html_return_str .= "</tr>";
-				$pdf_title             = "Transaction Activity for {$_SESSION['permrep_obj']->fname} {$_SESSION['permrep_obj']->lname}
-						\n\r
-						$pdf_title_dates";
+				$broker_name = ucfirst(strtolower($_SESSION['permrep_obj']->fname)).' '.ucfirst(strtolower($_SESSION['permrep_obj']->lname));
+				$pdf_title_first_line  = "Transaction Activity for $broker_name";
 			}
 		} else{
 			throw new Exception("No relevant records were found.", EXCEPTION_WARNING_CODE);
@@ -1221,11 +1220,12 @@ function activity_update($post, $create_boxes_flag = true, $create_table_flag = 
 						</div>";
 	}
 
-	$json_obj                             = new json_obj();
-	$json_obj->data_arr['activity_table'] = $table_html_return_str;
-	$json_obj->data_arr['activity_boxes'] = $boxes_html_return_str;
-	$json_obj->data_arr['pdf_title']      = $pdf_title;
-	$json_obj->status                     = true;
+	$json_obj                                     = new json_obj();
+	$json_obj->data_arr['activity_table']         = $table_html_return_str;
+	$json_obj->data_arr['activity_boxes']         = $boxes_html_return_str;
+	$json_obj->data_arr['$pdf_title_first_line']  = $pdf_title_first_line;
+	$json_obj->data_arr['$pdf_title_second_line'] = $pdf_title_dates;
+	$json_obj->status                             = true;
 
 	return $json_obj;
 }
