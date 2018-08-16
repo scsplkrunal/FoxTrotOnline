@@ -17,6 +17,36 @@ $( document ).ready( function(){
 		var is_checked = $( '#all_dates_checkbox' )["0"].checked;  //if true - means it became checked after clicking,
 		if( is_checked == true ){
 			$( '.dates_form input[type=date]' ).prop( "disabled", true );
+			$.post( 'junction.php', $( '#activity_form' ).serialize(), function( data ){
+				var json_obj = $.parseJSON( data );
+				if( json_obj.status == true ){
+					$("#activity_table").DataTable().destroy();
+					$("#activity_table tbody").html(json_obj.data_arr['activity_table']);
+
+					$('#activity_table').DataTable( {
+						searching: false,
+						paging: false,
+						info: false,
+						dom: 'Bfrtip',
+						buttons: [
+							'excelHtml5',
+							'pdfHtml5'
+						]
+					} );
+
+					$('.buttons-html5').addClass('btn btn-secondary');
+
+					$("#activity_boxes_container_div").html(json_obj.data_arr['activity_boxes']);
+					$( ".server_response_div .alert" ).removeClass('alert-warning alert-danger').addClass( 'alert-success' ).text( 'Table generated successfully.' ).show();
+				}else{ //If there is an error
+					$( ".server_response_div .alert" ).text( json_obj.error_message ).show();
+					if( json_obj.error_level == 0 ){
+						$( ".server_response_div .alert" ).removeClass('alert-success alert-danger').addClass( 'alert-warning' );
+					}else{
+						$( ".server_response_div .alert" ).removeClass('alert-success alert-warning').addClass( 'alert-danger' );
+					}
+				}
+			} );
 		}else{
 			$( '.dates_form input[type=date]' ).prop( "disabled", false );
 		}
