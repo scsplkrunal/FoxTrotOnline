@@ -566,7 +566,7 @@ class permrep{
  * @return string
  * @throws exception
  */
-function pie_chart_data_and_labels($chart_name, $post = array('time_period' => 'all_dates')){
+function pie_chart_data_and_labels($chart_name, $post = array('time_period' => 'all_dates', 'choose_date_radio' => 'dateTrade', 'choose_pay_radio' => 'rep_comm')){
 	switch($chart_name){
 		case 'dashboard_pie_chart':
 			$sql_str = "SELECT SUM(comm_rec) AS total_commission, trades.inv_type, prodtype.product
@@ -624,9 +624,9 @@ function pie_chart_data_and_labels($chart_name, $post = array('time_period' => '
 			if(isset($from_date) && isset($to_date)){
 				$_SESSION['from_date'] = $from_date;
 				$_SESSION['to_date']   = $to_date;
-				$where_clause          = "AND dateTrade > '$from_date' AND dateTrade < '$to_date'";
+				$where_clause          = "AND {$post['choose_date_radio']} > '$from_date' AND {$post['choose_date_radio']} < '$to_date'";
 			}
-			$sql_str = "SELECT SUM(rep_comm) AS total_commission, trades.inv_type, prodtype.product
+			$sql_str = "SELECT SUM({$post['choose_pay_radio']}) AS total_commission, trades.inv_type, prodtype.product
 					FROM trades
 					RIGHT JOIN prodtype ON trades.inv_type = prodtype.inv_type
 					WHERE rep_no = {$_SESSION["permrep_obj"]->permRepID} $where_clause
