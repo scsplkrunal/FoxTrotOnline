@@ -39,7 +39,7 @@ require_once 'header.php';
 					<option id="dates_form_option_custom" value="Custom">Custom</option>
 				</select>
 				<div class="row">
-					<div class="col-xs-2 mr-3">
+					<div class="col-xs-2 mr-3 ml-3">
 						<div class="custom-control custom-radio custom-control">
 							<input type="radio" id="trade_date_radio" name="choose_date_radio"
 							       class="custom-control-input" value="dateTrade" checked>
@@ -66,14 +66,13 @@ require_once 'header.php';
 						</div>
 					</div>
 				</div>
-				<div class="hidden_form_div">
+				<div class="hidden_form_div mt-2">
 					<label>From</label>
 					<input type="date" name="from_date" required><br class="d-xs-block d-sm-none">
 					<label>To</label>
 					<input type="date" name="to_date" required><br class="d-xs-block d-sm-none">
-					<input class="btn btn-primary ml-2" type="submit" value="Filter">
-
 				</div>
+				<input class="btn btn-primary mt-2" type="submit" value="Filter">
 				<input name="class" value="no_class" hidden>
 				<input name="func" value="reports_update" hidden>
 			</form>
