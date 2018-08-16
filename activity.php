@@ -38,7 +38,8 @@ require_once 'header.php';
 						<div class="alert" role="alert"></div>
 					</div>
 					<div class="custom-control custom-checkbox">
-						<input type="checkbox" name="all_dates" class="custom-control-input" id="all_dates_checkbox" checked>
+						<input type="checkbox" name="all_dates" class="custom-control-input"
+						       id="all_dates_checkbox" checked>
 						<label class="custom-control-label" for="all_dates_checkbox">All Dates</label>
 					</div>
 					<label>From</label>
@@ -51,7 +52,8 @@ require_once 'header.php';
 				</form>
 			</div>
 			<div class="table-responsive mb-5">
-				<table id="activity_table" class="main-table table table-hover table-striped table-sm text-center">
+				<table id="activity_table"
+				       class="main-table table table-hover table-striped table-sm text-center">
 					<thead>
 					<tr>
 						<th>DATE</th>
@@ -75,19 +77,32 @@ require_once 'header.php';
 					</tbody>
 				</table>
 				<script type="text/javascript">
-					$(document).ready( function () {
-						$('#activity_table').DataTable( {
+					$( document ).ready( function(){
+						var currentDate = new Date();
+						var top_massage = currentDate.getMonth() + '/' + currentDate.getDate() + '/' + currentDate.getFullYear() + ' ' + currentDate.getHours() + ':' + currentDate.getMinutes();
+						const months_names = ["January", "February", "March", "April", "May", "June",
+							"July", "August", "September", "October", "November", "December"
+						];
+						var file_name = 'Transaction Activity ' + currentDate.getDate() + ' ' + months_names[currentDate.getMonth()] + ' ' + currentDate.getFullYear();
+						var title = 'Transaction Activity for broker_name' + '\n\rDate Trades';
+						$( '#activity_table' ).DataTable( {
 							searching: false,
 							paging: false,
 							info: false,
 							dom: 'Bfrtip',
 							buttons: [
 								'excelHtml5',
-								'pdfHtml5'
-								]
+								{
+									extend: 'pdfHtml5',
+									orientation: 'landscape',
+									filename: file_name,
+									messageTop: top_massage,
+									title: title
+								}
+							]
 						} );
 
-						$('.buttons-html5').addClass('btn btn-secondary');
+						$( '.buttons-html5' ).addClass( 'btn btn-secondary' );
 					} );
 				</script>
 			</div>

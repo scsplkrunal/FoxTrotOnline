@@ -303,7 +303,7 @@ class statement{
 			if(self::is_authorized($file_obj)){
 				$option_content  = "{$file_obj->month} {$file_obj->year} {$file_obj->payroll_sequence} Payroll";
 				$html_return_str .= "<option value='{$file_obj->pdf_name}'>$option_content</option>";
-			}else{
+			} else{
 				unset($file_obj);
 			}
 		}
@@ -853,8 +853,8 @@ function reports_table_html($post, $original_table_data){
 				'-'
 			);
 		}
-		$values_arr[0] = number_format(floatval($values_arr[0]), 2);
-		$values_arr[1]= number_format(floatval($values_arr[1]), 2);
+		$values_arr[0]     = number_format(floatval($values_arr[0]), 2);
+		$values_arr[1]     = number_format(floatval($values_arr[1]), 2);
 		$html_table_string .= "<tr>
 						<td>
 							<ul class='graph_legend'>
@@ -867,32 +867,6 @@ function reports_table_html($post, $original_table_data){
 						<td>$difference</td>
 						</tr>";
 	}
-	//	for($i = 0; $i < sizeof($chart_labels); $i++){
-	//		$color = PIE_CHART_COLORS_ARRAY[$i];
-	//		if(isset($last_values)){
-	//			$difference = $last_values[$i] / $chart_data[$i] * 100;
-	//		}
-	//		$html_table_string .= "<tr>
-	//						<td>
-	//							<ul class='graph_legend'>
-	//								<li style='color: $color;'></li>
-	//							</ul>
-	//						</td>
-	//						<td>
-	//							{$chart_labels[$i]}
-	//						</td>
-	//						<td>
-	//							{$chart_data[$i]}
-	//						</td>
-	//						<td>
-	//							{$last_values[$i]}
-	//						</td>
-	//						<td>
-	//							{$difference}
-	//						</td>
-	//						";
-	//		$html_table_string .= "</tr>";
-	//	}
 	$html_table_string .= '
 						</tbody>
 					</table>
@@ -1012,7 +986,7 @@ function drill_down_pie_chart($post){
 		}
 		if($header == 'Trade Date'){
 			$drill_down_table_html .= "<th>$header</th>";
-		}else{
+		} else{
 			$drill_down_table_html .= "<th class='text-right'>$header</th>";
 		}
 	}
@@ -1119,18 +1093,21 @@ function activity_update($post, $create_boxes_flag = true, $create_table_flag = 
 		}
 
 		if(isset($post["from_date"]) && isset($post["to_date"]) && $post['all_dates'] != 'on'){
-			$where_clause = "AND dateTrade > '{$post['from_date']}' AND dateTrade < '{$post['to_date']}'";
+			$where_clause    = "AND dateTrade > '{$post['from_date']}' AND dateTrade < '{$post['to_date']}'";
+			$pdf_title_dates = "{$post['from_date']} to {$post['to_date']}";
+		} else{
+			$pdf_title_dates = 'All Trades';
 		}
 
-			if($post['from_date'] == $post['to_date'] && isset($post["from_date"]) && isset($post["to_date"]) && isset($post['all_dates'])){
-				$post['from_date'] = substr_replace($post['from_date'], ' 00:00:00', 10);
-				$post['to_date']   = substr_replace($post['to_date'], ' 23:59:59', 10);
-			} else{
-				$sql_str = "SELECT dateTrade, clearing, cli_name, invest, cusip_no, net_amt, comm_rec, rep_rate, rep_comm, date_rec, pay_date
+		if($post['from_date'] == $post['to_date'] && isset($post["from_date"]) && isset($post["to_date"]) && isset($post['all_dates'])){
+			$post['from_date'] = substr_replace($post['from_date'], ' 00:00:00', 10);
+			$post['to_date']   = substr_replace($post['to_date'], ' 23:59:59', 10);
+		} else{
+			$sql_str = "SELECT dateTrade, clearing, cli_name, invest, cusip_no, net_amt, comm_rec, rep_rate, rep_comm, date_rec, pay_date
 					FROM trades
 					WHERE rep_no = {$_SESSION["permrep_obj"]->permRepID}
 					$where_clause;";
-			}
+		}
 
 		$result = db_query($sql_str);
 		if($result->num_rows != 0){
@@ -1170,6 +1147,9 @@ function activity_update($post, $create_boxes_flag = true, $create_table_flag = 
 					}
 				}
 				$table_html_return_str .= "</tr>";
+				$pdf_title             = "Transaction Activity for {$_SESSION['permrep_obj']->fname} {$_SESSION['permrep_obj']->lname}
+						\n\r
+						$pdf_title_dates";
 			}
 		} else{
 			throw new Exception("No relevant records were found.", EXCEPTION_WARNING_CODE);
@@ -1244,25 +1224,11 @@ function activity_update($post, $create_boxes_flag = true, $create_table_flag = 
 	$json_obj                             = new json_obj();
 	$json_obj->data_arr['activity_table'] = $table_html_return_str;
 	$json_obj->data_arr['activity_boxes'] = $boxes_html_return_str;
+	$json_obj->data_arr['pdf_title']      = $pdf_title;
 	$json_obj->status                     = true;
 
 	return $json_obj;
 }
-
-///**
-// * Gets the dates in an array, adn present the corresponding values inside HTML template.
-// * @param $post
-// * @return json_obj
-// */
-//function activity_boxes($post){
-//
-//
-//	$json_obj                             = new json_obj();
-//	$json_obj->data_arr['activity_boxes'] = $boxes_html_return_str;
-//	$json_obj->status                     = true;
-//
-//	return $json_obj;
-//}
 
 /**
  * Updates the reports charts and table
