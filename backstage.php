@@ -1093,8 +1093,10 @@ function activity_update($post, $create_boxes_flag = true, $create_table_flag = 
 		}
 
 		if(isset($post["from_date"]) && isset($post["to_date"]) && $post['all_dates'] != 'on'){
-			$where_clause    = "AND dateTrade > '{$post['from_date']}' AND dateTrade < '{$post['to_date']}'";
-			$pdf_title_dates = "{$post['from_date']} to {$post['to_date']}";
+			$where_clause     = "AND dateTrade > '{$post['from_date']}' AND dateTrade < '{$post['to_date']}'";
+			$export_from_date = date_format(date_create($post['from_date']), 'm/d/Y');
+			$export_to_date   = date_format(date_create($post['to_date']), 'm/d/Y');
+			$pdf_title_dates  = "$export_from_date to $export_to_date";
 		} else{
 			$pdf_title_dates = 'All Trades';
 		}
@@ -1147,7 +1149,7 @@ function activity_update($post, $create_boxes_flag = true, $create_table_flag = 
 					}
 				}
 				$table_html_return_str .= "</tr>";
-				$broker_name = ucfirst(strtolower($_SESSION['permrep_obj']->fname)).' '.ucfirst(strtolower($_SESSION['permrep_obj']->lname));
+				$broker_name           = ucfirst(strtolower($_SESSION['permrep_obj']->fname)).' '.ucfirst(strtolower($_SESSION['permrep_obj']->lname));
 				$pdf_title_first_line  = "Transaction Activity for $broker_name";
 			}
 		} else{
@@ -1220,12 +1222,12 @@ function activity_update($post, $create_boxes_flag = true, $create_table_flag = 
 						</div>";
 	}
 
-	$json_obj                                     = new json_obj();
-	$json_obj->data_arr['activity_table']         = $table_html_return_str;
-	$json_obj->data_arr['activity_boxes']         = $boxes_html_return_str;
-	$json_obj->data_arr['$pdf_title_first_line']  = $pdf_title_first_line;
-	$json_obj->data_arr['$pdf_title_second_line'] = $pdf_title_dates;
-	$json_obj->status                             = true;
+	$json_obj                                    = new json_obj();
+	$json_obj->data_arr['activity_table']        = $table_html_return_str;
+	$json_obj->data_arr['activity_boxes']        = $boxes_html_return_str;
+	$json_obj->data_arr['pdf_title_first_line']  = $pdf_title_first_line;
+	$json_obj->data_arr['pdf_title_second_line'] = $pdf_title_dates;
+	$json_obj->status                            = true;
 
 	return $json_obj;
 }

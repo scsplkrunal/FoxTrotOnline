@@ -73,8 +73,8 @@ require_once 'header.php';
 					<?php
 					$json_obj = activity_update(['all_dates' => 'on'], false);
 					echo $json_obj->data_arr['activity_table'];
-					$pdf_title_first_line  = $json_obj->data_arr['$pdf_title_first_line'];
-					$pdf_title_second_line = $json_obj->data_arr['$pdf_title_second_line'];
+					$pdf_title_first_line  = $json_obj->data_arr['pdf_title_first_line'];
+					$pdf_title_second_line = $json_obj->data_arr['pdf_title_second_line'];
 					echo "<script>
 							var pdf_title_first_line = '$pdf_title_first_line';
 							var pdf_title_second_line = '$pdf_title_second_line';
@@ -85,7 +85,7 @@ require_once 'header.php';
 				<script type="text/javascript">
 					$( document ).ready( function(){
 						var currentDate = new Date();
-						var top_massage = currentDate.getMonth() + '/' + currentDate.getDate() + '/' + currentDate.getFullYear() + ' ' + currentDate.getHours() + ':' + currentDate.getMinutes();
+						var top_massage = 'Created: ' + currentDate.getMonth() + '/' + currentDate.getDate() + '/' + currentDate.getFullYear() + ' ' + currentDate.getHours() + ':' + currentDate.getMinutes();
 						const months_names = ["January", "February", "March", "April", "May", "June",
 							"July", "August", "September", "October", "November", "December"
 						];

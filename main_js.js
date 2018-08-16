@@ -23,14 +23,34 @@ $( document ).ready( function(){
 					$("#activity_table").DataTable().destroy();
 					$("#activity_table tbody").html(json_obj.data_arr['activity_table']);
 
+					var currentDate = new Date();
+					var top_massage = 'Created: ' + currentDate.getMonth() + '/' + currentDate.getDate() + '/' + currentDate.getFullYear() + ' ' + currentDate.getHours() + ':' + currentDate.getMinutes();
+					const months_names = ["January", "February", "March", "April", "May", "June",
+						"July", "August", "September", "October", "November", "December"
+					];
+					var file_name = 'Transaction Activity ' + currentDate.getDate() + ' ' + months_names[currentDate.getMonth()] + ' ' + currentDate.getFullYear();
+					var pdf_title = json_obj.data_arr.pdf_title_first_line + '\n\r' + json_obj.data_arr.pdf_title_second_line;
+					var excel_title = json_obj.data_arr.pdf_title_first_line + ' - ' + json_obj.data_arr.pdf_title_second_line;
 					$('#activity_table').DataTable( {
 						searching: false,
 						paging: false,
 						info: false,
 						dom: 'Bfrtip',
 						buttons: [
-							'excelHtml5',
-							'pdfHtml5'
+							{
+								extend: 'excelHtml5',
+								orientation: 'landscape',
+								filename: file_name,
+								messageTop: top_massage,
+								title: excel_title
+							},
+							{
+								extend: 'pdfHtml5',
+								orientation: 'landscape',
+								filename: file_name,
+								messageTop: top_massage,
+								title: pdf_title
+							}
 						]
 					} );
 
@@ -127,14 +147,34 @@ $( document ).ready( function(){
 				$("#activity_table").DataTable().destroy();
 				$("#activity_table tbody").html(json_obj.data_arr['activity_table']);
 
+				var currentDate = new Date();
+				var top_massage = 'Created: ' + currentDate.getMonth() + '/' + currentDate.getDate() + '/' + currentDate.getFullYear() + ' ' + currentDate.getHours() + ':' + currentDate.getMinutes();
+				const months_names = ["January", "February", "March", "April", "May", "June",
+					"July", "August", "September", "October", "November", "December"
+				];
+				var file_name = 'Transaction Activity ' + currentDate.getDate() + ' ' + months_names[currentDate.getMonth()] + ' ' + currentDate.getFullYear();
+				var pdf_title = json_obj.data_arr.pdf_title_first_line + '\n\r' + json_obj.data_arr.pdf_title_second_line;
+				var excel_title = json_obj.data_arr.pdf_title_first_line + ' - ' + json_obj.data_arr.pdf_title_second_line;
 				$('#activity_table').DataTable( {
 					searching: false,
 					paging: false,
 					info: false,
 					dom: 'Bfrtip',
 					buttons: [
-						'excelHtml5',
-						'pdfHtml5'
+						{
+							extend: 'excelHtml5',
+							orientation: 'landscape',
+							filename: file_name,
+							messageTop: top_massage,
+							title: excel_title
+						},
+						{
+							extend: 'pdfHtml5',
+							orientation: 'landscape',
+							filename: file_name,
+							messageTop: top_massage,
+							title: pdf_title
+						}
 					]
 				} );
 
