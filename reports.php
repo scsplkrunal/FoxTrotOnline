@@ -42,27 +42,27 @@ require_once 'header.php';
 					<div class="col-xs-2 mr-3">
 						<div class="custom-control custom-radio custom-control">
 							<input type="radio" id="trade_date_radio" name="choose_date_radio"
-							       class="custom-control-input">
+							       class="custom-control-input" value="dateTrade" checked>
 							<label class="custom-control-label" for="trade_date_radio">Trade Date</label>
 						</div>
 						<div class="custom-control custom-radio custom-control">
 							<input type="radio" id="date_posted_radio" name="choose_date_radio"
-							       class="custom-control-input">
+							       class="custom-control-input" value="date_rec">
 							<label class="custom-control-label" for="date_posted_radio">Date
 								Posted</label>
 						</div>
 					</div>
 					<div class="col-xs-3">
 						<div class="custom-control custom-radio custom-control">
-							<input type="radio" id="gross_comm_radio" name="choose_pay_radio"
-							       class="custom-control-input">
-							<label class="custom-control-label" for="gross_comm_radio">Gross
-								Commission</label>
+							<input type="radio" id="net_pay_radio" name="choose_pay_radio"
+							       class="custom-control-input" value="rep_comm" checked>
+							<label class="custom-control-label" for="net_pay_radio">Net Pay</label>
 						</div>
 						<div class="custom-control custom-radio custom-control">
-							<input type="radio" id="net_pay_radio" name="choose_pay_radio"
-							       class="custom-control-input">
-							<label class="custom-control-label" for="net_pay_radio">Net Pay</label>
+							<input type="radio" id="gross_comm_radio" name="choose_pay_radio"
+							       class="custom-control-input" value="comm_rec">
+							<label class="custom-control-label" for="gross_comm_radio">Gross
+								Commission</label>
 						</div>
 					</div>
 				</div>
