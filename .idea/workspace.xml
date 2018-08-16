@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="3afaa673-cb46-4034-a6f7-e9cf43ebac35" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/activity.php" beforeDir="false" afterPath="$PROJECT_DIR$/activity.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports.php" beforeDir="false" afterPath="$PROJECT_DIR$/reports.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tmp/foxtrot_online.log" beforeDir="false" afterPath="$PROJECT_DIR$/tmp/foxtrot_online.log" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -15,20 +15,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="activity.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/activity.php">
+      <file leaf-file-name="reports.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/reports.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="349">
-              <caret line="105" column="72" selection-start-line="105" selection-start-column="72" selection-end-line="105" selection-end-column="72" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="backstage.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/backstage.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="162">
-              <caret line="1150" column="87" selection-start-line="1150" selection-start-column="87" selection-end-line="1150" selection-end-column="87" />
+            <state relative-caret-position="348">
+              <caret line="67" column="30" selection-start-line="67" selection-start-column="30" selection-end-line="67" selection-end-column="30" />
             </state>
           </provider>
         </entry>
@@ -45,10 +36,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>time_period</find>
-      <find>return $json</find>
-      <find>graph</find>
-      <find>respo</find>
       <find>drill</find>
       <find>dateTrade &gt;</find>
       <find>table-sm</find>
@@ -68,13 +55,17 @@
       <find>number</find>
       <find>disab</find>
       <find>number_f</find>
-      <find>activity</find>
       <find>Activity</find>
       <find>all_da</find>
       <find>activi</find>
       <find>datatab</find>
       <find>pdf_title</find>
       <find>lname</find>
+      <find>pdfhtml</find>
+      <find>date_f</find>
+      <find>activity</find>
+      <find>Creat</find>
+      <find>first_line</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -98,10 +89,10 @@
         <option value="$PROJECT_DIR$/dashboard.php" />
         <option value="$PROJECT_DIR$/pie_chart_no_data.js" />
         <option value="$PROJECT_DIR$/statements.php" />
-        <option value="$PROJECT_DIR$/reports.php" />
-        <option value="$PROJECT_DIR$/main_js.js" />
         <option value="$PROJECT_DIR$/backstage.php" />
+        <option value="$PROJECT_DIR$/main_js.js" />
         <option value="$PROJECT_DIR$/activity.php" />
+        <option value="$PROJECT_DIR$/reports.php" />
       </list>
     </option>
   </component>
@@ -196,7 +187,7 @@
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="1" visible="true" weight="0.16111952" />
+      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.16111952" />
       <window_info anchor="bottom" id="TODO" order="9" />
       <window_info anchor="bottom" id="Event Log" order="1" side_tool="true" />
       <window_info anchor="right" id="Database" order="0" />
@@ -206,7 +197,7 @@
       <window_info anchor="bottom" id="Run" order="6" />
       <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="0" side_tool="true" />
-      <window_info active="true" anchor="right" id="Debug" order="4" visible="true" weight="0.17700455" />
+      <window_info anchor="right" id="Debug" order="4" weight="0.17700455" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="3" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="8" weight="0.4" />
       <window_info anchor="right" id="Commander" order="1" weight="0.4" />
@@ -228,8 +219,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$/.." />
     </ignored-roots>
-    <MESSAGE value="Line chart function" />
-    <MESSAGE value="Reports Line chart JS AJAX" />
     <MESSAGE value="Reports FINISH" />
     <MESSAGE value="Drill down table improve" />
     <MESSAGE value="Drill down modal remove large attribute" />
@@ -253,7 +242,9 @@
     <MESSAGE value="Activity all_dates check refresh table" />
     <MESSAGE value="PDF design" />
     <MESSAGE value="PDF title on page load" />
-    <option name="LAST_COMMIT_MESSAGE" value="PDF title on page load" />
+    <MESSAGE value="Excel export" />
+    <MESSAGE value="Excel and PDF export on page load an d AJAX finish" />
+    <option name="LAST_COMMIT_MESSAGE" value="Excel and PDF export on page load an d AJAX finish" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -536,29 +527,29 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/main_js.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="32" lean-forward="true" selection-start-column="32" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/reports.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="297">
-          <caret line="24" column="46" selection-start-line="24" selection-start-column="46" selection-end-line="24" selection-end-column="46" />
+        <state relative-caret-position="169">
+          <caret line="26" column="54" selection-start-line="26" selection-start-column="49" selection-end-line="26" selection-end-column="54" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/backstage.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="1150" column="87" selection-start-line="1150" selection-start-column="87" selection-end-line="1150" selection-end-column="87" />
+        <state relative-caret-position="186">
+          <caret line="1228" column="27" selection-start-line="1228" selection-start-column="27" selection-end-line="1228" selection-end-column="27" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/activity.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="349">
-          <caret line="105" column="72" selection-start-line="105" selection-start-column="72" selection-end-line="105" selection-end-column="72" />
+        <state relative-caret-position="130">
+          <caret line="87" column="64" selection-start-line="87" selection-start-column="64" selection-end-line="87" selection-end-column="64" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/reports.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="348">
+          <caret line="67" column="30" selection-start-line="67" selection-start-column="30" selection-end-line="67" selection-end-column="30" />
         </state>
       </provider>
     </entry>
