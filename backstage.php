@@ -1170,20 +1170,20 @@ function activity_update($post, $create_boxes_flag = true, $create_table_flag = 
 							break;
 						case 'rep_rate':
 							$value                 = number_format(floatval($value), 2);
-							$table_html_return_str .= "<td>$value</td>";
+							$table_html_return_str .= "<td class='text-right'>$value</td>";
 							break;
 						case 'net_amt':
 						case 'comm_rec':
 						case 'rep_comm':
 							$value                 = number_format(floatval($value), 2);
-							$table_html_return_str .= "<td>\$$value</td>";
+							$table_html_return_str .= "<td class='text-right'>\$$value</td>";
 							break;
 						case 'dateTrade':
 						case 'date_rec':
 						case 'pay_date':
 							if($value != null){
 								$value                 = date('Y-m-d', strtotime($value));
-								$table_html_return_str .= "<td>$value</td>";
+								$table_html_return_str .= "<td class='text-left'>$value</td>";
 							} else{
 								$table_html_return_str .= "<td>-</td>";
 							}
