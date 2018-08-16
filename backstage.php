@@ -1034,7 +1034,11 @@ function drill_down_pie_chart($post){
 				$header = 'Net Pay';
 				break;
 		}
-		$drill_down_table_html .= "<th>$header</th>";
+		if($header == 'Trade Date'){
+			$drill_down_table_html .= "<th>$header</th>";
+		}else{
+			$drill_down_table_html .= "<th class='text-right'>$header</th>";
+		}
 	}
 	$drill_down_table_html .= '   </tr>
 						</thead>
@@ -1044,11 +1048,11 @@ function drill_down_pie_chart($post){
 			$drill_down_table_html .= "<tr>";
 			foreach($row as $column_name => $value){
 				if($column_name == 'dateTrade'){
-					$value                 = date('d-M-Y', strtotime($value));
+					$value                 = date('m/d/Y', strtotime($value));
 					$drill_down_table_html .= "<td>$value</td>";
 				} else{
 					$value                 = number_format(floatval($value), 2);
-					$drill_down_table_html .= "<td>$value</td>";
+					$drill_down_table_html .= "<td class='text-right'>\$$value</td>";
 				}
 			}
 			$drill_down_table_html .= "</tr>";
