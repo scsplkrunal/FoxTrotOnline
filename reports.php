@@ -42,12 +42,12 @@ require_once 'header.php';
 					<div class="col-xs-2 mr-3 ml-3">
 						<div class="custom-control custom-radio custom-control">
 							<input type="radio" id="trade_date_radio" name="choose_date_radio"
-							       class="custom-control-input" value="dateTrade" checked>
+							       class="custom-control-input" value="dateTrade" checked disabled>
 							<label class="custom-control-label" for="trade_date_radio">Trade Date</label>
 						</div>
 						<div class="custom-control custom-radio custom-control">
 							<input type="radio" id="date_posted_radio" name="choose_date_radio"
-							       class="custom-control-input" value="date_rec">
+							       class="custom-control-input" value="date_rec" disabled>
 							<label class="custom-control-label" for="date_posted_radio">Date
 								Posted</label>
 						</div>
@@ -68,9 +68,9 @@ require_once 'header.php';
 				</div>
 				<div class="hidden_form_div mt-2">
 					<label>From</label>
-					<input type="date" name="from_date" required><br class="d-xs-block d-sm-none">
+					<input type="date" name="from_date" required disabled><br class="d-xs-block d-sm-none">
 					<label>To</label>
-					<input type="date" name="to_date" required><br class="d-xs-block d-sm-none">
+					<input type="date" name="to_date" required disabled><br class="d-xs-block d-sm-none">
 				</div>
 				<input class="btn btn-primary mt-2" type="submit" value="Filter">
 				<input name="class" value="no_class" hidden>
