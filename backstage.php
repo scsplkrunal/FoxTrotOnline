@@ -679,6 +679,12 @@ function pie_chart_data_and_labels($chart_name, $post = array('time_period' => '
  * @throws exception
  */
 function line_chart_data_and_labels($post){
+	if(!isset($post["choose_date_radio"])){
+		$post["choose_date_radio"] = 'dateTrade';
+	}
+	if(!isset($post["choose_pay_radio"])){
+		$post["choose_pay_radio"] = 'rep_comm';
+	}
 	if(isset($_SESSION["from_date"]) && isset($_SESSION["to_date"])){
 		$where_clause = "AND {$post["choose_date_radio"]} > '{$_SESSION["from_date"]}' AND {$post["choose_date_radio"]} < '{$_SESSION["to_date"]}'";
 	}
@@ -952,9 +958,9 @@ function drill_down_pie_chart($post){
 			break;
 		case 'reports_pie_chart':
 			if(isset($_SESSION["from_date"]) && isset($_SESSION["to_date"])){
-				$where_clause = "AND dateTrade > '{$_SESSION["from_date"]}' AND dateTrade < '{$_SESSION["to_date"]}'";
+				$where_clause = "AND {$post["date_type"]} > '{$_SESSION["from_date"]}' AND {$post["date_type"]} < '{$_SESSION["to_date"]}'";
 			}
-			$sql_str = "SELECT dateTrade, comm_rec, rep_comm
+			$sql_str = "SELECT dateTrade, date_rec, comm_rec, rep_comm
 					FROM trades
 					RIGHT JOIN prodtype ON trades.inv_type = prodtype.inv_type
 					WHERE rep_no = {$_SESSION["permrep_obj"]->permRepID}
@@ -977,6 +983,9 @@ function drill_down_pie_chart($post){
 			case 'dateTrade':
 				$header = 'Trade Date';
 				break;
+				case 'date_rec':
+				$header = 'Date Posted';
+				break;
 			case 'comm_rec':
 				$header = 'Gross Amount';
 				break;
@@ -984,7 +993,7 @@ function drill_down_pie_chart($post){
 				$header = 'Net Pay';
 				break;
 		}
-		if($header == 'Trade Date'){
+		if($header == 'Trade Date' || $header == 'Date Posted'){
 			$drill_down_table_html .= "<th>$header</th>";
 		} else{
 			$drill_down_table_html .= "<th class='text-right'>$header</th>";
@@ -997,7 +1006,7 @@ function drill_down_pie_chart($post){
 		while($row = $result->fetch_assoc()){ //Fill up all properties from DB data
 			$drill_down_table_html .= "<tr>";
 			foreach($row as $column_name => $value){
-				if($column_name == 'dateTrade'){
+				if($column_name == 'dateTrade' || $column_name == 'date_rec'){
 					$value                 = date('m/d/Y', strtotime($value));
 					$drill_down_table_html .= "<td>$value</td>";
 				} else{

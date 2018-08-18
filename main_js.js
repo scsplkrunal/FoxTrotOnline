@@ -283,6 +283,7 @@ $( document ).ready( function(){
 	 */
 	$( '#' + chart_id )[0].onclick = function( evt ){
 		var activePoints = pie_chart.getElementsAtEvent( evt );
+		var date_type = $('#reports_form input[name=choose_date_radio]:checked').val();
 		if( activePoints[0] ){
 			var chartData = activePoints[0]['_chart'].config.data;
 			var idx = activePoints[0]['_index'];
@@ -297,7 +298,8 @@ $( document ).ready( function(){
 				chart_id: chart_id,
 				label: label,
 				value: value,
-				color: color
+				color: color,
+				date_type: date_type
 			}, function( server_response_data ){
 				$( '#drill_down_pie_chart_modal' ).modal( 'show' );
 				var json_obj = $.parseJSON( server_response_data );
