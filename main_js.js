@@ -20,8 +20,8 @@ $( document ).ready( function(){
 			$.post( 'junction.php', $( '#activity_form' ).serialize(), function( data ){
 				var json_obj = $.parseJSON( data );
 				if( json_obj.status == true ){
-					$("#activity_table").DataTable().destroy();
-					$("#activity_table tbody").html(json_obj.data_arr['activity_table']);
+					$( "#activity_table" ).DataTable().destroy();
+					$( "#activity_table tbody" ).html( json_obj.data_arr['activity_table'] );
 
 					var currentDate = new Date();
 					var top_massage = 'Created: ' + currentDate.getMonth() + '/' + currentDate.getDate() + '/' + currentDate.getFullYear() + ' ' + currentDate.getHours() + ':' + currentDate.getMinutes();
@@ -31,7 +31,7 @@ $( document ).ready( function(){
 					var file_name = 'Transaction Activity ' + currentDate.getDate() + ' ' + months_names[currentDate.getMonth()] + ' ' + currentDate.getFullYear();
 					var pdf_title = json_obj.data_arr.pdf_title_first_line + '\n\r' + json_obj.data_arr.pdf_title_second_line;
 					var excel_title = json_obj.data_arr.pdf_title_first_line + ' - ' + json_obj.data_arr.pdf_title_second_line;
-					$('#activity_table').DataTable( {
+					$( '#activity_table' ).DataTable( {
 						searching: false,
 						paging: false,
 						info: false,
@@ -54,16 +54,16 @@ $( document ).ready( function(){
 						]
 					} );
 
-					$('.buttons-html5').addClass('btn btn-secondary');
+					$( '.buttons-html5' ).addClass( 'btn btn-secondary' );
 
-					$("#activity_boxes_container_div").html(json_obj.data_arr['activity_boxes']);
-					$( ".server_response_div .alert" ).removeClass('alert-warning alert-danger').addClass( 'alert-success' ).text( 'Table generated successfully.' ).show();
+					$( "#activity_boxes_container_div" ).html( json_obj.data_arr['activity_boxes'] );
+					$( ".server_response_div .alert" ).removeClass( 'alert-warning alert-danger' ).addClass( 'alert-success' ).text( 'Table generated successfully.' ).show();
 				}else{ //If there is an error
 					$( ".server_response_div .alert" ).text( json_obj.error_message ).show();
 					if( json_obj.error_level == 0 ){
-						$( ".server_response_div .alert" ).removeClass('alert-success alert-danger').addClass( 'alert-warning' );
+						$( ".server_response_div .alert" ).removeClass( 'alert-success alert-danger' ).addClass( 'alert-warning' );
 					}else{
-						$( ".server_response_div .alert" ).removeClass('alert-success alert-warning').addClass( 'alert-danger' );
+						$( ".server_response_div .alert" ).removeClass( 'alert-success alert-warning' ).addClass( 'alert-danger' );
 					}
 				}
 			} );
@@ -98,9 +98,9 @@ $( document ).ready( function(){
 			}else{ //If there is an error
 				$( "#log_in_form .server_response_div .alert" ).text( json_obj.error_message ).show();
 				if( json_obj.error_level == 0 ){
-					$( "#log_in_form .server_response_div .alert" ).removeClass('alert-danger').addClass( 'alert-warning' );
+					$( "#log_in_form .server_response_div .alert" ).removeClass( 'alert-danger' ).addClass( 'alert-warning' );
 				}else{
-					$( "#log_in_form .server_response_div .alert" ).removeClass('alert-warning').addClass( 'alert-danger' );
+					$( "#log_in_form .server_response_div .alert" ).removeClass( 'alert-warning' ).addClass( 'alert-danger' );
 				}
 			}
 		} );
@@ -123,13 +123,13 @@ $( document ).ready( function(){
 		$.post( 'junction.php', $( '#forgot_password_form' ).serialize(), function( data ){
 			var json_obj = $.parseJSON( data );
 			if( json_obj.status == true ){
-				$( "#forgot_password_form .server_response_div .alert" ).removeClass('alert-warning alert-danger').addClass( 'alert-success' ).text( 'Password and username sent to your E-mail. Check your inbox for mails from FoxTrot Online.' ).show();
+				$( "#forgot_password_form .server_response_div .alert" ).removeClass( 'alert-warning alert-danger' ).addClass( 'alert-success' ).text( 'Password and username sent to your E-mail. Check your inbox for mails from FoxTrot Online.' ).show();
 			}else{ //If there is an error
 				$( "#forgot_password_form .server_response_div .alert" ).text( json_obj.error_message ).show();
 				if( json_obj.error_level == 0 ){
-					$( "#forgot_password_form .server_response_div .alert" ).removeClass('alert-success alert-danger').addClass( 'alert-warning' );
+					$( "#forgot_password_form .server_response_div .alert" ).removeClass( 'alert-success alert-danger' ).addClass( 'alert-warning' );
 				}else{
-					$( "#forgot_password_form .server_response_div .alert" ).removeClass('alert-success alert-warning').addClass( 'alert-danger' );
+					$( "#forgot_password_form .server_response_div .alert" ).removeClass( 'alert-success alert-warning' ).addClass( 'alert-danger' );
 				}
 			}
 		} );
@@ -144,8 +144,8 @@ $( document ).ready( function(){
 		$.post( 'junction.php', $( '#activity_form' ).serialize(), function( data ){
 			var json_obj = $.parseJSON( data );
 			if( json_obj.status == true ){
-				$("#activity_table").DataTable().destroy();
-				$("#activity_table tbody").html(json_obj.data_arr['activity_table']);
+				$( "#activity_table" ).DataTable().destroy();
+				$( "#activity_table tbody" ).html( json_obj.data_arr['activity_table'] );
 
 				var currentDate = new Date();
 				var top_massage = 'Created: ' + currentDate.getMonth() + '/' + currentDate.getDate() + '/' + currentDate.getFullYear() + ' ' + currentDate.getHours() + ':' + currentDate.getMinutes();
@@ -155,7 +155,7 @@ $( document ).ready( function(){
 				var file_name = 'Transaction Activity ' + currentDate.getDate() + ' ' + months_names[currentDate.getMonth()] + ' ' + currentDate.getFullYear();
 				var pdf_title = json_obj.data_arr.pdf_title_first_line + '\n\r' + json_obj.data_arr.pdf_title_second_line;
 				var excel_title = json_obj.data_arr.pdf_title_first_line + ' - ' + json_obj.data_arr.pdf_title_second_line;
-				$('#activity_table').DataTable( {
+				$( '#activity_table' ).DataTable( {
 					searching: false,
 					paging: false,
 					info: false,
@@ -178,16 +178,16 @@ $( document ).ready( function(){
 					]
 				} );
 
-				$('.buttons-html5').addClass('btn btn-secondary');
+				$( '.buttons-html5' ).addClass( 'btn btn-secondary' );
 
-				$("#activity_boxes_container_div").html(json_obj.data_arr['activity_boxes']);
-				$( ".server_response_div .alert" ).removeClass('alert-warning alert-danger').addClass( 'alert-success' ).text( 'Table generated successfully.' ).show();
+				$( "#activity_boxes_container_div" ).html( json_obj.data_arr['activity_boxes'] );
+				$( ".server_response_div .alert" ).removeClass( 'alert-warning alert-danger' ).addClass( 'alert-success' ).text( 'Table generated successfully.' ).show();
 			}else{ //If there is an error
 				$( ".server_response_div .alert" ).text( json_obj.error_message ).show();
 				if( json_obj.error_level == 0 ){
-					$( ".server_response_div .alert" ).removeClass('alert-success alert-danger').addClass( 'alert-warning' );
+					$( ".server_response_div .alert" ).removeClass( 'alert-success alert-danger' ).addClass( 'alert-warning' );
 				}else{
-					$( ".server_response_div .alert" ).removeClass('alert-success alert-warning').addClass( 'alert-danger' );
+					$( ".server_response_div .alert" ).removeClass( 'alert-success alert-warning' ).addClass( 'alert-danger' );
 				}
 			}
 		} );
@@ -199,10 +199,22 @@ $( document ).ready( function(){
 	 */
 	$( '#time_periods_select' ).change( function(){ //On change of drop down list
 		var id_of_selected_option = $( this ).find( "option:selected" ).attr( "id" );
-		if( id_of_selected_option == "dates_form_option_custom" ){ //Check if the selected option was 'Custom'
-			$( '.hidden_form_div' ).show(); //If so - show the hidden div with the dates input.
-		}else{ //If Option selected is not 'Custom' or 'Choose from the list'
-			$( '.hidden_form_div' ).hide(); //Hide the hidden div with the dates input.
+		if( id_of_selected_option == 'dates_form_option_all_dates' ){
+			$( '#reports_form_dates_radios_div input' ).prop( "disabled", true );
+			$( '.hidden_form_div input' ).prop( "disabled", true );
+		}else{
+			$( '#reports_form_dates_radios_div input' ).prop( "disabled", false );
+			if( id_of_selected_option == "dates_form_option_custom" ){ //Check if the selected option was 'Custom'
+				$( '.hidden_form_div' ).show(); //If so - show the hidden div with the dates input.
+				$( '.hidden_form_div input' ).prop( "disabled", false );
+			}else{
+				$( '.hidden_form_div' ).hide(); //Hide the hidden div with the dates input.
+				$( '.hidden_form_div input' ).prop( "disabled", true );
+			}
+
+		}
+	// else
+	// 	{ //If Option selected is not 'Custom' or 'Choose from the list'
 			// $.post( 'junction.php', $( '#reports_form' ).serialize(), function( data ){ //Send the form to the server.
 			// 	var json_obj = $.parseJSON( data );
 			// 	if( json_obj.status == true ){
@@ -221,7 +233,7 @@ $( document ).ready( function(){
 			// 		}
 			// 	}
 			// } );
-		}
+		// }
 	} );
 
 
@@ -233,18 +245,18 @@ $( document ).ready( function(){
 		$.post( 'junction.php', $( '#reports_form' ).serialize(), function( data ){
 			var json_obj = $.parseJSON( data );
 			if( json_obj.status == true ){
-				pie_chart.data = $.parseJSON(json_obj.data_arr.pie_chart_data);
+				pie_chart.data = $.parseJSON( json_obj.data_arr.pie_chart_data );
 				pie_chart.update();
-				line_chart.data = $.parseJSON(json_obj.data_arr.line_chart_data);
+				line_chart.data = $.parseJSON( json_obj.data_arr.line_chart_data );
 				line_chart.update();
-				$("#reports_table").html(json_obj.data_arr['reports_table_html']);
-				$( ".server_response_div .alert" ).removeClass('alert-warning alert-danger').addClass( 'alert-success' ).text( 'Data generated successfully.' ).show();
+				$( "#reports_table" ).html( json_obj.data_arr['reports_table_html'] );
+				$( ".server_response_div .alert" ).removeClass( 'alert-warning alert-danger' ).addClass( 'alert-success' ).text( 'Data generated successfully.' ).show();
 			}else{ //If there is an error
 				$( ".server_response_div .alert" ).text( json_obj.error_message ).show();
 				if( json_obj.error_level == 0 ){
-					$( ".server_response_div .alert" ).removeClass('alert-success alert-danger').addClass( 'alert-warning' );
+					$( ".server_response_div .alert" ).removeClass( 'alert-success alert-danger' ).addClass( 'alert-warning' );
 				}else{
-					$( ".server_response_div .alert" ).removeClass('alert-success alert-warning').addClass( 'alert-danger' );
+					$( ".server_response_div .alert" ).removeClass( 'alert-success alert-warning' ).addClass( 'alert-danger' );
 				}
 			}
 		} );
@@ -289,7 +301,7 @@ $( document ).ready( function(){
 			}, function( server_response_data ){
 				$( '#drill_down_pie_chart_modal' ).modal( 'show' );
 				var json_obj = $.parseJSON( server_response_data );
-				$("#drill_down_table_div").html(json_obj.data_arr['drill_down_table']);
+				$( "#drill_down_table_div" ).html( json_obj.data_arr['drill_down_table'] );
 			} );
 		}
 
@@ -299,7 +311,7 @@ $( document ).ready( function(){
 	/**
 	 * Check if window is small enough, and if so, move down Pie chart legend
 	 */
-	if($( document ).width() < 992){
+	if( $( document ).width() < 992 ){
 		pie_chart.options.legend.position = 'bottom';
 		pie_chart.update();
 	}

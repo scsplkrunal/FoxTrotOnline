@@ -3,8 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="3afaa673-cb46-4034-a6f7-e9cf43ebac35" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main_js.js" beforeDir="false" afterPath="$PROJECT_DIR$/main_js.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/reports.php" beforeDir="false" afterPath="$PROJECT_DIR$/reports.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tmp/foxtrot_online.log" beforeDir="false" afterPath="$PROJECT_DIR$/tmp/foxtrot_online.log" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -18,13 +18,13 @@
       <file leaf-file-name="reports.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/reports.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="72" column="81" selection-start-line="72" selection-start-column="81" selection-end-line="72" selection-end-column="81" />
+            <state relative-caret-position="-323">
+              <caret line="41" column="68" selection-start-line="41" selection-start-column="39" selection-end-line="41" selection-end-column="68" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="backstage.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="backstage.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/backstage.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="280">
@@ -33,11 +33,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="main_js.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="main_js.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/main_js.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="229" column="9" lean-forward="true" selection-start-line="229" selection-start-column="9" selection-end-line="229" selection-end-column="9" />
+            <state relative-caret-position="241">
+              <caret line="204" column="18" lean-forward="true" selection-start-line="204" selection-start-column="18" selection-end-line="204" selection-end-column="18" />
             </state>
           </provider>
         </entry>
@@ -109,8 +109,8 @@
         <option value="$PROJECT_DIR$/statements.php" />
         <option value="$PROJECT_DIR$/activity.php" />
         <option value="$PROJECT_DIR$/backstage.php" />
-        <option value="$PROJECT_DIR$/main_js.js" />
         <option value="$PROJECT_DIR$/reports.php" />
+        <option value="$PROJECT_DIR$/main_js.js" />
       </list>
     </option>
   </component>
@@ -203,6 +203,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="1" visible="true" weight="0.16111952" />
       <window_info anchor="bottom" id="TODO" order="9" />
@@ -236,7 +237,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$/.." />
     </ignored-roots>
-    <MESSAGE value="Reformat activity table fields" />
     <MESSAGE value="Exception no records activity" />
     <MESSAGE value="Comment out the activity boxes function" />
     <MESSAGE value="Activity boxes WORK ON PAGE LOAD" />
@@ -261,12 +261,13 @@
     <MESSAGE value="Reports form margins" />
     <MESSAGE value="Implement radio buttons in reports form function change sql" />
     <MESSAGE value="Don't submit form on select change" />
-    <option name="LAST_COMMIT_MESSAGE" value="Don't submit form on select change" />
+    <MESSAGE value="Disable dates reports form for submit" />
+    <option name="LAST_COMMIT_MESSAGE" value="Disable dates reports form for submit" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
-        <line-breakpoint enabled="true" type="php">
+        <line-breakpoint type="php">
           <url>file://$PROJECT_DIR$/backstage.php</url>
           <line>633</line>
           <option name="timeStamp" value="253" />
@@ -556,17 +557,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/main_js.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="229" column="9" lean-forward="true" selection-start-line="229" selection-start-column="9" selection-end-line="229" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/reports.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="72" column="81" selection-start-line="72" selection-start-column="81" selection-end-line="72" selection-end-column="81" />
+        <state relative-caret-position="-323">
+          <caret line="41" column="68" selection-start-line="41" selection-start-column="39" selection-end-line="41" selection-end-column="68" />
         </state>
       </provider>
     </entry>
@@ -574,6 +568,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="280">
           <caret line="633" selection-start-line="633" selection-end-line="633" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main_js.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="241">
+          <caret line="204" column="18" lean-forward="true" selection-start-line="204" selection-start-column="18" selection-end-line="204" selection-end-column="18" />
         </state>
       </provider>
     </entry>

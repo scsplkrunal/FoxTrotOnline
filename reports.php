@@ -30,7 +30,7 @@ require_once 'header.php';
 				</div>
 				<label>Date:</label>
 				<select id="time_periods_select" name="time_period" class="mr-2">
-					<option value="all_dates">All Dates</option>
+					<option id='dates_form_option_all_dates' value="all_dates">All Dates</option>
 					<option value="Year to Date">Year to Date</option>
 					<option value="Month to Date">Month to Date</option>
 					<option value="Previous 12 Months">Previous 12 Months</option>
@@ -39,7 +39,7 @@ require_once 'header.php';
 					<option id="dates_form_option_custom" value="Custom">Custom</option>
 				</select>
 				<div class="row">
-					<div class="col-xs-2 mr-3 ml-3">
+					<div id="reports_form_dates_radios_div" class="col-xs-2 mr-3 ml-3">
 						<div class="custom-control custom-radio custom-control">
 							<input type="radio" id="trade_date_radio" name="choose_date_radio"
 							       class="custom-control-input" value="dateTrade" checked disabled>
