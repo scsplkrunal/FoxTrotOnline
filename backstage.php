@@ -680,7 +680,7 @@ function pie_chart_data_and_labels($chart_name, $post = array('time_period' => '
  */
 function line_chart_data_and_labels($post){
 	if(isset($_SESSION["from_date"]) && isset($_SESSION["to_date"])){
-		$where_clause = "AND dateTrade > '{$_SESSION["from_date"]}' AND dateTrade < '{$_SESSION["to_date"]}'";
+		$where_clause = "AND {$post["choose_date_radio"]} > '{$_SESSION["from_date"]}' AND {$post["choose_date_radio"]} < '{$_SESSION["to_date"]}'";
 	}
 	switch($post['time_period']){
 		case 'all_dates':
@@ -688,21 +688,21 @@ function line_chart_data_and_labels($post){
 		case  'Previous 12 Months':
 		case  'Last Year':
 			monthly:
-			$sql_str      = "SELECT EXTRACT(YEAR_MONTH FROM dateTrade) as 'date_time', SUM(rep_comm) AS total_commission
+			$sql_str      = "SELECT EXTRACT(YEAR_MONTH FROM {$post["choose_date_radio"]}) as 'date_time', SUM({$post["choose_pay_radio"]}) AS total_commission
 					FROM trades
 					WHERE rep_no = {$_SESSION["permrep_obj"]->permRepID}
 					$where_clause
-					GROUP BY YEAR(dateTrade), MONTH(dateTrade);";
+					GROUP BY YEAR({$post["choose_date_radio"]}), MONTH({$post["choose_date_radio"]});";
 			$flag_monthly = true;
 			break;
 		case  'Month to Date':
 		case  'Last Month':
 			daily:
-			$sql_str = "SELECT DATE(dateTrade) as date_time, SUM(rep_comm) as total_commission
+			$sql_str = "SELECT DATE({$post["choose_date_radio"]}) as date_time, SUM({$post["choose_pay_radio"]}) as total_commission
 					FROM trades
 					WHERE rep_no = {$_SESSION["permrep_obj"]->permRepID}
 					$where_clause
-					GROUP BY DATE(dateTrade);";
+					GROUP BY DATE({$post["choose_date_radio"]});";
 			break;
 		case  'Custom':
 			$to_date   = DateTime::createFromFormat('Y-m-d', $post['to_date']);
