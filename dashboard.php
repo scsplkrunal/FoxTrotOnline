@@ -62,9 +62,7 @@ require_once 'header.php';
 								<span aria-hidden="true">&times;</span>
 							</button>
 						</div>
-						<div id="drill_down_table_div" class="modal-body">
-							<!--							<canvas id="drill_down_pie_chart"></canvas>-->
-						</div>
+						<div id="drill_down_table_div" class="modal-body"></div>
 					</div>
 				</div>
 			</div>
