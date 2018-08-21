@@ -28,27 +28,36 @@ require_once 'header.php';
 			</div>
 			<div class="row">
 				<form class="col-md-3">
+					<div class="server_response_div mt-2">
+						<div class="alert" role="alert"></div>
+					</div>
 					<label class="h6">Available Documents</label><br>
 					<select id="statements_select" class="form-control" name="statements_select">
 						<?php
-//						echo statement::statements_list("{$_SESSION['company_name']}/data");
+						//						echo statement::statements_list("{$_SESSION['company_name']}/data");
 						?>
 					</select>
 					<div style="margin-top: 20px;">
-						<a class="statement_toolbar" href="none" download><button class="btn btn-sm btn-outline-secondary" type="button">Download</button></a>
-						<a class="statement_toolbar" href="none" target="_blank"><button class="btn btn-sm btn-outline-secondary" type="button">Open</button></a>
+						<a class="statement_toolbar" href="none" download>
+							<button class="btn btn-sm btn-outline-secondary" type="button">Download
+							</button>
+						</a>
+						<a class="statement_toolbar" href="none" target="_blank">
+							<button class="btn btn-sm btn-outline-secondary" type="button">Open</button>
+						</a>
 					</div>
 				</form>
 
 
-				<object id="statement_pdf_object" class="col-md-9" data="none" type="application/pdf" height="450">
+				<object id="statement_pdf_object" class="col-md-9" data="none" type="application/pdf"
+				        height="450">
 					<!--For wider browser compatibility-->
 					<!--					<iframe class="col-md-9" data="data/hello_world.pdf?#view=Fit" type="application/pdf" height="450">-->
 					<!--					</iframe>-->
 				</object>
-<!--				--><?php
-//				echo statement::statement_buttons_pdf_url_changer();
-//				?>
+				<!--				--><?php
+				//				echo statement::statement_buttons_pdf_url_changer();
+				//				?>
 			</div>
 		</main>
 	</div>
@@ -56,5 +65,16 @@ require_once 'header.php';
 <?php
 require_once 'footer.php';
 ?>
+<script type="text/javascript">
+	/*
+	If there's nothing in the dropdown list than disable the buttons.
+	 */
+	var select_size = $( '#statements_select option' ).length;
+	if( select_size == 0 ){
+		$( '#statements_select' ).prop( "disabled", true );
+		$( '.statement_toolbar button' ).prop( "disabled", true );
+		$( ".server_response_div .alert" ).text( "No available PDFs." ).addClass( 'alert-warning' ).show();
+	}
+</script>
 </body>
 </html>

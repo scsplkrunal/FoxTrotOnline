@@ -28,6 +28,9 @@ require_once 'header.php';
 			</div>
 			<div class="row">
 				<form class="col-md-3">
+					<div class="server_response_div mt-2">
+						<div class="alert" role="alert"></div>
+					</div>
 					<label class="h6">Available Statements</label><br>
 					<select id="statements_select" class="form-control" name="statements_select">
 						<?php
@@ -56,5 +59,16 @@ require_once 'header.php';
 <?php
 require_once 'footer.php';
 ?>
+<script type="text/javascript">
+	/*
+	If there's nothing in the dropdown list than disable the buttons.
+	 */
+	var select_size = $( '#statements_select option' ).length;
+	if( select_size == 0 ){
+		$( '#statements_select' ).prop( "disabled", true );
+		$( '.statement_toolbar button' ).prop( "disabled", true );
+		$( ".server_response_div .alert" ).text( "No available PDFs." ).addClass( 'alert-warning' ).show();
+	}
+</script>
 </body>
 </html>

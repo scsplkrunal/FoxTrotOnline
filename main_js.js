@@ -213,26 +213,26 @@ $( document ).ready( function(){
 			}
 
 		}
-	// else
-	// 	{ //If Option selected is not 'Custom' or 'Choose from the list'
-			// $.post( 'junction.php', $( '#reports_form' ).serialize(), function( data ){ //Send the form to the server.
-			// 	var json_obj = $.parseJSON( data );
-			// 	if( json_obj.status == true ){
-			// 		pie_chart.data = $.parseJSON(json_obj.data_arr.pie_chart_data);
-			// 		pie_chart.update();
-			// 		line_chart.data = $.parseJSON(json_obj.data_arr.line_chart_data);
-			// 		line_chart.update();
-			// 		$("#reports_table").html(json_obj.data_arr['reports_table_html']);
-			// 		$( ".server_response_div .alert" ).removeClass('alert-warning alert-danger').addClass( 'alert-success' ).text( 'Data generated successfully.' ).show();
-			// 	}else{ //If there is an error
-			// 		$( ".server_response_div .alert" ).text( json_obj.error_message ).show();
-			// 		if( json_obj.error_level == 0 ){
-			// 			$( ".server_response_div .alert" ).removeClass('alert-success alert-danger').addClass( 'alert-warning' );
-			// 		}else{
-			// 			$( ".server_response_div .alert" ).removeClass('alert-success alert-warning').addClass( 'alert-danger' );
-			// 		}
-			// 	}
-			// } );
+		// else
+		// 	{ //If Option selected is not 'Custom' or 'Choose from the list'
+		// $.post( 'junction.php', $( '#reports_form' ).serialize(), function( data ){ //Send the form to the server.
+		// 	var json_obj = $.parseJSON( data );
+		// 	if( json_obj.status == true ){
+		// 		pie_chart.data = $.parseJSON(json_obj.data_arr.pie_chart_data);
+		// 		pie_chart.update();
+		// 		line_chart.data = $.parseJSON(json_obj.data_arr.line_chart_data);
+		// 		line_chart.update();
+		// 		$("#reports_table").html(json_obj.data_arr['reports_table_html']);
+		// 		$( ".server_response_div .alert" ).removeClass('alert-warning alert-danger').addClass( 'alert-success' ).text( 'Data generated successfully.' ).show();
+		// 	}else{ //If there is an error
+		// 		$( ".server_response_div .alert" ).text( json_obj.error_message ).show();
+		// 		if( json_obj.error_level == 0 ){
+		// 			$( ".server_response_div .alert" ).removeClass('alert-success alert-danger').addClass( 'alert-warning' );
+		// 		}else{
+		// 			$( ".server_response_div .alert" ).removeClass('alert-success alert-warning').addClass( 'alert-danger' );
+		// 		}
+		// 	}
+		// } );
 		// }
 	} );
 
@@ -283,7 +283,7 @@ $( document ).ready( function(){
 	 */
 	$( '#' + chart_id )[0].onclick = function( evt ){
 		var activePoints = pie_chart.getElementsAtEvent( evt );
-		var date_type = $('#reports_form input[name=choose_date_radio]:checked').val();
+		var date_type = $( '#reports_form input[name=choose_date_radio]:checked' ).val();
 		if( activePoints[0] ){
 			var chartData = activePoints[0]['_chart'].config.data;
 			var idx = activePoints[0]['_index'];
