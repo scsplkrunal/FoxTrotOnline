@@ -108,6 +108,10 @@ require_once 'header.php';
 					        chart_id="reports_pie_chart"></script>
 					<script type="text/javascript">
 						pie_chart.data = pie_chart_data;
+						pie_chart.options.title = {
+							display: true,
+							text: "Breakdown by Product Category"
+						};
 						pie_chart.update();
 					</script>
 				</div>
