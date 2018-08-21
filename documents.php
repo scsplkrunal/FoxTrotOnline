@@ -28,10 +28,10 @@ require_once 'header.php';
 			</div>
 			<div class="row">
 				<form class="col-md-3">
-					<label class="h6">Available Statements</label><br>
+					<label class="h6">Available Documents</label><br>
 					<select id="statements_select" class="form-control" name="statements_select">
 						<?php
-						echo statement::statements_list("{$_SESSION['company_name']}/data");
+//						echo statement::statements_list("{$_SESSION['company_name']}/data");
 						?>
 					</select>
 					<div style="margin-top: 20px;">
@@ -46,9 +46,9 @@ require_once 'header.php';
 					<!--					<iframe class="col-md-9" data="data/hello_world.pdf?#view=Fit" type="application/pdf" height="450">-->
 					<!--					</iframe>-->
 				</object>
-				<?php
-				echo statement::statement_buttons_pdf_url_changer();
-				?>
+<!--				--><?php
+//				echo statement::statement_buttons_pdf_url_changer();
+//				?>
 			</div>
 		</main>
 	</div>
