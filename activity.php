@@ -53,10 +53,12 @@ require_once 'header.php';
 			</div>
 			<div class="table-responsive mb-5">
 				<table id="activity_table"
-				       class="main-table table table-hover table-striped table-sm text-center">
+				       class="main-table table table-hover table-striped table-sm text-center"
+				       style="font-size: 0.8rem">
 					<thead>
 					<tr>
 						<th>DATE</th>
+						<th>DATE RECEIVED</th>
 						<th>CLIENT ACCOUNT</th>
 						<th>CLIENT NAME</th>
 						<th>PRODUCT DESCRIPTION</th>
@@ -65,7 +67,6 @@ require_once 'header.php';
 						<th>COMMISSION RECEIVED</th>
 						<th>PAYOUT RATE</th>
 						<th>COMMISSION PAID</th>
-						<th>DATE RECEIVED</th>
 						<th>DATE PAID</th>
 					</tr>
 					</thead>

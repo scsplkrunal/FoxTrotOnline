@@ -1114,7 +1114,7 @@ function activity_update($post, $create_boxes_flag = true, $create_table_flag = 
 			$post['from_date'] = substr_replace($post['from_date'], ' 00:00:00', 10);
 			$post['to_date']   = substr_replace($post['to_date'], ' 23:59:59', 10);
 		} else{
-			$sql_str = "SELECT dateTrade, clearing, cli_name, invest, cusip_no, net_amt, comm_rec, rep_rate, rep_comm, date_rec, pay_date
+			$sql_str = "SELECT dateTrade, date_rec, clearing, cli_name, invest, cusip_no, net_amt, comm_rec, rep_rate, rep_comm, pay_date
 					FROM trades
 					WHERE rep_no = {$_SESSION["permrep_obj"]->permRepID}
 					$where_clause;";
