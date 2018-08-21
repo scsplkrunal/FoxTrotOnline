@@ -894,7 +894,7 @@ function dashboard_posted_commissions(){
 		}
 	}
 
-	return "Posted Commisions: $posted_commissions\$";
+	return "Posted Commisions: \$$posted_commissions";
 }
 
 /**
@@ -1133,8 +1133,8 @@ function activity_update($post, $create_boxes_flag = true, $create_table_flag = 
 							$table_html_return_str .= "<td class='text-left'>$value</td>";
 							break;
 						case 'rep_rate':
-							$value                 = number_format(floatval($value), 2);
-							$table_html_return_str .= "<td class='text-right'>$value</td>";
+							$value                 = number_format(floatval($value) * 100, 2);
+							$table_html_return_str .= "<td class='text-right'>$value%</td>";
 							break;
 						case 'net_amt':
 						case 'comm_rec':

@@ -40,7 +40,7 @@ require_once 'header.php';
 					<div class="custom-control custom-checkbox">
 						<input type="checkbox" name="all_dates" class="custom-control-input"
 						       id="all_dates_checkbox" checked>
-						<label class="custom-control-label" for="all_dates_checkbox">All Dates</label>
+						<label class="custom-control-label" for="all_dates_checkbox">All Trade Dates</label>
 					</div>
 					<label>From</label>
 					<input type="date" name="from_date" disabled><br class="d-xs-block d-sm-none">
