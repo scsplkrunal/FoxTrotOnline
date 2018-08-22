@@ -292,7 +292,7 @@ class statement{
 				unset($this->field_1);
 				break;
 		}
-		$this->date             = strtotime($this->month.' '.$this->year);
+		$this->date = strtotime($this->month.' '.$this->year);
 	}
 
 	/**
@@ -861,7 +861,7 @@ function reports_table_html($post, $original_table_data){
 							<th>COMMISSION</th>
 							<th class="text-right">TOTAL</th>
 							<th class="text-right">LAST</th>
-							<th>DIFFERENCE</th>
+							<th class="text-right">DIFFERENCE</th>
 						</tr>
 						</thead>
 						<tbody>';
@@ -872,9 +872,17 @@ function reports_table_html($post, $original_table_data){
 		$color = PIE_CHART_COLORS_ARRAY[$i];
 		$i++;
 		if(isset($last_values)){
-			$difference = round((100 * $values_arr[1]) / $values_arr[0], 2);
-			if(!is_numeric($difference) || is_nan($difference)){
-				$difference = '-';
+			$difference = round((100 * $values_arr[0]) / $values_arr[1], 2);
+			if(!is_numeric($difference) || is_nan($difference) || is_infinite($difference)){
+				$difference = '<td>-</td>';
+			} else{
+				if($difference > 100){
+					$difference = "<td class='text-success text-right'><b>$difference%</b></td>";
+				} elseif($difference < 100){
+					$difference = "<td class='text-danger text-right'><b>$difference%</b></td>";
+				} else{
+					$difference = "<td class='text-primary text-right'><b>$difference%</b></td>";
+				}
 			}
 		}
 		if(!is_array($values_arr)){
@@ -894,7 +902,7 @@ function reports_table_html($post, $original_table_data){
 						<td>$product</td>
 						<td class='text-right'>\${$values_arr[0]}</td>
 						<td class='text-right'>\${$values_arr[1]}</td>
-						<td>$difference</td>
+						$difference
 						</tr>";
 	}
 	$html_table_string .= '</tbody>
@@ -1294,7 +1302,8 @@ function reports_update($post){
  * @throws exception
  */
 function dashboard_update($post){
-	$json_obj = pie_chart_data_and_labels('dashboard_pie_chart',$post);
+	$json_obj                                = pie_chart_data_and_labels('dashboard_pie_chart', $post);
 	$json_obj->data_arr['posted_commission'] = dashboard_posted_commissions($post["to_date"]);
+
 	return $json_obj;
 }
