@@ -1,25 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="3afaa673-cb46-4034-a6f7-e9cf43ebac35" name="Default" comment="misc">
+    <list default="true" id="3afaa673-cb46-4034-a6f7-e9cf43ebac35" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lafferty/data/BrokerStatement2014FebA00001.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lafferty/data/BrokerStatement2014JanD00002.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lafferty/data/BrokerStatement2014NovB00001.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lafferty/data/BrokerStatement2014OctA00002.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lafferty/data/BrokerStatement2014SepA00001.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lafferty/data/BrokerStatement2015AugA00001.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lafferty/data/BrokerStatement2016JulB00001.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lafferty/data/BrokerStatement2018MarB00001.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/lafferty/data/BrokerStatement2018MarB00001.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/logos/lifemark.png" beforeDir="false" afterPath="$PROJECT_DIR$/lib/logos/lifemark.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lifemark/data/BrokerStatement2013AugA00001.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lifemark/data/BrokerStatement2013FebA00001.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lifemark/data/BrokerStatement2013JanD00002.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lifemark/data/BrokerStatement2013JulB00001.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lifemark/data/BrokerStatement2013MarB00001.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lifemark/data/BrokerStatement2013NovB00001.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lifemark/data/BrokerStatement2013OctA00002.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lifemark/data/BrokerStatement2013SepA00001.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backstage.php" beforeDir="false" afterPath="$PROJECT_DIR$/backstage.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tmp/foxtrot_online.log" beforeDir="false" afterPath="$PROJECT_DIR$/tmp/foxtrot_online.log" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -31,20 +15,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="login.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/login.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="765">
-              <caret line="45" column="14" selection-start-line="45" selection-start-column="14" selection-end-line="45" selection-end-column="14" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="backstage.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/backstage.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="267">
-              <caret line="1067" column="31" selection-start-line="1067" selection-start-column="31" selection-end-line="1067" selection-end-column="31" />
+            <state relative-caret-position="280">
+              <caret line="310" selection-start-line="310" selection-end-line="310" />
             </state>
           </provider>
         </entry>
@@ -114,10 +89,10 @@
         <option value="$PROJECT_DIR$/pie_chart_no_data.js" />
         <option value="$PROJECT_DIR$/dashboard.php" />
         <option value="$PROJECT_DIR$/activity.php" />
-        <option value="$PROJECT_DIR$/reports.php" />
         <option value="$PROJECT_DIR$/main_js.js" />
         <option value="$PROJECT_DIR$/documents.php" />
         <option value="$PROJECT_DIR$/statements.php" />
+        <option value="$PROJECT_DIR$/reports.php" />
         <option value="$PROJECT_DIR$/backstage.php" />
       </list>
     </option>
@@ -213,7 +188,7 @@
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="1" visible="true" weight="0.17246597" />
+      <window_info content_ui="combo" id="Project" order="1" visible="true" weight="0.17473525" />
       <window_info anchor="bottom" id="TODO" order="9" />
       <window_info anchor="bottom" id="Event Log" order="1" side_tool="true" weight="0.32933104" />
       <window_info anchor="right" id="Database" order="0" />
@@ -222,7 +197,7 @@
       <window_info anchor="bottom" id="Run" order="6" />
       <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="0" side_tool="true" />
-      <window_info anchor="right" id="Debug" order="4" weight="0.20121029" />
+      <window_info active="true" anchor="right" id="Debug" order="4" visible="true" weight="0.20121029" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="3" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="8" weight="0.4" />
       <window_info anchor="right" id="Commander" order="1" weight="0.4" />
@@ -271,7 +246,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$/.." />
     </ignored-roots>
-    <MESSAGE value="Display most recent statement by default" />
     <MESSAGE value="Reports change menu name and main pane name" />
     <MESSAGE value="Drill down table:&#10;1.&#9;Right align currency $999,999.99&#10;2.&#9;Left align text&#10;3.&#9;Format all dates to mm/dd/yyyy" />
     <MESSAGE value="Activity table:&#10;1.&#9;Right align currency $999,999.99&#10;2.&#9;Left align text&#10;3.&#9;Format all dates to mm/dd/yyyy" />
@@ -296,14 +270,15 @@
     <MESSAGE value="Pie chart title" />
     <MESSAGE value="Empty drop down list and no pdf preview in documents page" />
     <MESSAGE value="misc" />
-    <option name="LAST_COMMIT_MESSAGE" value="misc" />
+    <MESSAGE value="Change reports table location" />
+    <option name="LAST_COMMIT_MESSAGE" value="Change reports table location" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints-dialog>
         <breakpoints-dialog />
       </breakpoints-dialog>
-      <option name="time" value="267" />
+      <option name="time" value="270" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
@@ -612,13 +587,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/reports.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="112" column="78" selection-start-line="112" selection-start-column="78" selection-end-line="112" selection-end-column="78" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/documents.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
@@ -633,10 +601,17 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/reports.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="442">
+          <caret line="119" column="59" selection-start-line="119" selection-start-column="59" selection-end-line="119" selection-end-column="59" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/backstage.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="267">
-          <caret line="1067" column="31" selection-start-line="1067" selection-start-column="31" selection-end-line="1067" selection-end-column="31" />
+        <state relative-caret-position="280">
+          <caret line="310" selection-start-line="310" selection-end-line="310" />
         </state>
       </provider>
     </entry>

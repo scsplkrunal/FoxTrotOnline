@@ -295,17 +295,15 @@ class statement{
 		$files_array = array_values($files_array);
 
 		foreach($files_array as $file){
-			$file_obj_array [] = new statement($file, "{$_SESSION['company_name']}/data/$file");
+			if(self::is_authorized($file)){
+				$file_obj_array [] = new statement($file, "{$_SESSION['company_name']}/data/$file");
+			}
 		}
 		$file_obj_array = self::sort_pdf_array_by_date($file_obj_array);
 
 		foreach($file_obj_array as $file_obj){
-			if(self::is_authorized($file_obj)){
-				$option_content  = "{$file_obj->month} {$file_obj->year} {$file_obj->payroll_sequence} Payroll";
-				$html_return_str .= "<option value='{$file_obj->pdf_name}'>$option_content</option>";
-			} else{
-				unset($file_obj);
-			}
+			$option_content  = "{$file_obj->month} {$file_obj->year} {$file_obj->payroll_sequence} Payroll";
+			$html_return_str .= "<option value='{$file_obj->pdf_name}'>$option_content</option>";
 		}
 
 		$first_file_url = $_SESSION['first_statement_url'] = $file_obj_array[0]->pdf_url;
@@ -326,11 +324,12 @@ class statement{
 
 	/**
 	 * Gets a file object, and returns true/false if the logged in user is authorized to view the file.
-	 * @param $file_obj
+	 * @param $file
 	 * @return bool
 	 */
-	static function is_authorized($file_obj){
-		if($file_obj->broker_id == $_SESSION['permrep_obj']->permRepID){
+	static function is_authorized($file){
+		$broker_id = substr($file, 23, 5);
+		if($broker_id == $_SESSION['permrep_obj']->permRepID){
 			return true;
 		} else{
 			return false;
@@ -566,7 +565,10 @@ class permrep{
  * @return string
  * @throws exception
  */
-function pie_chart_data_and_labels($chart_name, $post = array('time_period' => 'all_dates', 'choose_date_radio' => 'dateTrade', 'choose_pay_radio' => 'rep_comm')){
+function pie_chart_data_and_labels($chart_name, $post = array('time_period'       => 'all_dates',
+                                                              'choose_date_radio' => 'dateTrade',
+                                                              'choose_pay_radio'  => 'rep_comm'
+)){
 	switch($chart_name){
 		case 'dashboard_pie_chart':
 			$sql_str = "SELECT SUM(comm_rec) AS total_commission, trades.inv_type, prodtype.product
@@ -977,7 +979,7 @@ function drill_down_pie_chart($post){
 			case 'dateTrade':
 				$header = 'Trade Date';
 				break;
-				case 'date_rec':
+			case 'date_rec':
 				$header = 'Date Posted';
 				break;
 			case 'comm_rec':
