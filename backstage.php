@@ -1066,7 +1066,6 @@ function logo_html_modal(){
 	unset($logos[array_search('foxtrot_online.png', $logos, true)]);
 	unset($logos[array_search('demo.png', $logos, true)]);
 	foreach($logos as $logo){
-
 		$company_name = pathinfo($logo, PATHINFO_FILENAME);
 		$modal_html   .= "<div class='col-md-4 mb-3'><a href='login.php?company_name=$company_name'><img class='logo' src='lib/logos/$logo' alt='logo'></a></div>";
 	}
