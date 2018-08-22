@@ -1,4 +1,7 @@
 $( document ).ready( function(){
+
+	$(".loader").hide();
+
 	//Toggle sidebar
 	$( '.navbar-toggler' ).click( function(){
 		var is_shown = $( '.sidebar' ).attr( 'style' );
@@ -320,3 +323,9 @@ $( document ).ready( function(){
 
 
 } );
+
+$(document).on({
+	ajaxStart: function() { $(".loader").show();    },
+	ajaxStop: function() { $(".loader").hide(); }
+	// load: function() {  }
+});
