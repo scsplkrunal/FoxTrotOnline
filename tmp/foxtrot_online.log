@@ -3921,3 +3921,8 @@
 [Wed Aug 22 13:19:02.480623 2018] [php7:notice] [pid 11596:tid 1276] [client 127.0.0.1:57329] PHP   1. {main}() C:\\Users\\alonb\\Desktop\\FoxTrotOnline\\login.php:0, referer: http://foxtrot_online:2000/dashboard.php
 [Wed Aug 22 13:19:02.480623 2018] [php7:notice] [pid 11596:tid 1276] [client 127.0.0.1:57329] PHP   2. require_once() C:\\Users\\alonb\\Desktop\\FoxTrotOnline\\login.php:2, referer: http://foxtrot_online:2000/dashboard.php
 [Wed Aug 22 13:19:02.480623 2018] [php7:notice] [pid 11596:tid 1276] [client 127.0.0.1:57329] PHP   3. session_start() C:\\Users\\alonb\\Desktop\\FoxTrotOnline\\header.php:4, referer: http://foxtrot_online:2000/dashboard.php
+[Wed Aug 22 17:48:39.264948 2018] [php7:notice] [pid 11596:tid 1256] [client 127.0.0.1:54516] PHP Notice:  session_start(): A session had already been started - ignoring in C:\\Users\\alonb\\Desktop\\FoxTrotOnline\\header.php on line 4
+[Wed Aug 22 17:48:39.264948 2018] [php7:notice] [pid 11596:tid 1256] [client 127.0.0.1:54516] PHP Stack trace:
+[Wed Aug 22 17:48:39.264948 2018] [php7:notice] [pid 11596:tid 1256] [client 127.0.0.1:54516] PHP   1. {main}() C:\\Users\\alonb\\Desktop\\FoxTrotOnline\\login.php:0
+[Wed Aug 22 17:48:39.264948 2018] [php7:notice] [pid 11596:tid 1256] [client 127.0.0.1:54516] PHP   2. require_once() C:\\Users\\alonb\\Desktop\\FoxTrotOnline\\login.php:2
+[Wed Aug 22 17:48:39.264948 2018] [php7:notice] [pid 11596:tid 1256] [client 127.0.0.1:54516] PHP   3. session_start() C:\\Users\\alonb\\Desktop\\FoxTrotOnline\\header.php:4
