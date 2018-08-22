@@ -4,7 +4,6 @@
     <list default="true" id="3afaa673-cb46-4034-a6f7-e9cf43ebac35" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backstage.php" beforeDir="false" afterPath="$PROJECT_DIR$/backstage.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tmp/foxtrot_online.log" beforeDir="false" afterPath="$PROJECT_DIR$/tmp/foxtrot_online.log" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -18,8 +17,8 @@
       <file leaf-file-name="backstage.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/backstage.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="280">
-              <caret line="310" selection-start-line="310" selection-end-line="310" />
+            <state relative-caret-position="331">
+              <caret line="116" column="47" selection-start-line="116" selection-start-column="47" selection-end-line="116" selection-end-column="47" />
             </state>
           </provider>
         </entry>
@@ -185,7 +184,7 @@
     <configuration name="foxtrot_online" type="PhpWebAppRunConfigurationType" factoryName="PHP Web Application" server_name="foxtrot_online" start_url="/login.php" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
     <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="1" visible="true" weight="0.17473525" />
@@ -246,8 +245,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$/.." />
     </ignored-roots>
-    <MESSAGE value="Reports change menu name and main pane name" />
-    <MESSAGE value="Drill down table:&#10;1.&#9;Right align currency $999,999.99&#10;2.&#9;Left align text&#10;3.&#9;Format all dates to mm/dd/yyyy" />
     <MESSAGE value="Activity table:&#10;1.&#9;Right align currency $999,999.99&#10;2.&#9;Left align text&#10;3.&#9;Format all dates to mm/dd/yyyy" />
     <MESSAGE value="Reports table:&#10;1.&#9;Right align currency $999,999.99&#10;2.&#9;Left align text&#10;3.&#9;Format all dates to mm/dd/yyyy" />
     <MESSAGE value="Delete comment" />
@@ -271,14 +268,23 @@
     <MESSAGE value="Empty drop down list and no pdf preview in documents page" />
     <MESSAGE value="misc" />
     <MESSAGE value="Change reports table location" />
-    <option name="LAST_COMMIT_MESSAGE" value="Change reports table location" />
+    <MESSAGE value="Statements improve performance" />
+    <MESSAGE value="Statements – add field_1 at the end of statement and present Direct if equal to DIR" />
+    <option name="LAST_COMMIT_MESSAGE" value="Statements – add field_1 at the end of statement and present Direct if equal to DIR" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/backstage.php</url>
+          <line>103</line>
+          <option name="timeStamp" value="272" />
+        </line-breakpoint>
+      </breakpoints>
       <breakpoints-dialog>
         <breakpoints-dialog />
       </breakpoints-dialog>
-      <option name="time" value="270" />
+      <option name="time" value="273" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
@@ -610,8 +616,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/backstage.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="280">
-          <caret line="310" selection-start-line="310" selection-end-line="310" />
+        <state relative-caret-position="331">
+          <caret line="116" column="47" selection-start-line="116" selection-start-column="47" selection-end-line="116" selection-end-column="47" />
         </state>
       </provider>
     </entry>
