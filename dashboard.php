@@ -27,7 +27,7 @@ require_once 'header.php';
 			</div>
 
 			<div class="row text-center">
-				<h4 class="col-md-5 mb-4">
+				<h4 id="posted_commission_heading" class="col-md-5 mb-4">
 					<?php
 					echo dashboard_posted_commissions();
 					?>
@@ -50,7 +50,7 @@ require_once 'header.php';
 							$( "#dashboard_form input[type=date]" ).val( today );
 						</script>
 						<br>
-						<input class="btn btn-primary mt-2" type="submit" value="Cutoff">
+						<input class="btn btn-primary mt-2" type="submit" value="Cutoff" required>
 						<input name="class" value="no_class" hidden>
 						<input name="func" value="dashboard_update" hidden>
 					</form>

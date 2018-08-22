@@ -590,10 +590,15 @@ function pie_chart_data_and_labels($chart_name, $post = array(
 )){
 	switch($chart_name){
 		case 'dashboard_pie_chart':
+			if(isset($post["to_date"])){
+				$where_clause = "AND date_rec < '{$post["to_date"]}'";
+			}
 			$sql_str = "SELECT SUM(comm_rec) AS total_commission, trades.inv_type, prodtype.product
 					FROM trades
 					RIGHT JOIN prodtype ON trades.inv_type = prodtype.inv_type
-					WHERE rep_no = {$_SESSION["permrep_obj"]->permRepID} AND pay_date IS NULL
+					WHERE rep_no = {$_SESSION["permrep_obj"]->permRepID}
+					AND pay_date IS NULL
+					$where_clause
 					GROUP BY inv_type;";
 			$result  = db_query($sql_str);
 			if($result->num_rows != 0){ //If there is a value returned
@@ -899,9 +904,19 @@ function reports_table_html($post, $original_table_data){
 
 /**
  * Returns a string representing the total commissions posted.
+ * @param $to_date
+ * @return string
+ * @throws exception
  */
-function dashboard_posted_commissions(){
-	$sql_str = "SELECT SUM(comm_rec) AS posted_commission FROM trades WHERE pay_date is NULL AND rep_no = {$_SESSION['permrep_obj']->permRepID} LIMIT 1;";
+function dashboard_posted_commissions($to_date = null){
+	if($to_date != null){
+		$where_clause = "AND date_rec < '$to_date'";
+	}
+	$sql_str = "SELECT SUM(comm_rec) AS posted_commission
+			FROM trades
+			WHERE pay_date is NULL
+			$where_clause
+			AND rep_no = {$_SESSION['permrep_obj']->permRepID} LIMIT 1;";
 	$result  = db_query($sql_str);
 	if($result->num_rows != 0){ //If there is a value returned
 		while($row = $result->fetch_assoc()){ //Fill up all properties from DB data
@@ -909,7 +924,7 @@ function dashboard_posted_commissions(){
 		}
 	}
 
-	return "Posted Commisions: \$$posted_commissions";
+	return "Posted Commissions: \$$posted_commissions";
 }
 
 /**
@@ -1273,7 +1288,11 @@ function reports_update($post){
 /**
  * Gets a date and returns the comm_rec sum to this date.
  * @param $post
+ * @return string
+ * @throws exception
  */
 function dashboard_update($post){
-
+	$json_obj = pie_chart_data_and_labels('dashboard_pie_chart',$post);
+	$json_obj->data_arr['posted_commission'] = dashboard_posted_commissions($post["to_date"]);
+	return $json_obj;
 }
