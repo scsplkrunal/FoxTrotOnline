@@ -1269,3 +1269,11 @@ function reports_update($post){
 
 	return $json_obj;
 }
+
+/**
+ * Gets a date and returns the comm_rec sum to this date.
+ * @param $post
+ */
+function dashboard_update($post){
+
+}

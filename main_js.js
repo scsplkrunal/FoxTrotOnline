@@ -1,8 +1,13 @@
 $( document ).ready( function(){
 
+	/**
+	 * Hide loader div on page load
+	 */
 	$(".loader").hide();
 
-	//Toggle sidebar
+	/**
+	 * Toggle sidebar
+	 */
 	$( '.navbar-toggler' ).click( function(){
 		var is_shown = $( '.sidebar' ).attr( 'style' );
 		if( is_shown == undefined ){
@@ -13,7 +18,7 @@ $( document ).ready( function(){
 	} );
 
 
-	/*
+	/**
 	Disable/Enable the dates input fields according to the checkbox 'checked' state.
 	 */
 	$( '#all_dates_checkbox' ).click( function(){
@@ -76,7 +81,7 @@ $( document ).ready( function(){
 	} );
 
 
-	/*
+	/**
 	Changes data attribute of html pdf embed (object) after choosing a pdf to view
 	And the buttons Download and Open.
 	 */
@@ -89,7 +94,7 @@ $( document ).ready( function(){
 		}
 	} );
 
-	/*
+	/**
 	Log in form submit
 	 */
 	$( "#log_in_form" ).submit( function(){
@@ -110,7 +115,7 @@ $( document ).ready( function(){
 	} );
 
 
-	/*
+	/**
 	Autofocus on Select input when forgot_password modal is opened.
 	 */
 	$( '#forgot_password_modal' ).on( 'shown.bs.modal', function(){
@@ -118,7 +123,7 @@ $( document ).ready( function(){
 	} );
 
 
-	/*
+	/**
 	Forgot password form submit
 	 */
 	$( "#forgot_password_form" ).submit( function(){
@@ -139,7 +144,7 @@ $( document ).ready( function(){
 	} );
 
 
-	/*
+	/**
 	Activity form submit
 	 */
 	$( "#activity_form" ).submit( function(){
@@ -197,7 +202,7 @@ $( document ).ready( function(){
 	} );
 
 
-	/*
+	/**
 	Reports form - changed selection.
 	 */
 	$( '#time_periods_select' ).change( function(){ //On change of drop down list
@@ -240,7 +245,7 @@ $( document ).ready( function(){
 	} );
 
 
-	/*
+	/**
 	Reports form submit
 	 */
 	$( "#reports_form" ).submit( function(){
@@ -266,7 +271,7 @@ $( document ).ready( function(){
 	} );
 
 
-	/*
+	/**
 	Sign out link
 	 */
 	$( "#sign_out_fake_link" ).click( function(){
@@ -321,6 +326,28 @@ $( document ).ready( function(){
 		pie_chart.update();
 	}
 
+
+	/**
+	Dashboard form submit
+      */
+	$( "#dashboard_form" ).submit( function(){
+		event.preventDefault(); //Prevent the form from submitting normally
+		$.post( 'junction.php', $( '#dashboard_form' ).serialize(), function( data ){
+			var json_obj = $.parseJSON( data );
+			if( json_obj.status == true ){
+				pie_chart.data = $.parseJSON( json_obj.data_arr.pie_chart_data );
+				pie_chart.update();
+				$( ".server_response_div .alert" ).removeClass( 'alert-warning alert-danger' ).addClass( 'alert-success' ).text( 'Data generated successfully.' ).show();
+			}else{ //If there is an error
+				$( ".server_response_div .alert" ).text( json_obj.error_message ).show();
+				if( json_obj.error_level == 0 ){
+					$( ".server_response_div .alert" ).removeClass( 'alert-success alert-danger' ).addClass( 'alert-warning' );
+				}else{
+					$( ".server_response_div .alert" ).removeClass( 'alert-success alert-warning' ).addClass( 'alert-danger' );
+				}
+			}
+		} );
+	} );
 
 } );
 
