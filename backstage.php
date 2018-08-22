@@ -598,6 +598,7 @@ function pie_chart_data_and_labels($chart_name, $post = array(
 					RIGHT JOIN prodtype ON trades.inv_type = prodtype.inv_type
 					WHERE rep_no = {$_SESSION["permrep_obj"]->permRepID}
 					AND pay_date IS NULL
+					AND date_rec IS NOT NULL
 					$where_clause
 					GROUP BY inv_type;";
 			$result  = db_query($sql_str);
@@ -915,6 +916,7 @@ function dashboard_posted_commissions($to_date = null){
 	$sql_str = "SELECT SUM(comm_rec) AS posted_commission
 			FROM trades
 			WHERE pay_date is NULL
+			AND date_rec IS NOT NULL
 			$where_clause
 			AND rep_no = {$_SESSION['permrep_obj']->permRepID} LIMIT 1;";
 	$result  = db_query($sql_str);
