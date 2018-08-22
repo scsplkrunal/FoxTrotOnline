@@ -43,7 +43,7 @@
       <file leaf-file-name="backstage.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/backstage.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="369">
+            <state relative-caret-position="216">
               <caret line="1121" column="13" selection-start-line="1121" selection-start-column="13" selection-end-line="1121" selection-end-column="13" />
             </state>
           </provider>
@@ -166,17 +166,6 @@
             <path>
               <item name="FoxTrotOnline" type="b2602c69:ProjectViewProjectNode" />
               <item name="FoxTrotOnline" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="FoxTrotOnline" type="b2602c69:ProjectViewProjectNode" />
-              <item name="FoxTrotOnline" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="concorde" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="FoxTrotOnline" type="b2602c69:ProjectViewProjectNode" />
-              <item name="FoxTrotOnline" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="concorde" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="data" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
           </expand>
           <select />
@@ -646,7 +635,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/backstage.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="369">
+        <state relative-caret-position="216">
           <caret line="1121" column="13" selection-start-line="1121" selection-start-column="13" selection-end-line="1121" selection-end-column="13" />
         </state>
       </provider>
