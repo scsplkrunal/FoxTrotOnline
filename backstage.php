@@ -264,6 +264,7 @@ class statement{
 	public $month;
 	public $payroll_sequence;
 	public $broker_id;
+	public $field_1;
 	public $date;
 
 	function __construct($pdf_name = null, $pdf_url = null){
@@ -274,6 +275,15 @@ class statement{
 		$payroll_sequence_int   = ord(substr($pdf_name, 22, 1)) - ord('A') + 1; //Replace the letter with a number
 		$this->payroll_sequence = number_to_ordinal($payroll_sequence_int); //Replace the number with an word
 		$this->broker_id        = substr($pdf_name, 23, 5);
+		$this->field_1          = substr($pdf_name, 28, 3);
+		switch($this->field_1){
+			case 'DIR':
+				$this->field_1 = 'Direct';
+				break;
+			default:
+				unset($this->field_1);
+				break;
+		}
 		$this->date             = strtotime($this->month.' '.$this->year);
 	}
 
@@ -302,7 +312,7 @@ class statement{
 		$file_obj_array = self::sort_pdf_array_by_date($file_obj_array);
 
 		foreach($file_obj_array as $file_obj){
-			$option_content  = "{$file_obj->month} {$file_obj->year} {$file_obj->payroll_sequence} Payroll";
+			$option_content  = "{$file_obj->month} {$file_obj->year} {$file_obj->payroll_sequence} Payroll {$file_obj->field_1}";
 			$html_return_str .= "<option value='{$file_obj->pdf_name}'>$option_content</option>";
 		}
 
@@ -565,9 +575,10 @@ class permrep{
  * @return string
  * @throws exception
  */
-function pie_chart_data_and_labels($chart_name, $post = array('time_period'       => 'all_dates',
-                                                              'choose_date_radio' => 'dateTrade',
-                                                              'choose_pay_radio'  => 'rep_comm'
+function pie_chart_data_and_labels($chart_name, $post = array(
+	'time_period'       => 'all_dates',
+	'choose_date_radio' => 'dateTrade',
+	'choose_pay_radio'  => 'rep_comm'
 )){
 	switch($chart_name){
 		case 'dashboard_pie_chart':
