@@ -827,10 +827,7 @@ function reports_table_html($post, $original_table_data){
 		}
 	}
 
-	$html_table_string = '
-				<div class="row mt-5 mb-5">
-				<div class="col-lg-6">
-					<table class="main-table table table-hover table-striped table-sm">
+	$html_table_string = '<table class="main-table table table-hover table-striped table-sm">
 						<thead>
 						<tr>
 							<th>COLOR</th>
@@ -873,11 +870,8 @@ function reports_table_html($post, $original_table_data){
 						<td>$difference</td>
 						</tr>";
 	}
-	$html_table_string .= '
-						</tbody>
-					</table>
-				</div>
-			</div>';
+	$html_table_string .= '</tbody>
+				</table>';
 
 	return $html_table_string;
 }

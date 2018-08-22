@@ -115,6 +115,12 @@ require_once 'header.php';
 						pie_chart.update();
 					</script>
 				</div>
+				<div id="reports_table" class="col-lg-6">
+					<?php
+					$json_obj = pie_chart_data_and_labels('reports_pie_chart');
+					echo $json_obj->data_arr['reports_table_html'];
+					?>
+				</div>
 			</div>
 
 			<!-- Modal -->
@@ -134,12 +140,7 @@ require_once 'header.php';
 				</div>
 			</div>
 
-			<div id="reports_table">
-				<?php
-				$json_obj = pie_chart_data_and_labels('reports_pie_chart');
-				echo $json_obj->data_arr['reports_table_html'];
-				?>
-			</div>
+
 		</main>
 	</div>
 </div>
