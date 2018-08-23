@@ -854,18 +854,19 @@ function reports_table_html($post, $original_table_data){
 		}
 	}
 
-	$html_table_string = '<table class="main-table table table-hover table-striped table-sm">
+	$analytics_headers = (isset($last_values))? '<th class="text-right">DIFFERENCE</th>
+							<th class="text-right">GROWTH</th>' : '';
+	$html_table_string = "<table class='main-table table table-hover table-striped table-sm'>
 						<thead>
 						<tr>
 							<th>COLOR</th>
 							<th>COMMISSION</th>
-							<th class="text-right">TOTAL</th>
-							<th class="text-right">LAST</th>
-							<th class="text-right">DIFFERENCE</th>
-							<th class="text-right">GROWTH</th>
+							<th class='text-right'>TOTAL</th>
+							<th class='text-right'>LAST</th>
+							$analytics_headers
 						</tr>
 						</thead>
-						<tbody>';
+						<tbody>";
 
 	$i          = 0;
 	$table_data = (isset($table_data)) ? $table_data : $original_table_data;
@@ -876,14 +877,14 @@ function reports_table_html($post, $original_table_data){
 			$difference = number_format((1 - ($values_arr[1] / $values_arr[0])) * 100, 2);
 			if(!is_numeric($difference) || is_nan($difference) || is_infinite($difference)){
 				$difference = '<td class="text-right">-</td>';
-			}elseif($difference > 0){
+			} elseif($difference > 0){
 				$difference = "<td class='text-success text-right'><b>$difference%</b></td>";
-			}elseif($difference == 0){
+			} elseif($difference == 0){
 				$difference = "<td class='text-primary text-right'><b>$difference%</b></td>";
-			}else{
+			} else{
 				$difference = "<td class='text-danger text-right'><b>$difference%</b></td>";
 			}
-			$growth     = number_format((100 * $values_arr[0]) / $values_arr[1], 2);
+			$growth = number_format((100 * $values_arr[0]) / $values_arr[1], 2);
 			if(!is_numeric($growth) || is_nan($growth) || is_infinite($growth)){
 				$growth = '<td class="text-right">-</td>';
 			} else{
