@@ -706,6 +706,10 @@ function pie_chart_data_and_labels($chart_name, $post = array(
  * @throws exception
  */
 function line_chart_data_and_labels($post){
+	if($post["time_period"] == 'all_dates'){
+		unset($_SESSION['from_date']);
+		unset($_SESSION['to_date']);
+	}
 	if(!isset($post["choose_date_radio"])){
 		$post["choose_date_radio"] = 'dateTrade';
 	}

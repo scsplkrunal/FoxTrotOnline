@@ -79,7 +79,7 @@ require_once 'header.php';
 			<div class="row"> <!-- Line Chart div -->
 				<div class="col-lg-6">
 					<?php
-					$line_chart_data = line_chart_data_and_labels([]);
+					$line_chart_data = line_chart_data_and_labels(['time_period' => 'all_dates']);
 					echo "<script type='text/javascript'>
 							var line_chart_data = $line_chart_data;
 						</script>";
