@@ -862,6 +862,7 @@ function reports_table_html($post, $original_table_data){
 							<th class="text-right">TOTAL</th>
 							<th class="text-right">LAST</th>
 							<th class="text-right">DIFFERENCE</th>
+							<th class="text-right">GROWTH</th>
 						</tr>
 						</thead>
 						<tbody>';
@@ -872,16 +873,26 @@ function reports_table_html($post, $original_table_data){
 		$color = PIE_CHART_COLORS_ARRAY[$i];
 		$i++;
 		if(isset($last_values)){
-			$difference = round((100 * $values_arr[0]) / $values_arr[1], 2);
+			$difference = number_format((1 - ($values_arr[1] / $values_arr[0])) * 100, 2);
 			if(!is_numeric($difference) || is_nan($difference) || is_infinite($difference)){
-				$difference = '<td>-</td>';
+				$difference = '<td class="text-right">-</td>';
+			}elseif($difference > 0){
+				$difference = "<td class='text-success text-right'><b>$difference%</b></td>";
+			}elseif($difference == 0){
+				$difference = "<td class='text-primary text-right'><b>$difference%</b></td>";
+			}else{
+				$difference = "<td class='text-danger text-right'><b>$difference%</b></td>";
+			}
+			$growth     = number_format((100 * $values_arr[0]) / $values_arr[1], 2);
+			if(!is_numeric($growth) || is_nan($growth) || is_infinite($growth)){
+				$growth = '<td class="text-right">-</td>';
 			} else{
-				if($difference > 100){
-					$difference = "<td class='text-success text-right'><b>$difference%</b></td>";
-				} elseif($difference < 100){
-					$difference = "<td class='text-danger text-right'><b>$difference%</b></td>";
+				if($growth > 100){
+					$growth = "<td class='text-success text-right'><b>$growth%</b></td>";
+				} elseif($growth < 100){
+					$growth = "<td class='text-danger text-right'><b>$growth%</b></td>";
 				} else{
-					$difference = "<td class='text-primary text-right'><b>$difference%</b></td>";
+					$growth = "<td class='text-primary text-right'><b>$growth%</b></td>";
 				}
 			}
 		}
@@ -903,6 +914,7 @@ function reports_table_html($post, $original_table_data){
 						<td class='text-right'>\${$values_arr[0]}</td>
 						<td class='text-right'>\${$values_arr[1]}</td>
 						$difference
+						$growth
 						</tr>";
 	}
 	$html_table_string .= '</tbody>
