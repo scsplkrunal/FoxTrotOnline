@@ -207,12 +207,20 @@ $( document ).ready( function(){
 	 */
 	$( '#time_periods_select' ).change( function(){ //On change of drop down list
 		var id_of_selected_option = $( this ).find( "option:selected" ).attr( "id" );
-		if(id_of_selected_option == 'dates_form_option_custom'){
-			$( '.hidden_form_div' ).show(); //If so - show the hidden div with the dates input.
-			$( '.hidden_form_div input' ).prop( "disabled", false );
-		}else{
+		if( id_of_selected_option == 'dates_form_option_all_dates' ){
+			$( '#reports_form_dates_radios_div input' ).prop( "disabled", true );
 			$( '.hidden_form_div' ).hide(); //Hide the hidden div with the dates input.
 			$( '.hidden_form_div input' ).prop( "disabled", true );
+		}else{
+			$( '#reports_form_dates_radios_div input' ).prop( "disabled", false );
+			if( id_of_selected_option == "dates_form_option_custom" ){ //Check if the selected option was 'Custom'
+				$( '.hidden_form_div' ).show(); //If so - show the hidden div with the dates input.
+				$( '.hidden_form_div input' ).prop( "disabled", false );
+			}else{
+				$( '.hidden_form_div' ).hide(); //Hide the hidden div with the dates input.
+				$( '.hidden_form_div input' ).prop( "disabled", true );
+			}
+
 		}
 	} );
 
