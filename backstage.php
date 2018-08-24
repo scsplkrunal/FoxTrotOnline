@@ -832,7 +832,8 @@ function reports_table_html($post, $original_table_data){
 		$sql_str      = "SELECT SUM(rep_comm) AS total_commission, trades.inv_type, prodtype.product
 					FROM trades
 					RIGHT JOIN prodtype ON trades.inv_type = prodtype.inv_type
-					WHERE rep_no = {$_SESSION["permrep_obj"]->permRepID} $where_clause
+					WHERE rep_no = {$_SESSION["permrep_obj"]->permRepID}
+					$where_clause
 					GROUP BY inv_type;";
 		$result       = db_query($sql_str);
 		if($result->num_rows != 0){ //If there is a value returned
@@ -860,12 +861,13 @@ function reports_table_html($post, $original_table_data){
 		}
 	}
 
-	$analytics_headers = (isset($last_values)) ? '<th class="text-right">DIFFERENCE</th>
-							<th class="text-right">GROWTH</th>' : '';
+//	$analytics_headers = (isset($last_values)) ? '<th class="text-right">DIFFERENCE</th>
+//							<th class="text-right">GROWTH</th>' : '';
+	$analytics_headers = (isset($last_values)) ? '<th class="text-right">CHANGE</th>' : '';
 	$html_table_string = "<table class='main-table table table-hover table-striped table-sm'>
 						<thead>
 						<tr>
-							<th>COLOR</th>
+							<th></th>
 							<th>COMMISSION</th>
 							<th class='text-right'>TOTAL</th>
 							<th class='text-right'>LAST</th>
@@ -880,28 +882,28 @@ function reports_table_html($post, $original_table_data){
 		$color = PIE_CHART_COLORS_ARRAY[$i];
 		$i++;
 		if(isset($last_values)){
-			$difference = number_format((1 - ($values_arr[1] / $values_arr[0])) * 100, 2);
-			if(!is_numeric($difference) || is_nan($difference) || is_infinite($difference)){
-				$difference = '<td class="text-right">-</td>';
-			} elseif($difference > 0){
-				$difference = "<td class='text-success text-right'><b>$difference%</b></td>";
-			} elseif($difference == 0){
-				$difference = "<td class='text-primary text-right'><b>$difference%</b></td>";
+			$change = number_format((1 - ($values_arr[1] / $values_arr[0])) * 100, 2);
+			if(!is_numeric($change) || is_nan($change) || is_infinite($change)){
+				$change = '<td class="text-right">-</td>';
+			} elseif($change > 0){
+				$change = "<td class='text-success text-right'><b>$change%</b></td>";
+			} elseif($change == 0){
+				$change = "<td class='text-primary text-right'><b>$change%</b></td>";
 			} else{
-				$difference = "<td class='text-danger text-right'><b>$difference%</b></td>";
+				$change = "<td class='text-danger text-right'><b>$change%</b></td>";
 			}
-			$growth = number_format((100 * $values_arr[0]) / $values_arr[1], 2);
-			if(!is_numeric($growth) || is_nan($growth) || is_infinite($growth)){
-				$growth = '<td class="text-right">-</td>';
-			} else{
-				if($growth > 100){
-					$growth = "<td class='text-success text-right'><b>$growth%</b></td>";
-				} elseif($growth < 100){
-					$growth = "<td class='text-danger text-right'><b>$growth%</b></td>";
-				} else{
-					$growth = "<td class='text-primary text-right'><b>$growth%</b></td>";
-				}
-			}
+//			$growth = number_format((100 * $values_arr[0]) / $values_arr[1], 2);
+//			if(!is_numeric($growth) || is_nan($growth) || is_infinite($growth)){
+//				$growth = '<td class="text-right">-</td>';
+//			} else{
+//				if($growth > 100){
+//					$growth = "<td class='text-success text-right'><b>$growth%</b></td>";
+//				} elseif($growth < 100){
+//					$growth = "<td class='text-danger text-right'><b>$growth%</b></td>";
+//				} else{
+//					$growth = "<td class='text-primary text-right'><b>$growth%</b></td>";
+//				}
+//			}
 		}
 		if(!is_array($values_arr)){
 			$values_arr = array(
@@ -920,8 +922,8 @@ function reports_table_html($post, $original_table_data){
 						<td>$product</td>
 						<td class='text-right'>\${$values_arr[0]}</td>
 						<td class='text-right'>\${$values_arr[1]}</td>
-						$difference
-						$growth
+						$change
+						
 						</tr>";
 	}
 	$html_table_string .= '</tbody>
