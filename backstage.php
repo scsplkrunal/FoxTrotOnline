@@ -593,6 +593,9 @@ function pie_chart_data_and_labels($chart_name, $post = array(
 			if(isset($post["to_date"])){
 				$where_clause = "AND date_rec < '{$post["to_date"]}'";
 			}
+			if($post["to_date"] === ''){
+				throw new Exception("Enter a date.", EXCEPTION_WARNING_CODE);
+			}
 			$sql_str = "SELECT SUM(comm_rec) AS total_commission, trades.inv_type, prodtype.product
 					FROM trades
 					RIGHT JOIN prodtype ON trades.inv_type = prodtype.inv_type
