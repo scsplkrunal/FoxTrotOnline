@@ -3,7 +3,7 @@ $( document ).ready( function(){
 	/**
 	 * Hide loader div on page load
 	 */
-	$(".loader").hide();
+	$( ".loader" ).hide();
 
 	/**
 	 * Toggle sidebar
@@ -19,7 +19,7 @@ $( document ).ready( function(){
 
 
 	/**
-	Disable/Enable the dates input fields according to the checkbox 'checked' state.
+	 Disable/Enable the dates input fields according to the checkbox 'checked' state.
 	 */
 	$( '#all_dates_checkbox' ).click( function(){
 		var is_checked = $( '#all_dates_checkbox' )["0"].checked;  //if true - means it became checked after clicking,
@@ -82,8 +82,8 @@ $( document ).ready( function(){
 
 
 	/**
-	Changes data attribute of html pdf embed (object) after choosing a pdf to view
-	And the buttons Download and Open.
+	 Changes data attribute of html pdf embed (object) after choosing a pdf to view
+	 And the buttons Download and Open.
 	 */
 	$( '#statements_select' ).change( function(){
 		var value_of_selected_option = $( this ).find( "option:selected" ).attr( "value" );
@@ -95,7 +95,7 @@ $( document ).ready( function(){
 	} );
 
 	/**
-	Log in form submit
+	 Log in form submit
 	 */
 	$( "#log_in_form" ).submit( function(){
 		event.preventDefault(); //Prevent the form from submitting normally
@@ -116,7 +116,7 @@ $( document ).ready( function(){
 
 
 	/**
-	Autofocus on Select input when forgot_password modal is opened.
+	 Autofocus on Select input when forgot_password modal is opened.
 	 */
 	$( '#forgot_password_modal' ).on( 'shown.bs.modal', function(){
 		$( '#forgot_password_modal select' ).trigger( 'focus' )
@@ -124,7 +124,7 @@ $( document ).ready( function(){
 
 
 	/**
-	Forgot password form submit
+	 Forgot password form submit
 	 */
 	$( "#forgot_password_form" ).submit( function(){
 		event.preventDefault(); //Prevent the form from submitting normally
@@ -145,7 +145,7 @@ $( document ).ready( function(){
 
 
 	/**
-	Activity form submit
+	 Activity form submit
 	 */
 	$( "#activity_form" ).submit( function(){
 		event.preventDefault(); //Prevent the form from submitting normally
@@ -203,7 +203,7 @@ $( document ).ready( function(){
 
 
 	/**
-	Reports form - changed selection.
+	 Reports form - changed selection.
 	 */
 	$( '#time_periods_select' ).change( function(){ //On change of drop down list
 		var id_of_selected_option = $( this ).find( "option:selected" ).attr( "id" );
@@ -226,17 +226,25 @@ $( document ).ready( function(){
 
 
 	/**
-	Reports form submit
+	 Reports form submit
 	 */
 	$( "#reports_form" ).submit( function(){
 		event.preventDefault(); //Prevent the form from submitting normally
 		$.post( 'junction.php', $( '#reports_form' ).serialize(), function( data ){
 			var json_obj = $.parseJSON( data );
 			if( json_obj.status == true ){
-				pie_chart.data = $.parseJSON( json_obj.data_arr.pie_chart_data );
-				pie_chart.update();
-				line_chart.data = $.parseJSON( json_obj.data_arr.line_chart_data );
-				line_chart.update();
+				var pie_chart_data = $.parseJSON( json_obj.data_arr.pie_chart_data );
+				if( pie_chart_data.datasets[0].data != null ){
+					$( "#reports_pie_chart" ).show();
+					$( "#reports_line_chart" ).show();
+					pie_chart.data = pie_chart_data;
+					pie_chart.update();
+					line_chart.data = $.parseJSON( json_obj.data_arr.line_chart_data );
+					line_chart.update();
+				}else{
+					$( "#reports_pie_chart" ).hide();
+					$( "#reports_line_chart" ).hide();
+				}
 				$( "#reports_table" ).html( json_obj.data_arr['reports_table_html'] );
 				$( ".server_response_div .alert" ).removeClass( 'alert-warning alert-danger' ).addClass( 'alert-success' ).text( 'Data generated successfully.' ).show();
 			}else{ //If there is an error
@@ -252,7 +260,7 @@ $( document ).ready( function(){
 
 
 	/**
-	Sign out link
+	 Sign out link
 	 */
 	$( "#sign_out_fake_link" ).click( function(){
 		$.post( "junction.php", {func: 'sign_out', class: 'no_class'}, function( data ){
@@ -308,8 +316,8 @@ $( document ).ready( function(){
 
 
 	/**
-	Dashboard form submit
-      */
+	 Dashboard form submit
+	 */
 	$( "#dashboard_form" ).submit( function(){
 		event.preventDefault(); //Prevent the form from submitting normally
 		$.post( 'junction.php', $( '#dashboard_form' ).serialize(), function( data ){
@@ -317,7 +325,7 @@ $( document ).ready( function(){
 			if( json_obj.status == true ){
 				pie_chart.data = $.parseJSON( json_obj.data_arr.pie_chart_data );
 				pie_chart.update();
-				$("#posted_commission_heading").text(json_obj.data_arr.posted_commission);
+				$( "#posted_commission_heading" ).text( json_obj.data_arr.posted_commission );
 				$( ".server_response_div .alert" ).removeClass( 'alert-warning alert-danger' ).addClass( 'alert-success' ).text( 'Data generated successfully.' ).show();
 			}else{ //If there is an error
 				$( ".server_response_div .alert" ).text( json_obj.error_message ).show();
@@ -332,8 +340,12 @@ $( document ).ready( function(){
 
 } );
 
-$(document).on({
-	ajaxStart: function() { $(".loader").show();    },
-	ajaxStop: function() { $(".loader").hide(); }
+$( document ).on( {
+	ajaxStart: function(){
+		$( ".loader" ).show();
+	},
+	ajaxStop: function(){
+		$( ".loader" ).hide();
+	}
 	// load: function() {  }
-});
+} );

@@ -663,8 +663,11 @@ function pie_chart_data_and_labels($chart_name, $post = array(
 			$result  = db_query($sql_str);
 			if($result->num_rows != 0){ //If there is a value returned
 				while($row = $result->fetch_assoc()){ //Fill up all properties from DB data
-					$pie_chart_data_values []     = $row['total_commission'];
-					$pie_chart_labels []          = $row['product'];
+					if($row['total_commission'] != 0){
+						$pie_chart_data_values [] = $row['total_commission'];
+						$pie_chart_labels []      = $row['product'];
+					}
+
 					$table_data [$row['product']] = $row['total_commission'];
 				}
 			} else{
@@ -678,7 +681,9 @@ function pie_chart_data_and_labels($chart_name, $post = array(
 			break;
 	}
 
-	$pie_chart_data = [
+//	$pie_chart_data_values = ($pie_chart_data_values == null) ? [0 => null] : $pie_chart_data_values;
+//	$pie_chart_labels = ($pie_chart_labels == null) ? [0 => ''] : $pie_chart_labels;
+	$pie_chart_data        = [
 		'datasets' => [
 			[
 				'data'            => $pie_chart_data_values,
@@ -861,8 +866,8 @@ function reports_table_html($post, $original_table_data){
 		}
 	}
 
-//	$analytics_headers = (isset($last_values)) ? '<th class="text-right">DIFFERENCE</th>
-//							<th class="text-right">GROWTH</th>' : '';
+	//	$analytics_headers = (isset($last_values)) ? '<th class="text-right">DIFFERENCE</th>
+	//							<th class="text-right">GROWTH</th>' : '';
 	$analytics_headers = (isset($last_values)) ? '<th class="text-right">CHANGE</th>' : '';
 	$html_table_string = "<table class='main-table table table-hover table-striped table-sm'>
 						<thead>
@@ -892,18 +897,18 @@ function reports_table_html($post, $original_table_data){
 			} else{
 				$change = "<td class='text-danger text-right'><b>$change%</b></td>";
 			}
-//			$growth = number_format((100 * $values_arr[0]) / $values_arr[1], 2);
-//			if(!is_numeric($growth) || is_nan($growth) || is_infinite($growth)){
-//				$growth = '<td class="text-right">-</td>';
-//			} else{
-//				if($growth > 100){
-//					$growth = "<td class='text-success text-right'><b>$growth%</b></td>";
-//				} elseif($growth < 100){
-//					$growth = "<td class='text-danger text-right'><b>$growth%</b></td>";
-//				} else{
-//					$growth = "<td class='text-primary text-right'><b>$growth%</b></td>";
-//				}
-//			}
+			//			$growth = number_format((100 * $values_arr[0]) / $values_arr[1], 2);
+			//			if(!is_numeric($growth) || is_nan($growth) || is_infinite($growth)){
+			//				$growth = '<td class="text-right">-</td>';
+			//			} else{
+			//				if($growth > 100){
+			//					$growth = "<td class='text-success text-right'><b>$growth%</b></td>";
+			//				} elseif($growth < 100){
+			//					$growth = "<td class='text-danger text-right'><b>$growth%</b></td>";
+			//				} else{
+			//					$growth = "<td class='text-primary text-right'><b>$growth%</b></td>";
+			//				}
+			//			}
 		}
 		if(!is_array($values_arr)){
 			$values_arr = array(
@@ -911,8 +916,11 @@ function reports_table_html($post, $original_table_data){
 				'-'
 			);
 		}
-		$values_arr[0]     = number_format(floatval($values_arr[0]), 2);
-		$values_arr[1]     = number_format(floatval($values_arr[1]), 2);
+		$values_arr[0] = number_format(floatval($values_arr[0]), 2);
+		$values_arr[1] = number_format(floatval($values_arr[1]), 2);
+		if($values_arr[0] == 0 && $values_arr[1] == 0){
+			continue;
+		}
 		$html_table_string .= "<tr>
 						<td>
 							<ul class='graph_legend'>
