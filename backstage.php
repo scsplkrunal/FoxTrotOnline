@@ -887,15 +887,21 @@ function reports_table_html($post, $original_table_data){
 		if(isset($last_values)){
 			if($values_arr[0] == $values_arr[1]){
 				$text_class = 'text-primary';
-				$change     = 0;
+				$change     = '0%';
 			} elseif($values_arr[0] > $values_arr[1]){ //if the total is bigger than the last
 				$text_class = 'text-success';
-				$change     = number_format(100 * (1 - ($values_arr[1] / $values_arr[0])), 2);
+				$change     = round(100 * ($values_arr[0] / $values_arr[1]), 2);
+				if(is_infinite($change)){
+					$change = '<larger>&#x221e;</larger>';
+				}else{
+					$change = $change.'%';
+				}
+				//				$change     = number_format(100 * (1 - ($values_arr[1] / $values_arr[0])), 2);
 			} else{ // if the last is bigger than the total
 				$text_class = 'text-danger';
-				$change     = number_format(100 * (($values_arr[0] / $values_arr[1]) - 1), 2);
+				$change     = number_format(100 * (($values_arr[0] / $values_arr[1]) - 1), 2).'%';
 			}
-			$change_cell = "<td class='text-right $text_class'><b>$change%</b></td>";
+			$change_cell = "<td class='text-right $text_class'><b>$change</b></td>";
 			//			$change = number_format((1 - ($values_arr[1] / $values_arr[0])) * 100, 2);
 			//			if(!is_numeric($change) || is_nan($change) || is_infinite($change)){
 			//				$change = '<td class="text-right">-</td>';
