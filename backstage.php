@@ -681,9 +681,7 @@ function pie_chart_data_and_labels($chart_name, $post = array(
 			break;
 	}
 
-//	$pie_chart_data_values = ($pie_chart_data_values == null) ? [0 => null] : $pie_chart_data_values;
-//	$pie_chart_labels = ($pie_chart_labels == null) ? [0 => ''] : $pie_chart_labels;
-	$pie_chart_data        = [
+	$pie_chart_data = [
 		'datasets' => [
 			[
 				'data'            => $pie_chart_data_values,
@@ -887,16 +885,27 @@ function reports_table_html($post, $original_table_data){
 		$color = PIE_CHART_COLORS_ARRAY[$i];
 		$i++;
 		if(isset($last_values)){
-			$change = number_format((1 - ($values_arr[1] / $values_arr[0])) * 100, 2);
-			if(!is_numeric($change) || is_nan($change) || is_infinite($change)){
-				$change = '<td class="text-right">-</td>';
-			} elseif($change > 0){
-				$change = "<td class='text-success text-right'><b>$change%</b></td>";
-			} elseif($change == 0){
-				$change = "<td class='text-primary text-right'><b>$change%</b></td>";
-			} else{
-				$change = "<td class='text-danger text-right'><b>$change%</b></td>";
+			if($values_arr[0] == $values_arr[1]){
+				$text_class = 'text-primary';
+				$change     = 0;
+			} elseif($values_arr[0] > $values_arr[1]){ //if the total is bigger than the last
+				$text_class = 'text-success';
+				$change     = number_format(100 * (1 - ($values_arr[1] / $values_arr[0])), 2);
+			} else{ // if the last is bigger than the total
+				$text_class = 'text-danger';
+				$change     = number_format(100 * (($values_arr[0] / $values_arr[1]) - 1), 2);
 			}
+			$change_cell = "<td class='text-right $text_class'><b>$change%</b></td>";
+			//			$change = number_format((1 - ($values_arr[1] / $values_arr[0])) * 100, 2);
+			//			if(!is_numeric($change) || is_nan($change) || is_infinite($change)){
+			//				$change = '<td class="text-right">-</td>';
+			//			} elseif($change > 0){
+			//				$change = "<td class='text-success text-right'><b>$change%</b></td>";
+			//			} elseif($change == 0){
+			//				$change = "<td class='text-primary text-right'><b>$change%</b></td>";
+			//			} else{
+			//				$change = "<td class='text-danger text-right'><b>$change%</b></td>";
+			//			}
 			//			$growth = number_format((100 * $values_arr[0]) / $values_arr[1], 2);
 			//			if(!is_numeric($growth) || is_nan($growth) || is_infinite($growth)){
 			//				$growth = '<td class="text-right">-</td>';
@@ -930,7 +939,7 @@ function reports_table_html($post, $original_table_data){
 						<td>$product</td>
 						<td class='text-right'>\${$values_arr[0]}</td>
 						<td class='text-right'>\${$values_arr[1]}</td>
-						$change
+						$change_cell
 						
 						</tr>";
 	}
