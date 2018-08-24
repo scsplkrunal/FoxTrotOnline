@@ -593,9 +593,6 @@ function pie_chart_data_and_labels($chart_name, $post = array(
 			if(isset($post["to_date"])){
 				$where_clause = "AND date_rec < '{$post["to_date"]}'";
 			}
-			if($post["to_date"] === ''){
-				throw new Exception("Enter a date.", EXCEPTION_WARNING_CODE);
-			}
 			$sql_str = "SELECT SUM(comm_rec) AS total_commission, trades.inv_type, prodtype.product
 					FROM trades
 					RIGHT JOIN prodtype ON trades.inv_type = prodtype.inv_type
@@ -610,7 +607,7 @@ function pie_chart_data_and_labels($chart_name, $post = array(
 					$pie_chart_data_values [] = $row['total_commission'];
 					$pie_chart_labels []      = $row['product'];
 				}
-			}else{
+			} else{
 				throw new Exception("No relevant records were found.", EXCEPTION_WARNING_CODE);
 			}
 			break;
@@ -863,7 +860,7 @@ function reports_table_html($post, $original_table_data){
 		}
 	}
 
-	$analytics_headers = (isset($last_values))? '<th class="text-right">DIFFERENCE</th>
+	$analytics_headers = (isset($last_values)) ? '<th class="text-right">DIFFERENCE</th>
 							<th class="text-right">GROWTH</th>' : '';
 	$html_table_string = "<table class='main-table table table-hover table-striped table-sm'>
 						<thead>

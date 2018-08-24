@@ -41,7 +41,7 @@ require_once 'header.php';
 							<div class="alert" role="alert"></div>
 						</div>
 						<label>Transactions through Payroll Cutoff Date:</label>
-						<input type="date" name="to_date">
+						<input type="date" name="to_date" required>
 						<script type="text/javascript">
 							var now = new Date();
 							var day = ("0" + now.getDate()).slice( -2 );

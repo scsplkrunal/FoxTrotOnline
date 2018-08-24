@@ -43,9 +43,9 @@ require_once 'header.php';
 						<label class="custom-control-label" for="all_dates_checkbox">All Trade Dates</label>
 					</div>
 					<label>From</label>
-					<input type="date" name="from_date" disabled><br class="d-xs-block d-sm-none">
+					<input type="date" name="from_date" disabled required><br class="d-xs-block d-sm-none">
 					<label>To</label>
-					<input type="date" name="to_date" disabled><br class="d-xs-block d-sm-none">
+					<input type="date" name="to_date" disabled required><br class="d-xs-block d-sm-none">
 					<input class="btn btn-primary ml-2" type="submit" value="Filter">
 					<input name="class" value="no_class" hidden>
 					<input name="func" value="activity_update" hidden>
