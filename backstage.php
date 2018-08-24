@@ -607,6 +607,8 @@ function pie_chart_data_and_labels($chart_name, $post = array(
 					$pie_chart_data_values [] = $row['total_commission'];
 					$pie_chart_labels []      = $row['product'];
 				}
+			}else{
+				throw new Exception("No relevant records were found.", EXCEPTION_WARNING_CODE);
 			}
 			break;
 		case 'reports_pie_chart':
