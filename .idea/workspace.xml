@@ -4,67 +4,229 @@
     <list default="true" id="3afaa673-cb46-4034-a6f7-e9cf43ebac35" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backstage.php" beforeDir="false" afterPath="$PROJECT_DIR$/backstage.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00001.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00001.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00003.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00003.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00005.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00005.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00009.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00009.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00010.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00010.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00015.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00015.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00017.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00017.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00020.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00020.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00022.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00022.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00023.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00023.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00026.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00026.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00033.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00033.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00035.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00035.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00038.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00038.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00044.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00044.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00047.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00047.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00048.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00048.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00049.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00049.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00051.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00051.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00056.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00056.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00057.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00057.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00058.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00058.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00060.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00060.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00061.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00061.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00062.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00062.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00063.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00063.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00064.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00064.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00066.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00066.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00067.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00067.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00074.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00074.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00081.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00081.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00082.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00082.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00083.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00083.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00089.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00089.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00096.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00096.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00100.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00100.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00102.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00102.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00103.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00103.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00110.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00110.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00117.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00117.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00118.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00118.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00120.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00120.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00126.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00126.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00138.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00138.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00140.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00140.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00143.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00143.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00145.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00145.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00158.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00158.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00166.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00166.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00168.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00168.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00174.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00174.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00179.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00179.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00180.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00180.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00183.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00183.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00185.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00185.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00189.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00189.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00191.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00191.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00194.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00194.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00206.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00206.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00207.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00207.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00208.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00208.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00209.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00209.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00210.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00210.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00214.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00214.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00220.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00220.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00221.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00221.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00223.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00223.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00225.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00225.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00228.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00228.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00229.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00229.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00230.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00230.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00232.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00232.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00240.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00240.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00242.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00242.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00243.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00243.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00244.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00244.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00245.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00245.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00246.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00246.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00248.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00248.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00249.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00249.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00250.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00250.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00251.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00251.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00252.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00252.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00253.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00253.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00254.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00254.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00255.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00255.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00256.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00256.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00257.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00257.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00258.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00258.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00259.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00259.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00263.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00263.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00267.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00267.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00269.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00269.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00272.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00272.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00273.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00273.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00279.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00279.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00282.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00282.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00286.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00286.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00287.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00287.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00290.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00290.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00293.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00293.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00295.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00295.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00296.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00296.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00306.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00306.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00308.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00308.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00310.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00310.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00311.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00311.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00313.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00313.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00314.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00314.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00315.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00315.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00320.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00320.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00321.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00321.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00326.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00326.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00327.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00327.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00328.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00328.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00329.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00329.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00332.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00332.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00333.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00333.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00334.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00334.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00335.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00335.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00348.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00348.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00349.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00349.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00350.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00350.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00356.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00356.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00360.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00360.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00361.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00361.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00364.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00364.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00365.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00365.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00367.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00367.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00379.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00379.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00380.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00380.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00384.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00384.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00388.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00388.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00390.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00390.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00392.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00392.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00396.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00396.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00400.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00400.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00401.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00401.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00402.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00402.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00406.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00406.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00412.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00412.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00414.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00414.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00418.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00418.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00419.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00419.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00421.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00421.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00423.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00423.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00425.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00425.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00426.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00426.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00430.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00430.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00432.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00432.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00446.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00446.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00449.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00449.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00450.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00450.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00451.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00451.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00453.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00453.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00454.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00454.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00455.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00455.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00456.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00456.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-03-00048.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-03-00048.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-03-00049.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-03-00049.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-03-00220.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-03-00220.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-03-00243.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-03-00243.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-03-00246.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-03-00246.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-03-00248.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-03-00248.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-03-00263.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-03-00263.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-03-00286.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-03-00286.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/reports.php" beforeDir="false" afterPath="$PROJECT_DIR$/reports.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tmp/foxtrot_online.log" beforeDir="false" afterPath="$PROJECT_DIR$/tmp/foxtrot_online.log" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
-    <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FUSProjectUsageTrigger">
+    <session id="-86045946">
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.closed" value="3" />
+          <entry key="project.open.time.4" value="2" />
+          <entry key="project.open.time.5" value="2" />
+          <entry key="project.opened" value="4" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.open">
+        <counts>
+          <entry key="php" value="2" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.open">
+        <counts>
+          <entry key="PHP" value="2" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.edit">
+        <counts>
+          <entry key="php" value="43" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.edit">
+        <counts>
+          <entry key="PHP" value="43" />
+        </counts>
+      </usages-collector>
+    </session>
+  </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="backstage.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/backstage.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="365">
-              <caret line="897" column="84" selection-start-line="897" selection-start-column="84" selection-end-line="897" selection-end-column="84" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="junction.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/junction.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="13" selection-start-line="13" selection-end-line="13" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="main_js.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/main_js.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="179">
-              <caret line="246" column="24" selection-start-line="246" selection-start-column="24" selection-end-line="246" selection-end-column="24" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="activity.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/activity.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="45" column="83" selection-start-line="45" selection-start-column="75" selection-end-line="45" selection-end-column="83" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="dashboard.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/dashboard.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="731">
-              <caret line="43" column="78" selection-start-line="43" selection-start-column="78" selection-end-line="43" selection-end-column="78" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="reports.php" pinned="false" current-in-tab="false">
+    <leaf>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/reports.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="86" column="60" selection-start-line="86" selection-start-column="42" selection-end-line="86" selection-end-column="60" />
+            <state relative-caret-position="476">
+              <caret line="96" column="44" selection-start-line="96" selection-start-column="44" selection-end-line="96" selection-end-column="44" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/backstage.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1079">
+              <caret line="945" column="48" selection-start-line="945" selection-start-column="48" selection-end-line="945" selection-end-column="48" />
             </state>
           </provider>
         </entry>
@@ -134,10 +296,10 @@
         <option value="$PROJECT_DIR$/footer.php" />
         <option value="$PROJECT_DIR$/statements.php" />
         <option value="$PROJECT_DIR$/main_stylesheet.css" />
-        <option value="$PROJECT_DIR$/reports.php" />
         <option value="$PROJECT_DIR$/activity.php" />
         <option value="$PROJECT_DIR$/dashboard.php" />
         <option value="$PROJECT_DIR$/main_js.js" />
+        <option value="$PROJECT_DIR$/reports.php" />
         <option value="$PROJECT_DIR$/backstage.php" />
       </list>
     </option>
@@ -147,9 +309,6 @@
   <component name="JsGulpfileManager">
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
-  </component>
-  <component name="NodePackageJsonFileManager">
-    <packageJsonPaths />
   </component>
   <component name="PhpDebugGeneral" listening_started="true" />
   <component name="PhpServers">
@@ -186,7 +345,7 @@
           <expand>
             <path>
               <item name="FoxTrotOnline" type="b2602c69:ProjectViewProjectNode" />
-              <item name="FoxTrotOnline" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="FoxTrotOnline" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -227,30 +386,32 @@
     </option>
   </component>
   <component name="RunManager">
-    <configuration name="foxtrot_online" type="PhpWebAppRunConfigurationType" factoryName="PHP Web Application" server_name="foxtrot_online" start_url="/login.php?company_name=demo" />
+    <configuration name="foxtrot_online" type="PhpWebAppRunConfigurationType" factoryName="PHP Web Application" server_name="foxtrot_online" start_url="/login.php?company_name=demo">
+      <method v="2" />
+    </configuration>
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="1" visible="true" weight="0.18381241" />
-      <window_info anchor="bottom" id="TODO" order="9" />
+      <window_info id="Favorites" order="0" side_tool="true" />
+      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.20196672" />
+      <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
+      <window_info anchor="bottom" id="Messages" order="0" weight="0.32933104" />
       <window_info anchor="bottom" id="Event Log" order="1" side_tool="true" weight="0.32933104" />
-      <window_info anchor="right" id="Database" order="0" />
       <window_info anchor="bottom" id="Database Changes" order="2" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="3" weight="0.32933104" />
+      <window_info anchor="bottom" id="Message" order="4" />
+      <window_info anchor="bottom" id="Find" order="5" weight="0.29331046" />
       <window_info anchor="bottom" id="Run" order="6" />
-      <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
-      <window_info id="Favorites" order="0" side_tool="true" />
-      <window_info active="true" anchor="right" id="Debug" order="4" visible="true" weight="0.20121029" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="3" weight="0.25" />
+      <window_info anchor="bottom" id="Cvs" order="7" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="8" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="9" />
+      <window_info anchor="right" id="Database" order="0" />
       <window_info anchor="right" id="Commander" order="1" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="2" weight="0.25" />
-      <window_info anchor="bottom" id="Message" order="4" />
-      <window_info anchor="bottom" id="Cvs" order="7" weight="0.25" />
-      <window_info anchor="bottom" id="Find" order="5" weight="0.29331046" />
-      <window_info anchor="bottom" id="Messages" order="0" weight="0.32933104" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="3" weight="0.25" />
+      <window_info anchor="right" id="Debug" order="4" weight="0.20121029" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -291,7 +452,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$/.." />
     </ignored-roots>
-    <MESSAGE value="Empty drop down list and no pdf preview in documents page" />
     <MESSAGE value="Change reports table location" />
     <MESSAGE value="Statements improve performance" />
     <MESSAGE value="Statements – add field_1 at the end of statement and present Direct if equal to DIR" />
@@ -316,227 +476,10 @@
     <MESSAGE value="Remove exceptions, include required HTML input attr" />
     <MESSAGE value="Remove growth, change difference to change - reports page" />
     <MESSAGE value="Hide graphs on reports page if there are no values, but leave table as is" />
-    <option name="LAST_COMMIT_MESSAGE" value="Hide graphs on reports page if there are no values, but leave table as is" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint type="php">
-          <url>file://$PROJECT_DIR$/backstage.php</url>
-          <line>886</line>
-          <option name="timeStamp" value="315" />
-        </line-breakpoint>
-      </breakpoints>
-      <breakpoints-dialog>
-        <breakpoints-dialog />
-      </breakpoints-dialog>
-      <option name="time" value="316" />
-    </breakpoint-manager>
+    <MESSAGE value="CHANGE column algorithm" />
+    <option name="LAST_COMMIT_MESSAGE" value="CHANGE column algorithm" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/reports.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1904">
-          <caret line="112" column="78" selection-start-line="112" selection-start-column="78" selection-end-line="112" selection-end-column="78" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/documents.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1003">
-          <caret line="59" column="7" selection-start-line="59" selection-start-column="7" selection-end-line="59" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/reports.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="697">
-          <caret line="41" column="68" selection-start-line="41" selection-start-column="39" selection-end-line="41" selection-end-column="68" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/junction.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="20" selection-start-line="20" selection-end-line="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/backstage.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="12257">
-          <caret line="721" selection-start-line="721" selection-end-line="721" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/activity.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="30" column="24" selection-start-line="30" selection-start-column="24" selection-end-line="31" selection-end-column="67" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/reports.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1224">
-          <caret line="72" selection-start-line="72" selection-end-line="72" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/header.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" selection-start-line="6" selection-end-line="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dashboard.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="697">
-          <caret line="41" selection-start-line="41" selection-end-line="41" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/main_stylesheet.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2210">
-          <caret line="130" column="7" selection-start-line="130" selection-start-column="7" selection-end-line="130" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/junction.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" selection-start-line="5" selection-end-line="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/main_js.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2023">
-          <caret line="119" column="22" selection-start-line="119" selection-start-column="11" selection-end-line="119" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/backstage.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="13447">
-          <caret line="791" selection-start-line="791" selection-end-line="791" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/activity.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1088">
-          <caret line="64" column="80" selection-start-line="64" selection-start-column="80" selection-end-line="64" selection-end-column="80" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pie_chart_no_data.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="731">
-          <caret line="43" column="14" selection-start-line="43" selection-start-column="14" selection-end-line="43" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/backstage.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="7276">
-          <caret line="428" column="39" selection-start-line="428" selection-start-column="39" selection-end-line="428" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/header.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="22" column="6" lean-forward="true" selection-start-line="22" selection-start-column="6" selection-end-line="22" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/backstage.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1139">
-          <caret line="67" column="20" selection-start-line="67" selection-start-column="20" selection-end-line="67" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/statements.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="578">
-          <caret line="34" column="63" selection-start-line="34" selection-start-column="63" selection-end-line="34" selection-end-column="63" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/backstage.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4845">
-          <caret line="285" column="9" selection-start-line="285" selection-start-column="9" selection-end-line="285" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/header.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" selection-start-line="6" selection-end-line="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/backstage.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4658">
-          <caret line="274" column="38" selection-start-line="274" selection-start-column="38" selection-end-line="274" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/login.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="14" column="114" selection-start-line="14" selection-start-column="114" selection-end-line="14" selection-end-column="114" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/main_stylesheet.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2210">
-          <caret line="130" column="7" selection-start-line="130" selection-start-column="7" selection-end-line="130" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/login_stylesheet.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="595">
-          <caret line="35" column="3" selection-start-line="35" selection-start-column="3" selection-end-line="35" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/backstage.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4658">
-          <caret line="274" column="38" selection-start-line="274" selection-start-column="38" selection-end-line="274" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/login.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="14" column="114" selection-start-line="14" selection-start-column="114" selection-end-line="14" selection-end-column="114" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/main_stylesheet.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2210">
-          <caret line="130" column="7" selection-start-line="130" selection-start-column="7" selection-end-line="130" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/login_stylesheet.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="595">
-          <caret line="35" column="3" selection-start-line="35" selection-start-column="3" selection-end-line="35" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/drill_down_pie_chart_no_data.js" />
     <entry file="file://$PROJECT_DIR$/lib/foxtrot_online_create_table.sql">
       <provider selected="true" editor-type-id="text-editor">
@@ -646,13 +589,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/reports.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="86" column="60" selection-start-line="86" selection-start-column="42" selection-end-line="86" selection-end-column="60" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/main_js.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="179">
@@ -660,10 +596,24 @@
         </state>
       </provider>
     </entry>
+    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/php/lib/php.jar!/stubs/standard/standard_3.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="186">
+          <caret line="380" column="9" selection-start-line="380" selection-start-column="9" selection-end-line="380" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/reports.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="476">
+          <caret line="96" column="44" selection-start-line="96" selection-start-column="44" selection-end-line="96" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/backstage.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="365">
-          <caret line="897" column="84" selection-start-line="897" selection-start-column="84" selection-end-line="897" selection-end-column="84" />
+        <state relative-caret-position="1079">
+          <caret line="945" column="48" selection-start-line="945" selection-start-column="48" selection-end-line="945" selection-end-column="48" />
         </state>
       </provider>
     </entry>
