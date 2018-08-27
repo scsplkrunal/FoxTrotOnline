@@ -864,16 +864,14 @@ function reports_table_html($post, $original_table_data){
 		}
 	}
 
-	//	$analytics_headers = (isset($last_values)) ? '<th class="text-right">DIFFERENCE</th>
-	//							<th class="text-right">GROWTH</th>' : '';
-	$analytics_headers = (isset($last_values)) ? '<th class="text-right">CHANGE</th>' : '';
+	$analytics_headers = (isset($last_values)) ? '<th class="text-right">Growth</th>' : '';
 	$html_table_string = "<table class='main-table table table-hover table-striped table-sm'>
 						<thead>
 						<tr>
 							<th></th>
-							<th>COMMISSION</th>
-							<th class='text-right'>TOTAL</th>
-							<th class='text-right'>LAST</th>
+							<th>Commission</th>
+							<th class='text-right'>Current Period</th>
+							<th class='text-right'>Previous Period</th>
 							$analytics_headers
 						</tr>
 						</thead>
@@ -887,43 +885,21 @@ function reports_table_html($post, $original_table_data){
 		if(isset($last_values)){
 			if($values_arr[0] == $values_arr[1]){
 				$text_class = 'text-primary';
-				$change     = '0%';
+				$growth     = '0%';
 			} elseif($values_arr[0] > $values_arr[1]){ //if the total is bigger than the last
 				$text_class = 'text-success';
-				$change     = round(100 * ($values_arr[0] / $values_arr[1]), 2);
+				$growth     = round(100 * ($values_arr[0] / $values_arr[1]), 2);
 				if(is_infinite($change)){
-					$change = '<larger>&#x221e;</larger>';
+					$growth = '<larger>&#x221e;</larger>';
 				}else{
-					$change = $change.'%';
+					$growth = $growth.'%';
 				}
 				//				$change     = number_format(100 * (1 - ($values_arr[1] / $values_arr[0])), 2);
 			} else{ // if the last is bigger than the total
 				$text_class = 'text-danger';
-				$change     = number_format(100 * (($values_arr[0] / $values_arr[1]) - 1), 2).'%';
+				$growth     = number_format(100 * (($values_arr[0] / $values_arr[1]) - 1), 2).'%';
 			}
-			$change_cell = "<td class='text-right $text_class'><b>$change</b></td>";
-			//			$change = number_format((1 - ($values_arr[1] / $values_arr[0])) * 100, 2);
-			//			if(!is_numeric($change) || is_nan($change) || is_infinite($change)){
-			//				$change = '<td class="text-right">-</td>';
-			//			} elseif($change > 0){
-			//				$change = "<td class='text-success text-right'><b>$change%</b></td>";
-			//			} elseif($change == 0){
-			//				$change = "<td class='text-primary text-right'><b>$change%</b></td>";
-			//			} else{
-			//				$change = "<td class='text-danger text-right'><b>$change%</b></td>";
-			//			}
-			//			$growth = number_format((100 * $values_arr[0]) / $values_arr[1], 2);
-			//			if(!is_numeric($growth) || is_nan($growth) || is_infinite($growth)){
-			//				$growth = '<td class="text-right">-</td>';
-			//			} else{
-			//				if($growth > 100){
-			//					$growth = "<td class='text-success text-right'><b>$growth%</b></td>";
-			//				} elseif($growth < 100){
-			//					$growth = "<td class='text-danger text-right'><b>$growth%</b></td>";
-			//				} else{
-			//					$growth = "<td class='text-primary text-right'><b>$growth%</b></td>";
-			//				}
-			//			}
+			$growth_cell = "<td class='text-right $text_class'><b>$growth</b></td>";
 		}
 		if(!is_array($values_arr)){
 			$values_arr = array(
@@ -945,8 +921,7 @@ function reports_table_html($post, $original_table_data){
 						<td>$product</td>
 						<td class='text-right'>\${$values_arr[0]}</td>
 						<td class='text-right'>\${$values_arr[1]}</td>
-						$change_cell
-						
+						$growth_cell
 						</tr>";
 	}
 	$html_table_string .= '</tbody>
