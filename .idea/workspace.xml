@@ -1,11 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="3afaa673-cb46-4034-a6f7-e9cf43ebac35" name="Default" comment="CHANGE column algorithm">
+    <list default="true" id="3afaa673-cb46-4034-a6f7-e9cf43ebac35" name="Default" comment="Search box to activity table including design">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/activity.php" beforeDir="false" afterPath="$PROJECT_DIR$/activity.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main_js.js" beforeDir="false" afterPath="$PROJECT_DIR$/main_js.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tmp/foxtrot_online.log" beforeDir="false" afterPath="$PROJECT_DIR$/tmp/foxtrot_online.log" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -38,14 +35,16 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="js" value="2" />
-          <entry key="php" value="328" />
+          <entry key="js" value="15" />
+          <entry key="php" value="333" />
+          <entry key="txt" value="45" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JavaScript" value="2" />
-          <entry key="PHP" value="328" />
+          <entry key="JavaScript" value="15" />
+          <entry key="PHP" value="333" />
+          <entry key="PLAIN_TEXT" value="45" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.js.language.service.starts" />
@@ -61,8 +60,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/activity.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="301">
-              <caret line="119" column="139" selection-start-line="119" selection-start-column="139" selection-end-line="119" selection-end-column="139" />
+            <state relative-caret-position="267">
+              <caret line="117" lean-forward="true" selection-start-line="117" selection-end-line="117" />
             </state>
           </provider>
         </entry>
@@ -70,8 +69,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/main_js.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="200">
-              <caret line="311" column="6" selection-start-line="311" selection-start-column="6" selection-end-line="314" selection-end-column="7" />
+            <state relative-caret-position="254">
+              <caret line="69" column="102" selection-start-line="69" selection-start-column="102" selection-end-line="69" selection-end-column="102" />
             </state>
           </provider>
         </entry>
@@ -88,8 +87,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>activi</find>
-      <find>datatab</find>
       <find>pdf_title</find>
       <find>lname</find>
       <find>pdfhtml</find>
@@ -118,6 +115,8 @@
       <find>search</find>
       <find>sear</find>
       <find>width</find>
+      <find>html</find>
+      <find>-html</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -297,7 +296,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$/.." />
     </ignored-roots>
-    <MESSAGE value="Statements improve performance" />
     <MESSAGE value="Statements – add field_1 at the end of statement and present Direct if equal to DIR" />
     <MESSAGE value="Create demo client" />
     <MESSAGE value="Add loader" />
@@ -322,7 +320,8 @@
     <MESSAGE value="Hide graphs on reports page if there are no values, but leave table as is" />
     <MESSAGE value="CHANGE column algorithm" />
     <MESSAGE value="Expand the line chart (on top) to be the same width as the pie chart and the Total/Previous table&#10;&#10;Change the &quot;Total&quot; header to &quot;Current Period&quot;&#10;&#10;Change the &quot;Last&quot; header to &quot;Previous Period&quot;&#10;&#10;Change the &quot;Change&quot;:header to &quot;Growth&quot;" />
-    <option name="LAST_COMMIT_MESSAGE" value="Expand the line chart (on top) to be the same width as the pie chart and the Total/Previous table&#10;&#10;Change the &quot;Total&quot; header to &quot;Current Period&quot;&#10;&#10;Change the &quot;Last&quot; header to &quot;Previous Period&quot;&#10;&#10;Change the &quot;Change&quot;:header to &quot;Growth&quot;" />
+    <MESSAGE value="Search box to activity table including design" />
+    <option name="LAST_COMMIT_MESSAGE" value="Search box to activity table including design" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/drill_down_pie_chart_no_data.js" />
@@ -450,15 +449,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/main_js.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="311" column="6" selection-start-line="311" selection-start-column="6" selection-end-line="314" selection-end-column="7" />
+        <state relative-caret-position="254">
+          <caret line="69" column="102" selection-start-line="69" selection-start-column="102" selection-end-line="69" selection-end-column="102" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/activity.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="301">
-          <caret line="119" column="139" selection-start-line="119" selection-start-column="139" selection-end-line="119" selection-end-column="139" />
+        <state relative-caret-position="267">
+          <caret line="117" lean-forward="true" selection-start-line="117" selection-end-line="117" />
         </state>
       </provider>
     </entry>
