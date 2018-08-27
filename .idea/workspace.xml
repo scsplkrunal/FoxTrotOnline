@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="3afaa673-cb46-4034-a6f7-e9cf43ebac35" name="Default" comment="Search box to activity table including design">
+    <list default="true" id="3afaa673-cb46-4034-a6f7-e9cf43ebac35" name="Default" comment="Filter button margin responsive">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -14,7 +14,7 @@
     <session id="-86045946">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="4" />
+          <entry key="project.closed" value="5" />
           <entry key="project.open.time.4" value="2" />
           <entry key="project.open.time.5" value="2" />
           <entry key="project.open.time.6" value="1" />
@@ -36,15 +36,15 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="js" value="15" />
-          <entry key="php" value="333" />
-          <entry key="txt" value="45" />
+          <entry key="php" value="338" />
+          <entry key="txt" value="82" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="JavaScript" value="15" />
-          <entry key="PHP" value="333" />
-          <entry key="PLAIN_TEXT" value="45" />
+          <entry key="PHP" value="338" />
+          <entry key="PLAIN_TEXT" value="82" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.js.language.service.starts" />
@@ -60,8 +60,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/activity.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="267">
-              <caret line="117" lean-forward="true" selection-start-line="117" selection-end-line="117" />
+            <state relative-caret-position="200">
+              <caret line="48" column="65" selection-start-line="48" selection-start-column="65" selection-end-line="48" selection-end-column="65" />
             </state>
           </provider>
         </entry>
@@ -87,7 +87,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>pdf_title</find>
       <find>lname</find>
       <find>pdfhtml</find>
       <find>date_f</find>
@@ -117,6 +116,7 @@
       <find>width</find>
       <find>html</find>
       <find>-html</find>
+      <find>filter</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -296,7 +296,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$/.." />
     </ignored-roots>
-    <MESSAGE value="Statements – add field_1 at the end of statement and present Direct if equal to DIR" />
     <MESSAGE value="Create demo client" />
     <MESSAGE value="Add loader" />
     <MESSAGE value="Choose DB new DBs" />
@@ -321,7 +320,8 @@
     <MESSAGE value="CHANGE column algorithm" />
     <MESSAGE value="Expand the line chart (on top) to be the same width as the pie chart and the Total/Previous table&#10;&#10;Change the &quot;Total&quot; header to &quot;Current Period&quot;&#10;&#10;Change the &quot;Last&quot; header to &quot;Previous Period&quot;&#10;&#10;Change the &quot;Change&quot;:header to &quot;Growth&quot;" />
     <MESSAGE value="Search box to activity table including design" />
-    <option name="LAST_COMMIT_MESSAGE" value="Search box to activity table including design" />
+    <MESSAGE value="Filter button margin responsive" />
+    <option name="LAST_COMMIT_MESSAGE" value="Filter button margin responsive" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/drill_down_pie_chart_no_data.js" />
@@ -456,8 +456,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/activity.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="267">
-          <caret line="117" lean-forward="true" selection-start-line="117" selection-end-line="117" />
+        <state relative-caret-position="200">
+          <caret line="48" column="65" selection-start-line="48" selection-start-column="65" selection-end-line="48" selection-end-column="65" />
         </state>
       </provider>
     </entry>
