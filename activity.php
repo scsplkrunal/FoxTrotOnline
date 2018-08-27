@@ -94,7 +94,7 @@ require_once 'header.php';
 						var pdf_title = pdf_title_first_line + '\n\r' + pdf_title_second_line;
 						var excel_title = pdf_title_first_line + ' - ' + pdf_title_second_line;
 						$( '#activity_table' ).DataTable( {
-							searching: false,
+							language: { search: "" },
 							paging: false,
 							info: false,
 							dom: 'Bfrtip',
@@ -117,6 +117,13 @@ require_once 'header.php';
 						} );
 
 						$( '.buttons-html5' ).addClass( 'btn btn-secondary' );
+						$('#activity_table_filter input').addClass('form-control').attr("placeholder", "Search").css('margin',0);
+						$('#activity_table_filter').width(210).css('float','right');
+						$('.dt-buttons').width(200).css('float','left');
+						if( $( document ).width() < 992 ){
+							$('#activity_table_filter').width('100%').addClass('text-left mt-2');
+							$('#activity_table_filter input').width('100%');
+						}
 					} );
 				</script>
 			</div>

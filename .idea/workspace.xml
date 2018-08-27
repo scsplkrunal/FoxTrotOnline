@@ -1,176 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="3afaa673-cb46-4034-a6f7-e9cf43ebac35" name="Default" comment="">
+    <list default="true" id="3afaa673-cb46-4034-a6f7-e9cf43ebac35" name="Default" comment="CHANGE column algorithm">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backstage.php" beforeDir="false" afterPath="$PROJECT_DIR$/backstage.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00001.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00001.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00003.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00003.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00005.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00005.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00009.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00009.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00010.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00010.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00015.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00015.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00017.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00017.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00020.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00020.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00022.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00022.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00023.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00023.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00026.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00026.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00033.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00033.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00035.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00035.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00038.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00038.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00044.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00044.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00047.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00047.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00048.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00048.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00049.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00049.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00051.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00051.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00056.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00056.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00057.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00057.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00058.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00058.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00060.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00060.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00061.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00061.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00062.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00062.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00063.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00063.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00064.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00064.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00066.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00066.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00067.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00067.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00074.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00074.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00081.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00081.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00082.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00082.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00083.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00083.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00089.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00089.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00096.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00096.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00100.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00100.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00102.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00102.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00103.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00103.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00110.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00110.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00117.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00117.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00118.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00118.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00120.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00120.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00126.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00126.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00138.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00138.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00140.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00140.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00143.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00143.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00145.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00145.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00158.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00158.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00166.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00166.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00168.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00168.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00174.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00174.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00179.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00179.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00180.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00180.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00183.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00183.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00185.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00185.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00189.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00189.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00191.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00191.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00194.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00194.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00206.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00206.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00207.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00207.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00208.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00208.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00209.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00209.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00210.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00210.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00214.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00214.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00220.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00220.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00221.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00221.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00223.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00223.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00225.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00225.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00228.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00228.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00229.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00229.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00230.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00230.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00232.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00232.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00240.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00240.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00242.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00242.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00243.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00243.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00244.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00244.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00245.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00245.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00246.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00246.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00248.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00248.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00249.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00249.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00250.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00250.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00251.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00251.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00252.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00252.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00253.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00253.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00254.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00254.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00255.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00255.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00256.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00256.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00257.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00257.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00258.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00258.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00259.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00259.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00263.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00263.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00267.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00267.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00269.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00269.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00272.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00272.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00273.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00273.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00279.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00279.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00282.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00282.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00286.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00286.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00287.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00287.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00290.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00290.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00293.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00293.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00295.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00295.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00296.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00296.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00306.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00306.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00308.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00308.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00310.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00310.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00311.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00311.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00313.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00313.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00314.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00314.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00315.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00315.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00320.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00320.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00321.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00321.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00326.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00326.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00327.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00327.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00328.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00328.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00329.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00329.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00332.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00332.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00333.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00333.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00334.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00334.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00335.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00335.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00348.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00348.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00349.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00349.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00350.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00350.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00356.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00356.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00360.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00360.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00361.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00361.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00364.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00364.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00365.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00365.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00367.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00367.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00379.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00379.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00380.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00380.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00384.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00384.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00388.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00388.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00390.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00390.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00392.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00392.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00396.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00396.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00400.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00400.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00401.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00401.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00402.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00402.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00406.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00406.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00412.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00412.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00414.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00414.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00418.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00418.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00419.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00419.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00421.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00421.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00423.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00423.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00425.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00425.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00426.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00426.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00430.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00430.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00432.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00432.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00446.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00446.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00449.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00449.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00450.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00450.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00451.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00451.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00453.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00453.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00454.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00454.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00455.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00455.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00456.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-01-00456.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-03-00048.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-03-00048.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-03-00049.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-03-00049.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-03-00220.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-03-00220.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-03-00243.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-03-00243.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-03-00246.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-03-00246.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-03-00248.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-03-00248.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-03-00263.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-03-00263.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-03-00286.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/concorde/data/BrokerStatement2018AugB-03-00286.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/reports.php" beforeDir="false" afterPath="$PROJECT_DIR$/reports.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/activity.php" beforeDir="false" afterPath="$PROJECT_DIR$/activity.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main_js.js" beforeDir="false" afterPath="$PROJECT_DIR$/main_js.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tmp/foxtrot_online.log" beforeDir="false" afterPath="$PROJECT_DIR$/tmp/foxtrot_online.log" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -183,50 +17,61 @@
     <session id="-86045946">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="3" />
+          <entry key="project.closed" value="4" />
           <entry key="project.open.time.4" value="2" />
           <entry key="project.open.time.5" value="2" />
-          <entry key="project.opened" value="4" />
+          <entry key="project.open.time.6" value="1" />
+          <entry key="project.opened" value="5" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="php" value="2" />
+          <entry key="js" value="1" />
+          <entry key="php" value="3" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="PHP" value="2" />
+          <entry key="JavaScript" value="1" />
+          <entry key="PHP" value="3" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="php" value="43" />
+          <entry key="js" value="2" />
+          <entry key="php" value="328" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="PHP" value="43" />
+          <entry key="JavaScript" value="2" />
+          <entry key="PHP" value="328" />
         </counts>
       </usages-collector>
+      <usages-collector id="statistics.js.language.service.starts" />
+      <usages-collector id="statistics.php.composer.actions" />
+      <usages-collector id="statistics.php.rename.constructor" />
+      <usages-collector id="statistics.php.new.class" />
+      <usages-collector id="statistics.php.composer.command.options" />
+      <usages-collector id="statistics.php.new.test" />
     </session>
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/reports.php">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/activity.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="476">
-              <caret line="96" column="44" selection-start-line="96" selection-start-column="44" selection-end-line="96" selection-end-column="44" />
+            <state relative-caret-position="301">
+              <caret line="119" column="139" selection-start-line="119" selection-start-column="139" selection-end-line="119" selection-end-column="139" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/backstage.php">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/main_js.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1079">
-              <caret line="945" column="48" selection-start-line="945" selection-start-column="48" selection-end-line="945" selection-end-column="48" />
+            <state relative-caret-position="200">
+              <caret line="311" column="6" selection-start-line="311" selection-start-column="6" selection-end-line="314" selection-end-column="7" />
             </state>
           </provider>
         </entry>
@@ -243,9 +88,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>disab</find>
-      <find>number_f</find>
-      <find>Activity</find>
       <find>activi</find>
       <find>datatab</find>
       <find>pdf_title</find>
@@ -273,6 +115,9 @@
       <find>throw new</find>
       <find>date.</find>
       <find>reports</find>
+      <find>search</find>
+      <find>sear</find>
+      <find>width</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -296,11 +141,11 @@
         <option value="$PROJECT_DIR$/footer.php" />
         <option value="$PROJECT_DIR$/statements.php" />
         <option value="$PROJECT_DIR$/main_stylesheet.css" />
-        <option value="$PROJECT_DIR$/activity.php" />
         <option value="$PROJECT_DIR$/dashboard.php" />
-        <option value="$PROJECT_DIR$/main_js.js" />
         <option value="$PROJECT_DIR$/reports.php" />
         <option value="$PROJECT_DIR$/backstage.php" />
+        <option value="$PROJECT_DIR$/main_js.js" />
+        <option value="$PROJECT_DIR$/activity.php" />
       </list>
     </option>
   </component>
@@ -395,7 +240,7 @@
     <editor active="true" />
     <layout>
       <window_info id="Favorites" order="0" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.20196672" />
+      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.20499243" />
       <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Messages" order="0" weight="0.32933104" />
       <window_info anchor="bottom" id="Event Log" order="1" side_tool="true" weight="0.32933104" />
@@ -452,7 +297,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$/.." />
     </ignored-roots>
-    <MESSAGE value="Change reports table location" />
     <MESSAGE value="Statements improve performance" />
     <MESSAGE value="Statements – add field_1 at the end of statement and present Direct if equal to DIR" />
     <MESSAGE value="Create demo client" />
@@ -477,7 +321,8 @@
     <MESSAGE value="Remove growth, change difference to change - reports page" />
     <MESSAGE value="Hide graphs on reports page if there are no values, but leave table as is" />
     <MESSAGE value="CHANGE column algorithm" />
-    <option name="LAST_COMMIT_MESSAGE" value="CHANGE column algorithm" />
+    <MESSAGE value="Expand the line chart (on top) to be the same width as the pie chart and the Total/Previous table&#10;&#10;Change the &quot;Total&quot; header to &quot;Current Period&quot;&#10;&#10;Change the &quot;Last&quot; header to &quot;Previous Period&quot;&#10;&#10;Change the &quot;Change&quot;:header to &quot;Growth&quot;" />
+    <option name="LAST_COMMIT_MESSAGE" value="Expand the line chart (on top) to be the same width as the pie chart and the Total/Previous table&#10;&#10;Change the &quot;Total&quot; header to &quot;Current Period&quot;&#10;&#10;Change the &quot;Last&quot; header to &quot;Previous Period&quot;&#10;&#10;Change the &quot;Change&quot;:header to &quot;Growth&quot;" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/drill_down_pie_chart_no_data.js" />
@@ -575,24 +420,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/activity.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="45" column="83" selection-start-line="45" selection-start-column="75" selection-end-line="45" selection-end-column="83" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/junction.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="221">
           <caret line="13" selection-start-line="13" selection-end-line="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/main_js.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="179">
-          <caret line="246" column="24" selection-start-line="246" selection-start-column="24" selection-end-line="246" selection-end-column="24" />
         </state>
       </provider>
     </entry>
@@ -605,15 +436,29 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/reports.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="476">
+        <state relative-caret-position="17">
           <caret line="96" column="44" selection-start-line="96" selection-start-column="44" selection-end-line="96" selection-end-column="44" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/backstage.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1079">
-          <caret line="945" column="48" selection-start-line="945" selection-start-column="48" selection-end-line="945" selection-end-column="48" />
+        <state relative-caret-position="-2470">
+          <caret line="1156" column="9" selection-start-line="1156" selection-start-column="9" selection-end-line="1156" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main_js.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="200">
+          <caret line="311" column="6" selection-start-line="311" selection-start-column="6" selection-end-line="314" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/activity.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="301">
+          <caret line="119" column="139" selection-start-line="119" selection-start-column="139" selection-end-line="119" selection-end-column="139" />
         </state>
       </provider>
     </entry>
