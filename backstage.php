@@ -292,7 +292,8 @@ class statement{
 				unset($this->field_1);
 				break;
 		}
-		$this->date = strtotime($this->month.' '.$this->year);
+		//for sorting purposes - payroll sequence is the day of the month
+		$this->date = strtotime($payroll_sequence_int.' '.$this->month.' '.$this->year);
 	}
 
 	/**
