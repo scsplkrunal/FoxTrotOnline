@@ -125,6 +125,8 @@ require_once 'header.php';
 							$( '#activity_table_filter input' ).width( '100%' );
 						}
 
+						$('#activity_table_filter label').after('<small id="search_note" class="form-text text-muted" style="margin-top: -0.5em">Enter EXACTLY what you\'re looking for</small>');
+
 						// $( "#activity_table_filter input" ).keydown( function(){
 						// 	var current_value = $( "#activity_table_filter input" ).val();
 						// 	current_value = current_value.replace(/,/g, '');

@@ -40,7 +40,7 @@ $( document ).ready( function(){
 					var pdf_title = json_obj.data_arr.pdf_title_first_line + '\n\r' + json_obj.data_arr.pdf_title_second_line;
 					var excel_title = json_obj.data_arr.pdf_title_first_line + ' - ' + json_obj.data_arr.pdf_title_second_line;
 					$( '#activity_table' ).DataTable( {
-
+						language: {search: ""},
 						paging: false,
 						info: false,
 						dom: 'Bfrtip',
@@ -63,13 +63,16 @@ $( document ).ready( function(){
 					} );
 
 					$( '.buttons-html5' ).addClass( 'btn btn-secondary' );
-					$('#activity_table_filter input').addClass('form-control').attr("placeholder", "Search").css('margin',0);
-					$('#activity_table_filter').width(210).css('float','right');
-					$('.dt-buttons').width(200).css('float','left');
+					$( '#activity_table_filter input' ).addClass( 'form-control' ).attr( "placeholder", "Search" ).css( 'margin', 0 );
+					$( '#activity_table_filter' ).width( 210 ).css( 'float', 'right' );
+					$( '.dt-buttons' ).width( 200 ).css( 'float', 'left' );
 					if( $( document ).width() < 992 ){
-						$('#activity_table_filter').width('100%').addClass('text-left mt-2');
-						$('#activity_table_filter input').width('100%');
+						$( '#activity_table_filter' ).width( '100%' ).addClass( 'text-left mt-2' );
+						$( '#activity_table_filter input' ).width( '100%' );
 					}
+
+					$('#activity_table_filter label').after('<small id="search_note" class="form-text text-muted" style="margin-top: -0.5em">Enter EXACTLY what you\'re looking for</small>');
+
 					$( "#activity_boxes_container_div" ).html( json_obj.data_arr['activity_boxes'] );
 					$( ".server_response_div .alert" ).removeClass( 'alert-warning alert-danger' ).addClass( 'alert-success' ).text( 'Table generated successfully.' ).show();
 				}else{ //If there is an error
@@ -170,7 +173,7 @@ $( document ).ready( function(){
 				var pdf_title = json_obj.data_arr.pdf_title_first_line + '\n\r' + json_obj.data_arr.pdf_title_second_line;
 				var excel_title = json_obj.data_arr.pdf_title_first_line + ' - ' + json_obj.data_arr.pdf_title_second_line;
 				$( '#activity_table' ).DataTable( {
-
+					language: {search: ""},
 					paging: false,
 					info: false,
 					dom: 'Bfrtip',
@@ -193,13 +196,16 @@ $( document ).ready( function(){
 				} );
 
 				$( '.buttons-html5' ).addClass( 'btn btn-secondary' );
-				$('#activity_table_filter input').addClass('form-control').attr("placeholder", "Search").css('margin',0);
-				$('#activity_table_filter').width(210).css('float','right');
-				$('.dt-buttons').width(200).css('float','left');
+				$( '#activity_table_filter input' ).addClass( 'form-control' ).attr( "placeholder", "Search" ).css( 'margin', 0 );
+				$( '#activity_table_filter' ).width( 210 ).css( 'float', 'right' );
+				$( '.dt-buttons' ).width( 200 ).css( 'float', 'left' );
 				if( $( document ).width() < 992 ){
-					$('#activity_table_filter').width('100%').addClass('text-left mt-2');
-					$('#activity_table_filter input').width('100%');
+					$( '#activity_table_filter' ).width( '100%' ).addClass( 'text-left mt-2' );
+					$( '#activity_table_filter input' ).width( '100%' );
 				}
+
+				$('#activity_table_filter label').after('<small id="search_note" class="form-text text-muted" style="margin-top: -0.5em">Enter EXACTLY what you\'re looking for</small>');
+
 
 				$( "#activity_boxes_container_div" ).html( json_obj.data_arr['activity_boxes'] );
 				$( ".server_response_div .alert" ).removeClass( 'alert-warning alert-danger' ).addClass( 'alert-success' ).text( 'Table generated successfully.' ).show();
