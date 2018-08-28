@@ -4,6 +4,7 @@ html{
 
 body{
 	font-size: .875rem;
+	overflow: scroll;
 	}
 
 .sidebar_icon{
