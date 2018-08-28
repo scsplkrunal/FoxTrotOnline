@@ -347,11 +347,19 @@ class statement{
 	 */
 	static function is_authorized($file){
 		$broker_id = substr($file, 23, 5);
-		if($broker_id == $_SESSION['permrep_obj']->permRepID){
-			return true;
-		} else{
-			return false;
+		switch($_SESSION['company_name']){
+			case 'lifemark':
+				if($broker_id == $_SESSION['permrep_obj']->clear_no){
+					return true;
+				}
+				break;
+			default:
+				if($broker_id == $_SESSION['permrep_obj']->permRepID){
+					return true;
+				}
+				break;
 		}
+		return false;
 	}
 
 	/**
