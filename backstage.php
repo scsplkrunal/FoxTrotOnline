@@ -331,7 +331,9 @@ class statement{
 			$option_content  = "{$file_obj->month} {$file_obj->year} {$file_obj->payroll_sequence} Payroll {$file_obj->field_1}";
 			switch($_SESSION['company_name']){
 				case 'concorde':
-					$option_content.=" Company {$file_obj->concorde_company_number}";
+					if($file_obj->concorde_company_number == 2){
+						$option_content.= ' Asset Management';
+					}
 					break;
 			}
 			$html_return_str .= "<option value='{$file_obj->pdf_name}'>$option_content</option>";
