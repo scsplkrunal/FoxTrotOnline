@@ -271,6 +271,7 @@ class statement{
 	public $year;
 	public $month;
 	public $payroll_sequence;
+	public $concorde_company_number = null;
 	public $broker_id;
 	public $field_1;
 	public $date;
@@ -291,6 +292,12 @@ class statement{
 			default:
 				unset($this->field_1);
 				break;
+		}
+		switch($_SESSION['company_name']){
+			case 'concorde':
+				$this->concorde_company_number = substr($pdf_name, 24,2);
+				$this->broker_id = substr($pdf_name, 27, 5);
+			break;
 		}
 		//for sorting purposes - payroll sequence is the day of the month
 		$this->date = strtotime($payroll_sequence_int.' '.$this->month.' '.$this->year);
@@ -322,6 +329,11 @@ class statement{
 
 		foreach($file_obj_array as $file_obj){
 			$option_content  = "{$file_obj->month} {$file_obj->year} {$file_obj->payroll_sequence} Payroll {$file_obj->field_1}";
+			switch($_SESSION['company_name']){
+				case 'concorde':
+					$option_content.=" Company {$file_obj->concorde_company_number}";
+					break;
+			}
 			$html_return_str .= "<option value='{$file_obj->pdf_name}'>$option_content</option>";
 		}
 
@@ -352,15 +364,19 @@ class statement{
 			case 'lifemark':
 				if($broker_id == $_SESSION['permrep_obj']->clear_no){
 					return true;
+				}else{
+					return false;
 				}
 				break;
-			default:
-				if($broker_id == $_SESSION['permrep_obj']->permRepID){
-					return true;
-				}
+			case 'concorde':
+				$broker_id = substr($file, 27,5);
 				break;
 		}
-		return false;
+		if($broker_id == $_SESSION['permrep_obj']->permRepID){
+			return true;
+		}else{
+			return false;
+		}
 	}
 
 	/**
