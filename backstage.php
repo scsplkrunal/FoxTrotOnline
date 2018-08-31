@@ -192,12 +192,14 @@ function show_sidebar($current_page){
 						Graphs & Analytics
 					</a>
 				</li>
+				<!--
 				<li class="nav-item">
 					<a class="nav-link '.$documents_active.'" href="documents.php">
 						'.show_sidebar_icon('document').'
 						Documents
 					</a>
 				</li>
+				-->
 				<li class="nav-item">
 						<span id="sign_out_fake_link" class="fake_link nav-link">
 							'.show_sidebar_icon('sign_out').'
