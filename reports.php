@@ -77,7 +77,7 @@ require_once 'header.php';
 				<input name="func" value="reports_update" hidden>
 			</form>
 			<div class="row"> <!-- Line Chart div -->
-				<div class="col-12">
+				<div class="col-lg-8 col-xs-12">
 					<?php
 					$line_chart_data = line_chart_data_and_labels(['time_period' => 'all_dates']);
 					echo "<script type='text/javascript'>

@@ -56,6 +56,9 @@ require_once 'header.php';
 						<input name="func" value="dashboard_update" hidden>
 					</form>
 				</div>
+				<div class="col-lg-6">
+
+				</div>
 			</div>
 
 			<div class="row mb-5"> <!-- Pie Chart div -->
