@@ -937,6 +937,7 @@ function reports_table_html($post, $original_table_data){
 		$values_arr[0] = number_format(floatval($values_arr[0]), 2);
 		$values_arr[1] = number_format(floatval($values_arr[1]), 2);
 		if($values_arr[0] == 0 && $values_arr[1] == 0){
+			$i--;
 			continue;
 		}
 		$html_table_string .= "<tr>
