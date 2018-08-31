@@ -633,8 +633,10 @@ function pie_chart_data_and_labels($chart_name, $post = array(
 			$result  = db_query($sql_str);
 			if($result->num_rows != 0){ //If there is a value returned
 				while($row = $result->fetch_assoc()){ //Fill up all properties from DB data
-					$pie_chart_data_values [] = $row['total_commission'];
-					$pie_chart_labels []      = $row['product'];
+					if($row["total_commission"] != 0){
+						$pie_chart_data_values [] = $row['total_commission'];
+						$pie_chart_labels []      = $row['product'];
+					}
 				}
 			} else{
 				throw new Exception("No relevant records were found.", EXCEPTION_WARNING_CODE);
