@@ -916,12 +916,11 @@ function reports_table_html($post, $original_table_data){
 			} elseif($values_arr[0] > $values_arr[1]){ //if the total is bigger than the last
 				$text_class = 'text-success';
 				$growth     = round(100 * ($values_arr[0] / $values_arr[1]), 2);
-				if(is_infinite($change)){
+				if(is_infinite($growth)){
 					$growth = '<larger>&#x221e;</larger>';
 				}else{
 					$growth = $growth.'%';
 				}
-				//				$change     = number_format(100 * (1 - ($values_arr[1] / $values_arr[0])), 2);
 			} else{ // if the last is bigger than the total
 				$text_class = 'text-danger';
 				$growth     = number_format(100 * (($values_arr[0] / $values_arr[1]) - 1), 2).'%';
