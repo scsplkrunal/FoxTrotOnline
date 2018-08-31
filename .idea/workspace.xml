@@ -1,12 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="3afaa673-cb46-4034-a6f7-e9cf43ebac35" name="Default" comment="misc">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tmp/foxtrot_online.log" beforeDir="false" afterPath="$PROJECT_DIR$/tmp/foxtrot_online.log" afterDir="false" />
-    </list>
+    <list default="true" id="3afaa673-cb46-4034-a6f7-e9cf43ebac35" name="Default" comment="misc" />
+    <ignored path="tmp/" />
     <manually-removed-from-ignored>
-      <directory path="tmp/" />
       <directory path=".idea/" />
     </manually-removed-from-ignored>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
