@@ -27,16 +27,18 @@ require_once 'header.php';
 			</div>
 
 			<div class="row text-center">
-				<h4 id="posted_commission_heading" class="col-md-5 mb-4">
-					<?php
-					echo dashboard_posted_commissions();
-					?>
-				</h4>
+				<div class="col-lg-6 col-xs-12 mb-sm-4">
+					<h4 id="posted_commission_heading">
+						<?php
+						echo dashboard_posted_commissions();
+						?>
+					</h4>
+				</div>
 			</div>
 
 			<div class="row">
 				<div class="col-lg-6">
-					<form id="dashboard_form" class="dates_form col-md-12">
+					<form id="dashboard_form" class="dates_form">
 						<div class="server_response_div">
 							<div class="alert" role="alert"></div>
 						</div>
@@ -49,8 +51,7 @@ require_once 'header.php';
 							var today = now.getFullYear() + "-" + (month) + "-" + (day);
 							$( "#dashboard_form input[type=date]" ).val( today );
 						</script>
-						<br>
-						<input class="btn btn-primary mt-2" type="submit" value="Cutoff" required>
+						<input class="btn btn-primary ml-sm-2" type="submit" value="Refresh" required>
 						<input name="class" value="no_class" hidden>
 						<input name="func" value="dashboard_update" hidden>
 					</form>
