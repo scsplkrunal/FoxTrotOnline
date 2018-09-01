@@ -5,6 +5,8 @@ var config = {
 	type: 'pie',
 	data: {}, //Will be filled out through PHP
 	options: {
+		responsive: true,
+		maintainAspectRatio: false,
 		legend: {
 			onHover: function(e) {
 				e.target.style.cursor = 'pointer';
