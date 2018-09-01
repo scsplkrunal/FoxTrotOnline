@@ -297,9 +297,9 @@ class statement{
 		}
 		switch($_SESSION['company_name']){
 			case 'concorde':
-				$this->concorde_company_number = substr($pdf_name, 24,2);
-				$this->broker_id = substr($pdf_name, 27, 5);
-			break;
+				$this->concorde_company_number = substr($pdf_name, 24, 2);
+				$this->broker_id               = substr($pdf_name, 27, 5);
+				break;
 		}
 		//for sorting purposes - payroll sequence is the day of the month
 		$this->date = strtotime($payroll_sequence_int.' '.$this->month.' '.$this->year);
@@ -330,11 +330,11 @@ class statement{
 		$file_obj_array = self::sort_pdf_array_by_date($file_obj_array);
 
 		foreach($file_obj_array as $file_obj){
-			$option_content  = "{$file_obj->month} {$file_obj->year} {$file_obj->payroll_sequence} Payroll {$file_obj->field_1}";
+			$option_content = "{$file_obj->month} {$file_obj->year} {$file_obj->payroll_sequence} Payroll {$file_obj->field_1}";
 			switch($_SESSION['company_name']){
 				case 'concorde':
 					if($file_obj->concorde_company_number == 2){
-						$option_content.= ' Asset Management';
+						$option_content .= ' Asset Management';
 					}
 					break;
 			}
@@ -368,17 +368,17 @@ class statement{
 			case 'lifemark':
 				if($broker_id == $_SESSION['permrep_obj']->clear_no){
 					return true;
-				}else{
+				} else{
 					return false;
 				}
 				break;
 			case 'concorde':
-				$broker_id = substr($file, 27,5);
+				$broker_id = substr($file, 27, 5);
 				break;
 		}
 		if($broker_id == $_SESSION['permrep_obj']->permRepID){
 			return true;
-		}else{
+		} else{
 			return false;
 		}
 	}
@@ -922,7 +922,7 @@ function reports_table_html($post, $original_table_data){
 				$growth     = round(100 * ($values_arr[0] / $values_arr[1]), 2);
 				if(is_infinite($growth)){
 					$growth = '<larger>&#x221e;</larger>';
-				}else{
+				} else{
 					$growth = $growth.'%';
 				}
 			} else{ // if the last is bigger than the total
@@ -1098,7 +1098,11 @@ function drill_down_pie_chart($post){
 			$drill_down_table_html .= "<tr>";
 			foreach($row as $column_name => $value){
 				if($column_name == 'dateTrade' || $column_name == 'date_rec'){
-					$value                 = date('m/d/Y', strtotime($value));
+					if($value != null){
+						$value = date('m/d/Y', strtotime($value));
+					} else{
+						$value = '-';
+					}
 					$drill_down_table_html .= "<td>$value</td>";
 				} else{
 					$value                 = number_format(floatval($value), 2);
