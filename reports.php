@@ -110,6 +110,7 @@ require_once 'header.php';
 						pie_chart.data = pie_chart_data;
 						pie_chart.options.title = {
 							display: true,
+							fontSize: 14,
 							text: "Breakdown by Product Category"
 						};
 						pie_chart.update();
