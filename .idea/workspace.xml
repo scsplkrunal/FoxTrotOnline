@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="3afaa673-cb46-4034-a6f7-e9cf43ebac35" name="Default" comment="Add first statement to dashboard">
-      <change beforePath="$PROJECT_DIR$/backstage.php" beforeDir="false" afterPath="$PROJECT_DIR$/backstage.php" afterDir="false" />
+    <list default="true" id="3afaa673-cb46-4034-a6f7-e9cf43ebac35" name="Default" comment="Line chart title">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dashboard.php" beforeDir="false" afterPath="$PROJECT_DIR$/dashboard.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tmp/foxtrot_online.log" beforeDir="false" afterPath="$PROJECT_DIR$/tmp/foxtrot_online.log" afterDir="false" />
     </list>
     <manually-removed-from-ignored>
       <directory path="tmp/" />
@@ -32,7 +33,7 @@
         <counts>
           <entry key="css" value="6" />
           <entry key="js" value="5" />
-          <entry key="php" value="27" />
+          <entry key="php" value="29" />
           <entry key="sql" value="4" />
         </counts>
       </usages-collector>
@@ -40,7 +41,7 @@
         <counts>
           <entry key="CSS" value="6" />
           <entry key="JavaScript" value="5" />
-          <entry key="PHP" value="27" />
+          <entry key="PHP" value="29" />
           <entry key="SQL" value="4" />
         </counts>
       </usages-collector>
@@ -48,16 +49,16 @@
         <counts>
           <entry key="css" value="43" />
           <entry key="js" value="266" />
-          <entry key="php" value="2921" />
-          <entry key="txt" value="748" />
+          <entry key="php" value="2988" />
+          <entry key="txt" value="791" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="CSS" value="43" />
           <entry key="JavaScript" value="266" />
-          <entry key="PHP" value="2921" />
-          <entry key="PLAIN_TEXT" value="748" />
+          <entry key="PHP" value="2988" />
+          <entry key="PLAIN_TEXT" value="791" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.js.language.service.starts" />
@@ -70,20 +71,29 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/dashboard.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="179">
-              <caret line="88" column="57" lean-forward="true" selection-start-line="88" selection-start-column="57" selection-end-line="88" selection-end-column="57" />
+            <state relative-caret-position="-170">
+              <caret line="85" column="40" lean-forward="true" selection-start-line="85" selection-start-column="40" selection-end-line="85" selection-end-column="40" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/junction.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="340">
+              <caret line="20" selection-start-line="20" selection-end-line="20" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/backstage.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="196">
-              <caret line="789" column="20" lean-forward="true" selection-start-line="789" selection-start-column="20" selection-end-line="789" selection-end-column="20" />
+            <state relative-caret-position="383">
+              <caret line="1051" selection-start-line="1050" selection-end-line="1051" />
             </state>
           </provider>
         </entry>
@@ -91,8 +101,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/reports.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="169">
-              <caret line="33" column="52" selection-start-line="33" selection-start-column="45" selection-end-line="33" selection-end-column="57" />
+            <state relative-caret-position="33">
+              <caret line="97" column="24" selection-start-line="97" selection-start-column="24" selection-end-line="118" selection-end-column="30" />
             </state>
           </provider>
         </entry>
@@ -166,8 +176,8 @@
         <option value="$PROJECT_DIR$/pie_chart_no_data.js" />
         <option value="$PROJECT_DIR$/main_js.js" />
         <option value="$PROJECT_DIR$/reports.php" />
-        <option value="$PROJECT_DIR$/dashboard.php" />
         <option value="$PROJECT_DIR$/backstage.php" />
+        <option value="$PROJECT_DIR$/dashboard.php" />
       </list>
     </option>
   </component>
@@ -262,7 +272,7 @@
     <editor active="true" />
     <layout>
       <window_info id="Favorites" order="0" side_tool="true" />
-      <window_info content_ui="combo" id="Project" order="1" visible="true" weight="0.16263238" />
+      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.16263238" />
       <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Messages" order="0" weight="0.32933104" />
       <window_info anchor="bottom" id="Event Log" order="1" side_tool="true" weight="0.32933104" />
@@ -278,7 +288,7 @@
       <window_info anchor="right" id="Commander" order="1" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="2" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="3" weight="0.25" />
-      <window_info active="true" anchor="right" id="Debug" order="4" visible="true" weight="0.20121029" />
+      <window_info anchor="right" id="Debug" order="4" visible="true" weight="0.20121029" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -319,8 +329,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$/.." />
     </ignored-roots>
-    <MESSAGE value="Filter button margin responsive" />
-    <MESSAGE value="Filter search bug as comment" />
     <MESSAGE value="Add muted comment under the search input activity" />
     <MESSAGE value="CSS" />
     <MESSAGE value="scroll y axis" />
@@ -344,7 +352,20 @@
     <MESSAGE value="Add note under dashboard pie chart" />
     <MESSAGE value="Add note under reports pie chart" />
     <MESSAGE value="Add first statement to dashboard" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add first statement to dashboard" />
+    <MESSAGE value="Add line chart to dashboard" />
+    <MESSAGE value="Line chart title" />
+    <option name="LAST_COMMIT_MESSAGE" value="Line chart title" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/junction.php</url>
+          <line>2</line>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/drill_down_pie_chart_no_data.js" />
@@ -452,13 +473,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/junction.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="20" selection-start-line="20" selection-end-line="20" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/main_js.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="218">
@@ -479,22 +493,29 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/reports.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="169">
-          <caret line="33" column="52" selection-start-line="33" selection-start-column="45" selection-end-line="33" selection-end-column="57" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dashboard.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="179">
-          <caret line="88" column="57" lean-forward="true" selection-start-line="88" selection-start-column="57" selection-end-line="88" selection-end-column="57" />
+        <state relative-caret-position="33">
+          <caret line="97" column="24" selection-start-line="97" selection-start-column="24" selection-end-line="118" selection-end-column="30" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/backstage.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="196">
-          <caret line="789" column="20" lean-forward="true" selection-start-line="789" selection-start-column="20" selection-end-line="789" selection-end-column="20" />
+        <state relative-caret-position="383">
+          <caret line="1051" selection-start-line="1050" selection-end-line="1051" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/junction.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="20" selection-start-line="20" selection-end-line="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dashboard.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-170">
+          <caret line="85" column="40" lean-forward="true" selection-start-line="85" selection-start-column="40" selection-end-line="85" selection-end-column="40" />
         </state>
       </provider>
     </entry>

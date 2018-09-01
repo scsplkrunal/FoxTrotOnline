@@ -1,6 +1,6 @@
-var chart_id = document.currentScript.getAttribute('chart_id'); //Sent as a parameter from the page
+var line_chart_id = document.currentScript.getAttribute('chart_id'); //Sent as a parameter from the page
 
-var ctx = $('#'+chart_id);
+var ctx = $('#'+line_chart_id);
 var line_chart = new Chart(ctx, {
 	type: 'line',
 	data: {}, //filled up from server
