@@ -307,7 +307,13 @@ $( document ).ready( function(){
 			var value = chartData.datasets[0].data[idx];
 			var color = chartData.datasets[0].backgroundColor[idx];
 
-			var dashboard_form_date = $( "#dashboard_form input[type=date]" ).val( );
+
+			if($( ".server_response_div .alert" ).text() != 'No relevant records were found.'){
+				var dashboard_form_date = $( "#dashboard_form input[type=date]" ).val( );
+			}else{
+				var dashboard_form_date = today;
+			}
+
 			$.post( "junction.php", {
 				func: 'drill_down_pie_chart',
 				class: 'no_class',
