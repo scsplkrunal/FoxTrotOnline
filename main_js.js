@@ -106,7 +106,7 @@ $( document ).ready( function(){
 	/**
 	 Log in form submit
 	 */
-	$( "#log_in_form" ).submit( function(){
+	$( "#log_in_form" ).submit( function(event){
 		event.preventDefault(); //Prevent the form from submitting normally
 		$.post( 'junction.php', $( '#log_in_form' ).serialize(), function( data ){
 			var json_obj = $.parseJSON( data );
@@ -135,7 +135,7 @@ $( document ).ready( function(){
 	/**
 	 Forgot password form submit
 	 */
-	$( "#forgot_password_form" ).submit( function(){
+	$( "#forgot_password_form" ).submit( function(event){
 		event.preventDefault(); //Prevent the form from submitting normally
 		$.post( 'junction.php', $( '#forgot_password_form' ).serialize(), function( data ){
 			var json_obj = $.parseJSON( data );
@@ -156,7 +156,7 @@ $( document ).ready( function(){
 	/**
 	 Activity form submit
 	 */
-	$( "#activity_form" ).submit( function(){
+	$( "#activity_form" ).submit( function(event){
 		event.preventDefault(); //Prevent the form from submitting normally
 		$.post( 'junction.php', $( '#activity_form' ).serialize(), function( data ){
 			var json_obj = $.parseJSON( data );
@@ -247,7 +247,7 @@ $( document ).ready( function(){
 	/**
 	 Reports form submit
 	 */
-	$( "#reports_form" ).submit( function(){
+	$( "#reports_form" ).submit( function(event){
 		event.preventDefault(); //Prevent the form from submitting normally
 		$.post( 'junction.php', $( '#reports_form' ).serialize(), function( data ){
 			var json_obj = $.parseJSON( data );
@@ -337,7 +337,7 @@ $( document ).ready( function(){
 	/**
 	 Dashboard form submit
 	 */
-	$( "#dashboard_form" ).submit( function(){
+	$( "#dashboard_form" ).submit( function(event){
 		event.preventDefault(); //Prevent the form from submitting normally
 		$.post( 'junction.php', $( '#dashboard_form' ).serialize(), function( data ){
 			var json_obj = $.parseJSON( data );
