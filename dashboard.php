@@ -56,9 +56,6 @@ require_once 'header.php';
 						<input name="func" value="dashboard_update" hidden>
 					</form>
 				</div>
-				<div class="col-lg-6">
-
-				</div>
 			</div>
 
 			<div class="row mb-5"> <!-- Pie Chart div -->
@@ -79,6 +76,11 @@ require_once 'header.php';
 					</script>
 					<p class="text-center text-lg-left"><small class="text-muted ml-lg-5 pl-lg-5">Click on chart for details</small></p>
 				</div>
+				<object id="statement_pdf_object" class="col-lg-6" data="none" type="application/pdf" height="300"></object>
+				<?php
+				$x = statement::statements_list("{$_SESSION['company_name']}/data"); //x doesn't matter, initial the function for $_SESSION['first_statement_url']
+				echo statement::statement_buttons_pdf_url_changer();
+				?>
 			</div>
 
 			<!-- Modal -->
