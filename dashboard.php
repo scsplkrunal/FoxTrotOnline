@@ -83,6 +83,24 @@ require_once 'header.php';
 				?>
 			</div>
 
+			<div class="row mb-5">
+				<div class="col-lg-8 col-xs-12">
+					<?php
+					$line_chart_data = line_chart_data_and_labels(['time_period' => 'Year to Date']);
+					echo "<script type='text/javascript'>
+							var line_chart_data = $line_chart_data;
+						</script>";
+					?>
+					<canvas id="dashboard_line_chart"></canvas>
+					<script type="text/javascript" src="line_chart_no_data.js"
+					        chart_id="dashboard_line_chart"></script>
+					<script type="text/javascript">
+						line_chart.data = line_chart_data;
+						line_chart.update();
+					</script>
+				</div>
+			</div>
+
 			<!-- Modal -->
 			<div class="modal fade" id="drill_down_pie_chart_modal" tabindex="-1" role="dialog"
 			     aria-hidden="true">

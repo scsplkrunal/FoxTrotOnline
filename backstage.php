@@ -758,8 +758,8 @@ function line_chart_data_and_labels($post){
 	switch($post['time_period']){
 		case 'all_dates':
 		case 'Year to Date':
-		case  'Previous 12 Months':
-		case  'Last Year':
+		case 'Previous 12 Months':
+		case 'Last Year':
 			monthly:
 			$sql_str      = "SELECT EXTRACT(YEAR_MONTH FROM {$post["choose_date_radio"]}) as 'date_time', SUM({$post["choose_pay_radio"]}) AS total_commission
 					FROM trades
