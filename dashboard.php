@@ -84,7 +84,7 @@ require_once 'header.php';
 			</div>
 
 			<div class="row mb-5">
-				<div class="col-lg-8 col-xs-12">
+				<div class="col-lg-6 col-xs-12">
 					<?php
 					$line_chart_data = line_chart_data_and_labels(['time_period' => 'Year to Date']);
 					echo "<script type='text/javascript'>
@@ -96,6 +96,11 @@ require_once 'header.php';
 					        chart_id="dashboard_line_chart"></script>
 					<script type="text/javascript">
 						line_chart.data = line_chart_data;
+						line_chart.options.title = {
+							display: true,
+							fontSize: 14,
+							text: "Year to date Net Commission"
+						};
 						line_chart.update();
 					</script>
 				</div>
