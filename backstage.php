@@ -1044,6 +1044,7 @@ function drill_down_pie_chart($post){
 					WHERE rep_no = {$_SESSION["permrep_obj"]->permRepID}
 						AND pay_date IS NULL
 						AND date_rec IS NOT NULL
+						AND date_rec < '{$post["dashboard_form_date"]}'
 						AND product = '{$post["label"]}'
 					ORDER BY dateTrade DESC;";
 			break;

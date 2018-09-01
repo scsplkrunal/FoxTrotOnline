@@ -307,6 +307,7 @@ $( document ).ready( function(){
 			var value = chartData.datasets[0].data[idx];
 			var color = chartData.datasets[0].backgroundColor[idx];
 
+			var dashboard_form_date = $( "#dashboard_form input[type=date]" ).val( );
 			$.post( "junction.php", {
 				func: 'drill_down_pie_chart',
 				class: 'no_class',
@@ -314,7 +315,8 @@ $( document ).ready( function(){
 				label: label,
 				value: value,
 				color: color,
-				date_type: date_type
+				date_type: date_type,
+				dashboard_form_date: dashboard_form_date
 			}, function( server_response_data ){
 				$( '#drill_down_pie_chart_modal' ).modal( 'show' );
 				var json_obj = $.parseJSON( server_response_data );
