@@ -296,7 +296,20 @@ $( document ).ready( function(){
 	 * Drill down pie chart
 	 * @param evt
 	 */
-	$( '#' + chart_id )[0].onclick = function( evt ){
+	$("#dashboard_pie_chart")[0].onclick=function(event){
+		drill_down_pie_chart('dashboard_pie_chart', event, pie_charts_arr[0]);
+	};
+
+	$("#dashboard_pie_chart_2")[0].onclick=function(event){
+		drill_down_pie_chart('dashboard_pie_chart_2', event, pie_charts_arr[1]);
+	};
+
+	$("#reports_pie_chart")[0].onclick=function(event){
+		drill_down_pie_chart('reports_pie_chart', event, pie_charts_arr[0]);
+	};
+
+	// $( '#' + chart_id )[0].onclick = function( evt ){
+	function drill_down_pie_chart( chart_id, evt, pie_chart ){
 		var activePoints = pie_chart.getElementsAtEvent( evt );
 		var date_type = $( '#reports_form input[name=choose_date_radio]:checked' ).val();
 		if( activePoints[0] ){
@@ -307,11 +320,12 @@ $( document ).ready( function(){
 			var value = chartData.datasets[0].data[idx];
 			var color = chartData.datasets[0].backgroundColor[idx];
 
-
-			if( $( ".server_response_div .alert" ).text() != 'No relevant records were found.' ){
-				var dashboard_form_date = $( "#dashboard_form input[type=date]" ).val();
-			}else{
-				var dashboard_form_date = today;
+			if( chart_id == 'dashboard_pie_chart' ){
+				if( $( ".server_response_div .alert" ).text() != 'No relevant records were found.'){
+					var dashboard_form_date = $( "#dashboard_form input[type=date]" ).val();
+				}else{
+					var dashboard_form_date = today;
+				}
 			}
 
 			$.post( "junction.php", {
@@ -329,8 +343,11 @@ $( document ).ready( function(){
 				$( "#drill_down_table_div" ).html( json_obj.data_arr['drill_down_table'] );
 			} );
 		}
+	}
 
-	};
+
+
+	// };
 
 
 	/**
