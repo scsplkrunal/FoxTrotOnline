@@ -1056,6 +1056,7 @@ function drill_down_pie_chart($post){
 					FROM trades
 					RIGHT JOIN prodtype ON trades.inv_type = prodtype.inv_type
 					WHERE rep_no = {$_SESSION["permrep_obj"]->permRepID}
+					AND (comm_rec > 0 OR rep_comm > 0)
 					$where_clause
 					AND product = '{$post["label"]}'
 					ORDER BY dateTrade DESC;";
