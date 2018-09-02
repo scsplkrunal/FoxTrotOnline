@@ -370,7 +370,7 @@ $( document ).ready( function(){
 				pie_charts_arr[0].data = $.parseJSON( json_obj.data_arr.pie_chart_data );
 				pie_charts_arr[0].update();
 				$( "#posted_commission_heading" ).text( json_obj.data_arr.posted_commission );
-				$( ".server_response_div .alert" ).removeClass( 'alert-warning alert-danger' ).addClass( 'alert-success' ).text( 'Data generated successfully.' ).show();
+				$( "#dashboard_form .server_response_div .alert" ).removeClass( 'alert-warning alert-danger' ).addClass( 'alert-success' ).text( 'Data generated successfully.' ).show();
 			}else{ //If there is an error
 				$( "#dashboard_form .server_response_div .alert" ).text( json_obj.error_message ).show();
 				if( json_obj.error_level == 0 ){
