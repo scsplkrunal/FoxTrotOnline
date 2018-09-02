@@ -95,21 +95,20 @@ require_once 'header.php';
 
 			<div class="row mb-5">
 				<div class="col-lg-6 col-xs-12">
-					<form id="reports_form" class="dates_form col-md-12">
+					<form id="dashboard_time_period_form" class="dates_form col-md-12">
 						<div class="server_response_div">
 							<div class="alert" role="alert"></div>
 						</div>
 						<label>Date:</label>
 						<select id="time_periods_select" name="time_period" class="mr-2">
-							<option id='dates_form_option_all_dates' value="all_dates">All Dates</option>
 							<option value="Year to Date">Year to Date</option>
 							<option value="Month to Date">Month to Date</option>
 							<option value="Previous 12 Months">Previous 12 Months</option>
 							<option value="Last Year">Last Year</option>
 							<option value="Last Month">Last Month</option>
-							<option id="dates_form_option_custom" value="Custom">Custom</option>
 						</select>
-						<input class="btn btn-primary" type="submit" value="Filter">
+						<input name="choose_date_radio" value="dateTrade" hidden>
+						<input name="choose_pay_radio" value="rep_comm" hidden>
 						<input name="class" value="no_class" hidden>
 						<input name="func" value="reports_update" hidden>
 					</form>

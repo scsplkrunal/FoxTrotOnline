@@ -222,9 +222,41 @@ $( document ).ready( function(){
 
 
 	/**
+	 Dashboard time priod form - changed selection.
+	 */
+	$( '#dashboard_time_period_form #time_periods_select' ).change( function(){ //On change of drop down list
+		event.preventDefault(); //Prevent the form from submitting normally
+		$.post( 'junction.php', $( '#dashboard_time_period_form' ).serialize(), function( data ){
+			var json_obj = $.parseJSON( data );
+			if( json_obj.status == true ){
+				var pie_chart_data = $.parseJSON( json_obj.data_arr.pie_chart_data );
+				if( pie_chart_data.datasets[0].data != null ){
+					$( "#dashboard_pie_chart_2" ).show();
+					$( "#dashboard_line_chart" ).show();
+					pie_charts_arr[1].data = pie_chart_data;
+					pie_charts_arr[1].update();
+					line_chart.data = $.parseJSON( json_obj.data_arr.line_chart_data );
+					line_chart.update();
+				}else{
+					$( "#dashboard_pie_chart_2" ).hide();
+					$( "#dashboard_line_chart" ).hide();
+				}
+				$( "#dashboard_time_period_form .server_response_div .alert" ).removeClass( 'alert-warning alert-danger' ).addClass( 'alert-success' ).text( 'Data generated successfully.' ).show();
+			}else{ //If there is an error
+				$( "#dashboard_time_period_form .server_response_div .alert" ).text( json_obj.error_message ).show();
+				if( json_obj.error_level == 0 ){
+					$( "#dashboard_time_period_form .server_response_div .alert" ).removeClass( 'alert-success alert-danger' ).addClass( 'alert-warning' );
+				}else{
+					$( "#dashboard_time_period_form .server_response_div .alert" ).removeClass( 'alert-success alert-warning' ).addClass( 'alert-danger' );
+				}
+			}
+		} );
+	} );
+
+	/**
 	 Reports form - changed selection.
 	 */
-	$( '#time_periods_select' ).change( function(){ //On change of drop down list
+	$( '#reports_form #time_periods_select' ).change( function(){ //On change of drop down list
 		var id_of_selected_option = $( this ).find( "option:selected" ).attr( "id" );
 		if( id_of_selected_option == 'dates_form_option_all_dates' ){
 			$( '#reports_form_dates_radios_div input' ).prop( "disabled", true );
