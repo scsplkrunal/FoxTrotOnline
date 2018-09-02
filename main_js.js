@@ -256,8 +256,8 @@ $( document ).ready( function(){
 				if( pie_chart_data.datasets[0].data != null ){
 					$( "#reports_pie_chart" ).show();
 					$( "#reports_line_chart" ).show();
-					pie_chart.data = pie_chart_data;
-					pie_chart.update();
+					pie_charts_arr[0].data = pie_chart_data;
+					pie_charts_arr[0].update();
 					line_chart.data = $.parseJSON( json_obj.data_arr.line_chart_data );
 					line_chart.update();
 				}else{
@@ -370,16 +370,16 @@ $( document ).ready( function(){
 		$.post( 'junction.php', $( '#dashboard_form' ).serialize(), function( data ){
 			var json_obj = $.parseJSON( data );
 			if( json_obj.status == true ){
-				pie_chart.data = $.parseJSON( json_obj.data_arr.pie_chart_data );
-				pie_chart.update();
+				pie_charts_arr[0].data = $.parseJSON( json_obj.data_arr.pie_chart_data );
+				pie_charts_arr[0].update();
 				$( "#posted_commission_heading" ).text( json_obj.data_arr.posted_commission );
 				$( ".server_response_div .alert" ).removeClass( 'alert-warning alert-danger' ).addClass( 'alert-success' ).text( 'Data generated successfully.' ).show();
 			}else{ //If there is an error
-				$( ".server_response_div .alert" ).text( json_obj.error_message ).show();
+				$( "#dashboard_form .server_response_div .alert" ).text( json_obj.error_message ).show();
 				if( json_obj.error_level == 0 ){
-					$( ".server_response_div .alert" ).removeClass( 'alert-success alert-danger' ).addClass( 'alert-warning' );
+					$( "#dashboard_form .server_response_div .alert" ).removeClass( 'alert-success alert-danger' ).addClass( 'alert-warning' );
 				}else{
-					$( ".server_response_div .alert" ).removeClass( 'alert-success alert-warning' ).addClass( 'alert-danger' );
+					$( "#dashboard_form .server_response_div .alert" ).removeClass( 'alert-success alert-warning' ).addClass( 'alert-danger' );
 				}
 			}
 		} );
