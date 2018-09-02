@@ -71,8 +71,10 @@ require_once 'header.php';
 					<script type="text/javascript" src="pie_chart_no_data.js"
 					        chart_id="dashboard_pie_chart"></script>
 					<script type="text/javascript">
-						pie_chart.data = pie_chart_data;
-						pie_chart.update();
+						var pie_charts_arr = [];
+						pie_charts_arr.push(pie_chart);
+						pie_charts_arr[0].data = pie_chart_data;
+						pie_charts_arr[0].update();
 					</script>
 					<p class="text-center text-lg-left"><small class="text-muted ml-lg-5 pl-lg-5">Click on chart for details</small></p>
 				</div>
@@ -92,7 +94,7 @@ require_once 'header.php';
 			</div>
 
 			<div class="row mb-5">
-				<div class="col-lg-8 col-xs-12">
+				<div class="col-lg-6 col-xs-12">
 					<?php
 					$line_chart_data = line_chart_data_and_labels(['time_period' => 'Year to Date']);
 					echo "<script type='text/javascript'>
@@ -111,6 +113,33 @@ require_once 'header.php';
 						};
 						line_chart.update();
 					</script>
+				</div>
+				<div class="col-lg-6 mb-5" style="width: 300px; height: 300px;">
+					<?php
+					$json_obj       = pie_chart_data_and_labels('reports_pie_chart', [
+						'time_period'       => 'Year to Date',
+						'choose_date_radio' => 'dateTrade',
+						'choose_pay_radio'  => 'rep_comm'
+					]);
+					$pie_chart_data = $json_obj->data_arr['pie_chart_data'];
+					echo "<script type='text/javascript'>
+							var pie_chart_data = $pie_chart_data;
+						</script>";
+					?>
+					<canvas id="dashboard_pie_chart_2"></canvas>
+					<script type="text/javascript" src="pie_chart_no_data.js"
+					        chart_id="dashboard_pie_chart_2"></script>
+					<script type="text/javascript">
+						pie_charts_arr.push(pie_chart);
+						pie_charts_arr[1].data = pie_chart_data;
+						pie_charts_arr[1].options.title = {
+							display: true,
+							fontSize: 14,
+							text: "Breakdown by Product Category"
+						};
+						pie_charts_arr[1].update();
+					</script>
+					<p class="text-center text-lg-left mb-0"><small class="text-muted ml-lg-4 pl-lg-5">Click on chart for details</small></p>
 				</div>
 			</div>
 

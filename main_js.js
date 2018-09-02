@@ -71,7 +71,7 @@ $( document ).ready( function(){
 						$( '#activity_table_filter input' ).width( '100%' );
 					}
 
-					$('#activity_table_filter label').after('<small id="search_note" class="form-text text-muted" style="margin-top: -0.5em">Enter EXACTLY what you\'re looking for</small>');
+					$( '#activity_table_filter label' ).after( '<small id="search_note" class="form-text text-muted" style="margin-top: -0.5em">Enter EXACTLY what you\'re looking for</small>' );
 
 					$( "#activity_boxes_container_div" ).html( json_obj.data_arr['activity_boxes'] );
 					$( ".server_response_div .alert" ).removeClass( 'alert-warning alert-danger' ).addClass( 'alert-success' ).text( 'Table generated successfully.' ).show();
@@ -106,7 +106,7 @@ $( document ).ready( function(){
 	/**
 	 Log in form submit
 	 */
-	$( "#log_in_form" ).submit( function(event){
+	$( "#log_in_form" ).submit( function( event ){
 		event.preventDefault(); //Prevent the form from submitting normally
 		$.post( 'junction.php', $( '#log_in_form' ).serialize(), function( data ){
 			var json_obj = $.parseJSON( data );
@@ -135,7 +135,7 @@ $( document ).ready( function(){
 	/**
 	 Forgot password form submit
 	 */
-	$( "#forgot_password_form" ).submit( function(event){
+	$( "#forgot_password_form" ).submit( function( event ){
 		event.preventDefault(); //Prevent the form from submitting normally
 		$.post( 'junction.php', $( '#forgot_password_form' ).serialize(), function( data ){
 			var json_obj = $.parseJSON( data );
@@ -156,7 +156,7 @@ $( document ).ready( function(){
 	/**
 	 Activity form submit
 	 */
-	$( "#activity_form" ).submit( function(event){
+	$( "#activity_form" ).submit( function( event ){
 		event.preventDefault(); //Prevent the form from submitting normally
 		$.post( 'junction.php', $( '#activity_form' ).serialize(), function( data ){
 			var json_obj = $.parseJSON( data );
@@ -204,7 +204,7 @@ $( document ).ready( function(){
 					$( '#activity_table_filter input' ).width( '100%' );
 				}
 
-				$('#activity_table_filter label').after('<small id="search_note" class="form-text text-muted" style="margin-top: -0.5em">Enter EXACTLY what you\'re looking for</small>');
+				$( '#activity_table_filter label' ).after( '<small id="search_note" class="form-text text-muted" style="margin-top: -0.5em">Enter EXACTLY what you\'re looking for</small>' );
 
 
 				$( "#activity_boxes_container_div" ).html( json_obj.data_arr['activity_boxes'] );
@@ -247,7 +247,7 @@ $( document ).ready( function(){
 	/**
 	 Reports form submit
 	 */
-	$( "#reports_form" ).submit( function(event){
+	$( "#reports_form" ).submit( function( event ){
 		event.preventDefault(); //Prevent the form from submitting normally
 		$.post( 'junction.php', $( '#reports_form' ).serialize(), function( data ){
 			var json_obj = $.parseJSON( data );
@@ -308,8 +308,8 @@ $( document ).ready( function(){
 			var color = chartData.datasets[0].backgroundColor[idx];
 
 
-			if($( ".server_response_div .alert" ).text() != 'No relevant records were found.'){
-				var dashboard_form_date = $( "#dashboard_form input[type=date]" ).val( );
+			if( $( ".server_response_div .alert" ).text() != 'No relevant records were found.' ){
+				var dashboard_form_date = $( "#dashboard_form input[type=date]" ).val();
 			}else{
 				var dashboard_form_date = today;
 			}
@@ -337,15 +337,18 @@ $( document ).ready( function(){
 	 * Check if window is small enough, and if so, move down Pie chart legend
 	 */
 	if( $( document ).width() < 992 ){
-		pie_chart.options.legend.position = 'bottom';
-		pie_chart.update();
+		var i;
+		for( i = 0; i < pie_charts_arr.length; i++ ){
+			pie_charts_arr[i].options.legend.position = 'bottom';
+			pie_charts_arr[i].update();
+		}
 	}
 
 
 	/**
 	 Dashboard form submit
 	 */
-	$( "#dashboard_form" ).submit( function(event){
+	$( "#dashboard_form" ).submit( function( event ){
 		event.preventDefault(); //Prevent the form from submitting normally
 		$.post( 'junction.php', $( '#dashboard_form' ).serialize(), function( data ){
 			var json_obj = $.parseJSON( data );

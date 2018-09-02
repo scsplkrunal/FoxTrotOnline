@@ -107,13 +107,15 @@ require_once 'header.php';
 					<script type="text/javascript" src="pie_chart_no_data.js"
 					        chart_id="reports_pie_chart"></script>
 					<script type="text/javascript">
-						pie_chart.data = pie_chart_data;
-						pie_chart.options.title = {
+						var pie_charts_arr = [];
+						pie_charts_arr.push(pie_chart);
+						pie_charts_arr[0].data = pie_chart_data;
+						pie_charts_arr[0].options.title = {
 							display: true,
 							fontSize: 14,
 							text: "Breakdown by Product Category"
 						};
-						pie_chart.update();
+						pie_charts_arr[0].update();
 					</script>
 					<p class="text-center text-lg-left mb-0"><small class="text-muted ml-lg-4 pl-lg-5">Click on chart for details</small></p>
 				</div>
