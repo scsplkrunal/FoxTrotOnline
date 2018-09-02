@@ -296,22 +296,21 @@ $( document ).ready( function(){
 	 * Drill down pie chart
 	 * @param evt
 	 */
-	var current_page = location.href.split("/").slice(-1);
-	if(current_page == 'dashboard.php'){
-		$("#dashboard_pie_chart")[0].onclick=function(event){
-			drill_down_pie_chart('dashboard_pie_chart', event, pie_charts_arr[0]);
+	var current_page = location.href.split( "/" ).slice( -1 );
+	if( current_page == 'dashboard.php' ){
+		$( "#dashboard_pie_chart" )[0].onclick = function( event ){
+			drill_down_pie_chart( 'dashboard_pie_chart', event, pie_charts_arr[0] );
 		};
 
-		$("#dashboard_pie_chart_2")[0].onclick=function(event){
-			drill_down_pie_chart('dashboard_pie_chart_2', event, pie_charts_arr[1]);
+		$( "#dashboard_pie_chart_2" )[0].onclick = function( event ){
+			drill_down_pie_chart( 'dashboard_pie_chart_2', event, pie_charts_arr[1] );
 		};
-	}else if(current_page == 'reports.php'){
-		$("#reports_pie_chart")[0].onclick=function(event){
-			drill_down_pie_chart('reports_pie_chart', event, pie_charts_arr[0]);
+	}else if( current_page == 'reports.php' ){
+		$( "#reports_pie_chart" )[0].onclick = function( event ){
+			drill_down_pie_chart( 'reports_pie_chart', event, pie_charts_arr[0] );
 		};
 	}
 
-	// $( '#' + chart_id )[0].onclick = function( evt ){
 	function drill_down_pie_chart( chart_id, evt, pie_chart ){
 		var activePoints = pie_chart.getElementsAtEvent( evt );
 		var date_type = $( '#reports_form input[name=choose_date_radio]:checked' ).val();
@@ -324,7 +323,7 @@ $( document ).ready( function(){
 			var color = chartData.datasets[0].backgroundColor[idx];
 
 			if( chart_id == 'dashboard_pie_chart' ){
-				if( $( ".server_response_div .alert" ).text() != 'No relevant records were found.'){
+				if( $( ".server_response_div .alert" ).text() != 'No relevant records were found.' ){
 					var dashboard_form_date = $( "#dashboard_form input[type=date]" ).val();
 				}else{
 					var dashboard_form_date = today;
@@ -347,11 +346,6 @@ $( document ).ready( function(){
 			} );
 		}
 	}
-
-
-
-	// };
-
 
 	/**
 	 * Check if window is small enough, and if so, move down Pie chart legend
