@@ -745,6 +745,12 @@ function line_chart_data_and_labels($post){
 	if($post["time_period"] == 'all_dates'){
 		unset($_SESSION['from_date']);
 		unset($_SESSION['to_date']);
+	}elseif($post["time_period"] == 'Year to Date' && basename($_SERVER["PHP_SELF"], '.php') == 'dashboard'){
+		$from_date = strtotime('first day of January '.date('Y'));
+		$from_date = date('Y-m-d H:i:s', $from_date);
+		$to_date   = date('Y-m-d H:i:s');
+		$_SESSION['from_date'] = $from_date;
+		$_SESSION['to_date']   = $to_date;
 	}
 	if(!isset($post["choose_date_radio"])){
 		$post["choose_date_radio"] = 'dateTrade';
