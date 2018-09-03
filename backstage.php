@@ -1054,6 +1054,8 @@ function drill_down_pie_chart($post){
 						AND product = '{$post["label"]}'
 					ORDER BY dateTrade DESC;";
 			break;
+		case 'dashboard_pie_chart_2':
+			$post["date_type"] = 'dateTrade';
 		case 'reports_pie_chart':
 			if(isset($_SESSION["from_date"]) && isset($_SESSION["to_date"])){
 				$where_clause = "AND {$post["date_type"]} > '{$_SESSION["from_date"]}' AND {$post["date_type"]} < '{$_SESSION["to_date"]}'";
