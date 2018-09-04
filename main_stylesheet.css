@@ -167,10 +167,10 @@ footer{
 		}
 	}
 
-/*.card{*/
-	/*display: inline-block; !*Don't let them vertically span multiple columns*!*/
-	/*width:   100%; !*Don't let their width change*!*/
-	/*}*/
+.card-columns .card{
+	display: inline-block; /*Don't let them vertically span multiple columns*/
+	width:   100%; /*Don't let their width change*/
+	}
 
 @media (min-width: 34em){
 	.card-columns{
