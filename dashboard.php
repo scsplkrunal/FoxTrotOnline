@@ -82,7 +82,7 @@ require_once 'header.php';
 <!--				</div>-->
 <!--			</div>-->
 
-			<div class="row mb-2"> <!-- Pie Chart div -->
+			<div class="row mb-2">
 				<div class="col-lg-6 col-xs-12 mb-5" style="width: 300px; height: 300px;">
 					<div class="card">
 						<div class="card-header">
@@ -119,14 +119,13 @@ require_once 'header.php';
 						</div>
 						<div class="card-body">
 							<object id="statement_pdf_object" data="none" type="application/pdf" height="300px" width="100%"></object>
+							<?php
+							$x = statement::statements_list("{$_SESSION['company_name']}/data"); //x doesn't matter, initial the function for $_SESSION['first_statement_url']
+							echo statement::statement_buttons_pdf_url_changer();
+							?>
 						</div>
 					</div>
 				</div>
-
-				<?php
-				$x = statement::statements_list("{$_SESSION['company_name']}/data"); //x doesn't matter, initial the function for $_SESSION['first_statement_url']
-				echo statement::statement_buttons_pdf_url_changer();
-				?>
 			</div>
 
 			<div class="row mb-5">
