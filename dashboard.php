@@ -112,9 +112,17 @@ require_once 'header.php';
 					</div>
 <!--					<p class="text-center text-lg-left"><small class="text-muted ml-lg-5 pl-lg-5">Click on chart for details</small></p>-->
 				</div>
-				<object id="statement_pdf_object" class="col-lg-6 d-none d-lg-block" data="none" type="application/pdf" height="300">
+				<div class="col-lg-6 d-none d-lg-block">
+					<div class="card ">
+						<div class="card-header">
+							<h4 class="card-title mb-0">Commission Statement</h4>
+						</div>
+						<div class="card-body">
+							<object id="statement_pdf_object" data="none" type="application/pdf" height="300px" width="100%"></object>
+						</div>
+					</div>
+				</div>
 
-				</object>
 				<?php
 				$x = statement::statements_list("{$_SESSION['company_name']}/data"); //x doesn't matter, initial the function for $_SESSION['first_statement_url']
 				echo statement::statement_buttons_pdf_url_changer();
