@@ -60,28 +60,6 @@ require_once 'header.php';
 				</div>
 			</div>
 
-<!--			<div class="row">-->
-<!--				<div class="col-lg-6">-->
-<!--					<form id="dashboard_form" class="dates_form">-->
-<!--						<div class="server_response_div">-->
-<!--							<div class="alert" role="alert"></div>-->
-<!--						</div>-->
-<!--						<label>Transactions through Payroll Cutoff Date:</label>-->
-<!--						<input type="date" name="to_date" required>-->
-<!--						<script type="text/javascript">-->
-<!--							var now = new Date();-->
-<!--							var day = ("0" + now.getDate()).slice( -2 );-->
-<!--							var month = ("0" + (now.getMonth() + 1)).slice( -2 );-->
-<!--							var today = now.getFullYear() + "-" + (month) + "-" + (day);-->
-<!--							$( "#dashboard_form input[type=date]" ).val( today );-->
-<!--						</script>-->
-<!--						<input class="btn btn-primary ml-sm-2" type="submit" value="Refresh" required>-->
-<!--						<input name="class" value="no_class" hidden>-->
-<!--						<input name="func" value="dashboard_update" hidden>-->
-<!--					</form>-->
-<!--				</div>-->
-<!--			</div>-->
-
 			<div class="row mb-2">
 				<div class="col-lg-6 col-xs-12 mb-5" style="width: 300px; height: 300px;">
 					<div class="card">
@@ -174,31 +152,40 @@ require_once 'header.php';
 					</div>
 				</div>
 				<div class="col-lg-6 mb-5" style="width: 300px; height: 300px;">
-					<?php
-					$json_obj       = pie_chart_data_and_labels('reports_pie_chart', [
-						'time_period'       => 'Year to Date',
-						'choose_date_radio' => 'dateTrade',
-						'choose_pay_radio'  => 'rep_comm'
-					]);
-					$pie_chart_data = $json_obj->data_arr['pie_chart_data'];
-					echo "<script type='text/javascript'>
+					<div class="card">
+						<div class="card-header">
+							<h4 class="card-title mb-0">Net Commissions by Product Category</h4>
+						</div>
+						<div class="card-body">
+							<?php
+							$json_obj       = pie_chart_data_and_labels('reports_pie_chart', [
+								'time_period'       => 'Year to Date',
+								'choose_date_radio' => 'dateTrade',
+								'choose_pay_radio'  => 'rep_comm'
+							]);
+							$pie_chart_data = $json_obj->data_arr['pie_chart_data'];
+							echo "<script type='text/javascript'>
 							var pie_chart_data = $pie_chart_data;
 						</script>";
-					?>
-					<canvas id="dashboard_pie_chart_2"></canvas>
-					<script type="text/javascript" src="pie_chart_no_data.js"
-					        chart_id="dashboard_pie_chart_2"></script>
-					<script type="text/javascript">
-						pie_charts_arr.push(pie_chart);
-						pie_charts_arr[1].data = pie_chart_data;
-						pie_charts_arr[1].options.title = {
-							display: true,
-							fontSize: 14,
-							text: "Breakdown by Product Category"
-						};
-						pie_charts_arr[1].update();
-					</script>
-					<p class="text-center text-lg-left mb-0"><small class="text-muted ml-lg-4 pl-lg-5">Click on chart for details</small></p>
+							?>
+							<canvas id="dashboard_pie_chart_2"></canvas>
+							<script type="text/javascript" src="pie_chart_no_data.js"
+							        chart_id="dashboard_pie_chart_2"></script>
+							<script type="text/javascript">
+								pie_charts_arr.push(pie_chart);
+								pie_charts_arr[1].data = pie_chart_data;
+								pie_charts_arr[1].options.title = {
+									display: true,
+									fontSize: 14,
+									text: "Breakdown by Product Category"
+								};
+								pie_charts_arr[1].update();
+							</script>
+						</div>
+						<div class="card-footer text-muted">
+							Click on chart for details
+						</div>
+					</div>
 				</div>
 			</div>
 
