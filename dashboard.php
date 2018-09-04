@@ -84,23 +84,33 @@ require_once 'header.php';
 
 			<div class="row mb-2"> <!-- Pie Chart div -->
 				<div class="col-lg-6 col-xs-12 mb-5" style="width: 300px; height: 300px;">
-					<?php
-					$json_obj       = pie_chart_data_and_labels('dashboard_pie_chart');
-					$pie_chart_data = $json_obj->data_arr['pie_chart_data'];
-					echo "<script type='text/javascript'>
-							var pie_chart_data = $pie_chart_data;
-						</script>";
-					?>
-					<canvas id="dashboard_pie_chart"></canvas>
-					<script type="text/javascript" src="pie_chart_no_data.js"
-					        chart_id="dashboard_pie_chart"></script>
-					<script type="text/javascript">
-						var pie_charts_arr = [];
-						pie_charts_arr.push(pie_chart);
-						pie_charts_arr[0].data = pie_chart_data;
-						pie_charts_arr[0].update();
-					</script>
-					<p class="text-center text-lg-left"><small class="text-muted ml-lg-5 pl-lg-5">Click on chart for details</small></p>
+					<div class="card">
+						<div class="card-header">
+							<h4 class="card-title mb-0">Gross Commissions By Product Category</h4>
+						</div>
+						<div class="card-body">
+							<?php
+							$json_obj       = pie_chart_data_and_labels('dashboard_pie_chart');
+							$pie_chart_data = $json_obj->data_arr['pie_chart_data'];
+							echo "<script type='text/javascript'>
+									var pie_chart_data = $pie_chart_data;
+								</script>";
+							?>
+							<canvas id="dashboard_pie_chart"></canvas>
+							<script type="text/javascript" src="pie_chart_no_data.js"
+							        chart_id="dashboard_pie_chart"></script>
+							<script type="text/javascript">
+								var pie_charts_arr = [];
+								pie_charts_arr.push(pie_chart);
+								pie_charts_arr[0].data = pie_chart_data;
+								pie_charts_arr[0].update();
+							</script>
+						</div>
+						<div class="card-footer text-muted">
+							Click on chart for details
+						</div>
+					</div>
+<!--					<p class="text-center text-lg-left"><small class="text-muted ml-lg-5 pl-lg-5">Click on chart for details</small></p>-->
 				</div>
 				<object id="statement_pdf_object" class="col-lg-6 d-none d-lg-block" data="none" type="application/pdf" height="300">
 
