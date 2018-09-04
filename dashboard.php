@@ -78,14 +78,8 @@ require_once 'header.php';
 					</script>
 					<p class="text-center text-lg-left"><small class="text-muted ml-lg-5 pl-lg-5">Click on chart for details</small></p>
 				</div>
-				<object id="statement_pdf_object" class="col-lg-6" data="none" type="application/pdf" height="300">
-					<script type="text/javascript">
-						$( document ).ready( function(){
-							if( $( document ).width() < 992 ){
-								$("#statement_pdf_object").remove();
-							}
-						});
-					</script>
+				<object id="statement_pdf_object" class="col-lg-6 d-none d-lg-block" data="none" type="application/pdf" height="300">
+
 				</object>
 				<?php
 				$x = statement::statements_list("{$_SESSION['company_name']}/data"); //x doesn't matter, initial the function for $_SESSION['first_statement_url']
