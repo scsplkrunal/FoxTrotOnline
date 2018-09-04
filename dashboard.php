@@ -174,22 +174,6 @@ require_once 'header.php';
 					</div>
 				</div>
 			</div>
-<!--			<div class="row mb-2">-->
-<!--				<div class="col-lg-6 col-xs-12 mb-5" style="width: 300px; height: 300px;">-->
-<!---->
-<!--<!--					<p class="text-center text-lg-left"><small class="text-muted ml-lg-5 pl-lg-5">Click on chart for details</small></p>-->-->
-<!--				</div>-->
-<!--				<div class="col-lg-6 ">-->
-<!---->
-<!--				</div>-->
-<!--			</div>-->
-<!---->
-<!--			<div class="row mb-5">-->
-<!--				<div class="col-lg-6 col-xs-12">-->
-<!--				</div>-->
-<!--				<div class="col-lg-6 mb-5" style="width: 300px; height: 300px;">-->
-<!--				</div>-->
-<!--			</div>-->
 
 			<!-- Modal -->
 			<div class="modal fade" id="drill_down_pie_chart_modal" tabindex="-1" role="dialog"
