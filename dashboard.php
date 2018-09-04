@@ -130,41 +130,48 @@ require_once 'header.php';
 
 			<div class="row mb-5">
 				<div class="col-lg-6 col-xs-12">
-					<form id="dashboard_time_period_form" class="dates_form col-md-12">
-						<div class="server_response_div">
-							<div class="alert" role="alert"></div>
+					<div class="card">
+						<div class="card-header">
+							<h4 class="card-title mb-0">Net Commissions Total<br>Drop-down of date ranges</h4>
 						</div>
-						<label>Date:</label>
-						<select id="time_periods_select" name="time_period" class="mr-2">
-							<option value="Year to Date">Year to Date</option>
-							<option value="Month to Date">Month to Date</option>
-							<option value="Previous 12 Months">Previous 12 Months</option>
-							<option value="Last Year">Last Year</option>
-							<option value="Last Month">Last Month</option>
-						</select>
-						<input name="choose_date_radio" value="dateTrade" hidden>
-						<input name="choose_pay_radio" value="rep_comm" hidden>
-						<input name="class" value="no_class" hidden>
-						<input name="func" value="reports_update" hidden>
-					</form>
-					<?php
-					$line_chart_data = line_chart_data_and_labels(['time_period' => 'Year to Date']);
-					echo "<script type='text/javascript'>
-							var line_chart_data = $line_chart_data;
-						</script>";
-					?>
-					<canvas id="dashboard_line_chart"></canvas>
-					<script type="text/javascript" src="line_chart_no_data.js"
-					        chart_id="dashboard_line_chart"></script>
-					<script type="text/javascript">
-						line_chart.data = line_chart_data;
-						line_chart.options.title = {
-							display: true,
-							fontSize: 14,
-							text: "Net Commission"
-						};
-						line_chart.update();
-					</script>
+						<div class="card-body">
+							<form id="dashboard_time_period_form" class="dates_form col-md-12">
+								<div class="server_response_div">
+									<div class="alert" role="alert"></div>
+								</div>
+								<label>Date:</label>
+								<select id="time_periods_select" name="time_period" class="mr-2">
+									<option value="Year to Date">Year to Date</option>
+									<option value="Month to Date">Month to Date</option>
+									<option value="Previous 12 Months">Previous 12 Months</option>
+									<option value="Last Year">Last Year</option>
+									<option value="Last Month">Last Month</option>
+								</select>
+								<input name="choose_date_radio" value="dateTrade" hidden>
+								<input name="choose_pay_radio" value="rep_comm" hidden>
+								<input name="class" value="no_class" hidden>
+								<input name="func" value="reports_update" hidden>
+							</form>
+							<?php
+							$line_chart_data = line_chart_data_and_labels(['time_period' => 'Year to Date']);
+							echo "<script type='text/javascript'>
+									var line_chart_data = $line_chart_data;
+								</script>";
+							?>
+							<canvas id="dashboard_line_chart"></canvas>
+							<script type="text/javascript" src="line_chart_no_data.js"
+							        chart_id="dashboard_line_chart"></script>
+							<script type="text/javascript">
+								line_chart.data = line_chart_data;
+								line_chart.options.title = {
+									display: true,
+									fontSize: 14,
+									text: "Net Commission"
+								};
+								line_chart.update();
+							</script>
+						</div>
+					</div>
 				</div>
 				<div class="col-lg-6 mb-5" style="width: 300px; height: 300px;">
 					<?php
