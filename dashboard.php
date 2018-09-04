@@ -27,36 +27,60 @@ require_once 'header.php';
 			</div>
 
 			<div class="row text-center">
-				<div class="col-lg-6 col-xs-12 mb-sm-4">
-					<h4 id="posted_commission_heading">
-						<?php
-						echo dashboard_posted_commissions();
-						?>
-					</h4>
+				<div class="col-12 mb-sm-4">
+					<div class="card">
+						<div class="card-header">
+							<h4 class="card-title mb-0">Gross Commissions Received Payroll-To-Date</h4>
+						</div>
+						<div class="card-body">
+							<h5 class="card-subtitle mb-2" id="posted_commission_heading">
+								<?php
+								echo dashboard_posted_commissions();
+								?>
+							</h5>
+							<form id="dashboard_form" class="dates_form mb-0">
+								<div class="server_response_div">
+									<div class="alert" role="alert"></div>
+								</div>
+								<label>Transactions through Payroll Cutoff Date:</label>
+								<input type="date" name="to_date" required>
+								<script type="text/javascript">
+									var now = new Date();
+									var day = ("0" + now.getDate()).slice( -2 );
+									var month = ("0" + (now.getMonth() + 1)).slice( -2 );
+									var today = now.getFullYear() + "-" + (month) + "-" + (day);
+									$( "#dashboard_form input[type=date]" ).val( today );
+								</script>
+								<input class="btn btn-primary ml-sm-2" type="submit" value="Refresh" required>
+								<input name="class" value="no_class" hidden>
+								<input name="func" value="dashboard_update" hidden>
+							</form>
+						</div>
+					</div>
 				</div>
 			</div>
 
-			<div class="row">
-				<div class="col-lg-6">
-					<form id="dashboard_form" class="dates_form">
-						<div class="server_response_div">
-							<div class="alert" role="alert"></div>
-						</div>
-						<label>Transactions through Payroll Cutoff Date:</label>
-						<input type="date" name="to_date" required>
-						<script type="text/javascript">
-							var now = new Date();
-							var day = ("0" + now.getDate()).slice( -2 );
-							var month = ("0" + (now.getMonth() + 1)).slice( -2 );
-							var today = now.getFullYear() + "-" + (month) + "-" + (day);
-							$( "#dashboard_form input[type=date]" ).val( today );
-						</script>
-						<input class="btn btn-primary ml-sm-2" type="submit" value="Refresh" required>
-						<input name="class" value="no_class" hidden>
-						<input name="func" value="dashboard_update" hidden>
-					</form>
-				</div>
-			</div>
+<!--			<div class="row">-->
+<!--				<div class="col-lg-6">-->
+<!--					<form id="dashboard_form" class="dates_form">-->
+<!--						<div class="server_response_div">-->
+<!--							<div class="alert" role="alert"></div>-->
+<!--						</div>-->
+<!--						<label>Transactions through Payroll Cutoff Date:</label>-->
+<!--						<input type="date" name="to_date" required>-->
+<!--						<script type="text/javascript">-->
+<!--							var now = new Date();-->
+<!--							var day = ("0" + now.getDate()).slice( -2 );-->
+<!--							var month = ("0" + (now.getMonth() + 1)).slice( -2 );-->
+<!--							var today = now.getFullYear() + "-" + (month) + "-" + (day);-->
+<!--							$( "#dashboard_form input[type=date]" ).val( today );-->
+<!--						</script>-->
+<!--						<input class="btn btn-primary ml-sm-2" type="submit" value="Refresh" required>-->
+<!--						<input name="class" value="no_class" hidden>-->
+<!--						<input name="func" value="dashboard_update" hidden>-->
+<!--					</form>-->
+<!--				</div>-->
+<!--			</div>-->
 
 			<div class="row mb-2"> <!-- Pie Chart div -->
 				<div class="col-lg-6 col-xs-12 mb-5" style="width: 300px; height: 300px;">
