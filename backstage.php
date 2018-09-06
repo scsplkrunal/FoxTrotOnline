@@ -284,7 +284,8 @@ class statement{
 		$this->year             = substr($pdf_name, 15, 4);
 		$this->month            = date('F', strtotime(substr($pdf_name, 19, 3))); //Replace the 3 letter month with the full month name
 		$payroll_sequence_int   = ord(substr($pdf_name, 22, 1)) - ord('A') + 1; //Replace the letter with a number
-		$this->payroll_sequence = number_to_ordinal($payroll_sequence_int); //Replace the number with an word
+//		$this->payroll_sequence = number_to_ordinal_word($payroll_sequence_int); //Replace the number with an word
+		$this->payroll_sequence = number_to_ordinal_suffix($payroll_sequence_int);
 		$this->broker_id        = substr($pdf_name, 23, 5);
 		$this->field_1          = substr($pdf_name, 28, 3);
 		switch($this->field_1){
@@ -330,7 +331,7 @@ class statement{
 		$file_obj_array = self::sort_pdf_array_by_date($file_obj_array);
 
 		foreach($file_obj_array as $file_obj){
-			$option_content = "{$file_obj->month} {$file_obj->year} {$file_obj->payroll_sequence} Payroll {$file_obj->field_1}";
+			$option_content = "{$file_obj->year} {$file_obj->month} {$file_obj->payroll_sequence} Payroll {$file_obj->field_1}";
 			switch($_SESSION['company_name']){
 				case 'concorde':
 					if($file_obj->concorde_company_number == 2){
@@ -998,7 +999,7 @@ function dashboard_posted_commissions($to_date = null){
  * @param $num
  * @return string
  */
-function number_to_ordinal($num){
+function number_to_ordinal_word($num){
 	$first_word  = array(
 		'eth',
 		'First',
@@ -1039,6 +1040,19 @@ function number_to_ordinal($num){
 
 	return $string = str_replace('y-eth', 'ieth', $second_word[$second_num].' '.$first_word[$first_num]);
 
+}
+
+/**
+ * Gets a number and returns it with an ordinal suffix
+ * @param $number
+ * @return string
+ */
+function number_to_ordinal_suffix($number) {
+	$ends = array('th','st','nd','rd','th','th','th','th','th','th');
+	if ((($number % 100) >= 11) && (($number%100) <= 13))
+		return $number. 'th';
+	else
+		return $number. $ends[$number % 10];
 }
 
 function drill_down_pie_chart($post){
