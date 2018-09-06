@@ -119,7 +119,9 @@ require_once 'header.php';
 									messageTop: top_massage,
 									title: pdf_title
 								}
-							]
+							],
+							// "scrollY": 200,
+							"scrollX": 3000
 						} );
 
 						$( '.buttons-html5' ).addClass( 'btn btn-secondary' );

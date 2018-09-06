@@ -59,7 +59,8 @@ $( document ).ready( function(){
 								messageTop: top_massage,
 								title: pdf_title
 							}
-						]
+						],
+						"scrollX": 3000
 					} );
 
 					$( '.buttons-html5' ).addClass( 'btn btn-secondary' );
@@ -192,7 +193,8 @@ $( document ).ready( function(){
 							messageTop: top_massage,
 							title: pdf_title
 						}
-					]
+					],
+					"scrollX": 3000
 				} );
 
 				$( '.buttons-html5' ).addClass( 'btn btn-secondary' );
