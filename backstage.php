@@ -800,16 +800,20 @@ function line_chart_data_and_labels($post){
 	}
 
 	$result = db_query($sql_str);
-	while($row = $result->fetch_assoc()){
-		$line_chart_values [] = $row['total_commission'];
-		if($flag_monthly){
-			$year                 = substr($row['date_time'], 0, 4);
-			$month                = substr($row['date_time'], 4, 2);
-			$month                = date('M', mktime(0, 0, 0, $month));
-			$line_chart_labels [] = "$month-$year";
-		} else{
-			$line_chart_labels [] = $row['date_time'];
+	if($result->num_rows != 0){ //If there is a value returned
+		while($row = $result->fetch_assoc()){
+			$line_chart_values [] = $row['total_commission'];
+			if($flag_monthly){
+				$year                 = substr($row['date_time'], 0, 4);
+				$month                = substr($row['date_time'], 4, 2);
+				$month                = date('M', mktime(0, 0, 0, $month));
+				$line_chart_labels [] = "$month-$year";
+			} else{
+				$line_chart_labels [] = $row['date_time'];
+			}
 		}
+	}else{ //if there are no results
+		throw new Exception("No relevant records were found.", EXCEPTION_WARNING_CODE);
 	}
 
 	$line_chart_data = [
