@@ -23,7 +23,7 @@ require_once 'header.php';
 		<!--Main Content-->
 		<main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
 			<div class="pt-3 pb-2 mb-2 border-bottom">
-				<h2>Gross Commission & Fees Payroll-To-Date</h2>
+				<h2>Dashboard</h2>
 			</div>
 			<div class="card" style="margin-bottom: 0.75rem">
 				<div class="card-header">
@@ -83,7 +83,7 @@ require_once 'header.php';
 				</div>
 				<div class="card">
 					<div class="card-header">
-						<h4 class="card-title mb-0">Net Commissions Total<br>Drop-down of date ranges</h4>
+						<h4 class="card-title mb-0">Net Commissions Total</h4>
 					</div>
 					<div class="card-body">
 						<form id="dashboard_time_period_form" class="dates_form col-md-12">
