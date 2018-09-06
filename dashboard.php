@@ -30,15 +30,15 @@ require_once 'header.php';
 					<h4 class="card-title mb-0">Gross Commissions Received Payroll-To-Date</h4>
 				</div>
 				<div class="card-body">
-					<h5 class="card-subtitle mb-2" id="posted_commission_heading">
-						<?php
-						echo dashboard_posted_commissions();
-						?>
-					</h5>
 					<form id="dashboard_form" class="dates_form mb-0">
 						<div class="server_response_div">
 							<div class="alert" role="alert"></div>
 						</div>
+						<h5 class="card-subtitle mb-2" id="posted_commission_heading">
+							<?php
+								echo dashboard_posted_commissions();
+							?>
+						</h5>
 						<label>Transactions through Payroll Cutoff Date:</label>
 						<input type="date" name="to_date" required>
 						<script type="text/javascript">
