@@ -8,6 +8,7 @@ require_once 'header.php';
 	<link href="login_stylesheet.css" rel="stylesheet">
 </head>
 <body>
+<div class='loader'></div>
 <div class="container">
 	<div class="row justify-content-center mt-3 d-none d-md-flex">
 		<div class="col-3">

@@ -22,8 +22,7 @@ try{
 
 	echo "<script>
 			window.company_name = '{$_SESSION['company_name']}';
-		</script>
-		<div class='loader'></div>";
+		</script>";
 
 	db_connect();
 } catch(Exception $e){

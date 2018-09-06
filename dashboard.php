@@ -7,10 +7,10 @@ require_once 'header.php';
 	<?php
 	echo HEAD;
 	?>
-
 </head>
 
 <body>
+<div class='loader'></div>
 <!--Top Navigation Bar-->
 <?php echo show_top_navigation_bar(); ?>
 
