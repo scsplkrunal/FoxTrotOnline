@@ -30,15 +30,15 @@ require_once 'header.php';
 					<h4 class="card-title mb-0">Gross Commissions Received Payroll-To-Date</h4>
 				</div>
 				<div class="card-body">
+					<h5 class="card-subtitle mb-2" id="posted_commission_heading">
+						<?php
+						echo dashboard_posted_commissions();
+						?>
+					</h5>
 					<form id="dashboard_form" class="dates_form mb-0">
 						<div class="server_response_div">
 							<div class="alert" role="alert"></div>
 						</div>
-						<h5 class="card-subtitle mb-2" id="posted_commission_heading">
-							<?php
-								echo dashboard_posted_commissions();
-							?>
-						</h5>
 						<label>Transactions through Payroll Cutoff Date:</label>
 						<input type="date" name="to_date" required>
 						<script type="text/javascript">
@@ -61,11 +61,16 @@ require_once 'header.php';
 					</div>
 					<div class="card-body" style="height: 300px;">
 						<?php
-						$json_obj       = pie_chart_data_and_labels('dashboard_pie_chart');
-						$pie_chart_data = $json_obj->data_arr['pie_chart_data'];
-						echo "<script type='text/javascript'>
+						try{
+							$json_obj       = pie_chart_data_and_labels('dashboard_pie_chart');
+							$pie_chart_data = $json_obj->data_arr['pie_chart_data'];
+							echo "<script type='text/javascript'>
 									var pie_chart_data = $pie_chart_data;
 								</script>";
+						}catch(Exception $e){
+							catch_doc_first_load_exception($e, 'dashboard_form');
+						}
+
 						?>
 						<canvas id="dashboard_pie_chart"></canvas>
 						<script type="text/javascript" src="pie_chart_no_data.js"
@@ -104,10 +109,14 @@ require_once 'header.php';
 							<input name="func" value="reports_update" hidden>
 						</form>
 						<?php
-						$line_chart_data = line_chart_data_and_labels(['time_period' => 'Year to Date']);
-						echo "<script type='text/javascript'>
+						try{
+							$line_chart_data = line_chart_data_and_labels(['time_period' => 'Year to Date']);
+							echo "<script type='text/javascript'>
 									var line_chart_data = $line_chart_data;
 								</script>";
+						}catch(Exception $e){
+							catch_doc_first_load_exception($e, 'dashboard_time_period_form');
+						}
 						?>
 						<canvas id="dashboard_line_chart"></canvas>
 						<script type="text/javascript" src="line_chart_no_data.js"
@@ -143,15 +152,22 @@ require_once 'header.php';
 					<div class="card-body">
 						<div style="height: 300px">
 							<?php
-							$json_obj       = pie_chart_data_and_labels('reports_pie_chart', [
-								'time_period'       => 'Year to Date',
-								'choose_date_radio' => 'dateTrade',
-								'choose_pay_radio'  => 'rep_comm'
-							]);
-							$pie_chart_data = $json_obj->data_arr['pie_chart_data'];
-							echo "<script type='text/javascript'>
-							var pie_chart_data = $pie_chart_data;
-						</script>";
+							try{
+								$json_obj       = pie_chart_data_and_labels('reports_pie_chart', [
+									'time_period'       => 'Year to Date',
+									'choose_date_radio' => 'dateTrade',
+									'choose_pay_radio'  => 'rep_comm'
+								]);
+								$pie_chart_data = $json_obj->data_arr['pie_chart_data'];
+								echo "<script type='text/javascript'>
+										var pie_chart_data = $pie_chart_data;
+									</script>";
+							}catch(Exception $e){
+								catch_doc_first_load_exception($e, 'dashboard_time_period_form');
+								echo "<script type='text/javascript'>
+										var pie_charts_arr = '';
+									</script>";
+							}
 							?>
 							<canvas id="dashboard_pie_chart_2"></canvas>
 							<script type="text/javascript" src="pie_chart_no_data.js"
