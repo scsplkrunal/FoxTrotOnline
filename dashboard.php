@@ -165,7 +165,7 @@ require_once 'header.php';
 							}catch(Exception $e){
 								catch_doc_first_load_exception($e, 'dashboard_time_period_form');
 								echo "<script type='text/javascript'>
-										var pie_charts_arr = '';
+										pie_chart_data = '';
 									</script>";
 							}
 							?>
@@ -173,14 +173,14 @@ require_once 'header.php';
 							<script type="text/javascript" src="pie_chart_no_data.js"
 							        chart_id="dashboard_pie_chart_2"></script>
 							<script type="text/javascript">
-								pie_charts_arr.push( pie_chart );
-								pie_charts_arr[1].data = pie_chart_data;
-								pie_charts_arr[1].options.title = {
-									display: true,
-									fontSize: 14,
-									text: "Breakdown by Product Category"
-								};
-								pie_charts_arr[1].update();
+									pie_charts_arr.push( pie_chart );
+									pie_charts_arr[1].data = pie_chart_data;
+									pie_charts_arr[1].options.title = {
+										display: true,
+										fontSize: 14,
+										text: "Breakdown by Product Category"
+									};
+									pie_charts_arr[1].update();
 							</script>
 						</div>
 
