@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="3afaa673-cb46-4034-a6f7-e9cf43ebac35" name="Default" comment="&quot;en&quot;&quot; =&gt; &quot;en&quot;">
+    <list default="true" id="3afaa673-cb46-4034-a6f7-e9cf43ebac35" name="Default" comment="activity dates 0000-00-00 to -">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/activity.php" beforeDir="false" afterPath="$PROJECT_DIR$/activity.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backstage.php" beforeDir="false" afterPath="$PROJECT_DIR$/backstage.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tmp/foxtrot_online.log" beforeDir="false" afterPath="$PROJECT_DIR$/tmp/foxtrot_online.log" afterDir="false" />
     </list>
     <manually-removed-from-ignored>
@@ -33,7 +35,7 @@
           <entry key="css" value="8" />
           <entry key="html" value="1" />
           <entry key="js" value="15" />
-          <entry key="php" value="50" />
+          <entry key="php" value="54" />
           <entry key="sql" value="4" />
         </counts>
       </usages-collector>
@@ -42,7 +44,7 @@
           <entry key="CSS" value="8" />
           <entry key="HTML" value="1" />
           <entry key="JavaScript" value="15" />
-          <entry key="PHP" value="50" />
+          <entry key="PHP" value="54" />
           <entry key="SQL" value="4" />
         </counts>
       </usages-collector>
@@ -50,16 +52,16 @@
         <counts>
           <entry key="css" value="116" />
           <entry key="js" value="676" />
-          <entry key="php" value="4009" />
-          <entry key="txt" value="1372" />
+          <entry key="php" value="4179" />
+          <entry key="txt" value="1426" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="CSS" value="116" />
           <entry key="JavaScript" value="676" />
-          <entry key="PHP" value="4009" />
-          <entry key="PLAIN_TEXT" value="1372" />
+          <entry key="PHP" value="4179" />
+          <entry key="PLAIN_TEXT" value="1426" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.js.language.service.starts" />
@@ -75,17 +77,26 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/dashboard.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="179">
-              <caret line="63" selection-start-line="63" selection-end-line="63" />
+            <state relative-caret-position="-1088">
+              <caret line="38" column="48" selection-start-line="38" selection-start-column="48" selection-end-line="38" selection-end-column="48" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/activity.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="324">
+              <caret line="84" column="32" selection-start-line="84" selection-start-column="32" selection-end-line="84" selection-end-column="32" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/backstage.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="230">
-              <caret line="633" selection-start-line="633" selection-end-line="633" />
+            <state relative-caret-position="-392">
+              <caret line="1247" column="12" selection-start-line="1247" selection-start-column="12" selection-end-line="1247" selection-end-column="12" />
             </state>
           </provider>
         </entry>
@@ -102,7 +113,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>&lt;sma</find>
       <find>$_SESSION['first_statement_url']</find>
       <find>year</find>
       <find>document</find>
@@ -132,6 +142,7 @@
       <find>catch</find>
       <find>&quot;en&quot;</find>
       <find>response</find>
+      <find>$result-&gt;num_rows</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -159,9 +170,9 @@
         <option value="$PROJECT_DIR$/main_js.js" />
         <option value="$PROJECT_DIR$/test.html" />
         <option value="$PROJECT_DIR$/main_stylesheet.css" />
-        <option value="$PROJECT_DIR$/activity.php" />
         <option value="$PROJECT_DIR$/dashboard.php" />
         <option value="$PROJECT_DIR$/backstage.php" />
+        <option value="$PROJECT_DIR$/activity.php" />
       </list>
     </option>
   </component>
@@ -256,7 +267,7 @@
     <editor active="true" />
     <layout>
       <window_info id="Favorites" order="0" side_tool="true" />
-      <window_info content_ui="combo" id="Project" order="1" visible="true" weight="0.17170954" />
+      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.17170954" />
       <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Messages" order="0" weight="0.32933104" />
       <window_info anchor="bottom" id="Event Log" order="1" side_tool="true" weight="0.32879046" />
@@ -272,7 +283,7 @@
       <window_info anchor="right" id="Commander" order="1" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="2" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="3" weight="0.25" />
-      <window_info active="true" anchor="right" id="Debug" order="4" visible="true" weight="0.16792738" />
+      <window_info anchor="right" id="Debug" order="4" visible="true" weight="0.16792738" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -313,8 +324,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$/.." />
     </ignored-roots>
-    <MESSAGE value="Dashboard" />
-    <MESSAGE value="Remove PDF preview from small screens" />
     <MESSAGE value="Dashboard second pie chart and responsiveness" />
     <MESSAGE value="Drill down dashboard" />
     <MESSAGE value="misc" />
@@ -338,7 +347,9 @@
     <MESSAGE value="Dashboard titles" />
     <MESSAGE value="Line chart no values exception" />
     <MESSAGE value="&quot;en&quot;&quot; =&gt; &quot;en&quot;" />
-    <option name="LAST_COMMIT_MESSAGE" value="&quot;en&quot;&quot; =&gt; &quot;en&quot;" />
+    <MESSAGE value="activity dates 0000-00-00 to -" />
+    <MESSAGE value="Move h5 into form" />
+    <option name="LAST_COMMIT_MESSAGE" value="Move h5 into form" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/drill_down_pie_chart_no_data.js" />
@@ -472,27 +483,24 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/activity.php">
+    <entry file="file://$PROJECT_DIR$/backstage.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1122">
-          <caret line="66" column="59" selection-start-line="66" selection-start-column="59" selection-end-line="66" selection-end-column="59" />
-          <folding>
-            <element signature="n#style#0;n#small#0;n#!!top" expanded="true" />
-          </folding>
+        <state relative-caret-position="-392">
+          <caret line="1247" column="12" selection-start-line="1247" selection-start-column="12" selection-end-line="1247" selection-end-column="12" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/dashboard.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="179">
-          <caret line="63" selection-start-line="63" selection-end-line="63" />
+        <state relative-caret-position="-1088">
+          <caret line="38" column="48" selection-start-line="38" selection-start-column="48" selection-end-line="38" selection-end-column="48" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/backstage.php">
+    <entry file="file://$PROJECT_DIR$/activity.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="230">
-          <caret line="633" selection-start-line="633" selection-end-line="633" />
+        <state relative-caret-position="324">
+          <caret line="84" column="32" selection-start-line="84" selection-start-column="32" selection-end-line="84" selection-end-column="32" />
         </state>
       </provider>
     </entry>
