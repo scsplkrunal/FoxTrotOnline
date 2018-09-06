@@ -1391,3 +1391,14 @@ function dashboard_update($post){
 
 	return $json_obj;
 }
+
+function catch_doc_first_load_exception($e, $container_id){
+	$add_class = ($e->getCode() == 0) ? 'alert-warning' : 'alert-danger';
+	$remove_class = ($e->getCode() == 0) ? 'alert-danger' : 'alert-warning';
+
+	echo "<script type='text/javascript'>
+			$( document ).ready( function(){
+				$( '#$container_id .server_response_div .alert' ).removeClass('$remove_class').addClass( '$add_class' ).text('{$e->getMessage()}').show();
+			});
+		</script>";
+}

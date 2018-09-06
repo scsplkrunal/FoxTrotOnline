@@ -73,14 +73,18 @@ require_once 'header.php';
 					</thead>
 					<tbody>
 					<?php
-					$json_obj = activity_update(['all_dates' => 'on'], false);
-					echo $json_obj->data_arr['activity_table'];
-					$pdf_title_first_line  = $json_obj->data_arr['pdf_title_first_line'];
-					$pdf_title_second_line = $json_obj->data_arr['pdf_title_second_line'];
-					echo "<script>
+					try{
+						$json_obj = activity_update(['all_dates' => 'on'], false);
+						echo $json_obj->data_arr['activity_table'];
+						$pdf_title_first_line  = $json_obj->data_arr['pdf_title_first_line'];
+						$pdf_title_second_line = $json_obj->data_arr['pdf_title_second_line'];
+						echo "<script>
 							var pdf_title_first_line = '$pdf_title_first_line';
 							var pdf_title_second_line = '$pdf_title_second_line';
 						</script>";
+					}catch(Exception $e){
+						catch_doc_first_load_exception($e, 'activity_form');
+					}
 					?>
 					</tbody>
 				</table>
