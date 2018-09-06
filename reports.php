@@ -79,10 +79,14 @@ require_once 'header.php';
 			<div class="row"> <!-- Line Chart div -->
 				<div class="col-lg-8 col-xs-12">
 					<?php
-					$line_chart_data = line_chart_data_and_labels(['time_period' => 'all_dates']);
-					echo "<script type='text/javascript'>
+					try{
+						$line_chart_data = line_chart_data_and_labels(['time_period' => 'all_dates']);
+						echo "<script type='text/javascript'>
 							var line_chart_data = $line_chart_data;
 						</script>";
+					}catch(Exception $e){
+						catch_doc_first_load_exception($e, 'reports_form');
+					}
 					?>
 					<canvas id="reports_line_chart"></canvas>
 					<script type="text/javascript" src="line_chart_no_data.js"
@@ -97,11 +101,15 @@ require_once 'header.php';
 			<div class="row mt-5 mb-5">
 				<div class="col-lg-6 mb-5" style="width: 300px; height: 300px;"> <!-- Pie Chart div -->
 					<?php
-					$json_obj       = pie_chart_data_and_labels('reports_pie_chart');
-					$pie_chart_data = $json_obj->data_arr['pie_chart_data'];
-					echo "<script type='text/javascript'>
+					try{
+						$json_obj       = pie_chart_data_and_labels('reports_pie_chart');
+						$pie_chart_data = $json_obj->data_arr['pie_chart_data'];
+						echo "<script type='text/javascript'>
 							var pie_chart_data = $pie_chart_data;
 						</script>";
+					}catch(Exception $e){
+						catch_doc_first_load_exception($e, 'reports_form');
+					}
 					?>
 					<canvas id="reports_pie_chart"></canvas>
 					<script type="text/javascript" src="pie_chart_no_data.js"
@@ -121,8 +129,12 @@ require_once 'header.php';
 				</div>
 				<div id="reports_table" class="col-lg-6">
 					<?php
-					$json_obj = pie_chart_data_and_labels('reports_pie_chart');
-					echo $json_obj->data_arr['reports_table_html'];
+					try{
+						$json_obj = pie_chart_data_and_labels('reports_pie_chart');
+						echo $json_obj->data_arr['reports_table_html'];
+					}catch(Exception $e){
+						catch_doc_first_load_exception($e, 'reports_form');
+					}
 					?>
 				</div>
 			</div>

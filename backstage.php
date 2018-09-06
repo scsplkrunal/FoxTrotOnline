@@ -691,7 +691,8 @@ function pie_chart_data_and_labels($chart_name, $post = array(
 			$sql_str = "SELECT SUM({$post['choose_pay_radio']}) AS total_commission, trades.inv_type, prodtype.product
 					FROM trades
 					RIGHT JOIN prodtype ON trades.inv_type = prodtype.inv_type
-					WHERE rep_no = {$_SESSION["permrep_obj"]->permRepID} $where_clause
+					WHERE rep_no = {$_SESSION["permrep_obj"]->permRepID}
+					$where_clause
 					GROUP BY inv_type;";
 			$result  = db_query($sql_str);
 			if($result->num_rows != 0){ //If there is a value returned
