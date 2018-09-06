@@ -1270,7 +1270,7 @@ function activity_update($post, $create_boxes_flag = true, $create_table_flag = 
 						case 'dateTrade':
 						case 'date_rec':
 						case 'pay_date':
-							if($value != null){
+							if($value != null && $value != '0000-00-00 00:00:00'){
 								$value                 = date('Y-m-d', strtotime($value));
 								$table_html_return_str .= "<td class='text-left'>$value</td>";
 							} else{
