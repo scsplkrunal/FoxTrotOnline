@@ -64,6 +64,7 @@ require_once 'header.php';
 						<th>PRODUCT DESCRIPTION</th>
 						<th>CUSIP</th>
 						<th>PRINCIPAL</th>
+						<th>COMMISSION EXPECTED</th>
 						<th>COMMISSION RECEIVED</th>
 						<th>PAYOUT RATE</th>
 						<th>COMMISSION PAID</th>
