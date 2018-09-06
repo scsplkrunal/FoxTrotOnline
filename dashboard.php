@@ -79,6 +79,11 @@ require_once 'header.php';
 							var pie_charts_arr = [];
 							pie_charts_arr.push( pie_chart );
 							pie_charts_arr[0].data = pie_chart_data;
+							pie_charts_arr[0].options.title = {
+								display: true,
+								fontSize: 14,
+								text: "Payroll To Date"
+							};
 							pie_charts_arr[0].update();
 						</script>
 					</div>
@@ -130,6 +135,9 @@ require_once 'header.php';
 							};
 							line_chart.update();
 						</script>
+					</div>
+					<div class="card-footer text-muted">
+						Choose from the list to change the time period
 					</div>
 				</div>
 				<div class="card d-none d-lg-inline-block">
