@@ -1126,7 +1126,7 @@ function drill_down_pie_chart($post){
 			$drill_down_table_html .= "<tr>";
 			foreach($row as $column_name => $value){
 				if($column_name == 'dateTrade' || $column_name == 'date_rec'){
-					if($value != null){
+					if($value != null && $value != '0000-00-00 00:00:00'){
 						$value = date('m/d/Y', strtotime($value));
 					} else{
 						$value = '-';
