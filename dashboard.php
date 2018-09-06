@@ -2,7 +2,7 @@
 require_once 'header.php';
 ?>
 
-<html lang="en"">
+<html lang="en">
 <head>
 	<?php
 	echo HEAD;
@@ -55,7 +55,7 @@ require_once 'header.php';
 				</div>
 			</div>
 			<div class="card-columns mb-5">
-				<div class="card" >
+				<div class="card">
 					<div class="card-header">
 						<h4 class="card-title mb-0">Gross Commissions By Product Category</h4>
 					</div>
