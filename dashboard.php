@@ -145,12 +145,15 @@ require_once 'header.php';
 						<h4 class="card-title mb-0">Commission Statement</h4>
 					</div>
 					<div class="card-body">
-						<object id="statement_pdf_object" data="none" type="application/pdf" height="300px"
+						<object id="statement_pdf_object" data="none" type="application/pdf" height="260px"
 						        width="100%"></object>
 						<?php
 						$x = statement::statements_list("{$_SESSION['company_name']}/data"); //x doesn't matter, initial the function for $_SESSION['first_statement_url']
 						echo statement::statement_buttons_pdf_url_changer();
 						?>
+					</div>
+					<div class="card-footer text-muted">
+						Hover mouse to download or print
 					</div>
 				</div>
 				<div class="card">
@@ -158,7 +161,7 @@ require_once 'header.php';
 						<h4 class="card-title mb-0">Net Commissions by Product Category</h4>
 					</div>
 					<div class="card-body">
-						<div style="height: 300px">
+						<div style="height: 290px">
 							<?php
 							try{
 								$json_obj       = pie_chart_data_and_labels('reports_pie_chart', [
