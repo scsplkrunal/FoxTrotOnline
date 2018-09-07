@@ -52,7 +52,7 @@ require_once 'header.php';
 					<input name="func" value="activity_update" hidden>
 				</form>
 			</div>
-			<div class="table-responsive mb-5">
+			<div class="table-responsive mb-5" style="overflow: hidden">
 				<table id="activity_table"
 				       class="main-table table table-hover table-striped table-sm text-center"
 				       style="font-size: 0.8rem">

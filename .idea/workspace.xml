@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3afaa673-cb46-4034-a6f7-e9cf43ebac35" name="Default" comment="Activity table - horizontal scrolling">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/activity.php" beforeDir="false" afterPath="$PROJECT_DIR$/activity.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main_stylesheet.css" beforeDir="false" afterPath="$PROJECT_DIR$/main_stylesheet.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tmp/foxtrot_online.log" beforeDir="false" afterPath="$PROJECT_DIR$/tmp/foxtrot_online.log" afterDir="false" />
     </list>
     <manually-removed-from-ignored>
       <directory path="tmp/" />
@@ -34,7 +31,7 @@
         <counts>
           <entry key="css" value="10" />
           <entry key="html" value="1" />
-          <entry key="js" value="16" />
+          <entry key="js" value="17" />
           <entry key="php" value="76" />
           <entry key="sql" value="4" />
         </counts>
@@ -43,24 +40,24 @@
         <counts>
           <entry key="CSS" value="10" />
           <entry key="HTML" value="1" />
-          <entry key="JavaScript" value="16" />
+          <entry key="JavaScript" value="17" />
           <entry key="PHP" value="76" />
           <entry key="SQL" value="4" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="css" value="155" />
-          <entry key="js" value="680" />
-          <entry key="php" value="4714" />
+          <entry key="css" value="172" />
+          <entry key="js" value="688" />
+          <entry key="php" value="4719" />
           <entry key="txt" value="1726" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="CSS" value="155" />
-          <entry key="JavaScript" value="680" />
-          <entry key="PHP" value="4714" />
+          <entry key="CSS" value="172" />
+          <entry key="JavaScript" value="688" />
+          <entry key="PHP" value="4719" />
           <entry key="PLAIN_TEXT" value="1726" />
         </counts>
       </usages-collector>
@@ -74,23 +71,33 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/activity.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-952">
-              <caret line="61" column="39" selection-start-line="61" selection-start-column="39" selection-end-line="61" selection-end-column="39" />
-              <folding>
-                <element signature="n#style#0;n#small#0;n#!!top" expanded="true" />
-              </folding>
+            <state relative-caret-position="357">
+              <caret line="123" column="57" selection-start-line="123" selection-start-column="57" selection-end-line="123" selection-end-column="57" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/main_stylesheet.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="136">
+              <caret line="8" column="25" selection-start-line="8" selection-start-column="25" selection-end-line="8" selection-end-column="25" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/main_stylesheet.css">
+        <entry file="file://$PROJECT_DIR$/main_js.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="437">
-              <caret line="184" column="7" lean-forward="true" selection-start-line="184" selection-start-column="7" selection-end-line="184" selection-end-column="7" />
+            <state relative-caret-position="200">
+              <caret line="196" column="45" selection-start-line="196" selection-start-column="45" selection-end-line="196" selection-end-column="45" />
+              <folding>
+                <element signature="n#style#0;n#small#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#small#0;n#!!top" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -164,8 +171,8 @@
         <option value="$PROJECT_DIR$/statements.php" />
         <option value="$PROJECT_DIR$/reports.php" />
         <option value="$PROJECT_DIR$/dashboard.php" />
-        <option value="$PROJECT_DIR$/main_js.js" />
         <option value="$PROJECT_DIR$/activity.php" />
+        <option value="$PROJECT_DIR$/main_js.js" />
         <option value="$PROJECT_DIR$/main_stylesheet.css" />
       </list>
     </option>
@@ -254,7 +261,7 @@
     </option>
   </component>
   <component name="RunManager">
-    <configuration name="foxtrot_online" type="PhpWebAppRunConfigurationType" factoryName="PHP Web Application" server_name="foxtrot_online" start_url="/login.php?company_name=demo">
+    <configuration name="foxtrot_online" type="PhpWebAppRunConfigurationType" factoryName="PHP Web Application" browser="a7bb68e0-33c0-4d6f-a81a-aac1fdb870c8" server_name="foxtrot_online" start_url="/login.php?company_name=demo">
       <method v="2" />
     </configuration>
   </component>
@@ -493,28 +500,25 @@
     <entry file="file://$PROJECT_DIR$/main_js.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="200">
-          <caret line="46" column="46" selection-start-line="46" selection-start-column="46" selection-end-line="46" selection-end-column="46" />
+          <caret line="196" column="45" selection-start-line="196" selection-start-column="45" selection-end-line="196" selection-end-column="45" />
           <folding>
             <element signature="n#style#0;n#small#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#small#0;n#!!top" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/main_stylesheet.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="437">
-          <caret line="184" column="7" lean-forward="true" selection-start-line="184" selection-start-column="7" selection-end-line="184" selection-end-column="7" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/activity.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-952">
-          <caret line="61" column="39" selection-start-line="61" selection-start-column="39" selection-end-line="61" selection-end-column="39" />
-          <folding>
-            <element signature="n#style#0;n#small#0;n#!!top" expanded="true" />
-          </folding>
+        <state relative-caret-position="357">
+          <caret line="123" column="57" selection-start-line="123" selection-start-column="57" selection-end-line="123" selection-end-column="57" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main_stylesheet.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="25" selection-start-line="8" selection-start-column="25" selection-end-line="8" selection-end-column="25" />
         </state>
       </provider>
     </entry>
