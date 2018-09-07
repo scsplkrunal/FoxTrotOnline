@@ -179,3 +179,7 @@ footer{
 		column-count:         2;
 		}
 	}
+
+table td, table th{
+	white-space: nowrap;
+	}

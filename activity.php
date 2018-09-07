@@ -121,7 +121,7 @@ require_once 'header.php';
 								}
 							],
 							// "scrollY": 200,
-							"scrollX": 3000
+							"scrollX": true
 						} );
 
 						$( '.buttons-html5' ).addClass( 'btn btn-secondary' );

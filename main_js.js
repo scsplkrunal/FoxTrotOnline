@@ -60,7 +60,7 @@ $( document ).ready( function(){
 								title: pdf_title
 							}
 						],
-						"scrollX": 3000
+						"scrollX": true
 					} );
 
 					$( '.buttons-html5' ).addClass( 'btn btn-secondary' );
@@ -194,7 +194,7 @@ $( document ).ready( function(){
 							title: pdf_title
 						}
 					],
-					"scrollX": 3000
+					"scrollX": true
 				} );
 
 				$( '.buttons-html5' ).addClass( 'btn btn-secondary' );
