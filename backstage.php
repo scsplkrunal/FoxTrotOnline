@@ -280,12 +280,12 @@ class statement{
 	public $date;
 
 	function __construct($pdf_name = null, $pdf_url = null){
-		$this->pdf_name         = $pdf_name;
-		$this->pdf_url          = $pdf_url;
-		$this->year             = substr($pdf_name, 15, 4);
-		$this->month            = date('F', strtotime(substr($pdf_name, 19, 3))); //Replace the 3 letter month with the full month name
-		$payroll_sequence_int   = ord(substr($pdf_name, 22, 1)) - ord('A') + 1; //Replace the letter with a number
-//		$this->payroll_sequence = number_to_ordinal_word($payroll_sequence_int); //Replace the number with an word
+		$this->pdf_name       = $pdf_name;
+		$this->pdf_url        = $pdf_url;
+		$this->year           = substr($pdf_name, 15, 4);
+		$this->month          = date('F', strtotime(substr($pdf_name, 19, 3))); //Replace the 3 letter month with the full month name
+		$payroll_sequence_int = ord(substr($pdf_name, 22, 1)) - ord('A') + 1; //Replace the letter with a number
+		//		$this->payroll_sequence = number_to_ordinal_word($payroll_sequence_int); //Replace the number with an word
 		$this->payroll_sequence = number_to_ordinal_suffix($payroll_sequence_int);
 		$this->broker_id        = substr($pdf_name, 23, 5);
 		$this->field_1          = substr($pdf_name, 28, 3);
@@ -748,10 +748,10 @@ function line_chart_data_and_labels($post){
 	if($post["time_period"] == 'all_dates'){
 		unset($_SESSION['from_date']);
 		unset($_SESSION['to_date']);
-	}elseif($post["time_period"] == 'Year to Date' && basename($_SERVER["PHP_SELF"], '.php') == 'dashboard'){
-		$from_date = strtotime('first day of January '.date('Y'));
-		$from_date = date('Y-m-d H:i:s', $from_date);
-		$to_date   = date('Y-m-d H:i:s');
+	} elseif($post["time_period"] == 'Year to Date' && basename($_SERVER["PHP_SELF"], '.php') == 'dashboard'){
+		$from_date             = strtotime('first day of January '.date('Y'));
+		$from_date             = date('Y-m-d H:i:s', $from_date);
+		$to_date               = date('Y-m-d H:i:s');
 		$_SESSION['from_date'] = $from_date;
 		$_SESSION['to_date']   = $to_date;
 	}
@@ -814,7 +814,7 @@ function line_chart_data_and_labels($post){
 				$line_chart_labels [] = $row['date_time'];
 			}
 		}
-	}else{ //if there are no results
+	} else{ //if there are no results
 		throw new Exception("No relevant records were found.", EXCEPTION_WARNING_CODE);
 	}
 
@@ -1053,12 +1053,22 @@ function number_to_ordinal_word($num){
  * @param $number
  * @return string
  */
-function number_to_ordinal_suffix($number) {
-	$ends = array('th','st','nd','rd','th','th','th','th','th','th');
-	if ((($number % 100) >= 11) && (($number%100) <= 13))
-		return $number. 'th';
-	else
-		return $number. $ends[$number % 10];
+function number_to_ordinal_suffix($number){
+	$ends = array(
+		'th',
+		'st',
+		'nd',
+		'rd',
+		'th',
+		'th',
+		'th',
+		'th',
+		'th',
+		'th'
+	);
+	if((($number % 100) >= 11) && (($number % 100) <= 13))
+		return $number.'th'; else
+		return $number.$ends[$number % 10];
 }
 
 function drill_down_pie_chart($post){
@@ -1395,7 +1405,7 @@ function dashboard_update($post){
 }
 
 function catch_doc_first_load_exception($e, $container_id){
-	$add_class = ($e->getCode() == 0) ? 'alert-warning' : 'alert-danger';
+	$add_class    = ($e->getCode() == 0) ? 'alert-warning' : 'alert-danger';
 	$remove_class = ($e->getCode() == 0) ? 'alert-danger' : 'alert-warning';
 
 	echo "<script type='text/javascript'>
