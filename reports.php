@@ -128,7 +128,7 @@ require_once 'header.php';
 					</script>
 					<p class="text-center text-lg-left mb-0"><small class="text-muted ml-lg-4 pl-lg-5">Click on chart for details</small></p>
 				</div>
-				<div id="reports_table" class="col-lg-6">
+				<div id="reports_table" class="col-lg-6" style="overflow-x: scroll; width: 100%">
 					<?php
 					try{
 						$json_obj = pie_chart_data_and_labels('reports_pie_chart');
