@@ -1276,8 +1276,8 @@ function activity_update($post, $create_boxes_flag = true, $create_table_flag = 
 						case 'comm_rec':
 						case 'rep_comm':
 						case 'comm_exp':
-							$value                 = number_format(floatval($value), 2);
-							$table_html_return_str .= "<td class='text-right'>\$$value</td>";
+							$formatted_value                 = number_format(floatval($value), 2);
+							$table_html_return_str .= "<td data-search='$value' data-order='$value' class='text-right'>\$$formatted_value</td>";
 							break;
 						case 'dateTrade':
 						case 'date_rec':
