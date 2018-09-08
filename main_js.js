@@ -72,7 +72,7 @@ $( document ).ready( function(){
 						$( '#activity_table_filter input' ).width( '100%' );
 					}
 
-					$( '#activity_table_filter label' ).after( '<small id="search_note" class="form-text text-muted" style="margin-top: -0.5em">Enter EXACTLY what you\'re looking for</small>' );
+					// $( '#activity_table_filter label' ).after( '<small id="search_note" class="form-text text-muted" style="margin-top: -0.5em">Enter EXACTLY what you\'re looking for</small>' );
 
 					$( "#activity_boxes_container_div" ).html( json_obj.data_arr['activity_boxes'] );
 					$( ".server_response_div .alert" ).removeClass( 'alert-warning alert-danger' ).addClass( 'alert-success' ).text( 'Table generated successfully.' ).show();
@@ -206,7 +206,7 @@ $( document ).ready( function(){
 					$( '#activity_table_filter input' ).width( '100%' );
 				}
 
-				$( '#activity_table_filter label' ).after( '<small id="search_note" class="form-text text-muted" style="margin-top: -0.5em">Enter EXACTLY what you\'re looking for</small>' );
+				// $( '#activity_table_filter label' ).after( '<small id="search_note" class="form-text text-muted" style="margin-top: -0.5em">Enter EXACTLY what you\'re looking for</small>' );
 
 
 				$( "#activity_boxes_container_div" ).html( json_obj.data_arr['activity_boxes'] );
