@@ -255,6 +255,9 @@ $( document ).ready( function(){
 					$( "#dashboard_time_period_form .server_response_div .alert" ).removeClass( 'alert-success alert-warning' ).addClass( 'alert-danger' );
 				}
 			}
+			window.setTimeout(function() {
+				$(".alert").slideUp();
+			}, 4000);
 		} );
 	} );
 
@@ -419,6 +422,9 @@ $( document ).ready( function(){
 					$( "#dashboard_form .server_response_div .alert" ).removeClass( 'alert-success alert-warning' ).addClass( 'alert-danger' );
 				}
 			}
+			window.setTimeout(function() {
+				$(".alert-success, .alert-danger, .alert-warning").slideUp();
+			}, 4000);
 		} );
 	} );
 
