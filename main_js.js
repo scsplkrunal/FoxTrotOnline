@@ -84,6 +84,9 @@ $( document ).ready( function(){
 						$( ".server_response_div .alert" ).removeClass( 'alert-success alert-warning' ).addClass( 'alert-danger' );
 					}
 				}
+				window.setTimeout(function() {
+					$(".alert-success, .alert-danger, .alert-warning").slideUp();
+				}, 4000);
 			} );
 		}else{
 			$( '.dates_form input[type=date]' ).prop( "disabled", false );
