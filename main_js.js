@@ -308,6 +308,9 @@ $( document ).ready( function(){
 					$( ".server_response_div .alert" ).removeClass( 'alert-success alert-warning' ).addClass( 'alert-danger' );
 				}
 			}
+			window.setTimeout(function() {
+				$(".alert").slideUp();
+			}, 4000);
 		} );
 	} );
 

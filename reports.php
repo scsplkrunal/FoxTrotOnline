@@ -27,7 +27,7 @@ require_once 'header.php';
 			</div>
 			<form id="reports_form" class="dates_form col-md-12">
 				<div class="server_response_div">
-					<div class="alert" role="alert"></div>
+					<div class="alert" role="alert alert-dismissible"></div>
 				</div>
 				<label>Date:</label>
 				<select id="time_periods_select" name="time_period" class="mr-2">
