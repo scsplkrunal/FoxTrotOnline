@@ -934,7 +934,7 @@ function reports_table_html($post, $original_table_data){
 				$text_class = 'text-success';
 				$growth     = round(100 * ($values_arr[0] / $values_arr[1]), 2);
 				if(is_infinite($growth)){
-					$growth = '<larger>&#x221e;</larger>';
+					$growth = '<larger>---</larger>';
 				} else{
 					$growth = $growth.'%';
 				}
