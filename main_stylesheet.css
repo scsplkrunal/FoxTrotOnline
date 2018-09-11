@@ -183,3 +183,10 @@ footer{
 table td, table th{
 	white-space: nowrap;
 	}
+
+@media screen and (max-width: 992px){
+	#reports_table{
+		overflow-x: scroll;
+		width: 100%;
+		}
+	}

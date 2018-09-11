@@ -78,7 +78,7 @@ require_once 'header.php';
 				<input name="func" value="reports_update" hidden>
 			</form>
 			<div class="row"> <!-- Line Chart div -->
-				<div class="col-lg-8 col-xs-12">
+				<div class="col-xl-8 col-xs-12">
 					<?php
 					try{
 						$line_chart_data = line_chart_data_and_labels(['time_period' => 'all_dates']);
@@ -100,7 +100,7 @@ require_once 'header.php';
 			</div>
 
 			<div class="row mt-5 mb-5">
-				<div class="col-lg-6 mb-5" style="height: 300px;"> <!-- Pie Chart div -->
+				<div class="col-xl-6 mb-5" style="height: 300px;"> <!-- Pie Chart div -->
 					<?php
 					try{
 						$json_obj       = pie_chart_data_and_labels('reports_pie_chart');
@@ -128,7 +128,7 @@ require_once 'header.php';
 					</script>
 					<p class="text-center text-lg-left mb-0"><small class="text-muted ml-lg-4 pl-lg-5">Click on chart for details</small></p>
 				</div>
-				<div id="reports_table" class="col-lg-6" style="overflow-x: scroll; width: 100%">
+				<div id="reports_table" class="col-xl-6">
 					<?php
 					try{
 						$json_obj = pie_chart_data_and_labels('reports_pie_chart');
