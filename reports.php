@@ -100,7 +100,7 @@ require_once 'header.php';
 			</div>
 
 			<div class="row mt-5 mb-5">
-				<div class="col-lg-6 mb-5" style="width: 300px; height: 300px;"> <!-- Pie Chart div -->
+				<div class="col-lg-6 mb-5" style="height: 300px;"> <!-- Pie Chart div -->
 					<?php
 					try{
 						$json_obj       = pie_chart_data_and_labels('reports_pie_chart');
