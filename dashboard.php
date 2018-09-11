@@ -54,7 +54,7 @@ require_once 'header.php';
 					</form>
 				</div>
 			</div>
-			<div class="card-columns mb-5">
+			<div class="card-deck mb-3">
 				<div class="card">
 					<div class="card-header">
 						<h4 class="card-title mb-0">Gross Commissions By Product Category</h4>
@@ -91,6 +91,25 @@ require_once 'header.php';
 						Click on chart for details
 					</div>
 				</div>
+				<div class="card d-none d-lg-block">
+					<div class="card-header">
+						<h4 class="card-title mb-0">Commission Statement</h4>
+					</div>
+					<div class="card-body">
+						<object id="statement_pdf_object" data="none" type="application/pdf" height="260px"
+						        width="100%"></object>
+						<?php
+						$x = statement::statements_list("{$_SESSION['company_name']}/data"); //x doesn't matter, initial the function for $_SESSION['first_statement_url']
+						echo statement::statement_buttons_pdf_url_changer();
+						?>
+					</div>
+					<div class="card-footer text-muted">
+						Hover mouse to download or print
+					</div>
+				</div>
+
+			</div>
+			<div class="card-deck mb-5 pb-2">
 				<div class="card">
 					<div class="card-header">
 						<h4 class="card-title mb-0">Net Commissions Total</h4>
@@ -140,28 +159,12 @@ require_once 'header.php';
 						Choose from the list to change the time period
 					</div>
 				</div>
-				<div class="card d-none d-lg-inline-block">
-					<div class="card-header">
-						<h4 class="card-title mb-0">Commission Statement</h4>
-					</div>
-					<div class="card-body">
-						<object id="statement_pdf_object" data="none" type="application/pdf" height="260px"
-						        width="100%"></object>
-						<?php
-						$x = statement::statements_list("{$_SESSION['company_name']}/data"); //x doesn't matter, initial the function for $_SESSION['first_statement_url']
-						echo statement::statement_buttons_pdf_url_changer();
-						?>
-					</div>
-					<div class="card-footer text-muted">
-						Hover mouse to download or print
-					</div>
-				</div>
 				<div class="card">
 					<div class="card-header">
 						<h4 class="card-title mb-0">Net Commissions by Product Category</h4>
 					</div>
 					<div class="card-body">
-						<div style="height: 290px">
+						<div style="min-height: 300px">
 							<?php
 							try{
 								$json_obj       = pie_chart_data_and_labels('reports_pie_chart', [
@@ -184,17 +187,16 @@ require_once 'header.php';
 							<script type="text/javascript" src="pie_chart_no_data.js"
 							        chart_id="dashboard_pie_chart_2"></script>
 							<script type="text/javascript">
-									pie_charts_arr.push( pie_chart );
-									pie_charts_arr[1].data = pie_chart_data;
-									pie_charts_arr[1].options.title = {
-										display: true,
-										fontSize: 14,
-										text: "Breakdown by Product Category"
-									};
-									pie_charts_arr[1].update();
+								pie_charts_arr.push( pie_chart );
+								pie_charts_arr[1].data = pie_chart_data;
+								pie_charts_arr[1].options.title = {
+									display: true,
+									fontSize: 14,
+									text: "Breakdown by Product Category"
+								};
+								pie_charts_arr[1].update();
 							</script>
 						</div>
-
 					</div>
 					<div class="card-footer text-muted">
 						Click on chart for details
