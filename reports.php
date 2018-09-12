@@ -27,7 +27,7 @@ require_once 'header.php';
 			</div>
 			<form id="reports_form" class="dates_form col-md-12">
 				<div class="server_response_div">
-					<div class="alert" role="alert alert-dismissible"></div>
+					<div class="alert" role="alert"></div>
 				</div>
 				<label>Date:</label>
 				<select id="time_periods_select" name="time_period" class="mr-2">
@@ -66,6 +66,7 @@ require_once 'header.php';
 								Commission</label>
 						</div>
 					</div>
+					<input class="btn btn-primary mt-1 mb-1 ml-2" type="submit" value="Filter">
 				</div>
 				<div class="hidden_form_div mt-2">
 					<label>From</label>
@@ -73,7 +74,6 @@ require_once 'header.php';
 					<label>To</label>
 					<input type="date" name="to_date" required disabled><br class="d-xs-block d-sm-none">
 				</div>
-				<input class="btn btn-primary mt-2" type="submit" value="Filter">
 				<input name="class" value="no_class" hidden>
 				<input name="func" value="reports_update" hidden>
 			</form>
