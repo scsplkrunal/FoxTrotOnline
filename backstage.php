@@ -112,13 +112,9 @@ function db_choose($post){
 		case 'lifemark':
 		case 'signalsecurities':
 		case 'westgroup':
-			$_SESSION['company_name'] = $post['company_name'];
-			$_SESSION['db_host']      = 'sql5c40n.carrierzone.com';
-			$_SESSION['db_name']      = $post['company_name'].'_jjixgbv9my802728';
-			break;
 		case 'lafferty':
 			$_SESSION['company_name'] = $post['company_name'];
-			$_SESSION['db_host']      = 'sql5c40d.carrierzone.com';
+			$_SESSION['db_host']      = 'sql5c40n.carrierzone.com';
 			$_SESSION['db_name']      = $post['company_name'].'_jjixgbv9my802728';
 			break;
 		default:

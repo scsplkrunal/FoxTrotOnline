@@ -112,6 +112,8 @@ CREATE TABLE `clients` (
   `m_city` varchar(30) DEFAULT NULL,
   `m_state` varchar(2) DEFAULT NULL,
   `m_zip` varchar(10) DEFAULT NULL,
+  `open_date` datetime DEFAULT NULL,
+  `email` varchar(50) DEFAULT NULL
   PRIMARY KEY (`clientsID`)
 );
 
