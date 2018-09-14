@@ -2,7 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3afaa673-cb46-4034-a6f7-e9cf43ebac35" name="Default" comment="lafferty change DB host">
-      <change beforePath="$PROJECT_DIR$/tmp/foxtrot_online.log" beforeDir="false" afterPath="$PROJECT_DIR$/tmp/foxtrot_online.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backstage.php" beforeDir="false" afterPath="$PROJECT_DIR$/backstage.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lafferty/db/fto_clients.CSV" beforeDir="false" afterPath="$PROJECT_DIR$/lafferty/db/fto_clients.CSV" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lafferty/db/fto_permrep.CSV" beforeDir="false" afterPath="$PROJECT_DIR$/lafferty/db/fto_permrep.CSV" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lafferty/db/fto_trades.CSV" beforeDir="false" afterPath="$PROJECT_DIR$/lafferty/db/fto_trades.CSV" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/import_csv_to_mysql.sql" beforeDir="false" afterPath="$PROJECT_DIR$/lib/import_csv_to_mysql.sql" afterDir="false" />
     </list>
     <manually-removed-from-ignored>
       <directory path="tmp/" />
@@ -18,14 +23,15 @@
     <session id="-86045946">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="23" />
+          <entry key="project.closed" value="24" />
           <entry key="project.open.time.10" value="1" />
           <entry key="project.open.time.4" value="2" />
           <entry key="project.open.time.5" value="3" />
           <entry key="project.open.time.6" value="4" />
           <entry key="project.open.time.7" value="10" />
           <entry key="project.open.time.8" value="4" />
-          <entry key="project.opened" value="24" />
+          <entry key="project.open.time.9" value="1" />
+          <entry key="project.opened" value="25" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -33,7 +39,7 @@
           <entry key="css" value="13" />
           <entry key="html" value="1" />
           <entry key="js" value="19" />
-          <entry key="php" value="88" />
+          <entry key="php" value="89" />
           <entry key="sql" value="4" />
         </counts>
       </usages-collector>
@@ -42,7 +48,7 @@
           <entry key="CSS" value="13" />
           <entry key="HTML" value="1" />
           <entry key="JavaScript" value="19" />
-          <entry key="PHP" value="88" />
+          <entry key="PHP" value="89" />
           <entry key="SQL" value="4" />
         </counts>
       </usages-collector>
@@ -50,7 +56,7 @@
         <counts>
           <entry key="css" value="186" />
           <entry key="js" value="762" />
-          <entry key="php" value="5246" />
+          <entry key="php" value="5283" />
           <entry key="txt" value="2234" />
         </counts>
       </usages-collector>
@@ -58,7 +64,7 @@
         <counts>
           <entry key="CSS" value="186" />
           <entry key="JavaScript" value="762" />
-          <entry key="PHP" value="5246" />
+          <entry key="PHP" value="5283" />
           <entry key="PLAIN_TEXT" value="2234" />
         </counts>
       </usages-collector>
@@ -75,7 +81,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/reports.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="386">
+            <state relative-caret-position="493">
               <caret line="29" column="60" selection-start-line="29" selection-start-column="60" selection-end-line="29" selection-end-column="60" />
             </state>
           </provider>
@@ -84,8 +90,17 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/backstage.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="205">
-              <caret line="113" column="29" selection-start-line="113" selection-start-column="29" selection-end-line="113" selection-end-column="29" />
+            <state relative-caret-position="119">
+              <caret line="7" column="6" lean-forward="true" selection-start-line="7" selection-start-column="6" selection-end-line="7" selection-end-column="6" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/header.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="34">
+              <caret line="2" column="25" lean-forward="true" selection-start-line="2" selection-start-column="25" selection-end-line="2" selection-end-column="25" />
             </state>
           </provider>
         </entry>
@@ -258,7 +273,7 @@
     <editor active="true" />
     <layout>
       <window_info id="Favorites" order="0" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.19213313" />
+      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.19515885" />
       <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Messages" order="0" weight="0.32933104" />
       <window_info anchor="bottom" id="Event Log" order="1" side_tool="true" weight="0.32879046" />
@@ -432,13 +447,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/header.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="24" column="21" selection-start-line="24" selection-start-column="21" selection-end-line="24" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/login.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
@@ -483,15 +491,22 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/reports.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="386">
+        <state relative-caret-position="493">
           <caret line="29" column="60" selection-start-line="29" selection-start-column="60" selection-end-line="29" selection-end-column="60" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/header.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="25" lean-forward="true" selection-start-line="2" selection-start-column="25" selection-end-line="2" selection-end-column="25" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/backstage.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="205">
-          <caret line="113" column="29" selection-start-line="113" selection-start-column="29" selection-end-line="113" selection-end-column="29" />
+        <state relative-caret-position="119">
+          <caret line="7" column="6" lean-forward="true" selection-start-line="7" selection-start-column="6" selection-end-line="7" selection-end-column="6" />
         </state>
       </provider>
     </entry>
