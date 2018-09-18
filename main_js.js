@@ -60,6 +60,7 @@ $( document ).ready( function(){
 								title: pdf_title
 							}
 						],
+						"order": [[ 0, "desc" ]],
 						"scrollX": true
 					} );
 
@@ -197,6 +198,7 @@ $( document ).ready( function(){
 							title: pdf_title
 						}
 					],
+					"order": [[ 0, "desc" ]],
 					"scrollX": true
 				} );
 

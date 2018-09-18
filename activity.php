@@ -121,6 +121,7 @@ require_once 'header.php';
 									title: pdf_title
 								}
 							],
+							"order": [[ 0, "desc" ]],
 							"scrollX": true
 						} );
 
