@@ -121,7 +121,6 @@ require_once 'header.php';
 									title: pdf_title
 								}
 							],
-							// "scrollY": 200,
 							"scrollX": true
 						} );
 
@@ -133,44 +132,6 @@ require_once 'header.php';
 							$( '#activity_table_filter' ).width( '100%' ).addClass( 'text-left mt-2' );
 							$( '#activity_table_filter input' ).width( '100%' );
 						}
-
-						// $('#activity_table_filter label').after('<small id="search_note" class="form-text text-muted" style="margin-top: -0.5em">Enter EXACTLY what you\'re looking for</small>');
-
-						// $( "#activity_table_filter input" ).keydown( function(){
-						// 	var current_value = $( "#activity_table_filter input" ).val();
-						// 	current_value = current_value.replace(/,/g, '');
-						// 	var key = event.keyCode;
-						// 	var entered_value = String.fromCharCode( (96 <= key && key <= 105) ? key - 48 : key );
-						//
-						// 	if( !isNaN( current_value ) && current_value != '' && !isNaN( entered_value ) ){ //if current and entered value are numeric, and current value is not an empty string
-						// 		// parseFloat(current_value) !== 1.00 COULD BE A BUG
-						// 		if( current_value % 1 === 0 && current_value.length >= 3 ){ //if the number is an integer and has 3 digits
-						// 			// var formatted_value = current_value.slice( 0, current_value.length - 2 ) + ',' + current_value.slice( current_value.length - 2, current_value.length );
-						// 			// var first_char = current_value.charAt(0);
-						// 			// current_value.substr(1)
-						// 			current_value = current_value + '0'; //add a last char
-						// 			var formatted_value = parseInt(current_value).toLocaleString(); //format to beautiful
-						// 			formatted_value = formatted_value.toString(); //Convert to string
-						// 			formatted_value = formatted_value.slice(0,-1); //remove added '0' from the end
-						// 			// formatted_value = first_char + formatted_value.toString(); //add removed first char
-						// 			$( "#activity_table_filter input" ).val( formatted_value );
-						// 		}else{ //if the number is a float
-						//
-						// 		}
-
-
-								// if( current_value.length > 3 ){
-								// 	if( current_value.includes( '.' ) ){ //if there's a decimal point
-								// 		current_value = current_value.slice( 0, current_value.length - 5 ) + ',' + current_value.slice( current_value.length - 5, current_value.length );
-								// 	}else{
-								// 	}
-								//
-								// }
-								// var new_value = parseFloat( current_value );
-								// new_value = new_value.toLocaleString();
-
-						// 	}
-						// } );
 					} );
 				</script>
 			</div>
