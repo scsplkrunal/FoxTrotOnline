@@ -1,13 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="3afaa673-cb46-4034-a6f7-e9cf43ebac35" name="Default" comment="lafferty change DB host">
+    <list default="true" id="3afaa673-cb46-4034-a6f7-e9cf43ebac35" name="Default" comment="Add google analytics tag">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backstage.php" beforeDir="false" afterPath="$PROJECT_DIR$/backstage.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lafferty/db/fto_clients.CSV" beforeDir="false" afterPath="$PROJECT_DIR$/lafferty/db/fto_clients.CSV" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lafferty/db/fto_permrep.CSV" beforeDir="false" afterPath="$PROJECT_DIR$/lafferty/db/fto_permrep.CSV" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lafferty/db/fto_trades.CSV" beforeDir="false" afterPath="$PROJECT_DIR$/lafferty/db/fto_trades.CSV" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/import_csv_to_mysql.sql" beforeDir="false" afterPath="$PROJECT_DIR$/lib/import_csv_to_mysql.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/foxtrot_online_create_table.sql" beforeDir="false" afterPath="$PROJECT_DIR$/lib/foxtrot_online_create_table.sql" afterDir="false" />
     </list>
     <manually-removed-from-ignored>
       <directory path="tmp/" />
@@ -23,7 +21,7 @@
     <session id="-86045946">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="24" />
+          <entry key="project.closed" value="25" />
           <entry key="project.open.time.10" value="1" />
           <entry key="project.open.time.4" value="2" />
           <entry key="project.open.time.5" value="3" />
@@ -56,16 +54,16 @@
         <counts>
           <entry key="css" value="186" />
           <entry key="js" value="762" />
-          <entry key="php" value="5283" />
-          <entry key="txt" value="2234" />
+          <entry key="php" value="5301" />
+          <entry key="txt" value="2269" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="CSS" value="186" />
           <entry key="JavaScript" value="762" />
-          <entry key="PHP" value="5283" />
-          <entry key="PLAIN_TEXT" value="2234" />
+          <entry key="PHP" value="5301" />
+          <entry key="PLAIN_TEXT" value="2269" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.js.language.service.starts" />
@@ -74,38 +72,11 @@
       <usages-collector id="statistics.php.new.class" />
       <usages-collector id="statistics.php.composer.command.options" />
       <usages-collector id="statistics.php.new.test" />
+      <usages-collector id="statistics.vcs.git.usages" />
     </session>
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/reports.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="493">
-              <caret line="29" column="60" selection-start-line="29" selection-start-column="60" selection-end-line="29" selection-end-column="60" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/backstage.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="7" column="6" lean-forward="true" selection-start-line="7" selection-start-column="6" selection-end-line="7" selection-end-column="6" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/header.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
-              <caret line="2" column="25" lean-forward="true" selection-start-line="2" selection-start-column="25" selection-end-line="2" selection-end-column="25" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -168,7 +139,6 @@
         <option value="$PROJECT_DIR$/line_chart_no_data.js" />
         <option value="$PROJECT_DIR$/test.html" />
         <option value="$PROJECT_DIR$/footer.php" />
-        <option value="$PROJECT_DIR$/header.php" />
         <option value="$PROJECT_DIR$/login.php" />
         <option value="$PROJECT_DIR$/statements.php" />
         <option value="$PROJECT_DIR$/activity.php" />
@@ -177,6 +147,7 @@
         <option value="$PROJECT_DIR$/main_js.js" />
         <option value="$PROJECT_DIR$/reports.php" />
         <option value="$PROJECT_DIR$/backstage.php" />
+        <option value="$PROJECT_DIR$/header.php" />
       </list>
     </option>
   </component>
@@ -270,7 +241,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Favorites" order="0" side_tool="true" />
       <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.19515885" />
@@ -330,9 +300,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$/.." />
     </ignored-roots>
-    <MESSAGE value="Activity catch exception on first load" />
-    <MESSAGE value="Drill down dates 0000" />
-    <MESSAGE value="One more color pie chart array" />
     <MESSAGE value="Reports exceptions" />
     <MESSAGE value="Dashboard exceptions" />
     <MESSAGE value="loader from head to body" />
@@ -355,7 +322,10 @@
     <MESSAGE value="Auto dismiss alert activity page" />
     <MESSAGE value="Move filter button reports page" />
     <MESSAGE value="lafferty change DB host" />
-    <option name="LAST_COMMIT_MESSAGE" value="lafferty change DB host" />
+    <MESSAGE value="Add google analitycs tag" />
+    <MESSAGE value="db" />
+    <MESSAGE value="Add google analytics tag" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add google analytics tag" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/drill_down_pie_chart_no_data.js" />
@@ -491,22 +461,22 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/reports.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="493">
+        <state relative-caret-position="386">
           <caret line="29" column="60" selection-start-line="29" selection-start-column="60" selection-end-line="29" selection-end-column="60" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/header.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="25" lean-forward="true" selection-start-line="2" selection-start-column="25" selection-end-line="2" selection-end-column="25" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/backstage.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="6" lean-forward="true" selection-start-line="7" selection-start-column="6" selection-end-line="7" selection-end-column="6" />
+        <state relative-caret-position="102">
+          <caret line="6" column="16" selection-start-line="6" selection-start-column="16" selection-end-line="6" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/header.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="301">
+          <caret line="24" column="20" selection-start-line="24" selection-start-column="20" selection-end-line="24" selection-end-column="20" />
         </state>
       </provider>
     </entry>

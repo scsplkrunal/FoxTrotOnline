@@ -380,7 +380,7 @@ CREATE TABLE IF NOT EXISTS trades(
 	inv_type TINYINT NULL,
 	rep_name VARCHAR(40) NULL,
 	up_date DATETIME NULL,
-	hold TINYINT(1) NULL,
+	hold char(1) NULL,
 	override INT NULL,
 	override2 INT NULL,
 	override3 INT NULL,
