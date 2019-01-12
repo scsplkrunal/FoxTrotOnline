@@ -1,7 +1,7 @@
 <?php
 try{
 	require_once "backstage.php";
-	session_start();
+	//session_start();
 
 	//Check if cookies are in use for log in
 	if(permrep::is_remembered()){
@@ -13,12 +13,16 @@ try{
 	}
 
 	//Security
-	$_GET["company_name"] = addslashes(htmlentities($_GET["company_name"]));
+	$_GET["company_name"] = isset($_GET["company_name"])?addslashes(htmlentities($_GET["company_name"])):'demo';
 
 	//Choose DB
 	if(!isset($_SESSION['db_name']) || ($_SESSION['db_name'] != $_GET["company_name"])){
 		db_choose($_GET);
 	}
+    else
+    {
+        db_choose($_GET);
+    }
 
 	echo '<!-- Global site tag (gtag.js) - Google Analytics -->
 		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-125789539-1"></script>
@@ -38,3 +42,4 @@ try{
 } catch(Exception $e){
 	$GLOBALS['thrown_exception'] = $e->getMessage();
 }
+

@@ -73,8 +73,8 @@ require_once 'header.php';
 
 						?>
 						<canvas id="dashboard_pie_chart"></canvas>
-						<script type="text/javascript" src="pie_chart_no_data.js"
-						        chart_id="dashboard_pie_chart"></script>
+						<script type="text/javascript" chart_id="dashboard_pie_chart" src="pie_chart_no_data.js"
+						        ></script>
 						<script type="text/javascript">
 							var pie_charts_arr = [];
 							pie_charts_arr.push( pie_chart );
@@ -96,8 +96,7 @@ require_once 'header.php';
 						<h4 class="card-title mb-0">Commission Statement</h4>
 					</div>
 					<div class="card-body">
-						<object id="statement_pdf_object" data="none" type="application/pdf" height="260px"
-						        width="100%"></object>
+						<object id="statement_pdf_object" data="none" type="application/pdf" height="260px"  width="100%"></object>
 						<?php
 						$x = statement::statements_list("{$_SESSION['company_name']}/data"); //x doesn't matter, initial the function for $_SESSION['first_statement_url']
 						echo statement::statement_buttons_pdf_url_changer();
@@ -126,25 +125,26 @@ require_once 'header.php';
 								<option value="Previous 12 Months">Previous 12 Months</option>
 								<option value="Last Year">Last Year</option>
 								<option value="Last Month">Last Month</option>
-							</select>
-							<input name="choose_date_radio" value="dateTrade" hidden>
+ 						 `   </select>
+							<input name="choose_date_radio" value="date" hidden>
 							<input name="choose_pay_radio" value="rep_comm" hidden>
 							<input name="class" value="no_class" hidden>
 							<input name="func" value="reports_update" hidden>
 						</form>
 						<?php
-						try{
-							$line_chart_data = line_chart_data_and_labels(['time_period' => 'Year to Date']);
-							echo "<script type='text/javascript'>
-									var line_chart_data = $line_chart_data;
-								</script>";
-						}catch(Exception $e){
-							catch_doc_first_load_exception($e, 'dashboard_time_period_form');
-						}
+    						try{
+    							$line_chart_data = line_chart_data_and_labels(['time_period' => 'Year to Date']);
+    							echo "<script type='text/javascript'>
+    									var line_chart_data = $line_chart_data;
+    								</script>";
+    						}catch(Exception $e){
+    							catch_doc_first_load_exception($e, 'dashboard_time_period_form');
+    						}
 						?>
 						<canvas id="dashboard_line_chart"></canvas>
 						<script type="text/javascript" src="line_chart_no_data.js"
-						        chart_id="dashboard_line_chart"></script>
+						        chart_id="dashboard_line_chart">
+                        </script>
 						<script type="text/javascript">
 							line_chart.data = line_chart_data;
 							line_chart.options.title = {
@@ -161,45 +161,46 @@ require_once 'header.php';
 				</div>
 				<div class="card">
 					<div class="card-header">
-						<h4 class="card-title mb-0">Net Commissions by Product Category</h4>
+						<h4 class="card-title mb-0">Top 10 Sponsors</h4>
 					</div>
 					<div class="card-body">
-						<div style="min-height: 300px">
+                    
+                        <!--change by vishva 12/11/2018  2:55PM-->
+                        
+                        <form id="co_dashboard_time_period_form" class="dates_form col-md-12">
+							<div class="server_response_div">
+								<div class="alert" role="alert"></div>
+							</div>
+							<label>Date:</label>
+							<select id="co_time_periods_select" name="co_time_period" class="mr-2">
+								<option value="Year to Date">Year to Date</option>
+								<option value="Month to Date">Month to Date</option>
+								<option value="Previous 12 Months">Previous 12 Months</option>
+								<option value="Last Year">Last Year</option>
+								<option value="Last Month">Last Month</option>
+ 						 `   </select>
+							<input name="choose_date_radio" value="date" hidden>
+							<input name="choose_pay_radio" value="rep_comm" hidden>
+							<input name="class" value="no_class" hidden>
+							<input name="func" value="dashboard_top_sponsors" hidden>
+						</form>
+                    
+						<div style="min-height: 300px" id="sponsor_table">
 							<?php
-							try{
-								$json_obj       = pie_chart_data_and_labels('reports_pie_chart', [
-									'time_period'       => 'Year to Date',
-									'choose_date_radio' => 'dateTrade',
-									'choose_pay_radio'  => 'rep_comm'
-								]);
-								$pie_chart_data = $json_obj->data_arr['pie_chart_data'];
-								echo "<script type='text/javascript'>
-										var pie_chart_data = $pie_chart_data;
-									</script>";
-							}catch(Exception $e){
-								catch_doc_first_load_exception($e, 'dashboard_time_period_form');
-								echo "<script type='text/javascript'>
-										pie_chart_data = '';
-									</script>";
-							}
-							?>
-							<canvas id="dashboard_pie_chart_2"></canvas>
-							<script type="text/javascript" src="pie_chart_no_data.js"
-							        chart_id="dashboard_pie_chart_2"></script>
-							<script type="text/javascript">
-								pie_charts_arr.push( pie_chart );
-								pie_charts_arr[1].data = pie_chart_data;
-								pie_charts_arr[1].options.title = {
-									display: true,
-									fontSize: 14,
-									text: "Breakdown by Product Category"
-								};
-								pie_charts_arr[1].update();
-							</script>
+                                 try
+                                    {
+                                     $json_obj = dashboard_top_sponsors(['co_time_period' => 'Year to Date']);
+                                     echo $json_obj->data_arr['sponsor_table'];
+			                        }
+                                catch(Exception $e)
+                                    {
+                						catch_doc_first_load_exception($e, 'co_dashboard_time_period_form');
+                					}
+        					?>
 						</div>
 					</div>
 					<div class="card-footer text-muted">
-						Click on chart for details
+						Top sponsers on gross commission
 					</div>
 				</div>
 			</div>
@@ -207,7 +208,7 @@ require_once 'header.php';
 			<!-- Modal -->
 			<div class="modal fade" id="drill_down_pie_chart_modal" tabindex="-1" role="dialog"
 			     aria-hidden="true">
-				<div class="modal-dialog" role="document">
+				<div class="modal-dialog" role="document" style="max-width: 1000px !important;">
 					<div class="modal-content">
 						<div class="modal-header">
 							<h5 class="modal-title" id="forgot_password_modal_title">Trades list</h5>

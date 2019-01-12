@@ -23,7 +23,7 @@ require_once 'header.php';
 		<!--Main Content-->
 		<main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
 			<div class="pt-3 pb-2 mb-2 border-bottom">
-				<h2>Commissions & Fees</h2>
+				<h2>Graphs & Analytics</h2>
 			</div>
 			<form id="reports_form" class="dates_form col-md-12">
 				<div class="server_response_div">
@@ -43,7 +43,7 @@ require_once 'header.php';
 					<div id="reports_form_dates_radios_div" class="col-xs-2 mr-3 ml-3">
 						<div class="custom-control custom-radio custom-control">
 							<input type="radio" id="trade_date_radio" name="choose_date_radio"
-							       class="custom-control-input" value="dateTrade" checked disabled>
+							       class="custom-control-input" value="date" checked disabled>
 							<label class="custom-control-label" for="trade_date_radio">Trade Date</label>
 						</div>
 						<div class="custom-control custom-radio custom-control">
@@ -66,7 +66,7 @@ require_once 'header.php';
 								Commission</label>
 						</div>
 					</div>
-					<input class="btn btn-primary mt-1 mb-1 ml-2" type="submit" value="Filter">
+					<input class="btn btn-primary mt-1 mb-1 ml-2" type="submit" value="Apply">
 				</div>
 				<div class="hidden_form_div mt-2">
 					<label>From</label>
@@ -100,7 +100,7 @@ require_once 'header.php';
 			</div>
 
 			<div class="row mt-5 mb-5">
-				<div class="col-xl-6 mb-5" style="height: 300px;"> <!-- Pie Chart div -->
+				<div class="col-md-7 mb-5" style="height: 300px;"> <!-- Pie Chart div -->
 					<?php
 					try{
 						$json_obj       = pie_chart_data_and_labels('reports_pie_chart');
@@ -128,7 +128,7 @@ require_once 'header.php';
 					</script>
 					<p class="text-center text-lg-left mb-0"><small class="text-muted ml-lg-4 pl-lg-5">Click on chart for details</small></p>
 				</div>
-				<div id="reports_table" class="col-xl-6">
+				<div id="reports_table" class="col-md-5">
 					<?php
 					try{
 						$json_obj = pie_chart_data_and_labels('reports_pie_chart');

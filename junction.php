@@ -1,7 +1,7 @@
 <?php
 try{
 	require_once 'backstage.php';
-	session_start();
+	//session_start();
 
 	if(isset($_POST['class'])){
 

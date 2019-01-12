@@ -13,7 +13,7 @@ require_once 'header.php';
 	<div class="row justify-content-center mt-3 d-none d-md-flex">
 		<div class="col-3">
 			<?php
-			$comapny_name = (isset($_SESSION['company_name'])) ? $_SESSION['company_name'] : 'foxtrot_online';
+			$comapny_name = (isset($_SESSION['company_name'])) ? $_SESSION['company_name'] : 'demo';
 			echo "<img src='lib/logos/{$comapny_name}.png' alt='logo' class='logo'>";
 			?>
 		</div>
